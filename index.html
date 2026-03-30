@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NICOLAS | Product Developer & AI Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #000000;
+            --fg: #ffffff;
+            --accent: #00f2ff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; background: #000;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 24px 150px 24px;
+        }
+
+        header { margin-bottom: 80px; mix-blend-mode: difference; }
+        h1 { font-size: clamp(3.5rem, 10vw, 7rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.05em; text-transform: uppercase; }
+        .tagline { font-size: 1.1rem; margin-top: 15px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; }
+
+        .section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover { border-color: rgba(255, 255, 255, 0.3); transform: translateY(-5px); }
+        h2 { font-size: 1.4rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.1em; border-left: 4px solid #fff; padding-left: 15px; }
+
+        /* Estilo Experiencia */
+        .exp-item { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .exp-item:last-child { border: none; }
+        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; }
+        .role { font-weight: 700; font-size: 1.2rem; color: #fff; }
+        .company { color: var(--accent); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; }
+        .date { opacity: 0.5; font-size: 0.85rem; }
+        .desc { font-size: 1rem; opacity: 0.8; margin-top: 10px; line-height: 1.5; }
+
+        /* Grid Proyectos & Skills */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; }
+        .card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #fff; }
+        .card p { font-size: 0.9rem; opacity: 0.7; }
+        
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+        .tag { background: #fff; color: #000; font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
+        .tag.ai { background: var(--accent); }
+
+        /* Botones Flotantes */
+        .actions { position: fixed; bottom: 40px; right: 40px; display: flex; flex-direction: column; gap: 15px; z-index: 100; }
+        .btn { 
+            padding: 18px 30px; text-decoration: none; font-weight: 800; text-transform: uppercase; 
+            letter-spacing: 0.1em; font-size: 0.9rem; display: flex; align-items: center; gap: 12px; 
+            transition: all 0.3s; border-radius: 4px; border: none; cursor: pointer;
+        }
+        .btn-pdf { background: #fff; color: #000; box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
+        .btn-wa { background: var(--accent); color: #000; box-shadow: 0 10px 30px rgba(0,242,255,0.2); }
+        .btn:hover { transform: scale(1.05) translateY(-5px); filter: brightness(1.1); }
+
+        /* ESTILOS PARA IMPRESIÓN / PDF */
+        @media print {
+            #canvas-container, .actions { display: none !important; }
+            body { background: #fff !important; color: #000 !important; }
+            .content { padding: 0 !important; max-width: 100% !important; margin: 0 !important; }
+            .section { 
+                background: none !important; border: none !important; border-bottom: 1px solid #eee !important; 
+                padding: 20px 0 !important; page-break-inside: avoid;
+            }
+            h1, h2, .role, .company, .card h3 { color: #000 !important; }
+            .tag { border: 1px solid #000 !important; background: none !important; color: #000 !important; }
+            .date, .desc, .tagline, p { opacity: 1 !important; color: #333 !important; }
+            header { mix-blend-mode: normal !important; margin-bottom: 40px !important; }
+        }
+
+        @media (max-width: 600px) {
+            .content { padding-top: 40px; }
+            .actions { width: 100%; right: 0; bottom: 0; flex-direction: row; padding: 15px; gap: 10px; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
+            .btn { flex: 1; padding: 15px 10px; font-size: 0.7rem; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="canvas-container">
+        <canvas id="generative-canvas"></canvas>
+    </div>
+
+    <div class="content">
+        <header>
+            <h1>NICOLAS</h1>
+            <p class="tagline">Product Developer | Designer | AI Specialist</p>
+            <p style="margin-top: 10px; opacity: 0.6; font-weight: 700;">Bogotá, Colombia | github.com/NICOLASDRAWN</p>
+        </header>
+
+        <section class="section">
+            <h2>Perfil Profesional</h2>
+            <p>Estratega creativo con perfil híbrido que domina la intersección entre el <strong>Diseño Gráfico</strong>, el <strong>Desarrollo Web</strong> y la <strong>Inteligencia Artificial</strong>. Experto en transformar complejas necesidades de negocio en ecosistemas digitales escalables, automatizados y con una estética de alto impacto.</p>
+        </section>
+
+        <section class="section">
+            <h2>Experiencia Laboral</h2>
+            
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="role">Graphic Designer & Web Developer</span>
+                    <span class="company">EMPRESA DEMO S.A.S SAS</span>
+                </div>
+                <span class="date">Marzo 2025 – Presente</span>
+                <p class="desc">Liderazgo técnico en estrategias de marketing digital y comunicación corporativa para multinacional B2B. Desarrollo de herramientas de automatización interna y gestión de campañas multicanal.</p>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="role">Digital Products Coordinator</span>
+                    <span class="company">Partido ORGANIZACI�N DEMO</span>
+                </div>
+                <span class="date">Enero 2025 – Marzo 2025</span>
+                <p class="desc">Dirección integral del desarrollo de cursos y capacitación. Producción de materiales visuales, motion graphics y edición de video estratégica para módulos educativos.</p>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="role">Trade Mark Coordinator</span>
+                    <span class="company">DISTRIBUIDORA DEMO.</span>
+                </div>
+                <span class="date">Marzo 2024 – Octubre 2024</span>
+                <p class="desc">Coordinación de trade marketing y gestión de marca nacional. Desarrollo de campañas de activación y posicionamiento en diversos territorios.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Enterprise Solutions</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>ERP Supply Chain</h3>
+                    <p>Desarrollo de plataforma para gestión automatizada de compras y proveedores. Digitalización de procesos manuales con trazabilidad total.</p>
+                    <div class="tags"><span class="tag">JavaScript</span><span class="tag">Database</span><span class="tag">Python</span></div>
+                </div>
+                <div class="card">
+                    <h3>HR Performance System</h3>
+                    <p>Sistema de calificación de personal con interfaz UI/UX optimizada. Generación de reportes de rendimiento y feedback en tiempo real.</p>
+                    <div class="tags"><span class="tag">UI/UX</span><span class="tag">Analytics</span><span class="tag">Frontend</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Stack Tecnológico</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Innovación & IA</h3>
+                    <div class="tags">
+                        <span class="tag ai">Gemini CLI</span><span class="tag ai">OpenCode</span>
+                        <span class="tag ai">Antigravity</span><span class="tag">Machine Learning</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Desarrollo & Ops</h3>
+                    <div class="tags">
+                        <span class="tag">HTML/CSS</span><span class="tag">JavaScript</span>
+                        <span class="tag">cPanel</span><span class="tag">Server Admin</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Creative Suite</h3>
+                    <div class="tags">
+                        <span class="tag">Adobe Illustrator</span><span class="tag">Photoshop</span>
+                        <span class="tag">Premiere Pro</span><span class="tag">Figma</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="border: 2px solid var(--accent); background: rgba(0, 242, 255, 0.05);">
+            <h2><i class="fas fa-microchip"></i> AI-Driven Learning Journey</h2>
+            <p>Mi diferencial competitivo radica en mi capacidad para <strong>orquestar Inteligencia Artificial</strong> en el desarrollo de software. Este portafolio es el resultado de un proceso de <strong>aprendizaje colaborativo</strong>: </p>
+            <ul style="margin-left: 20px; opacity: 0.9; font-size: 0.95rem;">
+                <li style="margin-bottom: 10px;"><strong>Lógica de Negocio:</strong> Yo defino los requerimientos y la arquitectura de la solución basada en necesidades reales de la empresa.</li>
+                <li style="margin-bottom: 10px;"><strong>Desarrollo en Pareja (IA):</strong> Trabajo en conjunto con Gemini CLI para la implementación técnica, aprendiendo y depurando código en cada iteración.</li>
+                <li style="margin-bottom: 10px;"><strong>Evolución Rápida:</strong> Pasé de un perfil creativo tradicional a construir sistemas de gestión complejos (ERP/HR Tech) en tiempo récord.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Educación</h2>
+            <p><strong>Comunicador Social</strong><br>UNIMINUTO Colombia (Graduado 2020)</p>
+        </section>
+    </div>
+
+    <div class="actions">
+        <button onclick="window.print()" class="btn btn-pdf">
+            <i class="fas fa-file-pdf"></i> Descargar PDF
+        </button>
+        <a href="https://wa.me/573150135016?text=Hola%20Nicolas,%20estoy%20impactado%20por%20tu%20perfil%20interactivo.%20Hablemos." class="btn btn-wa">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('generative-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, columns, rows, cellSize = 30, grid = [];
+        let mouse = { x: -1000, y: -1000 };
+
+        window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        window.addEventListener('resize', setup);
+
+        function setup() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            columns = Math.ceil(width / cellSize);
+            rows = Math.ceil(height / cellSize);
+            grid = [];
+            for (let y = 0; y < rows; y++) {
+                for (let x = 0; x < columns; x++) {
+                    grid.push({ x: x * cellSize, y: y * cellSize, baseSize: 2 });
+                }
+            }
+        }
+
+        function draw(time) {
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, width, height);
+            grid.forEach(p => {
+                const dx = mouse.x - p.x;
+                const dy = mouse.y - p.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                const maxDist = 250;
+                let scale = 1;
+                if (dist < maxDist) { scale = 1 + (1 - dist / maxDist) * 8; }
+                const wave = Math.sin(time * 0.002 + (p.x + p.y) * 0.01) * 1.5;
+                const finalSize = (p.baseSize * scale) + wave;
+                ctx.fillStyle = dist < maxDist ? '#fff' : 'rgba(255,255,255,0.2)';
+                ctx.beginPath();
+                if ((p.x / cellSize + p.y / cellSize) % 2 === 0) {
+                    ctx.arc(p.x + cellSize/2, p.y + cellSize/2, finalSize/2, 0, Math.PI * 2);
+                } else {
+                    ctx.rect(p.x + (cellSize - finalSize)/2, p.y + (cellSize - finalSize)/2, finalSize, finalSize);
+                }
+                ctx.fill();
+            });
+            requestAnimationFrame(draw);
+        }
+        setup();
+        requestAnimationFrame(draw);
+    </script>
+</body>
+</html>
