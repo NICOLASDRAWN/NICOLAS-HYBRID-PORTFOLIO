@@ -1,0 +1,857 @@
+[
+  {
+    "id": "7101",
+    "code": "7101",
+    "name": "ALQUILER EXCAVADORA CAT336D2 MT  SN:2165   (MOVIL 1434)"
+  },
+  {
+    "id": "7102",
+    "code": "7102",
+    "name": "ALQUILER EXCAVADORA CAT349D2L      SN: 0237  (MOVIL 2235)"
+  },
+  {
+    "id": "7103",
+    "code": "7103",
+    "name": "ALQUILER EXCAVADORA CAT320GX2 M  SN: 0671  (MOVIL 1243)"
+  },
+  {
+    "id": "7103_0qxh",
+    "code": "7103",
+    "name": "ALQUILER EXCAVADORA CAT320GX2 M  SN: 0671  (MOVIL 1243)"
+  },
+  {
+    "id": "7104",
+    "code": "7104",
+    "name": "ALQUILER EXCAVADORA CAT320GC M    SN: 3120   (MOVIL 1341)"
+  },
+  {
+    "id": "7105",
+    "code": "7105",
+    "name": "ALQUILER EXCAVADORA CAT320             SN: 1012  (MOVIL 2232)"
+  },
+  {
+    "id": "7106",
+    "code": "7106",
+    "name": "ALQUILER EXCAVADORA  CAT320GX       SN: 1940   (MOVIL 0990)"
+  },
+  {
+    "id": "7107",
+    "code": "7107",
+    "name": "ALQUILER EXCAVADORA   CAT323           SN: 1604  (MOVIL 2234)"
+  },
+  {
+    "id": "7108",
+    "code": "7108",
+    "name": "ALQUILER EXCAVADORA  CAT336E M       SN: 1614  (MOVIL 0891)"
+  },
+  {
+    "id": "7109",
+    "code": "7109",
+    "name": "ALQUILER EXCAVADORA  CAT323GC M    SN: 0287  (MOVIL 0991)"
+  },
+  {
+    "id": "7110",
+    "code": "7110",
+    "name": "ALQUILER EXCAVADORA  KOMATSU        SN 1952  (MOBIL 1438)"
+  },
+  {
+    "id": "7111",
+    "code": "7111",
+    "name": "ALQUILER EXCAVADORA  CAT320             SN: 0678  (MOVIL 0924)"
+  },
+  {
+    "id": "7112",
+    "code": "7112",
+    "name": "ALQUILER EXCAVADORA CAT320              SN:1408   (MOVIL 2233)"
+  },
+  {
+    "id": "7113",
+    "code": "7113",
+    "name": "ALQUILER EXCAVADORA ZOOMLION ZE215E SN:6705 (MOVIL 2694)|"
+  },
+  {
+    "id": "7114",
+    "code": "7114",
+    "name": "ALQUILER EXCAVADORA  XCMG XE500  SN:0052  (MOVIL 3618)"
+  },
+  {
+    "id": "7115",
+    "code": "7115",
+    "name": "ALQUILER EXCAVADORA  XCMG XE500  SN:0053  (MOVIL 3620)"
+  },
+  {
+    "id": "7116",
+    "code": "7116",
+    "name": "ALQUILER EXCAVADORA  ZE215E   SN:6705  (MOVIL 2694)"
+  },
+  {
+    "id": "7117",
+    "code": "7117",
+    "name": "ALQUILER EXCAVADORA  ZE60-10  SN:4913  (MOVIL 2695)"
+  },
+  {
+    "id": "7121",
+    "code": "7121",
+    "name": "ALQUILER GRUA TELESCOPIOCA  ZTC500  SN: 3951  (MOVIL 1498)"
+  },
+  {
+    "id": "7122",
+    "code": "7122",
+    "name": "ALQUILER GRUA TELESCOPIOCA ZTC500  SN: 3953  (MOVIL 1499)"
+  },
+  {
+    "id": "7123",
+    "code": "7123",
+    "name": "ALQUILER GRUA TELESCOPIOCA  ZOOMLION  ZTC500  SN: 3954  (MOVIL 1705)"
+  },
+  {
+    "id": "7126",
+    "code": "7126",
+    "name": "ALQUILER CAMION GRUA SN: 15-180 (MOVIL ????) UVM010"
+  },
+  {
+    "id": "7127",
+    "code": "7127",
+    "name": "ALQUILER TRATOCAMION SN:2026   (PLACA NTQ543)"
+  },
+  {
+    "id": "7131",
+    "code": "7131",
+    "name": "ALQUILER MONTACARGA CPCD30  1129K (MOVIL 1138)"
+  },
+  {
+    "id": "7132",
+    "code": "7132",
+    "name": "ALQUILER MONTACARGA CPCD30  1230K"
+  },
+  {
+    "id": "7133",
+    "code": "7133",
+    "name": "ALQUILER MONTACARGA CPCD50  0216K"
+  },
+  {
+    "id": "7134",
+    "code": "7134",
+    "name": "ALQUILER MONTACARGA CPCD50  0217K"
+  },
+  {
+    "id": "7135",
+    "code": "7135",
+    "name": "ALQUILER MONTACARGA CPCD50  1228K (MOVIL 1353)"
+  },
+  {
+    "id": "7136",
+    "code": "7136",
+    "name": "ALQUILER MONTACARGA KOMATSU IQE59C"
+  },
+  {
+    "id": "7139",
+    "code": "7139",
+    "name": "ALQUILER MINICARGADOR ZS090V SN:1125 (MOVIL 3532)"
+  },
+  {
+    "id": "7141",
+    "code": "7141",
+    "name": "ALQUILER VOLQUETAS M300 WFR788"
+  },
+  {
+    "id": "7142",
+    "code": "7142",
+    "name": "ALQUILER VOLQUETAS M300 WFR796"
+  },
+  {
+    "id": "7143",
+    "code": "7143",
+    "name": "ALQUILER VOLQUETAS M300 WFR800"
+  },
+  {
+    "id": "7144",
+    "code": "7144",
+    "name": "ALQUILER VOLQUETAS M300 WFS072"
+  },
+  {
+    "id": "7145",
+    "code": "7145",
+    "name": "ALQUILER VOLQUETAS M300 WFS081"
+  },
+  {
+    "id": "7151",
+    "code": "7151",
+    "name": "ALQUILER VIBROCOMPACTADOR XCMG 5702 (MOVIL 3630)"
+  },
+  {
+    "id": "7152",
+    "code": "7152",
+    "name": "ALQUILER VIBROCOMPACTADOR SDBM BM2000  (MOVIL 2119)"
+  },
+  {
+    "id": "7153",
+    "code": "7153",
+    "name": "ALQUILER VIBROCOMPACTADOR XCMG XS223  (MOVIL 6185)"
+  },
+  {
+    "id": "7154",
+    "code": "7154",
+    "name": "ALQUILER VIBROCOMPACTADOR XCMG SX223  (MOVIL 6199)"
+  },
+  {
+    "id": "7171",
+    "code": "7171",
+    "name": "ALQUILER MIXER WFS016"
+  },
+  {
+    "id": "7172",
+    "code": "7172",
+    "name": "ALQUILER MIXER WFS017"
+  },
+  {
+    "id": "7175",
+    "code": "7175",
+    "name": "ALQUILER MARTILLO HIDRAULICO SN 175-200 33-45T"
+  },
+  {
+    "id": "7176",
+    "code": "7176",
+    "name": "ALQUILER MARTILLO HIDRAULICO 135-140MM 20-23T"
+  },
+  {
+    "id": "7177",
+    "code": "7177",
+    "name": "ALQUILER MARTILLO CAT336D2"
+  },
+  {
+    "id": "7181",
+    "code": "7181",
+    "name": "ALQUILER CARGADOR FRONTAL XCMG LW500KV-S (MOBIL 2833)"
+  },
+  {
+    "id": "7186",
+    "code": "7186",
+    "name": "ALQUILER GENERADOR ELECTRICO VODA 1003 (MOBIL 1927)"
+  },
+  {
+    "id": "7201",
+    "code": "7201",
+    "name": "PLATAFORMA SECTOR S01"
+  },
+  {
+    "id": "7202",
+    "code": "7202",
+    "name": "PLATAFORMA SECTOR S02"
+  },
+  {
+    "id": "7203",
+    "code": "7203",
+    "name": "PLATAFORMA SECTOR S03"
+  },
+  {
+    "id": "7204",
+    "code": "7204",
+    "name": "PLATAFORMA SECTOR S04"
+  },
+  {
+    "id": "7205",
+    "code": "7205",
+    "name": "PLATAFORMA SECTOR S05"
+  },
+  {
+    "id": "7206",
+    "code": "7206",
+    "name": "PLATAFORMA SECTOR S06"
+  },
+  {
+    "id": "7207",
+    "code": "7207",
+    "name": "PLATAFORMA SECTOR S07"
+  },
+  {
+    "id": "7208",
+    "code": "7208",
+    "name": "PLATAFORMA SECTOR S08"
+  },
+  {
+    "id": "7209",
+    "code": "7209",
+    "name": "PLATAFORMA SECTOR S09"
+  },
+  {
+    "id": "7210",
+    "code": "7210",
+    "name": "PLATAFORMA SECTOR S10"
+  },
+  {
+    "id": "7211",
+    "code": "7211",
+    "name": "PLATAFORMA SECTOR S11"
+  },
+  {
+    "id": "7212",
+    "code": "7212",
+    "name": "PLATAFORMA SECTOR S12"
+  },
+  {
+    "id": "7213",
+    "code": "7213",
+    "name": "PLATAFORMA SECTOR S13"
+  },
+  {
+    "id": "7214",
+    "code": "7214",
+    "name": "PLATAFORMA SECTOR S14"
+  },
+  {
+    "id": "7215",
+    "code": "7215",
+    "name": "PLATAFORMA SECTOR S15"
+  },
+  {
+    "id": "7216",
+    "code": "7216",
+    "name": "PLATAFORMA SECTOR S16"
+  },
+  {
+    "id": "7251",
+    "code": "7251",
+    "name": "PLATAFORMA ESTACION E01"
+  },
+  {
+    "id": "7252",
+    "code": "7252",
+    "name": "PLATAFORMA ESTACION E02"
+  },
+  {
+    "id": "7253",
+    "code": "7253",
+    "name": "PLATAFORMA ESTACION E03"
+  },
+  {
+    "id": "7254",
+    "code": "7254",
+    "name": "PLATAFORMA ESTACION E04"
+  },
+  {
+    "id": "7255",
+    "code": "7255",
+    "name": "PLATAFORMA ESTACION E05"
+  },
+  {
+    "id": "7256",
+    "code": "7256",
+    "name": "PLATAFORMA ESTACION E06"
+  },
+  {
+    "id": "7257",
+    "code": "7257",
+    "name": "PLATAFORMA ESTACION E07"
+  },
+  {
+    "id": "7258",
+    "code": "7258",
+    "name": "PLATAFORMA ESTACION E08"
+  },
+  {
+    "id": "7259",
+    "code": "7259",
+    "name": "PLATAFORMA ESTACION E09"
+  },
+  {
+    "id": "7260",
+    "code": "7260",
+    "name": "PLATAFORMA ESTACION E10"
+  },
+  {
+    "id": "7261",
+    "code": "7261",
+    "name": "PLATAFORMA ESTACION E11"
+  },
+  {
+    "id": "7262",
+    "code": "7262",
+    "name": "PLATAFORMA ESTACION E12"
+  },
+  {
+    "id": "7263",
+    "code": "7263",
+    "name": "PLATAFORMA ESTACION E13"
+  },
+  {
+    "id": "7264",
+    "code": "7264",
+    "name": "PLATAFORMA ESTACION E14"
+  },
+  {
+    "id": "7265",
+    "code": "7265",
+    "name": "PLATAFORMA ESTACION E15"
+  },
+  {
+    "id": "7266",
+    "code": "7266",
+    "name": "PLATAFORMA ESTACION E16"
+  },
+  {
+    "id": "7301",
+    "code": "7301",
+    "name": "SUBESTRUCTURA SECTOR S01"
+  },
+  {
+    "id": "7302",
+    "code": "7302",
+    "name": "SUBESTRUCTURA SECTOR S02"
+  },
+  {
+    "id": "7303",
+    "code": "7303",
+    "name": "SUBESTRUCTURA SECTOR S03"
+  },
+  {
+    "id": "7304",
+    "code": "7304",
+    "name": "SUBESTRUCTURA SECTOR S04"
+  },
+  {
+    "id": "7305",
+    "code": "7305",
+    "name": "SUBESTRUCTURA SECTOR S05"
+  },
+  {
+    "id": "7306",
+    "code": "7306",
+    "name": "SUBESTRUCTURA SECTOR S06"
+  },
+  {
+    "id": "7307",
+    "code": "7307",
+    "name": "SUBESTRUCTURA SECTOR S07"
+  },
+  {
+    "id": "7308",
+    "code": "7308",
+    "name": "SUBESTRUCTURA SECTOR S08"
+  },
+  {
+    "id": "7309",
+    "code": "7309",
+    "name": "SUBESTRUCTURA SECTOR S09"
+  },
+  {
+    "id": "7310",
+    "code": "7310",
+    "name": "SUBESTRUCTURA SECTOR S10"
+  },
+  {
+    "id": "7311",
+    "code": "7311",
+    "name": "SUBESTRUCTURA SECTOR S11"
+  },
+  {
+    "id": "7312",
+    "code": "7312",
+    "name": "SUBESTRUCTURA SECTOR S12"
+  },
+  {
+    "id": "7313",
+    "code": "7313",
+    "name": "SUBESTRUCTURA SECTOR S13"
+  },
+  {
+    "id": "7314",
+    "code": "7314",
+    "name": "SUBESTRUCTURA SECTOR S14"
+  },
+  {
+    "id": "7315",
+    "code": "7315",
+    "name": "SUBESTRUCTURA SECTOR S15"
+  },
+  {
+    "id": "7316",
+    "code": "7316",
+    "name": "SUBESTRUCTURA SECTOR S16"
+  },
+  {
+    "id": "7351",
+    "code": "7351",
+    "name": "SUBESTRUCTURA ESTACION E01"
+  },
+  {
+    "id": "7352",
+    "code": "7352",
+    "name": "SUBESTRUCTURA ESTACION E02"
+  },
+  {
+    "id": "7353",
+    "code": "7353",
+    "name": "SUBESTRUCTURA ESTACION E03"
+  },
+  {
+    "id": "7354",
+    "code": "7354",
+    "name": "SUBESTRUCTURA ESTACION E04"
+  },
+  {
+    "id": "7355",
+    "code": "7355",
+    "name": "SUBESTRUCTURA ESTACION E05"
+  },
+  {
+    "id": "7356",
+    "code": "7356",
+    "name": "SUBESTRUCTURA ESTACION E06"
+  },
+  {
+    "id": "7357",
+    "code": "7357",
+    "name": "SUBESTRUCTURA ESTACION E07"
+  },
+  {
+    "id": "7358",
+    "code": "7358",
+    "name": "SUBESTRUCTURA ESTACION E08"
+  },
+  {
+    "id": "7359",
+    "code": "7359",
+    "name": "SUBESTRUCTURA ESTACION E09"
+  },
+  {
+    "id": "7360",
+    "code": "7360",
+    "name": "SUBESTRUCTURA ESTACION E10"
+  },
+  {
+    "id": "7361",
+    "code": "7361",
+    "name": "SUBESTRUCTURA ESTACION E11"
+  },
+  {
+    "id": "7362",
+    "code": "7362",
+    "name": "SUBESTRUCTURA ESTACION E12"
+  },
+  {
+    "id": "7363",
+    "code": "7363",
+    "name": "SUBESTRUCTURA ESTACION E13"
+  },
+  {
+    "id": "7364",
+    "code": "7364",
+    "name": "SUBESTRUCTURA ESTACION E14"
+  },
+  {
+    "id": "7365",
+    "code": "7365",
+    "name": "SUBESTRUCTURA ESTACION E15"
+  },
+  {
+    "id": "7366",
+    "code": "7366",
+    "name": "SUBESTRUCTURA ESTACION E16"
+  },
+  {
+    "id": "7401",
+    "code": "7401",
+    "name": "SW PATIO TALLER"
+  },
+  {
+    "id": "7402",
+    "code": "7402",
+    "name": "SW PLANTA RCD"
+  },
+  {
+    "id": "7403",
+    "code": "7403",
+    "name": "SW PLATAFORMA PUENTEARANDA"
+  },
+  {
+    "id": "7404",
+    "code": "7404",
+    "name": "SW CORTE DE PILOTES"
+  },
+  {
+    "id": "7406",
+    "code": "7406",
+    "name": "SW BANDERAS E06"
+  },
+  {
+    "id": "7407",
+    "code": "7407",
+    "name": "SW CUBIERTAS E06"
+  },
+  {
+    "id": "7408",
+    "code": "7408",
+    "name": "SW SISTEMA DRENAJE BODEGA PUENTE ARANDA"
+  },
+  {
+    "id": "7409",
+    "code": "7409",
+    "name": "SW SISTEMA DRENAJE S09"
+  },
+  {
+    "id": "7410",
+    "code": "7410",
+    "name": "SW DOG KENNELS E02"
+  },
+  {
+    "id": "7411",
+    "code": "7411",
+    "name": "SW TRASLADOS DEPOT"
+  },
+  {
+    "id": "7412",
+    "code": "7412",
+    "name": "SW TRASTADO CANILES E06"
+  },
+  {
+    "id": "7413",
+    "code": "7413",
+    "name": "SW TRASLADOS REDES S08"
+  },
+  {
+    "id": "7414",
+    "code": "7414",
+    "name": "SW TRASLADOS REDES E16"
+  },
+  {
+    "id": "7415",
+    "code": "7415",
+    "name": "SW TRASLADOS REDES E12"
+  },
+  {
+    "id": "7416",
+    "code": "7416",
+    "name": "SW TRASLADOS REDES E14"
+  },
+  {
+    "id": "7421",
+    "code": "7421",
+    "name": "SW CERRAMIENTO E07"
+  },
+  {
+    "id": "7422",
+    "code": "7422",
+    "name": "SW CERRAMIENTO E08 E06 E02"
+  },
+  {
+    "id": "7423",
+    "code": "7423",
+    "name": "SW CERRAMIENTO E09"
+  },
+  {
+    "id": "7424",
+    "code": "7424",
+    "name": "SW CERRAMIENTO E11"
+  },
+  {
+    "id": "7425",
+    "code": "7425",
+    "name": "SW CERRAMIENTO E13"
+  },
+  {
+    "id": "7426",
+    "code": "7426",
+    "name": "SW CERRAMIENTO S15"
+  },
+  {
+    "id": "7427",
+    "code": "7427",
+    "name": "SW CERRAMIENTO E16"
+  },
+  {
+    "id": "7428",
+    "code": "7428",
+    "name": "SW CERRAMIENTO E10"
+  },
+  {
+    "id": "7429",
+    "code": "7429",
+    "name": "SW CERRAMIENTO E12"
+  },
+  {
+    "id": "7430",
+    "code": "7430",
+    "name": "SW ADEC PLATAFORMA E INSTAL CERRAMIENTO E01"
+  },
+  {
+    "id": "7431",
+    "code": "7431",
+    "name": "SW Cerramiento Subestructura S13"
+  },
+  {
+    "id": "7451",
+    "code": "7451",
+    "name": "SW CERRAMIENTO PLATAFORMA PUENTEARANDA"
+  },
+  {
+    "id": "7501",
+    "code": "7501",
+    "name": "TALLER ADMINISTRATIVO"
+  },
+  {
+    "id": "7502",
+    "code": "7502",
+    "name": "TALLER MANTENIMIENTO"
+  },
+  {
+    "id": "7503",
+    "code": "7503",
+    "name": "TALLER HERRAMIENTAS"
+  },
+  {
+    "id": "7504",
+    "code": "7504",
+    "name": "TALLER ACTIVOS"
+  },
+  {
+    "id": "7601",
+    "code": "7601",
+    "name": "INSTITUCIONAL ADMINISTRATIVO"
+  },
+  {
+    "id": "7602",
+    "code": "7602",
+    "name": "INSTITUCIONAL LOGISTICA"
+  },
+  {
+    "id": "7603",
+    "code": "7603",
+    "name": "INSTITUCIONAL TRANSPORTE"
+  },
+  {
+    "id": "7701",
+    "code": "7701",
+    "name": "CHEC OBRA CIVIL"
+  },
+  {
+    "id": "7702",
+    "code": "7702",
+    "name": "CHEC TRANSPORTE"
+  },
+  {
+    "id": "7703",
+    "code": "7703",
+    "name": "CHEC VIGAS CAPITEL S6"
+  },
+  {
+    "id": "7751",
+    "code": "7751",
+    "name": "SEC CORTE, CARGUE Y TRANSPORTE S16 23-27"
+  },
+  {
+    "id": "7801",
+    "code": "7801",
+    "name": "CO PRODUCTOS PECUARIOS"
+  },
+  {
+    "id": "7802",
+    "code": "7802",
+    "name": "CO MATERIAL INDUSTRIAL"
+  },
+  {
+    "id": "7803",
+    "code": "7803",
+    "name": "CO MAQUINARIA INDUSTRIAL"
+  },
+  {
+    "id": "7804",
+    "code": "7804",
+    "name": "CO SERVICIOS INDSTRIALES"
+  },
+  {
+    "id": "7805",
+    "code": "7805",
+    "name": "CO OTROS TANSPORTES"
+  },
+  {
+    "id": "7806",
+    "code": "7806",
+    "name": "CO SUMINISTRO DE AGUA"
+  },
+  {
+    "id": "7901",
+    "code": "7901",
+    "name": "ADMON ADMINISTRACION"
+  },
+  {
+    "id": "7902",
+    "code": "7902",
+    "name": "ADMON  FINANZAS Y CONTABILIDAD"
+  },
+  {
+    "id": "7903",
+    "code": "7903",
+    "name": "ADMON RECURSOS HUMANOS"
+  },
+  {
+    "id": "7904",
+    "code": "7904",
+    "name": "ADMON COMPRAS Y ALMACEN"
+  },
+  {
+    "id": "7905",
+    "code": "7905",
+    "name": "ADMON IMPORTACIONES"
+  },
+  {
+    "id": "7906",
+    "code": "7906",
+    "name": "ADMON CALIDAD (ISO)"
+  },
+  {
+    "id": "7909",
+    "code": "7909",
+    "name": "ADMON GERENCIA GENERAL"
+  },
+  {
+    "id": "7951",
+    "code": "7951",
+    "name": "ADMON COMERCIAL"
+  },
+  {
+    "id": "7971",
+    "code": "7971",
+    "name": "ADMON PROYECTOS"
+  },
+  {
+    "id": "DISTRIBUCION",
+    "code": "DISTRIBUCION",
+    "name": "PRORRATEO"
+  },
+  {
+    "id": "7317",
+    "code": "7317",
+    "name": "SUBESTRUCTURA SECTOR S17"
+  },
+  {
+    "id": "7217",
+    "code": "7217",
+    "name": "PLATAFORMA SECTOR S17"
+  },
+  {
+    "id": "7417",
+    "code": "7417",
+    "name": "SW TRASLADOS REDES S12"
+  },
+  {
+    "id": "811209",
+    "code": "811209",
+    "name": "ADMON SUBESTRUCTURA S12 - 09"
+  },
+  {
+    "id": "811210",
+    "code": "811210",
+    "name": "ADMON SUBESTRUCTURA S12 - 10"
+  },
+  {
+    "id": "1773244310901",
+    "code": "E-10",
+    "name": "SUBESTRUCTURA ESTACION 10"
+  },
+  {
+    "id": "1773421123533",
+    "code": "7704",
+    "name": "ADMON CHEC E04 MANO DE OBRA E INSUMOS"
+  }
+]

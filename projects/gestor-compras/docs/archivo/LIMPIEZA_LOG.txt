@@ -1,0 +1,21 @@
+LIMPIEZA COMPLETADA: mié 04/02/2026 12:09:23,25 
+ 
+ARCHIVOS ELIMINADOS: 
+- README-ACTUALIZACION.md (duplicado) 
+- actualizar.bat (obsoleto) 
+- GUIA-DE-USO.md (duplicado) 
+- login.json (duplicado) 
+- Archivos temporales (*.log, *.tmp) 
+ 
+ARCHIVOS ORGANIZADOS: 
+- Documentación movida a carpeta 'docs/' 
+ 
+BACKUP CREADO EN: 
+- backups\LIMPIEZA_2026-04-02_1209p. m. 
+ 
+ARCHIVOS PRINCIPALES CONSERVADOS: 
+- INICIAR_Y_GUARDAR.bat (Script principal) 
+- BACKUP_RAPIDO.bat (Backups) 
+- DETENER_SISTEMA.bat (Detener servicios) 
+- backend/data/ (Todos los datos) 
+- pages/Drafts.tsx (Nueva funcionalidad) 

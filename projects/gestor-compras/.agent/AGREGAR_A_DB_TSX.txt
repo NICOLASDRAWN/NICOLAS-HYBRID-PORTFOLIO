@@ -1,0 +1,48 @@
+// AGREGAR ESTAS FUNCIONES EN store/db.tsx DESPUÉS DE LA FUNCIÓN logout (línea 344)
+
+  const addUser = async (u: User) => {
+    try {
+      await authFetch(`${API_URL}/users`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(u)
+      });
+      setUsers(prev => {
+        const exists = prev.find(item => item.id === u.id);
+        if (exists) return prev.map(item => item.id === u.id ? u : item);
+        return [...prev, u];
+      });
+      logActivity('system', `Creó usuario: ${u.name}`, u.id);
+    } catch (err) {
+      toast.error("Error al guardar usuario en el servidor");
+      throw err;
+    }
+  };
+
+  const updateUser = async (id: string, u: Partial<User>) => {
+    try {
+      await authFetch(`${API_URL}/users/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(u)
+      });
+      setUsers(prev => prev.map(user => user.id === id ? { ...user, ...u } : user));
+      logActivity('system', `Actualizó usuario: ${u.name || id}`, id);
+    } catch (err) {
+      toast.error("Error al actualizar usuario en el servidor");
+      throw err;
+    }
+  };
+
+  const deleteUser = async (id: string) => {
+    try {
+      await authFetch(`${API_URL}/users/${id}`, {
+        method: 'DELETE'
+      });
+      setUsers(prev => prev.filter(u => u.id !== id));
+      logActivity('system', `Eliminó usuario: ${id}`, id);
+    } catch (err) {
+      toast.error("Error al eliminar usuario en el servidor");
+      throw err;
+    }
+  };

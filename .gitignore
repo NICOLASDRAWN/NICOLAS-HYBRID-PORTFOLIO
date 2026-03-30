@@ -1,49 +1,76 @@
-# Logs
-*.log
-logs/
-
-# Node modules
+# === Dependencies ===
 node_modules/
 
-# Build outputs
+# === Build outputs ===
 dist/
 dist-app/
 dist-ssr/
 *.asar
+release/
 
-# Compressed files
+# === Compressed / Binary files ===
 *.zip
 *.rar
 *.tar.gz
-
-# Executables
 *.exe
 *.exe.blockmap
 
-# Local env files
+# === Environment / Secrets ===
 .env
 .env.local
 .env.*.local
 
-# Editor
+# === Logs ===
+*.log
+logs/
+
+# === Editor / IDE ===
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS
+# === OS ===
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Uploads (user data)
+# === Uploads (user data) ===
 uploads/
-*/uploads/
+**/uploads/
 
-# Database
+# === Database files ===
 *.db
 *.sqlite
+database.json
 
-# Backend data (runtime)
+# === Backend runtime data ===
 backend/data/*.json
 !backend/data/*.json.sample
-backend/backups/
+**/backups/
+
+# === Debug / Test scripts (gestor-compras) ===
+projects/gestor-compras/check_*.js
+projects/gestor-compras/test_*.js
+projects/gestor-compras/inspect_*.js
+projects/gestor-compras/compare_*.js
+projects/gestor-compras/diagnose_*.js
+projects/gestor-compras/update_*_pass.js
+projects/gestor-compras/sync_*.js
+projects/gestor-compras/apply_*.js
+projects/gestor-compras/create_launcher.js
+projects/gestor-compras/upgrade_launcher*.js
+projects/gestor-compras/get_remote_link.js
+projects/gestor-compras/wait_for_server.js
+projects/gestor-compras/error.log
+projects/gestor-compras/tmp_data/
+projects/gestor-compras/temp_extract/
+projects/gestor-compras/test_data/
+projects/gestor-compras/uptime-kuma/
+
+# === Temp data ===
+tmp_data/
+temp_extract/
+
+# === Package lock (optional - keep if you want reproducible builds) ===
+# package-lock.json

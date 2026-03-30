@@ -1,0 +1,248 @@
+[
+  {
+    "id": "1",
+    "name": "Administrador",
+    "username": "admin",
+    "password": "$2b$10$9bXaXgPeTBwi7R0ZzAX95urFtD86qILl7n72BOOyzSqhEVO6IVryK",
+    "role": "Admin",
+    "isActive": true,
+    "permissions": {
+      "orders_view": true,
+      "orders_create": true,
+      "orders_edit": true,
+      "orders_delete": true,
+      "suppliers_view": true,
+      "products_view": true,
+      "products_create": true,
+      "products_edit": true,
+      "inventory_view": true,
+      "inventory_create": true,
+      "cost_centers_view": true
+    },
+    "lastSeen": "2026-03-24T19:00:33.704Z"
+  },
+  {
+    "id": "master-user-id",
+    "name": "Super Usuario",
+    "username": "master",
+    "password": "$2b$10$3iAngWpzBw4nkC0Be3651ORK0dcsSU2YRNtGDqCOwswS.mbeRfNXu",
+    "role": "Admin",
+    "isActive": true,
+    "permissions": {
+      "orders_view": true,
+      "orders_create": true,
+      "orders_edit": true,
+      "orders_delete": true,
+      "suppliers_view": true,
+      "products_view": true,
+      "products_create": true,
+      "products_edit": true,
+      "inventory_view": true,
+      "inventory_create": true,
+      "cost_centers_view": true
+    },
+    "lastSeen": "2026-03-30T17:50:48.855Z"
+  },
+  {
+    "id": "1770154969915",
+    "name": "Yulieth Casadiego",
+    "username": "yulimip",
+    "password": "$2b$10$FmRcfKWVPK4UN0hUuVLgGOqK55Bilc5RV59PXg.JclRnN3s5IirPy",
+    "role": "Buyer",
+    "isActive": true,
+    "permissions": {
+      "orders_view": true,
+      "orders_create": true,
+      "orders_edit": true,
+      "orders_delete": true,
+      "suppliers_view": true,
+      "products_view": true,
+      "products_create": true,
+      "products_edit": true,
+      "inventory_view": true,
+      "inventory_create": true,
+      "cost_centers_view": true
+    },
+    "lastSeen": "2026-03-27T21:25:31.796Z"
+  },
+  {
+    "id": "1770234070693",
+    "name": "Helena Saez",
+    "username": "helenamip",
+    "password": "$2b$10$G7g12abr2CevdMltO6NBdeSi0O9gvGP6FvgOi4Hlbo0FTheYA2GQm",
+    "role": "Buyer",
+    "isActive": true,
+    "permissions": {
+      "orders_view": true,
+      "orders_create": true,
+      "orders_edit": true,
+      "orders_delete": true,
+      "suppliers_view": true,
+      "products_view": true,
+      "products_create": true,
+      "products_edit": true,
+      "inventory_view": true,
+      "inventory_create": true,
+      "cost_centers_view": true
+    }
+  },
+  {
+    "id": "1770304082399",
+    "name": "Maria Alejandra Anaya",
+    "username": "Alejandramip",
+    "password": "$2b$10$lA1rcMFnHAX8RpZ.gqNg1u/QBYczqnRQE4XWldGoiuVzbPjPmS7Rq",
+    "role": "Approver",
+    "isActive": true,
+    "permissions": {
+      "orders_view": true,
+      "orders_create": true,
+      "orders_edit": true,
+      "orders_delete": true,
+      "suppliers_view": true,
+      "products_view": true,
+      "products_create": true,
+      "products_edit": true,
+      "inventory_view": true,
+      "inventory_create": true,
+      "cost_centers_view": true
+    },
+    "signatureUrl": "/uploads/1770322544024-WhatsApp_Image_2026-02-05_at_13.30.17.jpeg",
+    "lastSeen": "2026-03-25T20:12:03.775Z"
+  },
+  {
+    "id": "1770404820571",
+    "name": "Magdaly Cuesta",
+    "username": "Magdalymip",
+    "password": "$2b$10$LvF8sx399YdbuCTgxxRyMOXUINq91qiF5AQraHRQawDEJImaa25sy",
+    "role": "Approver",
+    "isActive": true,
+    "permissions": {
+      "orders_view": true,
+      "orders_create": true,
+      "orders_edit": true,
+      "orders_delete": true,
+      "suppliers_view": true,
+      "products_view": true,
+      "products_create": true,
+      "products_edit": true,
+      "inventory_view": true,
+      "inventory_create": true,
+      "cost_centers_view": true
+    },
+    "signatureUrl": "/uploads/1770405473130-Firma_Magdaly.png",
+    "lastSeen": "2026-03-25T15:22:04.381Z"
+  },
+  {
+    "id": "17731600861690.9025742268686168",
+    "username": "miguelmip",
+    "name": "Miguel MIP",
+    "role": "Buyer",
+    "isActive": true,
+    "password": "$2b$10$e1ms0exIVgUMgDyLBKtPZ.tSKuuTtIOR3dRWIWE6B6nZFXg9m0rBa",
+    "permissions": {
+      "orders_view": true,
+      "orders_create": true,
+      "orders_edit": true,
+      "orders_delete": true,
+      "suppliers_view": true,
+      "products_view": true,
+      "products_create": true,
+      "products_edit": true,
+      "inventory_view": true,
+      "inventory_create": true,
+      "cost_centers_view": true
+    },
+    "lastSeen": "2026-03-30T17:50:50.474Z"
+  },
+  {
+    "id": "17731600861690.9684838005417011",
+    "username": "yesidmip",
+    "name": "Yesid rodriguez",
+    "role": "Buyer",
+    "isActive": true,
+    "password": "$2b$10$7MGFHboBpvHYa34RC1dJZuBLRW9adkyEdU6Mm6b/Xj4SW7T06o65.",
+    "permissions": {
+      "orders_view": true,
+      "orders_create": true,
+      "orders_edit": true,
+      "orders_delete": true,
+      "suppliers_view": true,
+      "products_view": true,
+      "products_create": true,
+      "products_edit": true,
+      "inventory_view": true,
+      "inventory_create": true,
+      "cost_centers_view": true
+    },
+    "lastSeen": "2026-03-30T17:50:43.360Z"
+  },
+  {
+    "id": "6f06b09d-1169-4637-857b-fdd97de2fb63",
+    "name": "Test Buyer",
+    "username": "testbuyer",
+    "password": "$2b$10$DrSEKPaUH.aSkmXGTPAiAeQ9mpWDXikgr8N0l/a3.srLMYQU7Tt5O",
+    "role": "Buyer",
+    "isActive": true,
+    "permissions": {
+      "orders_view": true,
+      "orders_create": true,
+      "orders_edit": true,
+      "orders_delete": true,
+      "suppliers_view": true,
+      "products_view": true,
+      "products_create": true,
+      "products_edit": true,
+      "inventory_view": true,
+      "inventory_create": true,
+      "cost_centers_view": true
+    }
+  },
+  {
+    "id": "1773696866547",
+    "name": "SOFIA DEL MAR",
+    "username": "sofiamip",
+    "password": "$2b$10$7dblZlavePfjG/9CPYoOBOnKhfhQxzxSCrv6yXn70wiEfgBb6YxDq",
+    "role": "Buyer",
+    "isActive": true,
+    "permissions": {
+      "orders_create": true,
+      "orders_edit": true,
+      "orders_view_all": true,
+      "suppliers_view": true,
+      "products_view": true
+    },
+    "lastSeen": "2026-03-26T22:02:04.281Z"
+  },
+  {
+    "id": "1773770351692",
+    "name": "julian valero",
+    "username": "julianmip",
+    "password": "$2b$10$XN9JQ9w257TsmT9vZP8fA.oHWbGG0GsgHP52tHjRUgOY8SZbpCJOy",
+    "role": "Buyer",
+    "isActive": true,
+    "permissions": {
+      "orders_create": true,
+      "orders_edit": true,
+      "orders_view_all": true,
+      "suppliers_view": true,
+      "products_view": true
+    },
+    "lastSeen": "2026-03-30T17:50:40.291Z"
+  },
+  {
+    "id": "1773771785552",
+    "name": "Alejandra Ballesteros",
+    "username": "alejamip",
+    "password": "$2b$10$Mkx26yw94BVX9/m6o8soQenAMrPyivYfrLmsDgVHrCksffES1plXa",
+    "role": "Buyer",
+    "isActive": true,
+    "permissions": {
+      "orders_create": true,
+      "orders_edit": true,
+      "orders_view_all": true,
+      "suppliers_view": true,
+      "products_view": true
+    },
+    "lastSeen": "2026-03-25T15:56:17.271Z"
+  }
+]

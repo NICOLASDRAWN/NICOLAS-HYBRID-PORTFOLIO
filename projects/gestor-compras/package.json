@@ -1,0 +1,104 @@
+{
+  "name": "gestor-de-compras-mip-internacional",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "electron-main.cjs",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node backend/server.js",
+    "app:dev": "electron .",
+    "app:build": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "com.mip.compras",
+    "productName": "MIP Internacional - Gestor de Compras",
+    "copyright": "Copyright © 2024 MIP Internacional",
+    "directories": {
+      "output": "dist-app"
+    },
+    "files": [
+      "dist/**/*",
+      "backend/**/*",
+      "electron-main.cjs",
+      "package.json",
+      "*.md"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "MIP Gestor de Compras"
+    },
+    "extraResources": [
+      {
+        "from": "backend/data",
+        "to": "backend/data",
+        "filter": [
+          "**/*",
+          "!backups/**"
+        ]
+      },
+      {
+        "from": "backend/uploads",
+        "to": "backend/uploads",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "async-mutex": "^0.5.0",
+    "bcryptjs": "^3.0.3",
+    "clsx": "^2.1.0",
+    "cors": "^2.8.5",
+    "date-fns": "^3.3.1",
+    "express": "^4.18.3",
+    "express-rate-limit": "^8.2.0",
+    "framer-motion": "^11.0.8",
+    "fs-extra": "^11.2.0",
+    "helmet": "^8.1.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.1.0",
+    "localtunnel": "^2.0.2",
+    "lucide-react": "^0.475.0",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^6.9.10",
+    "pg": "^8.11.3",
+    "pg-pool": "^3.6.1",
+    "react": "^19.0.0",
+    "react-confetti": "^6.1.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^6.29.0",
+    "selfsigned": "^5.5.0",
+    "sonner": "^1.7.4",
+    "sqlite3": "^5.1.7",
+    "tailwind-merge": "^2.2.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-basic-ssl": "^2.1.4",
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.18",
+    "electron": "^40.6.0",
+    "electron-builder": "^26.8.1",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

@@ -21,7 +21,10 @@
 
     <nav class="navbar">
         <div class="nav-logo">NM<span>.</span></div>
-        <div class="nav-links">
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
             <a href="#stack">Skills</a>
             <a href="#experience">Experiencia</a>
             <a href="#projects">Proyectos</a>
@@ -52,7 +55,7 @@
                 <a href="#projects" class="btn btn-primary">
                     <i class="fas fa-rocket"></i> Ver Proyectos
                 </a>
-                <a href="https://wa.me/573150135016" target="_blank" class="btn btn-secondary">
+                <a href="https://wa.me/573150135016" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     <i class="fab fa-whatsapp"></i> Conversar
                 </a>
             </div>
@@ -244,7 +247,7 @@
                 <h2>¿Listo para transformar tu negocio?</h2>
                 <p>Conversemos sobre cómo la IA y el desarrollo pueden llevar tu proyecto al siguiente nivel.</p>
                 <div class="cta-buttons">
-                    <a href="https://wa.me/573150135016" target="_blank" class="btn btn-primary btn-large">
+                    <a href="https://wa.me/573150135016" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
                         <i class="fab fa-whatsapp"></i> Escríbeme
                     </a>
                     <a href="#" onclick="printCV(); return false;" class="btn btn-secondary btn-large">
@@ -322,11 +325,13 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">NM<span>.</span></div>
-            <p>© 2025 Nicolás Monroy Pabón</p>
+            <p>© 2026 Nicolás Monroy Pabón</p>
             <p class="footer-tagline">Orchestrated with Artificial Intelligence</p>
             <div class="social-links">
-                <a href="https://wa.me/573150135016" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:nicolasdrawn@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/NICOLASDRAWN" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/nicolasdrawn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/573150135016" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:nicolasdrawn@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
@@ -432,6 +437,20 @@
             } else {
                 nav.classList.remove('scrolled');
             }
+        });
+
+        // Mobile hamburger menu
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+            });
         });
 
         // Print CV function

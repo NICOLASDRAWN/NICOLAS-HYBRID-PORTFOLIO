@@ -1,0 +1,32 @@
+{
+  "companyName": "MIP INTERNACIONAL TRADING SAS",
+  "companyAddress": "CRA 20B 77 05 OF 302",
+  "companyTaxId": "901.165.028-2",
+  "nextSequenceNumber": 72,
+  "signatureUrl": "",
+  "logoUrl": "/uploads/1770154934444-Logo MIP.png",
+  "currencySymbol": "$",
+  "schedules": {
+    "local": {
+      "start": 7,
+      "end": 19,
+      "enabled": false
+    },
+    "remote": {
+      "start": 11,
+      "end": 17,
+      "enabled": true,
+      "slots": [
+        [
+          11,
+          12
+        ],
+        [
+          16,
+          17
+        ]
+      ]
+    }
+  },
+  "releasedSequences": []
+}

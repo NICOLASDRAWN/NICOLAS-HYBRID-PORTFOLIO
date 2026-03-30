@@ -1,0 +1,5 @@
+{
+  "name": "ProveedHub",
+  "description": "A comprehensive supplier management prototype allowing users to track suppliers, sectorize them using AI, and manage documentation efficiently.",
+  "requestFramePermissions": []
+}

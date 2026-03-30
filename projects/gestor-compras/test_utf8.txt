@@ -1,0 +1,72 @@
+@echo off
+setlocal enabledelayedexpansion
+title CENTRO_DE_MANDO_MIP
+color 0F
+
+:Menu
+cls
+echo.
+echo    ==========================================================
+echo            CENTRO DE MANDO SUPREMO - GESTOR MIP
+echo    ==========================================================
+echo.
+echo    [3] = RESETEAR CLAVES (Admin: mip2025* / Maria: compras2026*)
+echo    [4] =� VER MANUAL DE USUARIO
+echo    [5] =� DETENER TODOS LOS SERVICIOS
+echo    [0] L SALIR
+echo.
+set /p opt="> Seleccione: "
+
+if "%opt%"=="1" goto Lanzar
+if "%opt%"=="2" goto Sync
+if "%opt%"=="3" goto Clave
+if "%opt%"=="4" goto Doc
+if "%opt%"=="5" goto Stop
+if "%opt%"=="0" exit
+goto Menu
+
+:Lanzar
+echo [*] Cerrando sesiones previas para evitar conflictos...
+node -e "try { require('child_process').execSync('taskkill /f /im node.exe /t'); } catch(e) {}" >nul 2>&1
+taskkill /f /im "MIP*.exe" >nul 2>&1
+for /f "tokens=5" %%a in ('netstat -aon ^| findstr :3000') do taskkill /f /pid %%a >nul 2>&1
+echo [*] Sincronizando informacion vital (Ultimos cambios AIU)...
+node sync_latest_data.js
+echo [*] Iniciando motor de base de datos MIP Internacional...
+set USER_DATA_PATH=%~dp0
+start "MIP_SRV" /min node backend/server.js
+echo [*] Esperando respuesta del servidor...
+node wait_for_server.js
+if %errorlevel% neq 0 ( echo [!] Error al iniciar. & pause & goto Menu )
+echo [*] Lanzando interfaz visual de escritorio...
+start "" "dist-app\win-unpacked\MIP Internacional - Gestor de Compras.exe"
+goto Menu
+
+:Sync
+cls
+echo [*] Sincronizando datos entre local y AppData...
+node sync_latest_data.js
+pause
+goto Menu
+
+:Clave
+echo [*] Aplicando nuevas claves maestras...
+node update_admin_pass.js
+node update_maria_pass.js
+echo [*] Sincronizando cambios de seguridad...
+node sync_latest_data.js
+echo [OK] Claves maestras actualizadas.
+pause
+goto Menu
+
+:Doc
+start "" "MANUAL_USUARIO_MIP.md"
+goto Menu
+
+:Stop
+echo [*] Deteniendo todo...
+node -e "try { require('child_process').execSync('taskkill /f /im node.exe /t'); } catch(e) {}" >nul 2>&1
+taskkill /f /im "MIP*.exe" >nul 2>&1
+echo [OK] Servicios detenidos.
+pause
+goto Menu

@@ -1,0 +1,150 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║              ✅ LIMPIEZA DE BORRADORES COMPLETADA ✅                      ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Fecha: 2026-02-04 13:54 PM
+Acción: Limpieza total de borradores y reinicio de consecutivos
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  📋 ACCIONES REALIZADAS                                                   │
+└────────────────────────────────────────────────────────────────────────────┘
+
+  1. ✅ BORRADORES ELIMINADOS
+     • Archivo: backend/data/orders.json
+     • Estado anterior: [] (ya estaba vacío)
+     • Estado actual: [] (vacío)
+     • Resultado: Sin borradores en el sistema
+
+  2. ✅ CONSECUTIVOS REINICIADOS
+     • Archivo: backend/data/settings.json
+     • nextSequenceNumber: 2 → 1
+     • userSequences: {} (vacío)
+     • Resultado: Todos los usuarios empezarán desde #0001
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  🎯 ESTADO ACTUAL                                                         │
+└────────────────────────────────────────────────────────────────────────────┘
+
+  BORRADORES:
+  • Total de borradores: 0
+  • Sistema limpio y listo
+
+  CONSECUTIVOS:
+  • admin: Próximo consecutivo #0001
+  • yulimip: Próximo consecutivo #0001
+  • master: Próximo consecutivo #0001
+
+  ÓRDENES:
+  • Total de órdenes: 0
+  • Sistema completamente limpio
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  👀 VISUALIZACIÓN DE BORRADORES                                           │
+└────────────────────────────────────────────────────────────────────────────┘
+
+  CONFIGURACIÓN ACTUAL:
+  ✅ Todos los usuarios ven TODOS los borradores
+  ✅ No hay filtro por usuario
+  ✅ Facilita colaboración en equipo
+
+  CÓDIGO (pages/Drafts.tsx línea 14-16):
+  ```typescript
+  const draftOrders = useMemo(() => {
+      return orders.filter(o => o.status === 'Draft');
+  }, [orders]);
+  ```
+
+  COMPORTAMIENTO:
+  • Usuario admin → Ve todos los borradores
+  • Usuario yulimip → Ve todos los borradores
+  • Usuario master → Ve todos los borradores
+
+  BENEFICIOS:
+  ✅ Cualquier usuario puede continuar cualquier borrador
+  ✅ Facilita trabajo en equipo
+  ✅ Visibilidad total de órdenes en progreso
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  🚀 PRÓXIMOS PASOS                                                        │
+└────────────────────────────────────────────────────────────────────────────┘
+
+  1. CREAR NUEVO BORRADOR:
+     • Ir a: Operativo → Nueva Orden
+     • Verás: "Orden #0001"
+     • Seleccionar proveedor
+     • Agregar productos
+     • Guardar como borrador
+
+  2. VER BORRADORES:
+     • Ir a: Operativo → Borradores
+     • Verás: Lista de todos los borradores
+     • Cualquier usuario puede verlos
+     • Cualquier usuario puede continuarlos
+
+  3. PROBAR CON DIFERENTES USUARIOS:
+     • Crear borrador como admin
+     • Cerrar sesión
+     • Iniciar como yulimip
+     • Ir a Borradores
+     • Verás el borrador de admin
+     • Puedes continuarlo
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  📊 RESUMEN DE CONFIGURACIÓN                                              │
+└────────────────────────────────────────────────────────────────────────────┘
+
+  CONSECUTIVOS:
+  • Sistema: Por usuario
+  • Inicio: #0001 para cada usuario
+  • Estado: Reiniciado
+
+  BORRADORES:
+  • Visibilidad: Global (todos ven todos)
+  • Filtro: Solo por status 'Draft'
+  • Edición: Cualquier usuario con permisos
+
+  PERMISOS PARA EDITAR BORRADORES:
+  ✅ Admin
+  ✅ Buyer (Comprador)
+  ✅ Approver (Aprobador)
+  ❌ Viewer (Solo lectura)
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  ✅ VERIFICACIÓN                                                          │
+└────────────────────────────────────────────────────────────────────────────┘
+
+  ARCHIVOS MODIFICADOS:
+  ✓ backend/data/settings.json (nextSequenceNumber = 1)
+  ✓ backend/data/orders.json (vacío)
+
+  ESTADO DEL SISTEMA:
+  ✓ Sin borradores
+  ✓ Sin órdenes
+  ✓ Consecutivos reiniciados
+  ✓ Listo para empezar desde #0001
+
+  FUNCIONALIDAD DE BORRADORES:
+  ✓ Todos los usuarios ven todos los borradores
+  ✓ Búsqueda funciona
+  ✓ Consecutivos reservados visibles
+  ✓ Edición permitida según permisos
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║                    ✅ LIMPIEZA COMPLETADA ✅                              ║
+║                                                                            ║
+║  • Borradores eliminados: 0 (ya estaba limpio)                            ║
+║  • Consecutivos reiniciados: Todos a 1                                    ║
+║  • Sistema listo para empezar desde #0001                                 ║
+║  • Todos los usuarios ven todos los borradores                            ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+PRÓXIMA ORDEN:
+• Usuario admin → #0001
+• Usuario yulimip → #0001
+• Usuario master → #0001
+
+¡Sistema limpio y listo para usar! 🎉
