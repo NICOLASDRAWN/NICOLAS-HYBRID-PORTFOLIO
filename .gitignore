@@ -1,0 +1,49 @@
+# Logs
+*.log
+logs/
+
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+dist-app/
+dist-ssr/
+*.asar
+
+# Compressed files
+*.zip
+*.rar
+*.tar.gz
+
+# Executables
+*.exe
+*.exe.blockmap
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads (user data)
+uploads/
+*/uploads/
+
+# Database
+*.db
+*.sqlite
+
+# Backend data (runtime)
+backend/data/*.json
+!backend/data/*.json.sample
+backend/backups/

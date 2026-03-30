@@ -3,304 +3,441 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NICOLAS | Product Developer & Generative AI Specialist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --bg: #000000;
-            --fg: #ffffff;
-            --accent: #00f2ff;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background-color: var(--bg);
-            color: var(--fg);
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        #canvas-container {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1; background: #000;
-        }
-
-        .content {
-            position: relative;
-            z-index: 1;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 24px;
-        }
-
-        /* Hero Section */
-        #hero {
-            margin-bottom: 100px;
-            mix-blend-mode: difference;
-            padding: 40px 0;
-        }
-        .learning-badge {
-            display: inline-block;
-            background: var(--accent);
-            color: #000;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        #hero h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; line-height: 0.9; margin-bottom: 20px; text-transform: uppercase; }
-        #hero h2 { font-size: 1.5rem; color: var(--accent); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.1em; }
-        #hero p { font-size: 1.2rem; opacity: 0.8; max-width: 700px; margin-bottom: 30px; }
-
-        .btn-primary, .btn-secondary {
-            display: inline-block;
-            padding: 18px 35px;
-            text-decoration: none;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-right: 15px;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-        .btn-primary { background: #fff; color: #000; }
-        .btn-secondary { border: 2px solid #fff; color: #fff; }
-        .btn-primary:hover, .btn-secondary:hover { transform: scale(1.05); filter: invert(1); }
-
-        /* Section Styling */
-        section {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 60px 40px;
-            border-radius: 12px;
-            margin-bottom: 40px;
-        }
-
-        h2 { font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; font-weight: 900; letter-spacing: -1px; border-bottom: 4px solid var(--accent); display: inline-block; padding-bottom: 10px; }
-
-        /* Experience Item */
-        .exp-item {
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .exp-item:last-child { border: none; }
-        .role { font-size: 1.4rem; font-weight: 900; color: var(--accent); }
-        .company { font-size: 1.1rem; font-weight: 700; color: #fff; margin: 5px 0; }
-        .date { font-size: 0.9rem; opacity: 0.5; }
-        .exp-desc { margin-top: 15px; list-style: square; margin-left: 20px; opacity: 0.8; }
-
-        /* Multi-Stack Grid */
-        .stack-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-        .stack-card {
-            background: rgba(255,255,255,0.05);
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .stack-card h3 { font-size: 1rem; color: var(--accent); text-transform: uppercase; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
-        .stack-list { list-style: none; font-size: 0.9rem; }
-        .stack-list li { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
-        .stack-list li i { font-size: 0.8rem; opacity: 0.6; }
-
-        /* Projects */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .project-card { background: rgba(0,0,0,0.5); padding: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
-        .project-card:hover { border-color: var(--accent); }
-
-        @media (max-width: 600px) {
-            #hero h1 { font-size: 2.5rem; }
-            section { padding: 30px 20px; }
-            .btn-primary, .btn-secondary { width: 100%; margin: 0 0 15px 0; text-align: center; }
-        }
-
-        @media print {
-            #canvas-container, .hero-actions { display: none !important; }
-            body { background: #fff; color: #000; }
-            section { border: none; border-bottom: 1px solid #eee; padding: 20px 0; }
-            h2, .role, .company { color: #000 !important; }
-        }
-    </style>
+    <meta name="description" content="Portfolio de Nicolás Monroy Pabón - Hybrid Creative & AI Orchestrator. Soluciones digitales avanzadas con Inteligencia Artificial, Diseño y Desarrollo.">
+    <meta name="keywords" content="Portfolio, AI, IA Generativa, Web Developer, Graphic Designer, Nicolás Monroy Pabón, Digital Strategy">
+    <meta name="author" content="Nicolás Monroy Pabón">
+    <title>NICOLÁS | Hybrid Creative & AI Orchestrator</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="canvas-container">
-        <canvas id="generative-canvas"></canvas>
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <canvas id="canvas-background"></canvas>
+
+    <nav class="navbar">
+        <div class="nav-logo">NM<span>.</span></div>
+        <div class="nav-links">
+            <a href="#stack">Skills</a>
+            <a href="#experience">Experiencia</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#contact" class="nav-cta">Contacto</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- HERO -->
+        <header class="hero">
+            <div class="hero-badge reveal">
+                <span class="badge-dot"></span>
+                Disponible para proyectos
+            </div>
+            <h1 class="reveal">
+                <span class="gradient-text">Nicolás Monroy</span><br>
+                <span class="title-outline">Pabón</span>
+            </h1>
+            <p class="hero-subtitle reveal">
+                <span class="typing-text">Hybrid Creative & AI Orchestrator</span>
+            </p>
+            <p class="hero-description reveal">
+                Transformo la complejidad de los negocios en ecosistemas fluidos. 
+                Combino <strong>IA Generativa</strong>, <strong>Desarrollo Web</strong> y 
+                <strong>Diseño Visual</strong> para crear soluciones digitales que generan impacto real.
+            </p>
+            <div class="hero-actions reveal">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Ver Proyectos
+                </a>
+                <a href="https://wa.me/573150135016" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-whatsapp"></i> Conversar
+                </a>
+            </div>
+            <div class="hero-stats reveal">
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Proyectos</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">3+</span>
+                    <span class="stat-label">Años Exp</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Compromiso</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- SERVICES / SKILLS -->
+        <section id="stack" class="reveal">
+            <div class="section-header">
+                <span class="section-tag"> expertise </span>
+                <h2>Tech & Vision Stack</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>IA Generativa</h3>
+                    <p>Runway, Midjourney, DALL-E 3, ElevenLabs, Stable Diffusion para creación de contenido multimedia de vanguardia.</p>
+                    <div class="service-tags">
+                        <span>Gen-2</span>
+                        <span>Flux</span>
+                        <span>Voice AI</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Desarrollo Híbrido</h3>
+                    <p>HTML5, CSS3, JavaScript, Python. Desarrollo de apps web, automatización y soluciones empresariales.</p>
+                    <div class="service-tags">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Dirección Creativa</h3>
+                    <p>Adobe Creative Suite, Figma, After Effects. Branding, UI/UX y motion graphics de nivel profesional.</p>
+                    <div class="service-tags">
+                        <span>Figma</span>
+                        <span>AE</span>
+                        <span>Branding</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Orquestación LLM</h3>
+                    <p>Prompt Engineering avanzado, integración de APIs, workflows autonomous agents y automatización inteligente.</p>
+                    <div class="service-tags">
+                        <span>Gemini</span>
+                        <span>Claude</span>
+                        <span>Agents</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="reveal">
+            <div class="section-header">
+                <span class="section-tag"> career </span>
+                <h2>Experiencia Profesional</h2>
+            </div>
+            <div class="experience-container">
+                <div class="exp-card">
+                    <div class="exp-year">2025 - PRESENTE</div>
+                    <h3>Graphic Designer & Web Developer</h3>
+                    <h4>MIP Internacional Trading SAS</h4>
+                    <p>Desarrollo de ecosistemas digitales B2B, automatización de procesos de compra y gestión de proveedores. Creación de portales web y sistemas internos.</p>
+                    <div class="exp-tags">
+                        <span>React</span>
+                        <span>Electron</span>
+                        <span>Node.js</span>
+                        <span>UI/UX</span>
+                    </div>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-year">2025</div>
+                    <h3>Digital Products Coordinator</h3>
+                    <h4>Partido Cambio Radical</h4>
+                    <p>Coordinación de producción multimedia y desarrollo de plataformas nacionales de capacitación para militantes.</p>
+                    <div class="exp-tags">
+                        <span>WordPress</span>
+                        <span>Multimedia</span>
+                        <span>Producción</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="reveal">
+            <div class="section-header">
+                <span class="section-tag"> work </span>
+                <h2>Proyectos Destacados</h2>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card project-large">
+                    <div class="project-image">
+                        <img src="assets/proveedhub_thumb.png" alt="ProveedHub">
+                        <div class="project-overlay">
+                            <a href="projects/proveedhub/index.html" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i> Ver Demo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Networking Portal</span>
+                        <h3>ProveedHub Platform</h3>
+                        <p>Ecosistema centralizado para comunicación y validación de proveedores críticos. Sistema completo con gestión documental y métricas en tiempo real.</p>
+                        <div class="project-tech">
+                            <span>Electron</span>
+                            <span>React</span>
+                            <span>AI Integration</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/erp_thumb.png" alt="ERP Supply">
+                        <div class="project-overlay">
+                            <a href="projects/gestor-compras/index.html" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i> Ver Demo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Supply Chain</span>
+                        <h3>ERP Supply Chain</h3>
+                        <p>Sistema de gestión de compras y proveedores con aprobaciones, firmas digitales y control de inventarios.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>SQLite</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/ecommerce_thumb.png" alt="E-commerce">
+                        <div class="project-overlay">
+                            <a href="projects/ecommerce/index.html" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i> Ver Demo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">E-Commerce B2B</span>
+                        <h3>B2B Wholesale Portal</h3>
+                        <p>Portal de ventas mayoristas con catálogos dinámicos, gestión de pedidos y integración de inventario.</p>
+                        <div class="project-tech">
+                            <span>Vite</span>
+                            <span>TypeScript</span>
+                            <span>API</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- CTA / CONTACT -->
+        <section id="contact" class="reveal">
+            <div class="cta-box">
+                <div class="cta-glow"></div>
+                <h2>¿Listo para transformar tu negocio?</h2>
+                <p>Conversemos sobre cómo la IA y el desarrollo pueden llevar tu proyecto al siguiente nivel.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/573150135016" target="_blank" class="btn btn-primary btn-large">
+                        <i class="fab fa-whatsapp"></i> Escríbeme
+                    </a>
+                    <a href="#" onclick="printCV(); return false;" class="btn btn-secondary btn-large">
+                        <i class="fas fa-file-pdf"></i> Ver/Descargar CV
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="content">
-        <!-- HERO SECTION -->
-        <section id="hero" style="background: none; border: none; backdrop-filter: none;">
-            <span class="learning-badge"><i class="fas fa-sync-alt fa-spin"></i> En Preparación Constante & Evolución IA</span>
+        <!-- CV Print Section (Hidden, shown on print) -->
+    <div class="cv-print">
+        <div class="cv-header">
             <h1>Nicolás Monroy Pabón</h1>
-            <h2>Creative Hybrid & AI Orchestrator</h2>
-            <p>Estratega visual enfocado en convertir problemas de negocio en ecosistemas digitales funcionales mediante la orquestación avanzada de Inteligencia Artificial.</p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn-primary">Explorar Demos</a>
-                <a href="https://wa.me/573150135016" class="btn-secondary" target="_blank">WhatsApp</a>
+            <p class="cv-title">Hybrid Creative & AI Orchestrator</p>
+            <div class="cv-contact">
+                <span>📱 +57 315 013 5016</span>
+                <span>📧 nicolasdrawn@gmail.com</span>
+                <span>📍 Bogotá, Colombia</span>
             </div>
-        </section>
-
-        <!-- TECH STACK TOTAL -->
-        <section id="stack">
-            <h2>Habilidades & Plataformas</h2>
-            <div class="stack-grid">
-                <div class="stack-card">
-                    <h3>IA Generativa Multimedia</h3>
-                    <ul class="stack-list">
-                        <li><i class="fas fa-video"></i> Runway Gen-2 / Pika</li>
-                        <li><i class="fas fa-image"></i> Midjourney / DALL-E 3</li>
-                        <li><i class="fas fa-microphone"></i> ElevenLabs (Voice AI)</li>
-                        <li><i class="fas fa-magic"></i> Stable Diffusion</li>
-                    </ul>
-                </div>
-                <div class="stack-card">
-                    <h3>LLMs & Orchestration</h3>
-                    <ul class="stack-list">
-                        <li><i class="fas fa-terminal"></i> Gemini CLI / OpenCode</li>
-                        <li><i class="fas fa-robot"></i> Antigravity AI</li>
-                        <li><i class="fas fa-brain"></i> ChatGPT (Adv. Data Analysis)</li>
-                        <li><i class="fas fa-code"></i> Claude 3.5 Sonnet</li>
-                    </ul>
-                </div>
-                <div class="stack-card">
-                    <h3>Diseño & Video Pro</h3>
-                    <ul class="stack-list">
-                        <li><i class="fab fa-adobe"></i> Photoshop / Illustrator</li>
-                        <li><i class="fas fa-film"></i> Premiere / After Effects</li>
-                        <li><i class="fab fa-figma"></i> Figma (UI/UX Design)</li>
-                        <li><i class="fas fa-pen-nib"></i> Branding Estratégico</li>
-                    </ul>
-                </div>
-                <div class="stack-card">
-                    <h3>Dev & Infraestructura</h3>
-                    <ul class="stack-list">
-                        <li><i class="fab fa-js"></i> HTML / CSS / JavaScript</li>
-                        <li><i class="fab fa-python"></i> Python (Automation)</li>
-                        <li><i class="fas fa-server"></i> cPanel / Server Admin</li>
-                        <li><i class="fas fa-envelope"></i> Corporate Email Ops</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE SECTION -->
-        <section id="experience">
-            <h2>Trayectoria Profesional</h2>
-            <div class="exp-item">
-                <span class="role">Graphic Designer & Web Developer</span>
-                <div class="company">MIP Internacional Trading SAS | 2025 – Presente</div>
-                <ul class="exp-desc">
-                    <li>Desarrollo de ecosistemas digitales B2B y automatización de procesos internos.</li>
-                    <li>Liderazgo en campañas de marketing digital corporativo a escala multinacional.</li>
+        </div>
+        
+        <div class="cv-section">
+            <h2>Perfil Profesional</h2>
+            <p>Profesional con experiencia en desarrollo web, diseño gráfico y orquestación de IA. Capacidad para transformar procesos complejos en soluciones digitales fluidas mediante la combinación de tecnologías emergentes y creatividad visual.</p>
+        </div>
+        
+        <div class="cv-section">
+            <h2>Experiencia</h2>
+            <div class="cv-job">
+                <h3>Graphic Designer & Web Developer</h3>
+                <p class="cv-company">MIP Internacional Trading SAS | 2025 - Presente</p>
+                <ul>
+                    <li>Desarrollo de ecosistemas digitales B2B y automatización de procesos</li>
+                    <li>Gestión de proveedores y sistemas de compras</li>
+                    <li>Creación de portales web y aplicaciones de escritorio</li>
                 </ul>
             </div>
-            <div class="exp-item">
-                <span class="role">Digital Products Coordinator</span>
-                <div class="company">Partido Cambio Radical | 2025</div>
-                <ul class="exp-desc">
-                    <li>Producción técnica de materiales multimedia y plataformas de capacitación nacional.</li>
-                    <li>Motion graphics y edición de video estratégica para comunicación masiva.</li>
+            <div class="cv-job">
+                <h3>Digital Products Coordinator</h3>
+                <p class="cv-company">Partido Cambio Radical | 2025</p>
+                <ul>
+                    <li>Coordinación de producción multimedia</li>
+                    <li>Desarrollo de plataformas de capacitación</li>
                 </ul>
             </div>
-            <div class="exp-item">
-                <span class="role">Trade Mark Coordinator</span>
-                <div class="company">Districol Ltda. | 2024</div>
-                <ul class="exp-desc">
-                    <li>Gestión de marca y activación de trade marketing en puntos de venta nacionales.</li>
-                </ul>
+        </div>
+        
+        <div class="cv-section">
+            <h2>Habilidades Técnicas</h2>
+            <div class="cv-skills">
+                <span>HTML5/CSS3</span>
+                <span>JavaScript/React</span>
+                <span>Node.js</span>
+                <span>Python</span>
+                <span>Electron</span>
+                <span>Figma</span>
+                <span>Adobe Creative Suite</span>
+                <span>Midjourney/DALL-E</span>
+                <span>Prompt Engineering</span>
+                <span>LLM Integration</span>
             </div>
-        </section>
-
-        <!-- PROJECTS SECTION -->
-        <section id="projects">
-            <h2>Proyectos & Demos</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>ERP Supply Chain</h3>
-                    <p>Optimización total del flujo de compras y proveedores mediante automatización.</p>
-                    <a href="projects/gestor-compras/index.html" style="color:var(--accent); text-decoration:none; font-weight:900;">TESTEAR DEMO →</a>
-                </div>
-                <div class="project-card">
-                    <h3>B2B E-Commerce</h3>
-                    <p>Portal mayorista con catálogo dinámico y gestión de pedidos integrada.</p>
-                    <a href="projects/ecommerce/index.html" style="color:var(--accent); text-decoration:none; font-weight:900;">TESTEAR DEMO →</a>
-                </div>
-                <div class="project-card">
-                    <h3>SGE Eval Pro</h3>
-                    <p>Plataforma de evaluación de personal con analítica en tiempo real.</p>
-                    <span style="opacity:0.5; font-size:0.8rem;">(En construcción / Demo disponible pronto)</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact" style="text-align: center;">
-            <h2>Contacto Directo</h2>
-            <p style="margin-bottom: 30px;">Si buscas a alguien que orqueste tecnología e IA para generar impacto, hablemos.</p>
-            <a href="https://wa.me/573150135016" class="btn-primary" style="margin-right: 0; width: 100%; margin-bottom: 20px;">WHATSAPP: +57 315 013 5016</a>
-            <button onclick="window.print()" class="btn-secondary" style="width: 100%; cursor: pointer;">DESCARGAR CV COMPLETO (PDF)</button>
-        </section>
+        </div>
+        
+        <div class="cv-section">
+            <h2>Proyectos Destacados</h2>
+            <ul>
+                <li><strong>ProveedHub Platform:</strong> Sistema de gestión y validación de proveedores</li>
+                <li><strong>ERP Supply Chain:</strong> Gestión de compras y control de inventarios</li>
+                <li><strong>B2B Wholesale Portal:</strong> E-commerce para ventas mayoristas</li>
+            </ul>
+        </div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">NM<span>.</span></div>
+            <p>© 2025 Nicolás Monroy Pabón</p>
+            <p class="footer-tagline">Orchestrated with Artificial Intelligence</p>
+            <div class="social-links">
+                <a href="https://wa.me/573150135016" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:nicolasdrawn@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        const canvas = document.getElementById('generative-canvas');
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Hover effects for cursor
+        document.querySelectorAll('a, button, .service-card, .project-card, .exp-card').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // Reveal Animation
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Canvas Neural Network Background
+        const canvas = document.getElementById('canvas-background');
         const ctx = canvas.getContext('2d');
-        let width, height, columns, rows, cellSize = 30, grid = [];
-        let mouse = { x: -1000, y: -1000 };
+        let particles = [];
 
-        window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
-        window.addEventListener('resize', setup);
+        function init() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            const particleCount = window.innerWidth < 768 ? 50 : 120;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
 
-        function setup() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            columns = Math.ceil(width / cellSize);
-            rows = Math.ceil(height / cellSize);
-            grid = [];
-            for (let y = 0; y < rows; y++) {
-                for (let x = 0; x < columns; x++) {
-                    grid.push({ x: x * cellSize, y: y * cellSize, baseSize: 2 });
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.color = Math.random() > 0.5 ? '#00f2ff' : '#8a2be2';
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = 0.6;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function connectParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 150) {
+                        ctx.strokeStyle = `rgba(0, 242, 255, ${0.15 * (1 - distance / 150)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
                 }
             }
         }
 
-        function draw(time) {
-            ctx.fillStyle = '#000';
-            ctx.fillRect(0, 0, width, height);
-            grid.forEach(p => {
-                const dx = mouse.x - p.x;
-                const dy = mouse.y - p.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                const maxDist = 250;
-                let scale = 1;
-                if (dist < maxDist) { scale = 1 + (1 - dist / maxDist) * 8; }
-                const wave = Math.sin(time * 0.002 + (p.x + p.y) * 0.01) * 1.5;
-                const finalSize = (p.baseSize * scale) + wave;
-                ctx.fillStyle = dist < maxDist ? '#fff' : 'rgba(255,255,255,0.2)';
-                ctx.beginPath();
-                if ((p.x / cellSize + p.y / cellSize) % 2 === 0) {
-                    ctx.arc(p.x + cellSize/2, p.y + cellSize/2, finalSize/2, 0, Math.PI * 2);
-                } else {
-                    ctx.rect(p.x + (cellSize - finalSize)/2, p.y + (cellSize - finalSize)/2, finalSize, finalSize);
-                }
-                ctx.fill();
-            });
-            requestAnimationFrame(draw);
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            connectParticles();
+            requestAnimationFrame(animate);
         }
-        setup();
-        requestAnimationFrame(draw);
+
+        window.addEventListener('resize', init);
+        init();
+        animate();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Print CV function
+        function printCV() {
+            window.print();
+        }
     </script>
 </body>
 </html>
