@@ -80,8 +80,20 @@ body {
     filter: blur(40px);
     border-radius: 60% 40% 50% 50%;
 }
+/* ═══════════ SPOTLIGHT ═══════════ */
+.spotlight {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(200,230,0,0.08) 0%, rgba(240,236,226,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    transition: left 0.1s ease-out, top 0.1s ease-out;
+}
 
-/* ═══════════ NAVBAR ═══════════ */
+@media (max-width: 768px) { .spotlight { display: none; } }
 .navbar {
     position: fixed;
     top: 0;
@@ -742,8 +754,10 @@ body {
 .project-entry:hover {
     padding-left: 14px;
     padding-right: 14px;
-    background: rgba(0,0,0,0.02);
+    background: rgba(200,230,0,0.03);
     border-radius: 16px;
+    transform: skewX(-1deg) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.03);
 }
 
 .project-num {

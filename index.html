@@ -133,7 +133,7 @@
     <section id="hero" class="section hero-section">
         <div class="container">
             <div class="hero-top">
-                <div class="hero-badge scroll-reveal">
+                <div class="hero-badge scroll-reveal visible">
                     <span class="badge-dot"></span>
                     DISPONIBLE PARA OPORTUNIDADES
                 </div>
@@ -376,7 +376,7 @@
                 <div class="edu-block">
                     <span class="edu-label">IDIOMAS</span>
                     <div class="lang-row"><span>Español</span><span class="lang-tag">NATIVO</span></div>
-                    <div class="lang-row"><span>Inglés</span><span class="lang-tag">B2</span></div>
+                    <div class="lang-row"><span>Inglés</span><span class="lang-tag">A2</span></div>
                 </div>
                 <div class="edu-block">
                     <span class="edu-label">SOFT SKILLS</span>
@@ -501,7 +501,7 @@
 
         <div class="cv-section">
             <h2>Educación e Idiomas</h2>
-            <p><strong>Idiomas:</strong> Español (Nativo), Inglés (B2 — Intermedio Alto).</p>
+            <p><strong>Idiomas:</strong> Español (Nativo), Inglés (A2 — Básico).</p>
             <p><strong>Formación:</strong> Desarrollo Full Stack, UI/UX Design, IA Orchestration.</p>
         </div>
     </div>
@@ -532,7 +532,7 @@
                     });
                 }
             });
-        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+        }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
 
         document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
 
@@ -548,9 +548,18 @@
                     });
                 }
             });
-        }, { threshold: 0.2 });
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.scroll-reveal-title').forEach(el => titleObserver.observe(el));
+
+        // ═══ Spotlight Effect ═══
+        const spotlight = document.createElement('div');
+        spotlight.className = 'spotlight';
+        document.body.appendChild(spotlight);
+        window.addEventListener('mousemove', (e) => {
+            spotlight.style.left = e.clientX + 'px';
+            spotlight.style.top = e.clientY + 'px';
+        });
 
         // ═══ Initial Hero Reveal ═══
         window.addEventListener('load', () => {
