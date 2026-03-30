@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NICOLAS | Product Developer & AI Specialist</title>
+    <title>NICOLAS | Product Developer & AI Orchestrator</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -34,75 +34,87 @@
             z-index: 1;
             max-width: 1000px;
             margin: 0 auto;
-            padding: 80px 24px 150px 24px;
+            padding: 80px 24px;
         }
 
-        header { margin-bottom: 80px; mix-blend-mode: difference; }
-        h1 { font-size: clamp(3.5rem, 10vw, 7rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.05em; text-transform: uppercase; }
-        .tagline { font-size: 1.1rem; margin-top: 15px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; }
+        /* Hero Section */
+        #hero {
+            margin-bottom: 120px;
+            mix-blend-mode: difference;
+            padding: 40px 0;
+        }
+        #hero h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; line-height: 0.9; margin-bottom: 20px; text-transform: uppercase; }
+        #hero h2 { font-size: 1.5rem; color: var(--accent); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.1em; }
+        #hero p { font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin-bottom: 30px; }
 
-        .section {
+        .btn-primary, .btn-secondary {
+            display: inline-block;
+            padding: 18px 35px;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-right: 15px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .btn-primary { background: #fff; color: #000; }
+        .btn-secondary { border: 2px solid #fff; color: #fff; }
+        .btn-primary:hover, .btn-secondary:hover { transform: scale(1.05); filter: invert(1); }
+
+        /* Common Section Styling */
+        section {
             background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
+            padding: 60px 40px;
+            border-radius: 4px;
+            margin-bottom: 40px;
         }
 
-        .section:hover { border-color: rgba(255, 255, 255, 0.3); transform: translateY(-5px); }
-        h2 { font-size: 1.4rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.1em; border-left: 4px solid #fff; padding-left: 15px; }
+        h2 { font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; font-weight: 900; letter-spacing: -1px; border-bottom: 4px solid var(--accent); display: inline-block; padding-bottom: 10px; }
 
-        /* Estilo Experiencia */
-        .exp-item { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .exp-item:last-child { border: none; }
-        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; }
-        .role { font-weight: 700; font-size: 1.2rem; color: #fff; }
-        .company { color: var(--accent); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; }
-        .date { opacity: 0.5; font-size: 0.85rem; }
-        .desc { font-size: 1rem; opacity: 0.8; margin-top: 10px; line-height: 1.5; }
-
-        /* Grid Proyectos & Skills */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; }
-        .card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #fff; }
-        .card p { font-size: 0.9rem; opacity: 0.7; }
-        
-        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
-        .tag { background: #fff; color: #000; font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
-        .tag.ai { background: var(--accent); }
-
-        /* Botones Flotantes */
-        .actions { position: fixed; bottom: 40px; right: 40px; display: flex; flex-direction: column; gap: 15px; z-index: 100; }
-        .btn { 
-            padding: 18px 30px; text-decoration: none; font-weight: 800; text-transform: uppercase; 
-            letter-spacing: 0.1em; font-size: 0.9rem; display: flex; align-items: center; gap: 12px; 
-            transition: all 0.3s; border-radius: 4px; border: none; cursor: pointer;
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
-        .btn-pdf { background: #fff; color: #000; box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
-        .btn-wa { background: var(--accent); color: #000; box-shadow: 0 10px 30px rgba(0,242,255,0.2); }
-        .btn:hover { transform: scale(1.05) translateY(-5px); filter: brightness(1.1); }
+        .services-grid article h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--accent); text-transform: uppercase; }
 
-        /* ESTILOS PARA IMPRESIÓN / PDF */
-        @media print {
-            #canvas-container, .actions { display: none !important; }
-            body { background: #fff !important; color: #000 !important; }
-            .content { padding: 0 !important; max-width: 100% !important; margin: 0 !important; }
-            .section { 
-                background: none !important; border: none !important; border-bottom: 1px solid #eee !important; 
-                padding: 20px 0 !important; page-break-inside: avoid;
-            }
-            h1, h2, .role, .company, .card h3 { color: #000 !important; }
-            .tag { border: 1px solid #000 !important; background: none !important; color: #000 !important; }
-            .date, .desc, .tagline, p { opacity: 1 !important; color: #333 !important; }
-            header { mix-blend-mode: normal !important; margin-bottom: 40px !important; }
+        /* Process List */
+        .process-steps { list-style: none; counter-reset: step; }
+        .process-steps li { margin-bottom: 40px; position: relative; padding-left: 60px; }
+        .process-steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute; left: 0; top: 0;
+            font-size: 3rem; font-weight: 900; opacity: 0.2;
+        }
+        .process-steps h3 { font-size: 1.3rem; margin-bottom: 10px; text-transform: uppercase; }
+
+        /* Projects */
+        .project { margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .project:last-child { border: none; }
+        .project h3 { font-size: 1.8rem; margin-bottom: 10px; color: #fff; }
+        .project-tag { font-family: monospace; color: var(--accent); margin-bottom: 20px; display: block; font-size: 0.9rem; }
+        .project p { margin-bottom: 15px; font-size: 1rem; opacity: 0.8; }
+        .project-link { color: #fff; text-decoration: underline; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
+
+        /* About & Contact */
+        #about ul, #contact ul { list-style: none; margin-top: 20px; }
+        #about li, #contact li { margin-bottom: 10px; font-size: 1.1rem; }
+        #about strong, #contact a { color: var(--accent); }
+
+        /* Footer Actions */
+        .footer-actions {
+            text-align: center; margin-top: 80px; padding-bottom: 100px;
         }
 
         @media (max-width: 600px) {
-            .content { padding-top: 40px; }
-            .actions { width: 100%; right: 0; bottom: 0; flex-direction: row; padding: 15px; gap: 10px; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
-            .btn { flex: 1; padding: 15px 10px; font-size: 0.7rem; justify-content: center; }
+            #hero h1 { font-size: 2.5rem; }
+            section { padding: 30px 20px; }
+            .btn-primary, .btn-secondary { width: 100%; margin: 0 0 15px 0; text-align: center; }
         }
     </style>
 </head>
@@ -113,114 +125,122 @@
     </div>
 
     <div class="content">
-        <header>
-            <h1>NICOLAS</h1>
-            <p class="tagline">Product Developer | Designer | AI Specialist</p>
-            <p style="margin-top: 10px; opacity: 0.6; font-weight: 700;">Bogotá, Colombia | github.com/NICOLASDRAWN</p>
-        </header>
-
-        <section class="section">
-            <h2>Perfil Profesional</h2>
-            <p>Estratega creativo con perfil híbrido que domina la intersección entre el <strong>Diseño Gráfico</strong>, el <strong>Desarrollo Web</strong> y la <strong>Inteligencia Artificial</strong>. Experto en transformar complejas necesidades de negocio en ecosistemas digitales escalables, automatizados y con una estética de alto impacto.</p>
-        </section>
-
-        <section class="section">
-            <h2>Experiencia Laboral</h2>
-            
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="role">Graphic Designer & Web Developer</span>
-                    <span class="company">EMPRESA DEMO S.A.S SAS</span>
-                </div>
-                <span class="date">Marzo 2025 – Presente</span>
-                <p class="desc">Liderazgo técnico en estrategias de marketing digital y comunicación corporativa para multinacional B2B. Desarrollo de herramientas de automatización interna y gestión de campañas multicanal.</p>
-            </div>
-
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="role">Digital Products Coordinator</span>
-                    <span class="company">Partido ORGANIZACI�N DEMO</span>
-                </div>
-                <span class="date">Enero 2025 – Marzo 2025</span>
-                <p class="desc">Dirección integral del desarrollo de cursos y capacitación. Producción de materiales visuales, motion graphics y edición de video estratégica para módulos educativos.</p>
-            </div>
-
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="role">Trade Mark Coordinator</span>
-                    <span class="company">DISTRIBUIDORA DEMO.</span>
-                </div>
-                <span class="date">Marzo 2024 – Octubre 2024</span>
-                <p class="desc">Coordinación de trade marketing y gestión de marca nacional. Desarrollo de campañas de activación y posicionamiento en diversos territorios.</p>
+        <!-- HERO SECTION -->
+        <section id="hero" style="background: none; border: none; backdrop-filter: none;">
+            <h1>Nicolás Monroy Pabón</h1>
+            <h2>Hybrid Creative: Diseño + Web + Arquitectura de IA</h2>
+            <p>Orquesto IAs para convertir problemas de negocio en productos digitales funcionales.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn-primary">Ver proyectos</a>
+                <a href="https://wa.me/573150135016?text=Hola%20Nicolas,%20vi%20tu%20portafolio%20híbrido%20en%20GitHub." class="btn-secondary" target="_blank">
+                    Escríbeme por WhatsApp
+                </a>
             </div>
         </section>
 
-        <section class="section">
-            <h2>Enterprise Solutions</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>ERP Supply Chain</h3>
-                    <p>Desarrollo de plataforma para gestión automatizada de compras y proveedores. Digitalización de procesos manuales con trazabilidad total.</p>
-                    <div class="tags"><span class="tag">JavaScript</span><span class="tag">Database</span><span class="tag">Python</span></div>
-                </div>
-                <div class="card">
-                    <h3>HR Performance System</h3>
-                    <p>Sistema de calificación de personal con interfaz UI/UX optimizada. Generación de reportes de rendimiento y feedback en tiempo real.</p>
-                    <div class="tags"><span class="tag">UI/UX</span><span class="tag">Analytics</span><span class="tag">Frontend</span></div>
-                </div>
+        <!-- SERVICES SECTION -->
+        <section id="services">
+            <h2>Qué hago</h2>
+            <div class="services-grid">
+                <article>
+                    <h3>Diseño</h3>
+                    <p>UI, branding y prototipado centrado en claridad, narrativa visual y facilidad de uso.</p>
+                </article>
+                <article>
+                    <h3>Desarrollo web</h3>
+                    <p>Landing pages y sistemas internos básicos en HTML, CSS y JavaScript listos para evolucionar.</p>
+                </article>
+                <article>
+                    <h3>AI Orchestration</h3>
+                    <p>Defino el problema, selecciono herramientas de IA, superviso sus resultados e integro todo en un producto funcional.</p>
+                </article>
             </div>
         </section>
 
-        <section class="section">
-            <h2>Stack Tecnológico</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Innovación & IA</h3>
-                    <div class="tags">
-                        <span class="tag ai">Gemini CLI</span><span class="tag ai">OpenCode</span>
-                        <span class="tag ai">Antigravity</span><span class="tag">Machine Learning</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Desarrollo & Ops</h3>
-                    <div class="tags">
-                        <span class="tag">HTML/CSS</span><span class="tag">JavaScript</span>
-                        <span class="tag">cPanel</span><span class="tag">Server Admin</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Creative Suite</h3>
-                    <div class="tags">
-                        <span class="tag">Adobe Illustrator</span><span class="tag">Photoshop</span>
-                        <span class="tag">Premiere Pro</span><span class="tag">Figma</span>
-                    </div>
-                </div>
-            </div>
+        <!-- PROCESS SECTION -->
+        <section id="process">
+            <h2>Proceso: The AI Orchestrator</h2>
+            <ol class="process-steps">
+                <li>
+                    <h3>1. Detectar la necesidad</h3>
+                    <p>Entiendo el contexto del negocio, sus cuellos de botella y lo que realmente hay que resolver.</p>
+                </li>
+                <li>
+                    <h3>2. Co-crear con IA</h3>
+                    <p>Trabajo con IAs avanzadas para generar código, estructuras y flujos, manteniendo el control creativo y técnico.</p>
+                </li>
+                <li>
+                    <h3>3. Prototipo funcional</h3>
+                    <p>Entrego una herramienta utilizable, con interfaz clara y lista para pruebas con usuarios o equipos internos.</p>
+                </li>
+            </ol>
         </section>
 
-        <section class="section" style="border: 2px solid var(--accent); background: rgba(0, 242, 255, 0.05);">
-            <h2><i class="fas fa-microchip"></i> AI-Driven Learning Journey</h2>
-            <p>Mi diferencial competitivo radica en mi capacidad para <strong>orquestar Inteligencia Artificial</strong> en el desarrollo de software. Este portafolio es el resultado de un proceso de <strong>aprendizaje colaborativo</strong>: </p>
-            <ul style="margin-left: 20px; opacity: 0.9; font-size: 0.95rem;">
-                <li style="margin-bottom: 10px;"><strong>Lógica de Negocio:</strong> Yo defino los requerimientos y la arquitectura de la solución basada en necesidades reales de la empresa.</li>
-                <li style="margin-bottom: 10px;"><strong>Desarrollo en Pareja (IA):</strong> Trabajo en conjunto con Gemini CLI para la implementación técnica, aprendiendo y depurando código en cada iteración.</li>
-                <li style="margin-bottom: 10px;"><strong>Evolución Rápida:</strong> Pasé de un perfil creativo tradicional a construir sistemas de gestión complejos (ERP/HR Tech) en tiempo récord.</li>
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <h2>Proyectos destacados</h2>
+
+            <article class="project">
+                <h3>ERP Supply Chain Demo</h3>
+                <p class="project-tag">/projects/gestor-compras</p>
+                <p><strong>Problema:</strong> Procesos de compra manuales y poca trazabilidad de proveedores.</p>
+                <p><strong>Solución:</strong> Sistema centralizado para registrar solicitudes, gestionar proveedores y seguir el ciclo completo de compra.</p>
+                <p><strong>Rol:</strong> Orquestación de IA, diseño de flujo y UI, ajuste de la lógica de negocio.</p>
+                <a href="projects/gestor-compras/index.html" class="project-link">Ver demo</a>
+            </article>
+
+            <article class="project">
+                <h3>B2B E-Commerce Platform</h3>
+                <p class="project-tag">/projects/ecommerce</p>
+                <p><strong>Problema:</strong> Necesidad de un canal de ventas digital eficiente para clientes mayoristas.</p>
+                <p><strong>Solución:</strong> Portal de comercio electrónico con catálogo dinámico y gestión de pedidos optimizada.</p>
+                <p><strong>Rol:</strong> UI/UX Design, implementación frontend y automatización de catálogo con IA.</p>
+                <a href="projects/ecommerce/index.html" class="project-link">Ver demo</a>
+            </article>
+
+            <article class="project">
+                <h3>ProveedHub: Portal de Proveedores</h3>
+                <p class="project-tag">/projects/proveedhub</p>
+                <p><strong>Problema:</strong> Comunicación fragmentada con proveedores externos.</p>
+                <p><strong>Solución:</strong> Hub de gestión donde los proveedores pueden cargar documentos y ver el estado de sus pagos.</p>
+                <p><strong>Rol:</strong> Arquitectura de información, diseño visual y desarrollo acelerado con IA.</p>
+                <a href="projects/proveedhub/index.html" class="project-link">Ver demo</a>
+            </article>
+
+            <article class="project">
+                <h3>HR Performance System Demo</h3>
+                <p class="project-tag">/projects/sge-eval-pro (en construcción)</p>
+                <p><strong>Problema:</strong> Evaluaciones de desempeño subjetivas y reportes lentos.</p>
+                <p><strong>Solución:</strong> Plataforma de evaluación con formularios claros y analítica básica en tiempo real.</p>
+                <p><strong>Rol:</strong> Diseño de UX, definición de métricas clave y uso de IA para acelerar la construcción.</p>
+            </article>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2>Perfil</h2>
+            <p>Soy un creativo híbrido con base en Bogotá, que combina diseño, desarrollo web y arquitectura de soluciones con IA.</p>
+            <ul>
+                <li><strong>Ubicación:</strong> Bogotá, Colombia</li>
+                <li><strong>Sectores de interés:</strong> ERP, RRHH, marketing interno, productos creativos.</li>
+                <li><strong>Modalidad:</strong> Freelance, remoto o híbrido.</li>
             </ul>
         </section>
 
-        <section class="section">
-            <h2>Educación</h2>
-            <p><strong>Comunicador Social</strong><br>UNIMINUTO Colombia (Graduado 2020)</p>
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <h2>Contacto</h2>
+            <p>Si quieres explorar cómo podríamos aplicar IA a tus procesos o productos, escríbeme.</p>
+            <ul>
+                <li>WhatsApp: <a href="https://wa.me/573150135016?text=Hola%20Nicolas,%20vi%20tu%20portafolio%20híbrido%20en%20GitHub." target="_blank">+57 315 013 5016</a></li>
+                <li>Email: <a href="mailto:nicolasdrawn@gmail.com">nicolasdrawn@gmail.com</a></li>
+            </ul>
+            <div style="margin-top: 40px;">
+                <button onclick="window.print()" class="btn-primary" style="cursor: pointer; width: 100%; margin-right: 0;">
+                    <i class="fas fa-file-pdf"></i> DESCARGAR HOJA DE VIDA (PDF)
+                </button>
+            </div>
         </section>
-    </div>
-
-    <div class="actions">
-        <button onclick="window.print()" class="btn btn-pdf">
-            <i class="fas fa-file-pdf"></i> Descargar PDF
-        </button>
-        <a href="https://wa.me/573150135016?text=Hola%20Nicolas,%20estoy%20impactado%20por%20tu%20perfil%20interactivo.%20Hablemos." class="btn btn-wa">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
     </div>
 
     <script>
