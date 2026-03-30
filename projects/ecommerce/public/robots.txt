@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mipgroup.com.co/sitemap.xml
