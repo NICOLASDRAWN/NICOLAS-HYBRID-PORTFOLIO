@@ -62,29 +62,10 @@
                 "Figma", "Adobe Photoshop", "Adobe Illustrator", "After Effects",
                 "UI/UX Design", "Git", "GitHub Actions", "Cloudflare", "cPanel"
             ],
-            "hasOccupation": [
-                {
-                    "@type": "Occupation",
-                    "name": "Full Stack Web Developer",
-                    "occupationLocation": { "@type": "City", "name": "Bogotá" }
-                },
-                {
-                    "@type": "Occupation",
-                    "name": "AI Integration Specialist"
-                }
-            ],
             "knowsLanguage": [
                 { "@type": "Language", "name": "Español", "alternateName": "es" },
                 { "@type": "Language", "name": "English", "alternateName": "en" }
-            ],
-            "makesOffer": {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Full Stack Development & AI Integration",
-                    "description": "Desarrollo de aplicaciones web, ERPs empresariales, plataformas B2B y soluciones con IA Generativa"
-                }
-            }
+            ]
         }
     }
     </script>
@@ -92,659 +73,524 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="custom-cursor" id="cursor"></div>
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-    <canvas id="canvas-background"></canvas>
+    <!-- Decorative Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
 
-    <nav class="navbar">
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="nav-logo">NM<span>.</span></div>
+        <div class="nav-info">
+            <span class="nav-status"><span class="status-dot"></span> DISPONIBLE</span>
+            <span class="nav-divider">|</span>
+            <span>BOGOTÁ, CO</span>
+        </div>
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
             <span></span><span></span><span></span>
         </button>
         <div class="nav-links" id="navLinks">
-            <a href="#stack">Skills</a>
-            <a href="#experience">Experiencia</a>
-            <a href="#projects">Proyectos</a>
-            <a href="#education">Formación</a>
-            <a href="#contact" class="nav-cta">Contacto</a>
+            <a href="#hero" data-section="01">Inicio</a>
+            <a href="#stack" data-section="02">Skills</a>
+            <a href="#experience" data-section="03">Experiencia</a>
+            <a href="#projects" data-section="04">Proyectos</a>
+            <a href="#contact" data-section="05">Contacto</a>
         </div>
     </nav>
 
-    <div class="container">
-        <!-- HERO -->
-        <header class="hero">
-            <div class="hero-badge reveal">
-                <span class="badge-dot"></span>
-                Disponible para oportunidades
-            </div>
-            <h1 class="reveal">
-                <span class="gradient-text">Nicolás Monroy</span><br>
-                <span class="title-outline">Pabón</span>
-            </h1>
-            <p class="hero-subtitle reveal">
-                <span class="typing-text">Full Stack Developer & AI Specialist</span>
-            </p>
-            <p class="hero-description reveal">
-                Desarrollo <strong>soluciones empresariales completas</strong> — desde ERPs con React/Node.js 
-                hasta portales B2B y apps desktop con Electron. Integro <strong>IA Generativa</strong> en 
-                flujos de trabajo reales para automatizar procesos y potenciar la productividad.
-            </p>
-            <div class="hero-location reveal">
-                <i class="fas fa-map-marker-alt"></i> Bogotá, Colombia · Disponible remoto
-            </div>
-            <div class="hero-actions reveal">
-                <a href="#contact" class="btn btn-primary">
-                    <i class="fas fa-paper-plane"></i> Contáctame
-                </a>
-                <a href="https://www.linkedin.com/in/nicolasdrawn" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    <i class="fab fa-linkedin-in"></i> LinkedIn
-                </a>
-                <a href="https://github.com/NICOLASDRAWN" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-            </div>
-            <div class="hero-stats reveal">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="5">0</span>
-                    <span class="stat-label">Proyectos en<br>Producción</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="3">0</span>
-                    <span class="stat-label">Años de<br>Experiencia</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number">10+</span>
-                    <span class="stat-label">Tecnologías<br>Dominadas</span>
-                </div>
-            </div>
-        </header>
-
-        <!-- TECH STACK / SKILLS -->
-        <section id="stack" class="reveal">
-            <div class="section-header">
-                <span class="section-tag"> technical skills </span>
-                <h2>Stack Tecnológico</h2>
-            </div>
-
-            <!-- Skills Proficiency Bars -->
-            <div class="skills-matrix reveal">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Frontend</h3>
-                    <div class="skill-bar"><span>React / React Native</span><div class="bar"><div class="fill" data-width="90"></div></div></div>
-                    <div class="skill-bar"><span>TypeScript / JavaScript</span><div class="bar"><div class="fill" data-width="88"></div></div></div>
-                    <div class="skill-bar"><span>HTML5 / CSS3 / Sass</span><div class="bar"><div class="fill" data-width="95"></div></div></div>
-                    <div class="skill-bar"><span>Vite / Webpack</span><div class="bar"><div class="fill" data-width="80"></div></div></div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> Backend & DB</h3>
-                    <div class="skill-bar"><span>Node.js / Express</span><div class="bar"><div class="fill" data-width="85"></div></div></div>
-                    <div class="skill-bar"><span>Python / Flask</span><div class="bar"><div class="fill" data-width="75"></div></div></div>
-                    <div class="skill-bar"><span>SQLite / PostgreSQL</span><div class="bar"><div class="fill" data-width="78"></div></div></div>
-                    <div class="skill-bar"><span>REST APIs / Auth</span><div class="bar"><div class="fill" data-width="85"></div></div></div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-desktop"></i> Desktop & DevOps</h3>
-                    <div class="skill-bar"><span>Electron</span><div class="bar"><div class="fill" data-width="82"></div></div></div>
-                    <div class="skill-bar"><span>Git / GitHub Actions</span><div class="bar"><div class="fill" data-width="85"></div></div></div>
-                    <div class="skill-bar"><span>cPanel / Deploy</span><div class="bar"><div class="fill" data-width="75"></div></div></div>
-                    <div class="skill-bar"><span>Cloudflare / DNS</span><div class="bar"><div class="fill" data-width="70"></div></div></div>
-                </div>
-            </div>
-
-            <!-- Service Cards -->
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>IA Generativa</h3>
-                    <p>Integración de LLMs en productos reales. Prompt engineering avanzado y automatización con APIs de Gemini, Claude y OpenAI.</p>
-                    <div class="service-tags">
-                        <span>Gemini API</span>
-                        <span>Claude</span>
-                        <span>Midjourney</span>
-                        <span>DALL-E 3</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Desarrollo Full Stack</h3>
-                    <p>Aplicaciones web completas y ERPs empresariales. Frontend en React + TypeScript, backend en Node.js/Express con bases de datos.</p>
-                    <div class="service-tags">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>TypeScript</span>
-                        <span>Python</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>UI/UX & Diseño</h3>
-                    <p>Interfaces premium con enfoque en usabilidad. Branding corporativo, motion graphics y diseño de sistemas visuales completos.</p>
-                    <div class="service-tags">
-                        <span>Figma</span>
-                        <span>Adobe CC</span>
-                        <span>After Effects</span>
-                        <span>Branding</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Apps Desktop</h3>
-                    <p>Aplicaciones de escritorio multiplataforma con Electron. Distribución con instaladores NSIS para entornos empresariales.</p>
-                    <div class="service-tags">
-                        <span>Electron</span>
-                        <span>SQLite</span>
-                        <span>Express</span>
-                        <span>NSIS</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE -->
-        <section id="experience" class="reveal">
-            <div class="section-header">
-                <span class="section-tag"> career path </span>
-                <h2>Experiencia Profesional</h2>
-            </div>
-            <div class="experience-timeline">
-                <div class="exp-card reveal">
-                    <div class="exp-year">ENE 2025 — PRESENTE</div>
-                    <h3>Graphic Designer & Full Stack Web Developer</h3>
-                    <h4>MIP Internacional Trading SAS</h4>
-                    <ul class="exp-achievements">
-                        <li>Desarrollé <strong>4 plataformas empresariales</strong> desde cero: ERP de compras (15+ módulos), portal de proveedores con IA, e-commerce B2B, y sitio web corporativo (<a href="https://www.mipgroup.com.co" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan)">mipgroup.com.co</a>)</li>
-                        <li>Implementé sistema de <strong>firmas digitales y aprobaciones</strong> multi-nivel para órdenes de compra</li>
-                        <li>Automaticé procesos de gestión de proveedores integrando <strong>Gemini AI</strong> para validación inteligente de documentos</li>
-                        <li>Diseñé y desarrollé el sitio web corporativo <strong>www.mipgroup.com.co</strong> con SEO optimizado para posicionamiento internacional</li>
-                        <li>Reduje tiempos de procesamiento de compras en un <strong>60%</strong> mediante digitalización y automatización</li>
-                    </ul>
-                    <div class="exp-tags">
-                        <span>React</span>
-                        <span>Electron</span>
-                        <span>Node.js</span>
-                        <span>Express</span>
-                        <span>SQLite</span>
-                        <span>UI/UX</span>
-                        <span>Gemini AI</span>
-                    </div>
-                </div>
-                <div class="exp-card reveal">
-                    <div class="exp-year">2025</div>
-                    <h3>Digital Products Coordinator</h3>
-                    <h4>Partido Cambio Radical</h4>
-                    <ul class="exp-achievements">
-                        <li>Coordiné producción multimedia para <strong>campañas nacionales</strong> con alcance a miles de militantes</li>
-                        <li>Desarrollé plataformas de capacitación online con contenido interactivo</li>
-                        <li>Dirigí equipo de producción audiovisual y contenido digital</li>
-                    </ul>
-                    <div class="exp-tags">
-                        <span>WordPress</span>
-                        <span>Multimedia</span>
-                        <span>Producción</span>
-                        <span>Liderazgo</span>
-                    </div>
-                </div>
-                <div class="exp-card reveal">
-                    <div class="exp-year">2023 — 2024</div>
-                    <h3>Diseñador Gráfico & Web Freelance</h3>
-                    <h4>Independiente</h4>
-                    <ul class="exp-achievements">
-                        <li>Desarrollé sitios web y landing pages para <strong>múltiples clientes</strong> del sector comercial</li>
-                        <li>Creé material de branding, social media y contenido con herramientas de IA generativa</li>
-                        <li>Gestión directa de clientes, presupuestos y entregables</li>
-                    </ul>
-                    <div class="exp-tags">
-                        <span>HTML/CSS/JS</span>
-                        <span>Figma</span>
-                        <span>Illustrator</span>
-                        <span>Photoshop</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="projects" class="reveal">
-            <div class="section-header">
-                <span class="section-tag"> portfolio </span>
-                <h2>Proyectos en Producción</h2>
-                <p class="section-subtitle">Sistemas reales usados por equipos de trabajo en entornos empresariales</p>
-            </div>
-            <div class="projects-grid">
-                <article class="project-card project-large">
-                    <div class="project-image">
-                        <img src="assets/proveedhub_thumb.png" alt="ProveedHub Platform - Sistema de gestión de proveedores" loading="lazy">
-                        <div class="project-overlay">
-                            <a href="projects/proveedhub/index.html" class="project-btn">
-                                <i class="fas fa-external-link-alt"></i> Ver Demo
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-tag">Vendor Management</span>
-                        <h3>ProveedHub Platform</h3>
-                        <p>Ecosistema centralizado para gestión, comunicación y validación de proveedores. Incluye IA para análisis de documentos, gestión documental con uploads, y métricas de rendimiento en tiempo real.</p>
-                        <div class="project-highlights">
-                            <span><i class="fas fa-check-circle"></i> IA integrada (Gemini)</span>
-                            <span><i class="fas fa-check-circle"></i> App desktop (Electron)</span>
-                            <span><i class="fas fa-check-circle"></i> CRUD completo</span>
-                        </div>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Express</span>
-                            <span>Electron</span>
-                            <span>Gemini API</span>
-                            <span>Lucide</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="assets/erp_thumb.png" alt="ERP Supply Chain - Sistema de gestión de compras" loading="lazy">
-                        <div class="project-overlay">
-                            <a href="projects/gestor-compras/index.html" class="project-btn">
-                                <i class="fas fa-external-link-alt"></i> Ver Demo
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-tag">Enterprise ERP</span>
-                        <h3>ERP Supply Chain</h3>
-                        <p>Sistema completo de gestión de compras con 15+ módulos: órdenes, aprobaciones multi-nivel, firmas digitales, inventario, finanzas, proveedores y reportes PDF.</p>
-                        <div class="project-highlights">
-                            <span><i class="fas fa-check-circle"></i> 15+ módulos</span>
-                            <span><i class="fas fa-check-circle"></i> Auth + Roles</span>
-                        </div>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>SQLite</span>
-                            <span>Electron</span>
-                            <span>TailwindCSS</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="assets/ecommerce_thumb.png" alt="B2B E-Commerce Platform" loading="lazy">
-                        <div class="project-overlay">
-                            <a href="projects/ecommerce/index.html" class="project-btn">
-                                <i class="fas fa-external-link-alt"></i> Ver Demo
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-tag">E-Commerce B2B</span>
-                        <h3>B2B Wholesale Portal</h3>
-                        <p>Portal de ventas mayoristas con catálogos dinámicos, gestión de pedidos, SEO optimizado por categoría y sistema de autenticación.</p>
-                        <div class="project-highlights">
-                            <span><i class="fas fa-check-circle"></i> 13 páginas</span>
-                            <span><i class="fas fa-check-circle"></i> SEO dinámico</span>
-                        </div>
-                        <div class="project-tech">
-                            <span>Vite</span>
-                            <span>TypeScript</span>
-                            <span>React Router</span>
-                            <span>Helmet</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card project-large">
-                    <div class="project-image">
-                        <img src="assets/bg_abstract.png" alt="MIP Internacional Trading - Sitio web corporativo" loading="lazy">
-                        <div class="project-overlay">
-                            <a href="https://www.mipgroup.com.co" target="_blank" rel="noopener noreferrer" class="project-btn">
-                                <i class="fas fa-external-link-alt"></i> Ver Sitio en Vivo
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-tag">Corporate Website</span>
-                        <h3>MIP Internacional Trading</h3>
-                        <p>Sitio web corporativo completo para empresa de trading internacional de maquinaria pesada. Diseño premium con SEO optimizado, catálogo de productos, y secciones de servicios de ingeniería y logística global.</p>
-                        <div class="project-highlights">
-                            <span><i class="fas fa-check-circle"></i> Sitio en producción</span>
-                            <span><i class="fas fa-check-circle"></i> SEO optimizado</span>
-                            <span><i class="fas fa-check-circle"></i> Diseño responsive</span>
-                        </div>
-                        <div class="project-tech">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>SEO</span>
-                            <span>Responsive</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- EDUCATION & CERTIFICATIONS -->
-        <section id="education" class="reveal">
-            <div class="section-header">
-                <span class="section-tag"> learning </span>
-                <h2>Formación & Herramientas</h2>
-            </div>
-            <div class="education-grid">
-                <div class="edu-card reveal">
-                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Formación Continua</h3>
-                    <p>Aprendizaje autodidacta respaldado por proyectos reales en producción. Desarrollo constante mediante documentación oficial, cursos especializados y práctica intensiva.</p>
-                </div>
-                <div class="edu-card reveal">
-                    <div class="edu-icon"><i class="fas fa-language"></i></div>
-                    <h3>Idiomas</h3>
-                    <div class="language-bars">
-                        <div class="lang-item"><span>Español</span><span class="lang-level">Nativo</span></div>
-                        <div class="lang-item"><span>Inglés</span><span class="lang-level">B2 — Intermedio Alto</span></div>
-                    </div>
-                </div>
-                <div class="edu-card reveal">
-                    <div class="edu-icon"><i class="fas fa-tools"></i></div>
-                    <h3>Herramientas Diarias</h3>
-                    <div class="tools-grid">
-                        <span>VS Code</span><span>Git</span><span>GitHub</span>
-                        <span>Figma</span><span>Postman</span><span>Chrome DevTools</span>
-                        <span>Terminal</span><span>npm</span><span>Vercel</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SOFT SKILLS -->
-        <section class="reveal">
-            <div class="section-header">
-                <span class="section-tag"> strengths </span>
-                <h2>Competencias Profesionales</h2>
-            </div>
-            <div class="soft-skills-grid">
-                <div class="soft-skill reveal">
-                    <div class="soft-icon">🧠</div>
-                    <h4>Resolución de Problemas</h4>
-                    <p>Descompongo problemas complejos en soluciones técnicas claras y escalables</p>
-                </div>
-                <div class="soft-skill reveal">
-                    <div class="soft-icon">⚡</div>
-                    <h4>Aprendizaje Rápido</h4>
-                    <p>Adopto nuevas tecnologías y frameworks con velocidad, validado por proyectos en producción</p>
-                </div>
-                <div class="soft-skill reveal">
-                    <div class="soft-icon">🤝</div>
-                    <h4>Comunicación</h4>
-                    <p>Traduzco requerimientos de negocio a soluciones técnicas comprensibles para todos</p>
-                </div>
-                <div class="soft-skill reveal">
-                    <div class="soft-icon">🎯</div>
-                    <h4>Orientación a Resultados</h4>
-                    <p>Foco en entregar valor real — cada proyecto resuelve un problema de negocio concreto</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA / CONTACT -->
-        <section id="contact" class="reveal">
-            <div class="cta-box">
-                <div class="cta-glow"></div>
-                <h2>¿Buscas un desarrollador que entregue resultados?</h2>
-                <p>Disponible para posiciones Full Stack, Frontend, o roles híbridos que combinen desarrollo y diseño. Remoto o presencial en Bogotá.</p>
-                <div class="cta-buttons">
-                    <a href="https://wa.me/573150135016?text=Hola%20Nicol%C3%A1s%2C%20vi%20tu%20portafolio%20y%20me%20interesa%20conversar." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Directo
-                    </a>
-                    <a href="mailto:nicolasdrawn@gmail.com?subject=Oportunidad%20Laboral%20—%20Portafolio" class="btn btn-secondary btn-large">
-                        <i class="fas fa-envelope"></i> Email Profesional
-                    </a>
-                    <a href="#" onclick="printCV(); return false;" class="btn btn-secondary btn-large">
-                        <i class="fas fa-file-pdf"></i> Imprimir CV
-                    </a>
-                </div>
-                <div class="contact-details">
-                    <span><i class="fas fa-phone-alt"></i> +57 315 013 5016</span>
-                    <span><i class="fas fa-envelope"></i> nicolasdrawn@gmail.com</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</span>
-                </div>
-            </div>
-        </section>
+    <!-- Section Step Indicator (Sonneto-style bottom bar) -->
+    <div class="step-bar" id="stepBar">
+        <a href="#hero" class="step active" data-step="1">
+            <span class="step-num">01</span>
+            <span class="step-label">INTRO</span>
+        </a>
+        <a href="#stack" class="step" data-step="2">
+            <span class="step-num">02</span>
+            <span class="step-label">SKILLS</span>
+        </a>
+        <a href="#experience" class="step" data-step="3">
+            <span class="step-num">03</span>
+            <span class="step-label">CARRERA</span>
+        </a>
+        <a href="#projects" class="step" data-step="4">
+            <span class="step-num">04</span>
+            <span class="step-label">WORK</span>
+        </a>
+        <a href="#contact" class="step" data-step="5">
+            <span class="step-num">05</span>
+            <span class="step-label">CONTACTO</span>
+        </a>
     </div>
 
-    <!-- CV Print Section (Hidden, shown on print) -->
+    <!-- ═══════════ HERO ═══════════ -->
+    <section id="hero" class="section hero-section">
+        <div class="container">
+            <div class="hero-top">
+                <div class="hero-badge scroll-reveal">
+                    <span class="badge-dot"></span>
+                    DISPONIBLE PARA OPORTUNIDADES
+                </div>
+            </div>
+
+            <h1 class="mega-title scroll-reveal-title">
+                <span class="line"><span class="word">FULL</span> <span class="word">STACK</span></span>
+                <span class="line"><span class="word accent-word">DEVELOPER</span></span>
+                <span class="line"><span class="word">&</span> <span class="word accent-word">AI</span> <span class="word">SPECIALIST</span></span>
+            </h1>
+
+            <div class="hero-bottom scroll-reveal">
+                <div class="hero-intro">
+                    <p>Construyo <strong>soluciones empresariales completas</strong> — ERPs, portales B2B y apps desktop con integración de inteligencia artificial. 5 proyectos en producción real.</p>
+                </div>
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn-pill btn-dark">VER PROYECTOS <i class="fas fa-arrow-down"></i></a>
+                    <a href="https://www.linkedin.com/in/nicolasdrawn" target="_blank" rel="noopener noreferrer" class="btn-pill btn-outline">LINKEDIN <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-marquee">
+                <div class="marquee-track">
+                    <span>REACT — NODE.JS — TYPESCRIPT — PYTHON — ELECTRON — GEMINI AI — FIGMA — SQLITE — EXPRESS — VITE — TAILWIND — CLAUDE API — </span>
+                    <span>REACT — NODE.JS — TYPESCRIPT — PYTHON — ELECTRON — GEMINI AI — FIGMA — SQLITE — EXPRESS — VITE — TAILWIND — CLAUDE API — </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════ ABOUT / NAME ═══════════ -->
+    <section class="section name-section">
+        <div class="container">
+            <div class="name-reveal scroll-reveal-title">
+                <span class="line"><span class="word">NICOLÁS</span></span>
+                <span class="line"><span class="word">MONROY</span></span>
+                <span class="line sub-line"><span class="word">PABÓN</span> <span class="word dim">— BOGOTÁ, CO</span></span>
+            </div>
+            <div class="about-grid scroll-reveal">
+                <div class="about-text">
+                    <p class="about-lead">Transformo la complejidad de los negocios en ecosistemas digitales fluidos. Combino desarrollo técnico, diseño visual y orquestación de IA.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-block">
+                        <span class="stat-big" data-target="5">0</span>
+                        <span class="stat-desc">PROYECTOS EN<br>PRODUCCIÓN</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-big" data-target="3">0</span>
+                        <span class="stat-desc">AÑOS DE<br>EXPERIENCIA</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-big">15+</span>
+                        <span class="stat-desc">TECNOLOGÍAS<br>DOMINADAS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ SKILLS ═══════════ -->
+    <section id="stack" class="section skills-section">
+        <div class="container">
+            <div class="section-label scroll-reveal"><span>02</span> STACK TECNOLÓGICO</div>
+            <h2 class="section-title scroll-reveal-title">
+                <span class="line"><span class="word">TECH</span></span>
+                <span class="line"><span class="word accent-word">&</span> <span class="word">SKILLS</span></span>
+            </h2>
+
+            <div class="skills-columns scroll-reveal">
+                <div class="skill-col">
+                    <h3><span class="col-num">01</span> FRONTEND</h3>
+                    <div class="skill-item"><span>React / React Native</span><span class="skill-pct">90%</span></div>
+                    <div class="skill-item"><span>TypeScript / JavaScript</span><span class="skill-pct">88%</span></div>
+                    <div class="skill-item"><span>HTML5 / CSS3 / Sass</span><span class="skill-pct">95%</span></div>
+                    <div class="skill-item"><span>Vite / TailwindCSS</span><span class="skill-pct">82%</span></div>
+                </div>
+                <div class="skill-col">
+                    <h3><span class="col-num">02</span> BACKEND</h3>
+                    <div class="skill-item"><span>Node.js / Express</span><span class="skill-pct">85%</span></div>
+                    <div class="skill-item"><span>Python / Flask</span><span class="skill-pct">75%</span></div>
+                    <div class="skill-item"><span>SQLite / PostgreSQL</span><span class="skill-pct">78%</span></div>
+                    <div class="skill-item"><span>REST APIs / JWT Auth</span><span class="skill-pct">85%</span></div>
+                </div>
+                <div class="skill-col">
+                    <h3><span class="col-num">03</span> IA & TOOLS</h3>
+                    <div class="skill-item"><span>Gemini / Claude / OpenAI</span><span class="skill-pct">88%</span></div>
+                    <div class="skill-item"><span>Prompt Engineering</span><span class="skill-pct">90%</span></div>
+                    <div class="skill-item"><span>Electron / Desktop</span><span class="skill-pct">82%</span></div>
+                    <div class="skill-item"><span>Git / CI-CD / Deploy</span><span class="skill-pct">85%</span></div>
+                </div>
+                <div class="skill-col">
+                    <h3><span class="col-num">04</span> DISEÑO</h3>
+                    <div class="skill-item"><span>Figma / UI-UX</span><span class="skill-pct">85%</span></div>
+                    <div class="skill-item"><span>Adobe Photoshop</span><span class="skill-pct">88%</span></div>
+                    <div class="skill-item"><span>Illustrator / Branding</span><span class="skill-pct">82%</span></div>
+                    <div class="skill-item"><span>After Effects</span><span class="skill-pct">70%</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ EXPERIENCE ═══════════ -->
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <div class="section-label scroll-reveal"><span>03</span> TRAYECTORIA</div>
+            <h2 class="section-title scroll-reveal-title">
+                <span class="line"><span class="word">CAREER</span></span>
+                <span class="line"><span class="word accent-word">PATH</span></span>
+            </h2>
+
+            <div class="exp-timeline">
+                <div class="exp-entry scroll-reveal">
+                    <div class="exp-date">ENE 2025 — PRESENTE</div>
+                    <div class="exp-content">
+                        <h3>Full Stack Developer & Graphic Designer</h3>
+                        <h4>MIP Internacional Trading SAS</h4>
+                        <ul>
+                            <li>Desarrollé <strong>4 plataformas empresariales</strong> desde cero: ERP de compras, portal de proveedores con IA, e-commerce B2B y sitio corporativo (<a href="https://www.mipgroup.com.co" target="_blank" rel="noopener noreferrer">mipgroup.com.co</a>)</li>
+                            <li>Implementé firmas digitales, autenticación JWT multi-rol y workflows de aprobación</li>
+                            <li>Integré <strong>Gemini API</strong> para validación inteligente de documentos de proveedores</li>
+                            <li>Reduje tiempos de procesamiento de compras en un <strong>60%</strong></li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span>React</span><span>Electron</span><span>Node.js</span><span>SQLite</span><span>Gemini AI</span><span>UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-entry scroll-reveal">
+                    <div class="exp-date">2025</div>
+                    <div class="exp-content">
+                        <h3>Digital Products Coordinator</h3>
+                        <h4>Partido Cambio Radical</h4>
+                        <ul>
+                            <li>Coordiné producción multimedia para campañas nacionales</li>
+                            <li>Desarrollé plataformas de capacitación online</li>
+                            <li>Dirigí equipo de producción audiovisual</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span>WordPress</span><span>Multimedia</span><span>Liderazgo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-entry scroll-reveal">
+                    <div class="exp-date">2023 — 2024</div>
+                    <div class="exp-content">
+                        <h3>Diseñador Gráfico & Web Freelance</h3>
+                        <h4>Independiente</h4>
+                        <ul>
+                            <li>Sitios web y landing pages para múltiples clientes</li>
+                            <li>Branding, social media y contenido con IA generativa</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span>HTML/CSS/JS</span><span>Figma</span><span>Adobe CC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ BIG TEXT DIVIDER ═══════════ -->
+    <section class="section divider-section">
+        <div class="big-text-wrapper scroll-reveal-title">
+            <span class="line"><span class="word">THE</span></span>
+            <span class="line"><span class="word accent-word">WORK</span></span>
+        </div>
+    </section>
+
+    <!-- ═══════════ PROJECTS ═══════════ -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-label scroll-reveal"><span>04</span> PROYECTOS EN PRODUCCIÓN</div>
+
+            <div class="project-entry scroll-reveal">
+                <div class="project-num">01</div>
+                <div class="project-info">
+                    <span class="project-tag">CORPORATE WEBSITE — EN VIVO</span>
+                    <h3><a href="https://www.mipgroup.com.co" target="_blank" rel="noopener noreferrer">MIP Internacional Trading</a></h3>
+                    <p>Sitio web corporativo para empresa de trading internacional de maquinaria pesada. Diseño premium con SEO optimizado y responsive design.</p>
+                    <div class="project-tech-row">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>SEO</span>
+                    </div>
+                </div>
+                <a href="https://www.mipgroup.com.co" target="_blank" rel="noopener noreferrer" class="project-arrow" aria-label="Ver sitio de MIP Internacional Trading"><i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-entry scroll-reveal">
+                <div class="project-num">02</div>
+                <div class="project-info">
+                    <span class="project-tag">VENDOR MANAGEMENT + AI</span>
+                    <h3><a href="projects/proveedhub/index.html">ProveedHub Platform</a></h3>
+                    <p>Ecosistema de gestión de proveedores con IA Gemini integrada para validación automática de documentos, CRUD completo y métricas en tiempo real.</p>
+                    <div class="project-tech-row">
+                        <span>React</span><span>Express</span><span>Electron</span><span>Gemini API</span>
+                    </div>
+                </div>
+                <a href="projects/proveedhub/index.html" class="project-arrow" aria-label="Ver ProveedHub Platform"><i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-entry scroll-reveal">
+                <div class="project-num">03</div>
+                <div class="project-info">
+                    <span class="project-tag">ENTERPRISE ERP — 15+ MÓDULOS</span>
+                    <h3><a href="projects/gestor-compras/index.html">ERP Supply Chain</a></h3>
+                    <p>Sistema de gestión de compras con órdenes, aprobaciones multi-nivel, firmas digitales, inventario, finanzas, reportes PDF y gestión de usuarios.</p>
+                    <div class="project-tech-row">
+                        <span>React</span><span>Node.js</span><span>SQLite</span><span>Electron</span>
+                    </div>
+                </div>
+                <a href="projects/gestor-compras/index.html" class="project-arrow" aria-label="Ver ERP Supply Chain"><i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-entry scroll-reveal">
+                <div class="project-num">04</div>
+                <div class="project-info">
+                    <span class="project-tag">E-COMMERCE B2B — 13 PÁGINAS</span>
+                    <h3><a href="projects/ecommerce/index.html">B2B Wholesale Portal</a></h3>
+                    <p>Portal de ventas mayoristas con catálogos dinámicos, SEO optimizado por categoría, dashboard y sistema de autenticación.</p>
+                    <div class="project-tech-row">
+                        <span>Vite</span><span>TypeScript</span><span>React Router</span><span>Helmet</span>
+                    </div>
+                </div>
+                <a href="projects/ecommerce/index.html" class="project-arrow" aria-label="Ver B2B Wholesale Portal"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ EDUCATION & SKILLS ═══════════ -->
+    <section id="education" class="section education-section">
+        <div class="container">
+            <div class="edu-grid scroll-reveal">
+                <div class="edu-block">
+                    <span class="edu-label">IDIOMAS</span>
+                    <div class="lang-row"><span>Español</span><span class="lang-tag">NATIVO</span></div>
+                    <div class="lang-row"><span>Inglés</span><span class="lang-tag">B2</span></div>
+                </div>
+                <div class="edu-block">
+                    <span class="edu-label">SOFT SKILLS</span>
+                    <div class="soft-list">
+                        <span>Resolución de Problemas</span>
+                        <span>Aprendizaje Rápido</span>
+                        <span>Comunicación Efectiva</span>
+                        <span>Orientación a Resultados</span>
+                    </div>
+                </div>
+                <div class="edu-block">
+                    <span class="edu-label">HERRAMIENTAS</span>
+                    <div class="tools-row">
+                        <span>VS Code</span><span>Git</span><span>GitHub</span><span>Figma</span>
+                        <span>Postman</span><span>DevTools</span><span>Terminal</span><span>Vercel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ CTA / CONTACT ═══════════ -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="contact-title scroll-reveal-title">
+                <span class="line"><span class="word">LET'S</span></span>
+                <span class="line"><span class="word accent-word">TALK</span></span>
+            </h2>
+            <p class="contact-sub scroll-reveal">Disponible para posiciones Full Stack, Frontend Engineer, o roles híbridos. Remoto o Bogotá.</p>
+            <div class="contact-links scroll-reveal">
+                <a href="https://wa.me/573150135016?text=Hola%20Nicol%C3%A1s%2C%20vi%20tu%20portafolio" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WHATSAPP</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="mailto:nicolasdrawn@gmail.com?subject=Oportunidad%20Laboral" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>EMAIL</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/nicolasdrawn" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LINKEDIN</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="https://github.com/NICOLASDRAWN" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <i class="fab fa-github"></i>
+                    <span>GITHUB</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <button class="btn-pill btn-dark print-btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> IMPRIMIR CV</button>
+        </div>
+    </section>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-left">
+                <span class="footer-logo">NM<span>.</span></span>
+                <p>© 2026 Nicolás Monroy Pabón</p>
+            </div>
+            <div class="footer-right">
+                <p>Full Stack Developer & AI Specialist</p>
+                <p>Bogotá, Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════ PRINTABLE CV ═══════════ -->
     <div class="cv-print">
         <div class="cv-header">
             <h1>Nicolás Monroy Pabón</h1>
-            <p class="cv-title">Full Stack Developer & AI Specialist</p>
-            <div class="cv-contact">
-                <span>📱 +57 315 013 5016</span>
-                <span>📧 nicolasdrawn@gmail.com</span>
-                <span>📍 Bogotá, Colombia</span>
-                <span>🔗 github.com/NICOLASDRAWN</span>
-                <span>🔗 linkedin.com/in/nicolasdrawn</span>
+            <div class="cv-title-box">
+                <span class="cv-title">Full Stack Developer & AI Specialist</span>
+                <div class="cv-contact">
+                    <span>📱 +57 315 013 5016</span>
+                    <span>📧 nicolasdrawn@gmail.com</span>
+                    <span>🔗 github.com/NICOLASDRAWN</span>
+                </div>
             </div>
         </div>
-        
+
         <div class="cv-section">
             <h2>Perfil Profesional</h2>
-            <p>Full Stack Developer con +3 años de experiencia construyendo soluciones empresariales end-to-end. Stack principal: React, TypeScript, Node.js/Express, Python, Electron y SQLite/PostgreSQL. Especializado en crear ERPs con autenticación multi-rol, firmas digitales y workflows de aprobación; plataformas B2B con catálogos dinámicos y SEO; y sistemas con integración de IA Generativa (Gemini API, Claude, OpenAI). Capacidad demostrada con 5 proyectos en producción real, incluyendo el sitio corporativo www.mipgroup.com.co. Experiencia complementaria en UI/UX Design con Figma y Adobe Creative Suite. Disponible para posiciones Full Stack, Frontend Engineer, o AI Integration roles — remoto o presencial en Bogotá.</p>
+            <p>Desarrollador Full Stack con +3 años de experiencia especializado en React, Node.js, TypeScript y Python. Experto en la creación de ERPs empresariales, plataformas B2B y aplicaciones de escritorio con Electron. Diferenciador clave: integración avanzada de IA Generativa (Gemini, Claude, OpenAI) en flujos de producción reales para optimizar procesos de negocio.</p>
         </div>
-        
+
         <div class="cv-section">
-            <h2>Experiencia Profesional</h2>
+            <h2>Experiencia Laboral</h2>
             <div class="cv-job">
-                <h3>Full Stack Web Developer & Graphic Designer</h3>
-                <p class="cv-company">MIP Internacional Trading SAS | Enero 2025 - Presente</p>
+                <h3>Full Stack Developer & Designer</h3>
+                <p class="cv-company">MIP Internacional Trading SAS | 2025 — Presente</p>
                 <ul>
-                    <li>Desarrollé 4 plataformas empresariales: ERP de compras (15+ módulos con React/Node.js/SQLite), portal de proveedores con Gemini AI, e-commerce B2B (TypeScript/Vite), y sitio corporativo www.mipgroup.com.co</li>
-                    <li>Implementé sistema de firmas digitales, autenticación JWT multi-rol y workflows de aprobación</li>
-                    <li>Integré Gemini API para validación inteligente de documentos de proveedores (AI-powered automation)</li>
-                    <li>Reduje tiempos de procesamiento de compras en un 60% mediante digitalización end-to-end</li>
-                    <li>Diseñé identidad visual corporativa con Figma y Adobe CC para posicionamiento internacional</li>
+                    <li>Liderazgo técnico en el desarrollo de 4 plataformas clave (ERP, B2B Portal, AI Vendor Ecosystem).</li>
+                    <li>Integración de IA Gemini para validación documental, reduciendo tiempos operativos en un 60%.</li>
+                    <li>Diseño y desarrollo del sitio corporativo oficial (www.mipgroup.com.co).</li>
                 </ul>
             </div>
             <div class="cv-job">
                 <h3>Digital Products Coordinator</h3>
                 <p class="cv-company">Partido Cambio Radical | 2025</p>
                 <ul>
-                    <li>Coordiné producción multimedia para campañas nacionales</li>
-                    <li>Desarrollé plataformas de capacitación online con contenido interactivo</li>
-                    <li>Dirigí equipo de producción audiovisual y contenido digital</li>
-                </ul>
-            </div>
-            <div class="cv-job">
-                <h3>Diseñador Gráfico & Web Freelance</h3>
-                <p class="cv-company">Independiente | 2023 - 2024</p>
-                <ul>
-                    <li>Desarrollé sitios web y landing pages para múltiples clientes del sector comercial</li>
-                    <li>Creé material de branding y contenido con herramientas de IA generativa</li>
+                    <li>Coordinación de ecosistemas digitales y plataformas de capacitación a nivel nacional.</li>
                 </ul>
             </div>
         </div>
 
         <div class="cv-section">
-            <h2>Habilidades Técnicas</h2>
-            <div class="cv-skills">
-                <span><strong>Frontend:</strong> React, React Native, TypeScript, JavaScript ES6+, HTML5, CSS3, Sass, Vite, TailwindCSS, Framer Motion</span>
-                <span><strong>Backend:</strong> Node.js, Express.js, Python, Flask, REST APIs, JWT Authentication, bcrypt</span>
-                <span><strong>Base de Datos:</strong> SQLite, PostgreSQL, JSON (NoSQL patterns)</span>
-                <span><strong>Desktop:</strong> Electron, NSIS Installer, electron-builder</span>
-                <span><strong>IA / ML:</strong> Gemini API, Claude API, OpenAI API, Prompt Engineering, LLM Orchestration, RAG patterns</span>
-                <span><strong>Diseño:</strong> Figma, Adobe Photoshop, Illustrator, After Effects, Branding, Design Systems</span>
-                <span><strong>DevOps:</strong> Git, GitHub Actions, cPanel, Cloudflare, Vercel, DNS management</span>
-                <span><strong>Metodologías:</strong> Agile, Component-driven development, Mobile-first, Responsive Design</span>
+            <h2>Stack Técnico</h2>
+            <div class="cv-skills-grid">
+                <div class="cv-skill-group">
+                    <strong>Frontend & Desktop</strong>
+                    React, TypeScript, Next.js, Electron, TailwindCSS, Vite.
+                </div>
+                <div class="cv-skill-group">
+                    <strong>Backend & AI</strong>
+                    Node.js, Express, Python, Flask, Gemini/Claude API, Prompt Engineering.
+                </div>
             </div>
-        </div>
-        
-        <div class="cv-section">
-            <h2>Proyectos Destacados (en producción)</h2>
-            <ul>
-                <li><strong>www.mipgroup.com.co:</strong> Sitio web corporativo para empresa de trading internacional — diseño premium, SEO optimizado, responsive (HTML5 + CSS3 + JS)</li>
-                <li><strong>ProveedHub Platform:</strong> Sistema vendor management con IA para validación de proveedores (React + Express + Electron + Gemini API)</li>
-                <li><strong>ERP Supply Chain:</strong> ERP de compras con 15+ módulos, firmas digitales, auth multi-rol y workflows de aprobación (React + Node.js + SQLite + Electron)</li>
-                <li><strong>B2B Wholesale Portal:</strong> E-commerce con catálogos dinámicos, SEO por categoría, 13 páginas y dashboard (Vite + TypeScript + React Router + Helmet)</li>
-            </ul>
         </div>
 
         <div class="cv-section">
-            <h2>Idiomas</h2>
-            <ul>
-                <li><strong>Español:</strong> Nativo</li>
-                <li><strong>Inglés:</strong> B2 — Intermedio Alto</li>
-            </ul>
+            <h2>Educación e Idiomas</h2>
+            <p><strong>Idiomas:</strong> Español (Nativo), Inglés (B2 — Intermedio Alto).</p>
+            <p><strong>Formación:</strong> Desarrollo Full Stack, UI/UX Design, IA Orchestration.</p>
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">NM<span>.</span></div>
-            <p>© 2026 Nicolás Monroy Pabón</p>
-            <p class="footer-tagline">Full Stack Developer & AI Specialist — Bogotá, Colombia</p>
-            <div class="social-links">
-                <a href="https://github.com/NICOLASDRAWN" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/nicolasdrawn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://wa.me/573150135016" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:nicolasdrawn@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Custom Cursor
-        const cursor = document.getElementById('cursor');
-        document.addEventListener('mousemove', e => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
+        // ═══ Scroll Progress Bar ═══
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
         });
 
-        // Hover effects for cursor
-        document.querySelectorAll('a, button, .service-card, .project-card, .exp-card, .edu-card, .soft-skill').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-        });
-
-        // Reveal Animation
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-        const observer = new IntersectionObserver((entries) => {
+        // ═══ Reveal on Scroll ═══
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-
-                    // Animate skill bars when in view
-                    entry.target.querySelectorAll('.fill').forEach(fill => {
-                        const width = fill.dataset.width;
-                        setTimeout(() => { fill.style.width = width + '%'; }, 200);
-                    });
-
+                    entry.target.classList.add('visible');
                     // Animate stat numbers
-                    entry.target.querySelectorAll('.stat-number[data-target]').forEach(num => {
-                        const target = parseInt(num.dataset.target);
+                    entry.target.querySelectorAll('.stat-big[data-target]').forEach(num => {
+                        const target = Number.parseInt(num.dataset.target);
                         let current = 0;
-                        const increment = target / 30;
                         const timer = setInterval(() => {
-                            current += increment;
+                            current++;
                             if (current >= target) { num.textContent = target + '+'; clearInterval(timer); }
-                            else { num.textContent = Math.floor(current) + '+'; }
-                        }, 50);
+                            else { num.textContent = current + '+'; }
+                        }, 120);
                     });
                 }
             });
-        }, observerOptions);
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
 
-        // Canvas Neural Network Background
-        const canvas = document.getElementById('canvas-background');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
+        document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
 
-        function init() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            particles = [];
-            const particleCount = window.innerWidth < 768 ? 40 : 100;
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
-                this.speedX = Math.random() * 0.8 - 0.4;
-                this.speedY = Math.random() * 0.8 - 0.4;
-                this.color = Math.random() > 0.5 ? '#00f2ff' : '#8a2be2';
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            }
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.globalAlpha = 0.5;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function connectParticles() {
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.hypot(dx, dy);
-                    if (distance < 150) {
-                        ctx.strokeStyle = `rgba(0, 242, 255, ${0.12 * (1 - distance / 150)})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
+        // ═══ Title Reveal (word by word) ═══
+        const titleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    const words = entry.target.querySelectorAll('.word');
+                    words.forEach((word, i) => {
+                        word.style.transitionDelay = (i * 0.08) + 's';
+                        word.classList.add('word-visible');
+                    });
                 }
-            }
-        }
+            });
+        }, { threshold: 0.2 });
 
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            connectParticles();
-            requestAnimationFrame(animate);
-        }
+        document.querySelectorAll('.scroll-reveal-title').forEach(el => titleObserver.observe(el));
 
-        window.addEventListener('resize', init);
-        init();
-        animate();
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+        // ═══ Initial Hero Reveal ═══
+        window.addEventListener('load', () => {
+             // Forzar animación de lo que esté visible al inicio
+             setTimeout(() => {
+                const heroTitle = document.querySelector('.hero-section .scroll-reveal-title');
+                if (heroTitle) {
+                    heroTitle.classList.add('visible');
+                    heroTitle.querySelectorAll('.word').forEach((word, i) => {
+                        word.style.transitionDelay = (i * 0.08) + 's';
+                        word.classList.add('word-visible');
+                    });
+                }
+                const heroScrolls = document.querySelectorAll('.hero-section .scroll-reveal');
+                heroScrolls.forEach(el => el.classList.add('visible'));
+             }, 300);
         });
 
-        // Mobile hamburger menu
+        // ═══ Step Bar Active State ═══
+        const sections = document.querySelectorAll('.section[id]');
+        const steps = document.querySelectorAll('.step');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    steps.forEach(s => s.classList.remove('active'));
+                    const map = { hero: '1', stack: '2', experience: '3', projects: '4', contact: '5' };
+                    const step = document.querySelector(`.step[data-step="${map[id]}"]`);
+                    if (step) step.classList.add('active');
+                }
+            });
+        }, { threshold: 0.3 });
+        sections.forEach(s => sectionObserver.observe(s));
+
+        // ═══ Navbar scroll effect ═══
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 80);
+        });
+
+        // ═══ Mobile menu ═══
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
         navToggle.addEventListener('click', () => {
@@ -758,10 +604,84 @@
             });
         });
 
-        // Print CV function
-        function printCV() {
-            window.print();
+        // ═══ Smooth scroll for step bar and nav ═══
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ═══ Sections Growth & Title Parallax & Blobs ═══
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        function updateScrollEffects() {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const isMobile = window.innerWidth <= 768;
+
+            // Blobs (Smoother & Mobile Optimized)
+            const blobSpeed = isMobile ? 0.01 : 0.05;
+            document.querySelector('.blob-1').style.transform = `translate(${scrollY * blobSpeed}px, ${scrollY * 0.02}px) rotate(${scrollY * 0.02}deg)`;
+            document.querySelector('.blob-2').style.transform = `translate(-${scrollY * 0.03}px, ${scrollY * (isMobile ? 0.01 : 0.04)}px)`;
+            document.querySelector('.blob-3').style.transform = `translate(${scrollY * 0.02}px, -${scrollY * 0.03}px) scale(${1 + scrollY * 0.0001})`;
+
+            // Sections Scale (Growth)
+            const allSections = document.querySelectorAll('.section');
+            allSections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const center = rect.top + rect.height / 2;
+                const distFromCenter = Math.abs(windowHeight / 2 - center);
+                
+                // Efecto de escala
+                const baseScale = isMobile ? 0.95 : 0.9;
+                const scale = Math.max(baseScale, 1.05 - (distFromCenter / windowHeight) * 0.2);
+                
+                // Efecto de opacidad
+                const opacity = Math.max(isMobile ? 0.8 : 0.6, 1 - (distFromCenter / windowHeight) * 0.5);
+
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                     section.style.transform = `scale(${scale})`;
+                     section.style.opacity = opacity;
+
+                     // Parallax en títulos gigantes
+                     if (!isMobile) {
+                        const title = section.querySelector('.mega-title, .section-title, .name-reveal, .contact-title');
+                        if (title) {
+                            const speed = 0.12;
+                            const yPos = (windowHeight / 2 - center) * speed;
+                            title.style.transform = `translateY(${yPos}px)`;
+                        }
+                     }
+                }
+            });
+            ticking = false;
         }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateScrollEffects);
+                ticking = true;
+            }
+        });
+
+        // ═══ Magnetic Effect for Buttons ═══
+        const magnetics = document.querySelectorAll('.project-arrow, .btn-pill');
+        magnetics.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
     </script>
 </body>
 </html>
