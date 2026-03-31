@@ -84,7 +84,7 @@
     <!-- Apple Style Loader -->
     <div class="loader-wrapper" id="loader">
         <div class="loader-content">
-            <div class="loader-text">DESPLEGANDO FLOTA</div>
+            <div class="loader-text">NICOLÁS MONROY PABÓN — 2026</div>
             <div class="loader-bar"><div class="loader-progress" id="loaderProgress"></div></div>
         </div>
     </div>
@@ -651,28 +651,38 @@
             spotlight.style.top = e.clientY + 'px';
         });
 
-        // ═══ Initial Hero Reveal ═══
-        globalThis.addEventListener('load', () => {
+        // ═══ Initial Hero Reveal & Loader ═══
+        const hideLoader = () => {
              const progress = document.getElementById('loaderProgress');
              const loader = document.getElementById('loader');
+             if (!loader) return;
              
-             // Simulate loading
+             progress.style.width = '100%';
+             setTimeout(() => {
+                 loader.style.opacity = '0';
+                 loader.style.visibility = 'hidden';
+                 setTimeout(triggerInitialAnims, 300);
+             }, 400);
+        };
+
+        // Fallback: Si no carga en 4s, forzar entrada
+        const loaderFallback = setTimeout(hideLoader, 4000);
+
+        window.addEventListener('load', () => {
+             clearTimeout(loaderFallback);
+             const progress = document.getElementById('loaderProgress');
+             
+             // Simulate smooth progress
              let p = 0;
              const interval = setInterval(() => {
-                 p += Math.random() * 30;
+                 p += Math.random() * 25;
                  if (p >= 100) {
                      p = 100;
                      clearInterval(interval);
-                     setTimeout(() => {
-                         loader.style.opacity = '0';
-                         loader.style.visibility = 'hidden';
-                         
-                         // Start initial animations
-                         setTimeout(triggerInitialAnims, 300);
-                     }, 500);
+                     hideLoader();
                  }
                  progress.style.width = p + '%';
-             }, 100);
+             }, 80);
         });
 
         function triggerInitialAnims() {
