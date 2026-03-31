@@ -222,7 +222,118 @@ body {
     color: var(--fg);
 }
 
-/* ═══════════ CUSTOM CURSOR ═══════════ */
+/* ═══════════ PULSE (Activity Log) ═══════════ */
+.pulse-section {
+    padding-top: 100px;
+    background: var(--bg-alt);
+}
+
+.pulse-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+}
+
+.pulse-live-tag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--fg);
+    padding: 8px 16px;
+    background: #fff;
+    border-radius: 100px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.pulse-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.pulse-feed::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-green), transparent);
+}
+
+.pulse-entry {
+    position: relative;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(189, 230, 0, 0.1);
+    transition: var(--transition);
+}
+
+.pulse-entry::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 35px;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--accent-green);
+}
+
+.pulse-entry:hover {
+    transform: translateX(10px);
+    border-color: var(--accent-green);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+}
+
+.pulse-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.pulse-date {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--accent-green);
+}
+
+.pulse-category {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--fg-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.pulse-content h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.pulse-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--fg-light);
+}
+
+@media (max-width: 768px) {
+    .pulse-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .pulse-feed { padding-left: 20px; }
+    .pulse-entry { padding: 20px; }
+    .pulse-entry::before { left: -25px; }
+}
 .cursor-dot, .cursor-follower {
     position: fixed;
     border-radius: 50%;
