@@ -598,9 +598,9 @@
         });
 
         // ═══ Scroll Progress Bar ═══
-        globalThis.('scroll', () => {
+        globalThis.addEventListener('scroll', () => {
             const scrollTop = document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - globalThis.;
+            const scrollHeight = document.documentElement.scrollHeight - globalThis.scrollY;
             const progress = (scrollTop / scrollHeight) * 100;
             document.getElementById('progressBar').style.width = progress + '%';
         });
@@ -646,7 +646,7 @@
         const spotlight = document.createElement('div');
         spotlight.className = 'spotlight';
         document.body.appendChild(spotlight);
-        globalThis.('mousemove', (e) => {
+        globalThis.addEventListener('mousemove', (e) => {
             spotlight.style.left = e.clientX + 'px';
             spotlight.style.top = e.clientY + 'px';
         });
@@ -735,13 +735,13 @@
         });
 
         // ═══ Sections Growth & Title Parallax & Blobs ═══
-        let lastScrollY = globalThis.;
+        let lastScrollY = globalThis.scrollY;
         let ticking = false;
 
         function updateScrollEffects() {
-            const scrollY = globalThis.;
-            const windowHeight = globalThis.;
-            const isMobile = globalThis. <= 768;
+            const scrollY = globalThis.scrollY;
+            const windowHeight = globalThis.scrollY;
+            const isMobile = globalThis.innerWidth <= 768;
 
             // Blobs (Smoother & Mobile Optimized)
             const blobSpeed = isMobile ? 0.01 : 0.05;
@@ -781,7 +781,7 @@
             ticking = false;
         }
 
-        globalThis.('scroll', () => {
+        globalThis.addEventListener('scroll', () => {
             if (!ticking) {
                 window.requestAnimationFrame(updateScrollEffects);
                 ticking = true;
