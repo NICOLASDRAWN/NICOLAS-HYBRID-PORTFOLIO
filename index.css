@@ -1373,13 +1373,14 @@ footer {
     }
 
     .cv-header {
-        border-bottom: 2px solid #1a1a1a;
-        padding-bottom: 25px;
-        margin-bottom: 35px;
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: flex-end;
+        padding-bottom: 25px;
+        border-bottom: 5px solid var(--accent-green);
+        margin-bottom: 35px;
         position: relative;
+        overflow: hidden;
     }
 
     .cv-header::before {
@@ -1389,17 +1390,8 @@ footer {
         right: -50px;
         width: 150px;
         height: 150px;
-        background: radial-gradient(circle, rgba(52, 199, 89, 0.08) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(189, 230, 0, 0.1) 0%, transparent 70%);
         border-radius: 50%;
-    }
-
-    .cv-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        padding-bottom: 25px;
-        border-bottom: 5px solid var(--accent-green);
-        margin-bottom: 35px;
     }
 
     .cv-name-box h1 {
