@@ -56,7 +56,7 @@ body {
 }
 
 .section {
-    padding: 140px 0 160px;
+    padding: 140px 0 240px; /* Large bottom padding for the Dock */
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -68,7 +68,7 @@ body {
 
 @media (max-width: 768px) {
     .section {
-        padding: 80px 0 160px; /* More bottom padding to clear the Dock */
+        padding: 80px 0 200px; /* Breathable mobile space */
         min-height: initial;
     }
 }
@@ -233,7 +233,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: 20px; /* Spacer from label */
+    margin-top: 40px; /* Explicit space from overline label */
     margin-bottom: 60px;
 }
 
@@ -638,10 +638,10 @@ body {
 .section-label {
     font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--fg-dim);
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -652,8 +652,9 @@ body {
 .section-label span {
     font-family: 'Inter', monospace;
     color: var(--accent);
-    font-size: 0.7rem;
-    font-weight: 800;
+    font-size: 0.75rem;
+    font-weight: 900;
+    line-height: 1;
 }
 
 /* ═══════════ MEGA TYPOGRAPHY ═══════════ */
@@ -662,10 +663,10 @@ body {
 .name-reveal,
 .big-text-wrapper,
 .contact-title {
-    font-size: clamp(2rem, 7vw, 5rem);
+    font-size: clamp(2.5rem, 6.5vw, 4.8rem);
     font-weight: 700;
     line-height: 1.05;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
     text-transform: none;
 }
 
@@ -1502,9 +1503,9 @@ footer {
     .hero-bottom { grid-template-columns: 1fr; gap: 24px; text-align: left; }
     .hero-ctas { justify-content: flex-start; margin-top: 10px; }
     
-    /* Ensure nothing hits the Dock */
-    .contact-section { padding-bottom: 200px; }
-    footer { padding-bottom: 120px; }
+    /* Extreme padding for mobile Dock clearance */
+    .contact-section { padding-bottom: 250px; }
+    footer { padding: 40px 0 160px; }
     
     .exp-entry { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
     
