@@ -569,14 +569,20 @@ body {
 }
 
 .step {
-    padding: 8px 18px;
+    padding: 8px 16px;
     text-decoration: none;
     color: var(--fg-dim);
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.05em;
     border-radius: 16px;
     transition: all 0.4s var(--ease);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+    min-width: fit-content;
 }
 
 .step.active {
@@ -1812,8 +1818,8 @@ footer {
     background: var(--accent-green);
     border-radius: 50%;
     display: inline-block;
-    margin-right: 8px;
-    box-shadow: 0 0 8px var(--accent-green);
+    flex-shrink: 0;
+    box-shadow: 0 0 10px var(--accent-green);
     animation: live-blink 1.5s infinite;
 }
 
@@ -1827,7 +1833,7 @@ footer {
 
 .step .live-dot {
     position: relative;
-    top: -1px;
+    top: 0;
 }
 
 
