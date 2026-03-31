@@ -81,6 +81,14 @@
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
 </head>
 <body>
+    <!-- Apple Style Loader -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader-content">
+            <div class="loader-text">DESPLEGANDO FLOTA</div>
+            <div class="loader-bar"><div class="loader-progress" id="loaderProgress"></div></div>
+        </div>
+    </div>
+
     <!-- Custom Cursor -->
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-follower" id="cursorFollower"></div>
@@ -590,9 +598,9 @@
         });
 
         // ═══ Scroll Progress Bar ═══
-        window.addEventListener('scroll', () => {
+        globalThis.('scroll', () => {
             const scrollTop = document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollHeight = document.documentElement.scrollHeight - globalThis.;
             const progress = (scrollTop / scrollHeight) * 100;
             document.getElementById('progressBar').style.width = progress + '%';
         });
@@ -638,15 +646,36 @@
         const spotlight = document.createElement('div');
         spotlight.className = 'spotlight';
         document.body.appendChild(spotlight);
-        window.addEventListener('mousemove', (e) => {
+        globalThis.('mousemove', (e) => {
             spotlight.style.left = e.clientX + 'px';
             spotlight.style.top = e.clientY + 'px';
         });
 
         // ═══ Initial Hero Reveal ═══
-        window.addEventListener('load', () => {
-             // Forzar animación de lo que esté visible al inicio
-             setTimeout(() => {
+        globalThis.addEventListener('load', () => {
+             const progress = document.getElementById('loaderProgress');
+             const loader = document.getElementById('loader');
+             
+             // Simulate loading
+             let p = 0;
+             const interval = setInterval(() => {
+                 p += Math.random() * 30;
+                 if (p >= 100) {
+                     p = 100;
+                     clearInterval(interval);
+                     setTimeout(() => {
+                         loader.style.opacity = '0';
+                         loader.style.visibility = 'hidden';
+                         
+                         // Start initial animations
+                         setTimeout(triggerInitialAnims, 300);
+                     }, 500);
+                 }
+                 progress.style.width = p + '%';
+             }, 100);
+        });
+
+        function triggerInitialAnims() {
                 const heroTitle = document.querySelector('.hero-section .scroll-reveal-title');
                 if (heroTitle) {
                     heroTitle.classList.add('visible');
@@ -657,8 +686,7 @@
                 }
                 const heroScrolls = document.querySelectorAll('.hero-section .scroll-reveal');
                 heroScrolls.forEach(el => el.classList.add('visible'));
-             }, 300);
-        });
+        }
 
         // ═══ Step Bar Active State ═══
         const navSections = document.querySelectorAll('.section[id]');
@@ -677,8 +705,8 @@
         navSections.forEach(s => sectionObserver.observe(s));
 
         // ═══ Navbar scroll effect ═══
-        window.addEventListener('scroll', () => {
-            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 80);
+        globalThis.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', globalThis.scrollY > 80);
         });
 
         // ═══ Mobile menu ═══
@@ -707,13 +735,13 @@
         });
 
         // ═══ Sections Growth & Title Parallax & Blobs ═══
-        let lastScrollY = window.scrollY;
+        let lastScrollY = globalThis.;
         let ticking = false;
 
         function updateScrollEffects() {
-            const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const isMobile = window.innerWidth <= 768;
+            const scrollY = globalThis.;
+            const windowHeight = globalThis.;
+            const isMobile = globalThis. <= 768;
 
             // Blobs (Smoother & Mobile Optimized)
             const blobSpeed = isMobile ? 0.01 : 0.05;
@@ -753,7 +781,7 @@
             ticking = false;
         }
 
-        window.addEventListener('scroll', () => {
+        globalThis.('scroll', () => {
             if (!ticking) {
                 window.requestAnimationFrame(updateScrollEffects);
                 ticking = true;
@@ -765,7 +793,7 @@
         const cursorDot = document.getElementById('cursorDot');
         const cursorFollower = document.getElementById('cursorFollower');
 
-        window.addEventListener('mousemove', (e) => {
+        globalThis.addEventListener('mousemove', (e) => {
             const { clientX: x, clientY: y } = e;
             cursorDot.style.left = x + 'px';
             cursorDot.style.top = y + 'px';
