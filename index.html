@@ -103,8 +103,8 @@
     <div class="progress-bar" id="progressBar"></div>
 
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-logo">NM<span>.</span></div>
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
+        <div class="nav-logo" onclick="lenis.scrollTo('#hero')">NM<span>.</span></div>
         <div class="nav-info">
             <span class="nav-status"><span class="status-dot"></span> DISPONIBLE</span>
             <span class="nav-divider">|</span>
@@ -130,6 +130,15 @@
         <a href="#projects" class="step" data-step="4">WORK</a>
         <a href="#contact" class="step" data-step="5">CONTACTO</a>
     </div>
+
+    <!-- Side Progress (Desktop Only) -->
+    <nav class="side-nav-desktop" id="sideNav" aria-label="Navegación lateral de escritorio">
+        <button class="side-nav-item active" onclick="lenis.scrollTo('#hero')" aria-label="Ir a Inicio"><span>01</span></button>
+        <button class="side-nav-item" onclick="lenis.scrollTo('#stack')" aria-label="Ir a Skills"><span>02</span></button>
+        <button class="side-nav-item" onclick="lenis.scrollTo('#experience')" aria-label="Ir a Experiencia"><span>03</span></button>
+        <button class="side-nav-item" onclick="lenis.scrollTo('#projects')" aria-label="Ir a Proyectos"><span>04</span></button>
+        <button class="side-nav-item" onclick="lenis.scrollTo('#contact')" aria-label="Ir a Contacto"><span>05</span></button>
+    </nav>
 
     <!-- ═══════════ HERO ═══════════ -->
     <section id="hero" class="section hero-section">
@@ -568,25 +577,46 @@
             document.getElementById('progressBar').style.width = progress + '%';
         });
 
-        // ═══ Reveal on Scroll ═══
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                        entry.target.querySelectorAll('.stat-big[data-target]').forEach(num => {
-                            const target = Number.parseInt(num.dataset.target);
-                            let current = 0;
-                        const timer = setInterval(() => {
-                            current++;
-                            if (current >= target) { num.textContent = target + '+'; clearInterval(timer); }
-                            else { num.textContent = current + '+'; }
-                        }, 120);
-                    });
+        // ═══ Reveal on Scroll (Staggered Apple Style) ═══
+        const reveals = document.querySelectorAll('.scroll-reveal');
+        reveals.forEach((el) => {
+            gsap.fromTo(el, 
+                { opacity: 0, y: 30 },
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 1, 
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
                 }
-            });
-        }, { threshold: 0.05 });
+            );
+        });
 
-        document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+        // Numeric Stagger for Stats
+        gsap.utils.toArray('.stat-block').forEach(block => {
+            const num = block.querySelector('.stat-big');
+            if (num && num.dataset.target) {
+                ScrollTrigger.create({
+                    trigger: block,
+                    start: "top 85%",
+                    onEnter: () => {
+                        const target = Number.parseInt(num.dataset.target);
+                        if (Number.isNaN(target)) return;
+                        let obj = { val: 0 };
+                        gsap.to(obj, {
+                            val: target,
+                            duration: 2,
+                            ease: "power2.out",
+                            onUpdate: () => num.textContent = Math.round(obj.val) + '+'
+                        });
+                    }
+                });
+            }
+        });
 
         const titleObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
