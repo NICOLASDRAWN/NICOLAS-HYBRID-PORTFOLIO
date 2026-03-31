@@ -573,14 +573,16 @@ body {
 
 @media (max-width: 768px) {
     .step-bar {
-        bottom: 20px;
-        width: 90%;
-        justify-content: space-around;
-        padding: 6px;
+        bottom: 12px;
+        width: 95%;
+        gap: 4px;
+        padding: 4px;
+        justify-content: center;
     }
     .step {
-        padding: 8px 12px;
-        font-size: 0.7rem;
+        padding: 6px 10px;
+        font-size: 0.65rem;
+        border-radius: 12px;
     }
 }
 @media (min-width: 1025px) {
