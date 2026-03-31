@@ -375,6 +375,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.02);
 }
 
 .container {
@@ -1175,9 +1176,10 @@ footer {
     }
     
     .mega-title, .section-title, .name-reveal, .contact-title { 
-        font-size: clamp(2.4rem, 18vw, 5rem) !important;
-        letter-spacing: -2px !important; 
-        line-height: 0.9 !important;
+        font-size: clamp(2rem, 15vw, 4rem) !important;
+        letter-spacing: -1.5px !important; 
+        line-height: 0.95 !important;
+        margin-bottom: 30px !important;
     }
 
     .hero-section { min-height: 90vh; padding-top: 100px; display: flex; align-items: flex-start; }
