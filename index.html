@@ -623,12 +623,6 @@
                 infinite: false,
             });
 
-            function raf(time) {
-                lenis.raf(time);
-                requestAnimationFrame(raf);
-            }
-            requestAnimationFrame(raf);
-
             lenis.on('scroll', ScrollTrigger.update);
             gsap.ticker.add((time) => {
                 lenis.raf(time * 1000);
@@ -639,25 +633,34 @@
         // ═══ GSAP Animations ═══
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to('.accent-word', {
-            scrollTrigger: {
-                trigger: '#hero',
-                start: 'top top',
-                end: 'bottom center',
-                scrub: true
-            },
-            color: '#0071e3',
-            scale: 1.02,
-            duration: 1
-        });
+        if (document.querySelector('.accent-word')) {
+            gsap.to('.accent-word', {
+                scrollTrigger: {
+                    trigger: '#hero',
+                    start: 'top top',
+                    end: 'bottom center',
+                    scrub: true
+                },
+                color: '#0071e3',
+                scale: 1.02,
+                duration: 1
+            });
+        }
 
         // ═══ Scroll Progress Bar ═══
-        globalThis.addEventListener('scroll', () => {
-            const scrollTop = document.documentElement.scrollTop;
+        const updateProgressBar = () => {
+            const scrollTop = globalThis.scrollY || document.documentElement.scrollTop;
             const scrollHeight = document.documentElement.scrollHeight - globalThis.innerHeight;
             const progress = (scrollTop / scrollHeight) * 100;
-            document.getElementById('progressBar').style.width = progress + '%';
-        });
+            const bar = document.getElementById('progressBar');
+            if (bar) bar.style.width = progress + '%';
+        };
+
+        if (lenis) {
+            lenis.on('scroll', updateProgressBar);
+        } else {
+            globalThis.addEventListener('scroll', updateProgressBar);
+        }
 
         // ═══ Reveal on Scroll (Staggered Apple Style) ═══
         const reveals = document.querySelectorAll('.scroll-reveal');
@@ -739,8 +742,16 @@
              let p = 0;
              const interval = setInterval(() => {
                  p += Math.random() * 25;
-                 if (p >= 100) { p = 100; clearInterval(interval); hideLoader(); }
-                 progress.style.width = p + '%';
+                 if (p >= 100) { 
+                     p = 100; 
+                     clearInterval(interval); 
+                     hideLoader(); 
+                     // Refresh ScrollTrigger after loader finishes and layout stabilizes
+                     setTimeout(() => {
+                         ScrollTrigger.refresh();
+                     }, 500);
+                 }
+                 if (progress) progress.style.width = p + '%';
              }, 80);
         });
 
@@ -810,10 +821,45 @@
             });
         });
 
-        // ═══ Navbar ═══
-        globalThis.addEventListener('scroll', () => {
-            document.getElementById('navbar').classList.toggle('scrolled', globalThis.scrollY > 80);
-        });
+        // ═══ Navbar & Nav Sync ═══
+        const sections = document.querySelectorAll('.section');
+        const stepItems = document.querySelectorAll('.step');
+        const sideNavItems = document.querySelectorAll('.side-nav-item');
+
+        const updateNav = () => {
+            const scrollY = globalThis.scrollY;
+            document.getElementById('navbar').classList.toggle('scrolled', scrollY > 80);
+
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            stepItems.forEach((item) => {
+                item.classList.remove("active");
+                if (item.getAttribute("href") === `#${current}`) {
+                    item.classList.add("active");
+                }
+            });
+
+            sideNavItems.forEach((item) => {
+                item.classList.remove("active");
+                // Check onclick scroll Target
+                const attr = item.getAttribute("onclick");
+                if (attr && attr.includes(current)) {
+                    item.classList.add("active");
+                }
+            });
+        };
+
+        if (lenis) {
+            lenis.on('scroll', updateNav);
+        } else {
+            globalThis.addEventListener('scroll', updateNav);
+        }
 
         // ═══ Mobile menu ═══
         const navToggle = document.getElementById('navToggle');
