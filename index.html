@@ -566,49 +566,10 @@
                 end: 'bottom center',
                 scrub: true
             },
-            color: '#c8e600',
-            webkitTextStroke: '1px #c8e600',
-            scale: 1.05,
+            color: '#0071e3',
+            scale: 1.02,
             duration: 1
         });
-
-        // Sticky Sections Stacking Effect
-        const allSectionsGSAP = document.querySelectorAll('.section');
-        
-        
-        // Sticky Sections Stacking Effect (Desktop Only)
-        if (!isMobile) {
-            allSectionsGSAP.forEach((section, i) => {
-                if (i < allSectionsGSAP.length - 1) {
-                    gsap.to(section, {
-                        scrollTrigger: {
-                            trigger: section,
-                            start: 'top top',
-                            end: 'bottom top',
-                            scrub: true
-                        },
-                        scale: 0.85,
-                        opacity: 0,
-                        y: -100
-                    });
-                }
-            });
-        }
-
-        // ═══ Horizontal Scroll for Skills (Desktop Only) ═══
-        if (!isMobile) {
-            gsap.to('.skills-columns', {
-                scrollTrigger: {
-                    trigger: '#stack',
-                    start: 'top top',
-                    end: '+=800',
-                    scrub: 1,
-                    pin: true
-                },
-                x: '-10%',
-                duration: 1
-            });
-        }
 
         // ═══ Scroll Progress Bar ═══
         globalThis.addEventListener('scroll', () => {
@@ -757,50 +718,35 @@
             });
         });
 
-        // ═══ Sections Growth & Title Parallax & Blobs ═══
-        let lastScrollY = globalThis.scrollY;
+        // ═══ Sections Parallax & Blobs ═══
         let ticking = false;
 
         function updateScrollEffects() {
             const scrollY = globalThis.scrollY;
-            const windowHeight = globalThis.scrollY;
-            
+            const windowHeight = globalThis.innerHeight;
 
-            // Blobs (Smoother & Mobile Optimized)
-            const blobSpeed = isMobile ? 0.01 : 0.05;
-            document.querySelector('.blob-1').style.transform = `translate(${scrollY * blobSpeed}px, ${scrollY * 0.02}px) rotate(${scrollY * 0.02}deg)`;
-            document.querySelector('.blob-2').style.transform = `translate(-${scrollY * 0.03}px, ${scrollY * (isMobile ? 0.01 : 0.04)}px)`;
-            document.querySelector('.blob-3').style.transform = `translate(${scrollY * 0.02}px, -${scrollY * 0.03}px) scale(${1 + scrollY * 0.0001})`;
+            // Blobs (Subtle & Smooth)
+            const blobSpeed = isMobile ? 0.02 : 0.05;
+            document.querySelector('.blob-1').style.transform = `translate(${scrollY * blobSpeed}px, ${scrollY * 0.02}px) rotate(${scrollY * 0.01}deg)`;
+            document.querySelector('.blob-2').style.transform = `translate(-${scrollY * 0.03}px, ${scrollY * (isMobile ? 0.01 : 0.03)}px)`;
+            document.querySelector('.blob-3').style.transform = `translate(${scrollY * 0.02}px, -${scrollY * 0.02}px)`;
 
-            // Sections Scale (Growth)
-            const allSections = document.querySelectorAll('.section');
-            allSections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                const center = rect.top + rect.height / 2;
-                const distFromCenter = Math.abs(windowHeight / 2 - center);
-                
-                // Efecto de escala
-                const baseScale = isMobile ? 0.95 : 0.9;
-                const scale = Math.max(baseScale, 1.05 - (distFromCenter / windowHeight) * 0.2);
-                
-                // Efecto de opacidad
-                const opacity = Math.max(isMobile ? 0.8 : 0.6, 1 - (distFromCenter / windowHeight) * 0.5);
-
-                if (rect.top < windowHeight && rect.bottom > 0) {
-                     section.style.transform = `scale(${scale})`;
-                     section.style.opacity = opacity;
-
-                     // Parallax en títulos gigantes
-                     if (!isMobile) {
+            // Subtle Parallax for titles
+            if (!isMobile) {
+                const allSections = document.querySelectorAll('.section');
+                allSections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < windowHeight && rect.bottom > 0) {
+                        const center = rect.top + rect.height / 2;
                         const title = section.querySelector('.mega-title, .section-title, .name-reveal, .contact-title');
                         if (title) {
-                            const speed = 0.12;
+                            const speed = 0.08;
                             const yPos = (windowHeight / 2 - center) * speed;
                             title.style.transform = `translateY(${yPos}px)`;
                         }
-                     }
-                }
-            });
+                    }
+                });
+            }
             ticking = false;
         }
 
