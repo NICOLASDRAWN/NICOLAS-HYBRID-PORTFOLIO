@@ -573,7 +573,7 @@
 
         // Sticky Sections Stacking Effect
         const allSectionsGSAP = document.querySelectorAll('.section');
-        const isMobile = globalThis.innerWidth <= 768;
+        
         
         // Sticky Sections Stacking Effect (Desktop Only)
         if (!isMobile) {
@@ -643,7 +643,7 @@
                     entry.target.classList.add('visible');
                     const words = entry.target.querySelectorAll('.word');
                     words.forEach((word, i) => {
-                        word.style.transitionDelay = (i * 0.08) + 's';
+                        word.style.transitionDelay = (i * 0.03) + 's';
                         word.classList.add('word-visible');
                     });
                 }
@@ -761,7 +761,7 @@
         function updateScrollEffects() {
             const scrollY = globalThis.scrollY;
             const windowHeight = globalThis.scrollY;
-            const isMobile = globalThis.innerWidth <= 768;
+            
 
             // Blobs (Smoother & Mobile Optimized)
             const blobSpeed = isMobile ? 0.01 : 0.05;
