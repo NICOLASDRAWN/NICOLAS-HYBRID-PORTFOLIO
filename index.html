@@ -74,8 +74,16 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Animation Engines (Apple Style) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
 
     <!-- Decorative Blobs -->
     <div class="blob blob-1"></div>
@@ -507,6 +515,80 @@
     </div>
 
     <script>
+        // ═══ Initialize GSAP & Lenis (Apple Smooth Scroll) ═══
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+            wheelMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Sync ScrollTrigger with Lenis
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+
+        // ═══ Apple Style Sticky Hero Animation ═══
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Scrubbing effect for "FULL STACK" text
+        gsap.to('.accent-word', {
+            scrollTrigger: {
+                trigger: '#hero',
+                start: 'top top',
+                end: 'bottom center',
+                scrub: true
+            },
+            color: '#c8e600',
+            webkitTextStroke: '1px #c8e600',
+            scale: 1.05,
+            duration: 1
+        });
+
+        // Sticky Sections Stacking Effect
+        const allSectionsGSAP = document.querySelectorAll('.section');
+        allSectionsGSAP.forEach((section, i) => {
+            if (i < allSectionsGSAP.length - 1) {
+                gsap.to(section, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true
+                    },
+                    scale: 0.85,
+                    opacity: 0,
+                    y: -100
+                });
+            }
+        });
+
+        // Horizontal Parallax for Skills
+        gsap.from('.skill-col', {
+            scrollTrigger: {
+                trigger: '#stack',
+                start: 'top bottom',
+                end: 'bottom center',
+                scrub: 1
+            },
+            x: (i) => i % 2 === 0 ? -80 : 80,
+            opacity: 0,
+            stagger: 0.1
+        });
+
         // ═══ Scroll Progress Bar ═══
         window.addEventListener('scroll', () => {
             const scrollTop = document.documentElement.scrollTop;
@@ -579,7 +661,7 @@
         });
 
         // ═══ Step Bar Active State ═══
-        const sections = document.querySelectorAll('.section[id]');
+        const navSections = document.querySelectorAll('.section[id]');
         const steps = document.querySelectorAll('.step');
         const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -592,7 +674,7 @@
                 }
             });
         }, { threshold: 0.3 });
-        sections.forEach(s => sectionObserver.observe(s));
+        navSections.forEach(s => sectionObserver.observe(s));
 
         // ═══ Navbar scroll effect ═══
         window.addEventListener('scroll', () => {
@@ -678,19 +760,52 @@
             }
         });
 
-        // ═══ Magnetic Effect for Buttons ═══
-        const magnetics = document.querySelectorAll('.project-arrow, .btn-pill');
+        // ═══ Magnetic Effect for Buttons & Custom Cursor ═══
+        const magnetics = document.querySelectorAll('.project-arrow, .btn-pill, .nav-logo, .step, .contact-link');
+        const cursorDot = document.getElementById('cursorDot');
+        const cursorFollower = document.getElementById('cursorFollower');
+
+        window.addEventListener('mousemove', (e) => {
+            const { clientX: x, clientY: y } = e;
+            cursorDot.style.left = x + 'px';
+            cursorDot.style.top = y + 'px';
+            
+            // Lagged follower
+            setTimeout(() => {
+                cursorFollower.style.left = x + 'px';
+                cursorFollower.style.top = y + 'px';
+            }, 80);
+
+            // Spotlight already updated in updateScrollEffects actually it's separate
+            const spotlight = document.querySelector('.spotlight');
+            if (spotlight) {
+                spotlight.style.left = x + 'px';
+                spotlight.style.top = y + 'px';
+            }
+        });
+
         magnetics.forEach(btn => {
             btn.addEventListener('mousemove', (e) => {
                 const rect = btn.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
                 btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                
+                // Hovering effect for cursor
+                cursorFollower.classList.add('active');
             });
             btn.addEventListener('mouseleave', () => {
                 btn.style.transform = 'translate(0, 0)';
+                cursorFollower.classList.remove('active');
             });
         });
+
+        // ═══════════ Mobile Pull to Reveal (Haptic simulation) ═══════════
+        if ('vibrate' in navigator) {
+             document.querySelectorAll('.step').forEach(step => {
+                 step.addEventListener('click', () => navigator.vibrate(10));
+             });
+        }
     </script>
 </body>
 </html>
