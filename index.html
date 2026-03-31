@@ -81,6 +81,7 @@
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
 </head>
 <body>
+    <div class="grain-overlay"></div>
     <!-- Apple Style Loader -->
     <div class="loader-wrapper" id="loader">
         <div class="loader-content">
@@ -594,18 +595,20 @@
             });
         }
 
-        // Horizontal Parallax for Skills
-        gsap.from('.skill-col', {
-            scrollTrigger: {
-                trigger: '#stack',
-                start: 'top bottom',
-                end: 'bottom center',
-                scrub: 1
-            },
-            x: (i) => i % 2 === 0 ? -80 : 80,
-            opacity: 0,
-            stagger: 0.1
-        });
+        // ═══ Horizontal Scroll for Skills (Desktop Only) ═══
+        if (!isMobile) {
+            gsap.to('.skills-columns', {
+                scrollTrigger: {
+                    trigger: '#stack',
+                    start: 'top top',
+                    end: '+=800',
+                    scrub: 1,
+                    pin: true
+                },
+                x: '-10%',
+                duration: 1
+            });
+        }
 
         // ═══ Scroll Progress Bar ═══
         globalThis.addEventListener('scroll', () => {
