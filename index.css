@@ -379,12 +379,18 @@ body {
     z-index: 1;
     min-height: 100vh;
     background: #f0ece2;
-    padding: 120px 0;
-    padding-bottom: 60px;
+    padding: 100px 0;
+    padding-bottom: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    scroll-snap-align: start;
+}
+
+@media (max-width: 1024px) {
+    .section {
+        min-height: auto;
+        padding: 60px 0;
+    }
 }
 
 @media (min-width: 1025px) {
