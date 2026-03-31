@@ -1756,73 +1756,7 @@ footer {
 
 
 /* ═══════════ LIVE HUB (Novedoso) ═══════════ */
-.live-hub-fab {
-    position: fixed;
-    bottom: 40px;
-    right: calc(var(--container-padding) + 0px);
-    background: rgba(26, 26, 26, 0.8);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    backdrop-filter: blur(20px) saturate(180%);
-    padding: 12px 20px;
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    color: #fff;
-    z-index: 1001;
-    cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
 
-.live-hub-fab:hover {
-    transform: translateY(-8px) scale(1.05);
-    background: #1a1a1a;
-    border-color: var(--accent-green);
-}
-
-.hub-icon {
-    position: relative;
-    width: 32px;
-    height: 32px;
-    background: var(--accent-green);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-}
-
-.live-pulse {
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    width: 10px;
-    height: 10px;
-    background: #f00;   /* Red for attention or Green */
-    background: var(--accent-green);
-    border-radius: 50%;
-    border: 2px solid #1a1a1a;
-    animation: live-blink 2s infinite;
-}
-
-.hub-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.hub-text strong {
-    font-size: 0.7rem;
-    font-weight: 900;
-    letter-spacing: 0.1em;
-    color: var(--accent-green);
-}
-
-.hub-text span {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.6);
-}
 
 .live-dot {
     width: 6px;
@@ -1848,15 +1782,7 @@ footer {
     top: -1px;
 }
 
-@media (max-width: 1024px) {
-    .live-hub-fab {
-        bottom: 100px; /* Stay above the step-bar on mobile */
-        right: 20px;
-        padding: 10px 16px;
-    }
-    .hub-text { display: none; } /* Compact on mobile */
-    .live-hub-fab:hover { transform: none; }
-}
+
 
 /* ═══════════ HERO BACKGROUND (Particles & Code) ═══════════ */
 .hero-bg-canvas {
