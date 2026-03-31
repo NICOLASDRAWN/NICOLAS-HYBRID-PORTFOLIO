@@ -104,7 +104,7 @@ body {
 .blob-1 {
     width: 600px;
     height: 600px;
-    background: rgba(0, 113, 227, 0.04);
+    background: rgba(189, 230, 0, 0.08); /* Lime Green */
     top: -100px;
     right: -100px;
 }
@@ -112,45 +112,45 @@ body {
 .blob-2 {
     width: 600px;
     height: 600px;
-    background: rgba(52, 199, 89, 0.12);
+    background: rgba(189, 230, 0, 0.12); /* Lime Green */
     bottom: -100px;
     left: -200px;
-    filter: blur(120px);
+    filter: blur(140px);
 }
 
 .blob-3 {
-    width: 500px;
-    height: 500px;
-    background: rgba(0, 113, 227, 0.08);
+    width: 600px;
+    height: 600px;
+    background: rgba(189, 230, 0, 0.06); /* Lime Green */
     top: 40vh;
     left: 20vw;
-    filter: blur(100px);
+    filter: blur(120px);
 }
 
 .blob-4 {
     position: fixed;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(52, 199, 89, 0.08) 0%, transparent 75%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(189, 230, 0, 0.1) 0%, transparent 75%);
     border-radius: 50%;
     z-index: 0;
     pointer-events: none;
     bottom: 0%;
     right: -10%;
-    filter: blur(100px);
+    filter: blur(140px);
 }
 
 .spotlight {
     position: fixed;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(52, 199, 89, 0.06) 0%, rgba(52, 199, 89, 0.02) 30%, transparent 70%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(189, 230, 0, 0.08) 0%, rgba(189, 230, 0, 0.02) 40%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 0;
     transform: translate(-50%, -50%);
     transition: left 0.15s ease-out, top 0.15s ease-out;
-    filter: blur(30px);
+    filter: blur(40px);
 }
 
 @media (max-width: 768px) { .spotlight { display: none; } }
@@ -1393,21 +1393,32 @@ footer {
         border-radius: 50%;
     }
 
+    .cv-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: 25px;
+        border-bottom: 5px solid var(--accent-green);
+        margin-bottom: 35px;
+    }
+
     .cv-name-box h1 {
-        font-size: 36pt !important;
-        font-weight: 800 !important;
-        letter-spacing: -1.5px !important;
+        font-family: 'Inter', sans-serif;
+        font-size: 34pt !important;
+        font-weight: 900 !important;
+        letter-spacing: -2px !important;
         margin: 0 0 5px 0 !important;
-        line-height: 1;
+        line-height: 0.9;
         color: #000;
     }
 
     .cv-tagline {
-        font-size: 10pt !important;
-        font-weight: 700 !important;
-        letter-spacing: 2px !important;
+        font-size: 10.5pt !important;
+        font-weight: 800 !important;
+        letter-spacing: 1.5px !important;
         color: var(--accent-green);
         text-transform: uppercase;
+        margin-top: 5px;
     }
 
     .cv-contact-info {
@@ -1438,7 +1449,7 @@ footer {
         flex: 1;
         padding-left: 25px;
         border-left: 2px solid var(--accent-green);
-        background: rgba(52, 199, 89, 0.02);
+        background: rgba(189, 230, 0, 0.03); /* New Lime Green */
     }
 
     .cv-section-title {
