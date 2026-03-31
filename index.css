@@ -20,6 +20,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+a { color: inherit; text-decoration: none; }
 
 html {
     scroll-behavior: smooth;
@@ -459,6 +460,9 @@ body {
     letter-spacing: -0.02em;
     cursor: pointer;
     transition: var(--transition);
+    color: var(--fg) !important;
+    text-decoration: none !important;
+    display: inline-block;
 }
 
 .nav-logo span { 
