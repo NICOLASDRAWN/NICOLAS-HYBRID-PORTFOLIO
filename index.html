@@ -73,7 +73,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Animation Engines (Apple Style) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -81,7 +81,6 @@
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
 </head>
 <body>
-    <div class="grain-overlay"></div>
     <!-- Apple Style Loader -->
     <div class="loader-wrapper" id="loader">
         <div class="loader-content">
@@ -114,36 +113,21 @@
             <span></span><span></span><span></span>
         </button>
         <div class="nav-links" id="navLinks">
-            <a href="#hero" data-section="01">Inicio</a>
-            <a href="#stack" data-section="02">Skills</a>
-            <a href="#experience" data-section="03">Experiencia</a>
-            <a href="#projects" data-section="04">Proyectos</a>
-            <a href="#contact" data-section="05">Contacto</a>
+            <a href="#hero">Inicio</a>
+            <a href="#stack">Skills</a>
+            <a href="#experience">Experiencia</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#contact">Contacto</a>
         </div>
     </nav>
 
-    <!-- Section Step Indicator (Sonneto-style bottom bar) -->
+    <!-- Section Step Indicator (Floating Dock) -->
     <div class="step-bar" id="stepBar">
-        <a href="#hero" class="step active" data-step="1">
-            <span class="step-num">01</span>
-            <span class="step-label">INTRO</span>
-        </a>
-        <a href="#stack" class="step" data-step="2">
-            <span class="step-num">02</span>
-            <span class="step-label">SKILLS</span>
-        </a>
-        <a href="#experience" class="step" data-step="3">
-            <span class="step-num">03</span>
-            <span class="step-label">CARRERA</span>
-        </a>
-        <a href="#projects" class="step" data-step="4">
-            <span class="step-num">04</span>
-            <span class="step-label">WORK</span>
-        </a>
-        <a href="#contact" class="step" data-step="5">
-            <span class="step-num">05</span>
-            <span class="step-label">CONTACTO</span>
-        </a>
+        <a href="#hero" class="step active" data-step="1">INTRO</a>
+        <a href="#stack" class="step" data-step="2">SKILLS</a>
+        <a href="#experience" class="step" data-step="3">CARRERA</a>
+        <a href="#projects" class="step" data-step="4">WORK</a>
+        <a href="#contact" class="step" data-step="5">CONTACTO</a>
     </div>
 
     <!-- ═══════════ HERO ═══════════ -->
@@ -158,13 +142,13 @@
 
             <h1 class="mega-title scroll-reveal-title">
                 <span class="line"><span class="word">FULL</span> <span class="word">STACK</span></span>
-                <span class="line"><span class="word accent-word">DEVELOPER</span></span>
-                <span class="line"><span class="word">&</span> <span class="word accent-word">AI</span> <span class="word">SPECIALIST</span></span>
+                <span class="line"><span class="word gradient-text">DEVELOPER</span></span>
+                <span class="line"><span class="word">&</span> <span class="word gradient-text">AI</span> <span class="word">SPECIALIST</span></span>
             </h1>
 
             <div class="hero-bottom scroll-reveal">
                 <div class="hero-intro">
-                    <p>Construyo <strong>soluciones empresariales completas</strong> — ERPs, portales B2B y apps desktop con integración de inteligencia artificial. 5 proyectos en producción real.</p>
+                    <p>Construyo <strong>soluciones empresariales completas</strong> — ERPs, portales B2B y apps desktop con integración de inteligencia artificial.</p>
                 </div>
                 <div class="hero-ctas">
                     <a href="#projects" class="btn-pill btn-dark">VER PROYECTOS <i class="fas fa-arrow-down"></i></a>
@@ -191,7 +175,7 @@
         <div class="container">
             <div class="name-reveal scroll-reveal-title">
                 <span class="line"><span class="word">NICOLÁS</span></span>
-                <span class="line"><span class="word">MONROY</span></span>
+                <span class="line"><span class="word gradient-text">MONROY</span></span>
                 <span class="line sub-line"><span class="word">PABÓN</span> <span class="word dim">— BOGOTÁ, CO</span></span>
             </div>
             <div class="about-grid scroll-reveal">
@@ -222,7 +206,7 @@
             <div class="section-label scroll-reveal"><span>02</span> STACK TECNOLÓGICO</div>
             <h2 class="section-title scroll-reveal-title">
                 <span class="line"><span class="word">TECH</span></span>
-                <span class="line"><span class="word accent-word">&</span> <span class="word">SKILLS</span></span>
+                <span class="line"><span class="word gradient-text">&</span> <span class="word">SKILLS</span></span>
             </h2>
 
             <div class="skills-columns scroll-reveal">
@@ -264,7 +248,7 @@
             <div class="section-label scroll-reveal"><span>03</span> TRAYECTORIA</div>
             <h2 class="section-title scroll-reveal-title">
                 <span class="line"><span class="word">CAREER</span></span>
-                <span class="line"><span class="word accent-word">PATH</span></span>
+                <span class="line"><span class="word gradient-text">PATH</span></span>
             </h2>
 
             <div class="exp-timeline">
@@ -274,13 +258,12 @@
                         <h3>Full Stack Developer & Graphic Designer</h3>
                         <h4>MIP Internacional Trading SAS</h4>
                         <ul>
-                            <li>Desarrollé <strong>4 plataformas empresariales</strong> desde cero: ERP de compras, portal de proveedores con IA, e-commerce B2B y sitio corporativo (<a href="https://www.mipgroup.com.co" target="_blank" rel="noopener noreferrer">mipgroup.com.co</a>)</li>
-                            <li>Implementé firmas digitales, autenticación JWT multi-rol y workflows de aprobación</li>
-                            <li>Integré <strong>Gemini API</strong> para validación inteligente de documentos de proveedores</li>
-                            <li>Reduje tiempos de procesamiento de compras en un <strong>60%</strong></li>
+                            <li>Desarrollé <strong>4 plataformas empresariales</strong> desde cero: ERP de compras, portal de proveedores con IA, e-commerce B2B y sitio corporativo.</li>
+                            <li>Implementé firmas digitales, autenticación JWT multi-rol y workflows de aprobación.</li>
+                            <li>Integré <strong>Gemini API</strong> para validación inteligente de documentos de proveedores.</li>
                         </ul>
                         <div class="exp-tags">
-                            <span>React</span><span>Electron</span><span>Node.js</span><span>SQLite</span><span>Gemini AI</span><span>UI/UX</span>
+                            <span>React</span><span>Electron</span><span>Node.js</span><span>SQLite</span><span>Gemini AI</span>
                         </div>
                     </div>
                 </div>
@@ -291,136 +274,93 @@
                         <h3>Digital Products Coordinator</h3>
                         <h4>Partido Cambio Radical</h4>
                         <ul>
-                            <li>Coordiné producción multimedia para campañas nacionales</li>
-                            <li>Desarrollé plataformas de capacitación online</li>
-                            <li>Dirigí equipo de producción audiovisual</li>
+                            <li>Coordiné producción multimedia para campañas nacionales.</li>
+                            <li>Desarrollé plataformas de capacitación online.</li>
                         </ul>
                         <div class="exp-tags">
                             <span>WordPress</span><span>Multimedia</span><span>Liderazgo</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="exp-entry scroll-reveal">
-                    <div class="exp-date">2023 — 2024</div>
-                    <div class="exp-content">
-                        <h3>Diseñador Gráfico & Web Freelance</h3>
-                        <h4>Independiente</h4>
-                        <ul>
-                            <li>Sitios web y landing pages para múltiples clientes</li>
-                            <li>Branding, social media y contenido con IA generativa</li>
-                        </ul>
-                        <div class="exp-tags">
-                            <span>HTML/CSS/JS</span><span>Figma</span><span>Adobe CC</span>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ═══════════ BIG TEXT DIVIDER ═══════════ -->
-    <section class="section divider-section">
-        <div class="big-text-wrapper scroll-reveal-title">
-            <span class="line"><span class="word">THE</span></span>
-            <span class="line"><span class="word accent-word">WORK</span></span>
         </div>
     </section>
 
     <!-- ═══════════ PROJECTS ═══════════ -->
     <section id="projects" class="section projects-section">
         <div class="container">
-            <div class="section-label scroll-reveal"><span>04</span> PROYECTOS EN PRODUCCIÓN</div>
+            <div class="section-label scroll-reveal"><span>04</span> PROYECTOS SELECCIONADOS</div>
+            <h2 class="section-title scroll-reveal-title">
+                <span class="line"><span class="word">FEATURED</span></span>
+                <span class="line"><span class="word gradient-text">WORK</span></span>
+            </h2>
 
-            <div class="project-entry scroll-reveal">
-                <div class="project-num">01</div>
-                <div class="project-info">
-                    <span class="project-tag">CORPORATE WEBSITE — EN VIVO</span>
-                    <h3><a href="https://www.mipgroup.com.co" target="_blank" rel="noopener noreferrer">MIP Internacional Trading</a></h3>
-                    <p>Sitio web corporativo para empresa de trading internacional de maquinaria pesada. Diseño premium con SEO optimizado y responsive design.</p>
-                    <div class="project-tech-row">
-                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>SEO</span>
+            <div class="projects-grid">
+                <a href="projects/proveedhub/index.html" class="project-card featured scroll-reveal">
+                    <div class="project-content">
+                        <span class="project-tag">VENDOR MANAGEMENT + AI</span>
+                        <h3>ProveedHub Platform</h3>
+                        <p>Ecosistema de gestión de proveedores con IA Gemini integrada para validación automática de documentos, CRUD completo y métricas en tiempo real.</p>
                     </div>
-                </div>
-                <a href="https://www.mipgroup.com.co" target="_blank" rel="noopener noreferrer" class="project-arrow" aria-label="Ver sitio de MIP Internacional Trading"><i class="fas fa-arrow-right"></i></a>
-            </div>
+                    <div class="project-footer">
+                        <div class="project-tech-row">
+                            <span>React</span><span>Express</span><span>Electron</span><span>Gemini API</span>
+                        </div>
+                        <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
 
-            <div class="project-entry scroll-reveal">
-                <div class="project-num">02</div>
-                <div class="project-info">
-                    <span class="project-tag">VENDOR MANAGEMENT + AI</span>
-                    <h3><a href="projects/proveedhub/index.html">ProveedHub Platform</a></h3>
-                    <p>Ecosistema de gestión de proveedores con IA Gemini integrada para validación automática de documentos, CRUD completo y métricas en tiempo real.</p>
-                    <div class="project-tech-row">
-                        <span>React</span><span>Express</span><span>Electron</span><span>Gemini API</span>
+                <a href="projects/gestor-compras/index.html" class="project-card scroll-reveal">
+                    <div class="project-content">
+                        <span class="project-tag">ENTERPRISE ERP</span>
+                        <h3>ERP Supply Chain</h3>
+                        <p>Sistema de gestión de compras con órdenes, aprobaciones multi-nivel, firmas digitales e inventario.</p>
                     </div>
-                </div>
-                <a href="projects/proveedhub/index.html" class="project-arrow" aria-label="Ver ProveedHub Platform"><i class="fas fa-arrow-right"></i></a>
-            </div>
+                    <div class="project-footer">
+                        <div class="project-tech-row">
+                            <span>React</span><span>Node.js</span><span>SQLite</span>
+                        </div>
+                        <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
 
-            <div class="project-entry scroll-reveal">
-                <div class="project-num">03</div>
-                <div class="project-info">
-                    <span class="project-tag">ENTERPRISE ERP — 15+ MÓDULOS</span>
-                    <h3><a href="projects/gestor-compras/index.html">ERP Supply Chain</a></h3>
-                    <p>Sistema de gestión de compras con órdenes, aprobaciones multi-nivel, firmas digitales, inventario, finanzas, reportes PDF y gestión de usuarios.</p>
-                    <div class="project-tech-row">
-                        <span>React</span><span>Node.js</span><span>SQLite</span><span>Electron</span>
+                <a href="projects/ecommerce/index.html" class="project-card scroll-reveal">
+                    <div class="project-content">
+                        <span class="project-tag">E-COMMERCE B2B</span>
+                        <h3>Wholesale Portal</h3>
+                        <p>Portal de ventas mayoristas con catálogos dinámicos y SEO optimizado.</p>
                     </div>
-                </div>
-                <a href="projects/gestor-compras/index.html" class="project-arrow" aria-label="Ver ERP Supply Chain"><i class="fas fa-arrow-right"></i></a>
-            </div>
+                    <div class="project-footer">
+                        <div class="project-tech-row">
+                            <span>Vite</span><span>TypeScript</span><span>React</span>
+                        </div>
+                        <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
 
-            <div class="project-entry scroll-reveal">
-                <div class="project-num">04</div>
-                <div class="project-info">
-                    <span class="project-tag">E-COMMERCE B2B — 13 PÁGINAS</span>
-                    <h3><a href="projects/ecommerce/index.html">B2B Wholesale Portal</a></h3>
-                    <p>Portal de ventas mayoristas con catálogos dinámicos, SEO optimizado por categoría, dashboard y sistema de autenticación.</p>
-                    <div class="project-tech-row">
-                        <span>Vite</span><span>TypeScript</span><span>React Router</span><span>Helmet</span>
+                <a href="https://www.mipgroup.com.co" target="_blank" rel="noopener noreferrer" class="project-card featured scroll-reveal">
+                    <div class="project-content">
+                        <span class="project-tag">CORPORATE WEBSITE — EN VIVO</span>
+                        <h3>MIP Internacional Trading</h3>
+                        <p>Sitio web corporativo para empresa de maquinaria pesada. Diseño premium con SEO de alto rendimiento.</p>
                     </div>
-                </div>
-                <a href="projects/ecommerce/index.html" class="project-arrow" aria-label="Ver B2B Wholesale Portal"><i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════ EDUCATION & SKILLS ═══════════ -->
-    <section id="education" class="section education-section">
-        <div class="container">
-            <div class="edu-grid scroll-reveal">
-                <div class="edu-block">
-                    <span class="edu-label">IDIOMAS</span>
-                    <div class="lang-row"><span>Español</span><span class="lang-tag">NATIVO</span></div>
-                    <div class="lang-row"><span>Inglés</span><span class="lang-tag">A2</span></div>
-                </div>
-                <div class="edu-block">
-                    <span class="edu-label">SOFT SKILLS</span>
-                    <div class="soft-list">
-                        <span>Resolución de Problemas</span>
-                        <span>Aprendizaje Rápido</span>
-                        <span>Comunicación Efectiva</span>
-                        <span>Orientación a Resultados</span>
+                    <div class="project-footer">
+                        <div class="project-tech-row">
+                            <span>HTML5</span><span>JavaScript</span><span>SEO</span><span>UI/UX</span>
+                        </div>
+                        <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
                     </div>
-                </div>
-                <div class="edu-block">
-                    <span class="edu-label">HERRAMIENTAS</span>
-                    <div class="tools-row">
-                        <span>VS Code</span><span>Git</span><span>GitHub</span><span>Figma</span>
-                        <span>Postman</span><span>DevTools</span><span>Terminal</span><span>Vercel</span>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════ CTA / CONTACT ═══════════ -->
+    <!-- ═══════════ CONTACT ═══════════ -->
     <section id="contact" class="section contact-section">
         <div class="container">
             <h2 class="contact-title scroll-reveal-title">
                 <span class="line"><span class="word">LET'S</span></span>
-                <span class="line"><span class="word accent-word">TALK</span></span>
+                <span class="line"><span class="word gradient-text">TALK</span></span>
             </h2>
             <p class="contact-sub scroll-reveal">Disponible para posiciones Full Stack, Frontend Engineer, o roles híbridos. Remoto o Bogotá.</p>
             <div class="contact-links scroll-reveal">
@@ -437,11 +377,6 @@
                 <a href="https://www.linkedin.com/in/nicolasdrawn" target="_blank" rel="noopener noreferrer" class="contact-link">
                     <i class="fab fa-linkedin-in"></i>
                     <span>LINKEDIN</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="https://github.com/NICOLASDRAWN" target="_blank" rel="noopener noreferrer" class="contact-link">
-                    <i class="fab fa-github"></i>
-                    <span>GITHUB</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -462,66 +397,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- ═══════════ PRINTABLE CV ═══════════ -->
-    <div class="cv-print">
-        <div class="cv-header">
-            <h1>Nicolás Monroy Pabón</h1>
-            <div class="cv-title-box">
-                <span class="cv-title">Full Stack Developer & AI Specialist</span>
-                <div class="cv-contact">
-                    <span>📱 +57 315 013 5016</span>
-                    <span>📧 nicolasdrawn@gmail.com</span>
-                    <span>🔗 github.com/NICOLASDRAWN</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="cv-section">
-            <h2>Perfil Profesional</h2>
-            <p>Desarrollador Full Stack con +3 años de experiencia especializado en React, Node.js, TypeScript y Python. Experto en la creación de ERPs empresariales, plataformas B2B y aplicaciones de escritorio con Electron. Diferenciador clave: integración avanzada de IA Generativa (Gemini, Claude, OpenAI) en flujos de producción reales para optimizar procesos de negocio.</p>
-        </div>
-
-        <div class="cv-section">
-            <h2>Experiencia Laboral</h2>
-            <div class="cv-job">
-                <h3>Full Stack Developer & Designer</h3>
-                <p class="cv-company">MIP Internacional Trading SAS | 2025 — Presente</p>
-                <ul>
-                    <li>Liderazgo técnico en el desarrollo de 4 plataformas clave (ERP, B2B Portal, AI Vendor Ecosystem).</li>
-                    <li>Integración de IA Gemini para validación documental, reduciendo tiempos operativos en un 60%.</li>
-                    <li>Diseño y desarrollo del sitio corporativo oficial (www.mipgroup.com.co).</li>
-                </ul>
-            </div>
-            <div class="cv-job">
-                <h3>Digital Products Coordinator</h3>
-                <p class="cv-company">Partido Cambio Radical | 2025</p>
-                <ul>
-                    <li>Coordinación de ecosistemas digitales y plataformas de capacitación a nivel nacional.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="cv-section">
-            <h2>Stack Técnico</h2>
-            <div class="cv-skills-grid">
-                <div class="cv-skill-group">
-                    <strong>Frontend & Desktop</strong>
-                    React, TypeScript, Next.js, Electron, TailwindCSS, Vite.
-                </div>
-                <div class="cv-skill-group">
-                    <strong>Backend & AI</strong>
-                    Node.js, Express, Python, Flask, Gemini/Claude API, Prompt Engineering.
-                </div>
-            </div>
-        </div>
-
-        <div class="cv-section">
-            <h2>Educación e Idiomas</h2>
-            <p><strong>Idiomas:</strong> Español (Nativo), Inglés (A2 — Básico).</p>
-            <p><strong>Formación:</strong> Desarrollo Full Stack, UI/UX Design, IA Orchestration.</p>
-        </div>
-    </div>
 
     <script>
         // ═══ Initialize GSAP & Lenis (Apple Smooth Scroll) ═══
@@ -547,7 +422,6 @@
             }
             requestAnimationFrame(raf);
 
-            // Sync ScrollTrigger with Lenis
             lenis.on('scroll', ScrollTrigger.update);
             gsap.ticker.add((time) => {
                 lenis.raf(time * 1000);
@@ -555,10 +429,9 @@
             gsap.ticker.lagSmoothing(0);
         }
 
-        // ═══ Apple Style Sticky Hero Animation ═══
+        // ═══ GSAP Animations ═══
         gsap.registerPlugin(ScrollTrigger);
 
-        // Scrubbing effect for "FULL STACK" text
         gsap.to('.accent-word', {
             scrollTrigger: {
                 trigger: '#hero',
@@ -574,7 +447,7 @@
         // ═══ Scroll Progress Bar ═══
         globalThis.addEventListener('scroll', () => {
             const scrollTop = document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - globalThis.scrollY;
+            const scrollHeight = document.documentElement.scrollHeight - globalThis.innerHeight;
             const progress = (scrollTop / scrollHeight) * 100;
             document.getElementById('progressBar').style.width = progress + '%';
         });
@@ -584,9 +457,8 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Animate stat numbers
                     entry.target.querySelectorAll('.stat-big[data-target]').forEach(num => {
-                        const target = Number.parseInt(num.dataset.target);
+                        const target = parseInt(num.dataset.target);
                         let current = 0;
                         const timer = setInterval(() => {
                             current++;
@@ -596,11 +468,10 @@
                     });
                 }
             });
-        }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
+        }, { threshold: 0.05 });
 
         document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
 
-        // ═══ Title Reveal (word by word) ═══
         const titleObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -625,36 +496,22 @@
             spotlight.style.top = e.clientY + 'px';
         });
 
-        // ═══ Initial Hero Reveal & Loader ═══
+        // ═══ Loader ═══
         const hideLoader = () => {
-             const progress = document.getElementById('loaderProgress');
              const loader = document.getElementById('loader');
-             if (!loader) return;
-             
-             progress.style.width = '100%';
-             setTimeout(() => {
+             if (loader) {
                  loader.style.opacity = '0';
                  loader.style.visibility = 'hidden';
                  setTimeout(triggerInitialAnims, 300);
-             }, 400);
+             }
         };
 
-        // Fallback: Si no carga en 4s, forzar entrada
-        const loaderFallback = setTimeout(hideLoader, 4000);
-
         globalThis.addEventListener('load', () => {
-             clearTimeout(loaderFallback);
              const progress = document.getElementById('loaderProgress');
-             
-             // Simulate smooth progress
              let p = 0;
              const interval = setInterval(() => {
                  p += Math.random() * 25;
-                 if (p >= 100) {
-                     p = 100;
-                     clearInterval(interval);
-                     hideLoader();
-                 }
+                 if (p >= 100) { p = 100; clearInterval(interval); hideLoader(); }
                  progress.style.width = p + '%';
              }, 80);
         });
@@ -668,27 +525,62 @@
                         word.classList.add('word-visible');
                     });
                 }
-                const heroScrolls = document.querySelectorAll('.hero-section .scroll-reveal');
-                heroScrolls.forEach(el => el.classList.add('visible'));
+                document.querySelectorAll('.hero-section .scroll-reveal').forEach(el => el.classList.add('visible'));
         }
 
-        // ═══ Step Bar Active State ═══
-        const navSections = document.querySelectorAll('.section[id]');
-        const steps = document.querySelectorAll('.step');
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.id;
-                    steps.forEach(s => s.classList.remove('active'));
-                    const map = { hero: '1', stack: '2', experience: '3', projects: '4', contact: '5' };
-                    const step = document.querySelector(`.step[data-step="${map[id]}"]`);
-                    if (step) step.classList.add('active');
-                }
-            });
-        }, { threshold: 0.3 });
-        navSections.forEach(s => sectionObserver.observe(s));
+        // ═══ Sections Parallax & Blobs ═══
+        function updateScrollEffects() {
+            const scrollY = globalThis.scrollY;
+            const windowHeight = globalThis.innerHeight;
 
-        // ═══ Navbar scroll effect ═══
+            document.querySelector('.blob-1').style.transform = `translate(${scrollY * 0.05}px, ${scrollY * 0.02}px)`;
+            document.querySelector('.blob-2').style.transform = `translate(-${scrollY * 0.03}px, ${scrollY * 0.03}px)`;
+
+            if (!isMobile) {
+                document.querySelectorAll('.section').forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < windowHeight && rect.bottom > 0) {
+                        const center = rect.top + rect.height / 2;
+                        const title = section.querySelector('.mega-title, .section-title, .name-reveal, .contact-title');
+                        if (title) {
+                            title.style.transform = `translateY(${(windowHeight / 2 - center) * 0.08}px)`;
+                        }
+                    }
+                });
+            }
+        }
+
+        globalThis.addEventListener('scroll', updateScrollEffects);
+
+        // ═══ Magnetics ═══
+        const magnetics = document.querySelectorAll('.card-arrow, .btn-pill, .nav-logo, .step, .contact-link');
+        const cursorFollower = document.getElementById('cursorFollower');
+        const cursorDot = document.getElementById('cursorDot');
+
+        globalThis.addEventListener('mousemove', (e) => {
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+            setTimeout(() => {
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+            }, 50);
+        });
+
+        magnetics.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                cursorFollower.classList.add('active');
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+                cursorFollower.classList.remove('active');
+            });
+        });
+
+        // ═══ Navbar ═══
         globalThis.addEventListener('scroll', () => {
             document.getElementById('navbar').classList.toggle('scrolled', globalThis.scrollY > 80);
         });
@@ -700,109 +592,6 @@
             navToggle.classList.toggle('active');
             navLinks.classList.toggle('open');
         });
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.classList.remove('active');
-                navLinks.classList.remove('open');
-            });
-        });
-
-        // ═══ Smooth scroll for step bar and nav ═══
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // ═══ Sections Parallax & Blobs ═══
-        let ticking = false;
-
-        function updateScrollEffects() {
-            const scrollY = globalThis.scrollY;
-            const windowHeight = globalThis.innerHeight;
-
-            // Blobs (Subtle & Smooth)
-            const blobSpeed = isMobile ? 0.02 : 0.05;
-            document.querySelector('.blob-1').style.transform = `translate(${scrollY * blobSpeed}px, ${scrollY * 0.02}px) rotate(${scrollY * 0.01}deg)`;
-            document.querySelector('.blob-2').style.transform = `translate(-${scrollY * 0.03}px, ${scrollY * (isMobile ? 0.01 : 0.03)}px)`;
-            document.querySelector('.blob-3').style.transform = `translate(${scrollY * 0.02}px, -${scrollY * 0.02}px)`;
-
-            // Subtle Parallax for titles
-            if (!isMobile) {
-                const allSections = document.querySelectorAll('.section');
-                allSections.forEach(section => {
-                    const rect = section.getBoundingClientRect();
-                    if (rect.top < windowHeight && rect.bottom > 0) {
-                        const center = rect.top + rect.height / 2;
-                        const title = section.querySelector('.mega-title, .section-title, .name-reveal, .contact-title');
-                        if (title) {
-                            const speed = 0.08;
-                            const yPos = (windowHeight / 2 - center) * speed;
-                            title.style.transform = `translateY(${yPos}px)`;
-                        }
-                    }
-                });
-            }
-            ticking = false;
-        }
-
-        globalThis.addEventListener('scroll', () => {
-            if (!ticking) {
-                globalThis.requestAnimationFrame(updateScrollEffects);
-                ticking = true;
-            }
-        });
-
-        // ═══ Magnetic Effect for Buttons & Custom Cursor ═══
-        const magnetics = document.querySelectorAll('.project-arrow, .btn-pill, .nav-logo, .step, .contact-link');
-        const cursorDot = document.getElementById('cursorDot');
-        const cursorFollower = document.getElementById('cursorFollower');
-
-        globalThis.addEventListener('mousemove', (e) => {
-            const { clientX: x, clientY: y } = e;
-            cursorDot.style.left = x + 'px';
-            cursorDot.style.top = y + 'px';
-            
-            // Lagged follower
-            setTimeout(() => {
-                cursorFollower.style.left = x + 'px';
-                cursorFollower.style.top = y + 'px';
-            }, 80);
-
-            // Spotlight already updated in updateScrollEffects actually it's separate
-            const spotlight = document.querySelector('.spotlight');
-            if (spotlight) {
-                spotlight.style.left = x + 'px';
-                spotlight.style.top = y + 'px';
-            }
-        });
-
-        magnetics.forEach(btn => {
-            btn.addEventListener('mousemove', (e) => {
-                const rect = btn.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-                
-                // Hovering effect for cursor
-                cursorFollower.classList.add('active');
-            });
-            btn.addEventListener('mouseleave', () => {
-                btn.style.transform = 'translate(0, 0)';
-                cursorFollower.classList.remove('active');
-            });
-        });
-
-        // ═══════════ Mobile Pull to Reveal (Haptic simulation) ═══════════
-        if ('vibrate' in navigator) {
-             document.querySelectorAll('.step').forEach(step => {
-                 step.addEventListener('click', () => navigator.vibrate(10));
-             });
-        }
     </script>
 </body>
 </html>
