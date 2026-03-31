@@ -399,6 +399,102 @@
         </div>
     </footer>
 
+    <!-- ═══════════ CV PRINT VERSION (Hidden on web) ═══════════ -->
+    <div class="cv-print">
+        <div class="cv-container">
+            <header class="cv-header">
+                <div class="cv-name-box">
+                    <h1>NICOLÁS MONROY</h1>
+                    <div class="cv-tagline">FULL STACK DEVELOPER & AI SPECIALIST</div>
+                </div>
+                <div class="cv-contact-grid">
+                    <div class="cv-contact-info">
+                        <span><i class="fas fa-envelope"></i> nmonroy@mipgroup.co</span>
+                        <span><i class="fas fa-phone"></i> +57 322 2841441</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</span>
+                        <span><i class="fas fa-globe"></i> nicolasdrawn.pw</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="cv-content">
+                <div class="cv-main-col">
+                    <section class="cv-section">
+                        <div class="cv-section-title">EXPERIENCIA PROFESIONAL</div>
+                        
+                        <div class="cv-entry">
+                            <div class="cv-entry-head">
+                                <div class="cv-entry-title">Full Stack Developer & Architect</div>
+                                <div class="cv-entry-date">2023 — ACTUAL</div>
+                            </div>
+                            <div class="cv-entry-company">MIP Internacional Trading SAS</div>
+                            <p>Liderazgo técnico en la transformación digital de la compañía. Desarrollo de ecosistema ERP con +15 módulos integrados.</p>
+                            <ul>
+                                <li>Implementación de validación de documentos mediante IA (Gemini API).</li>
+                                <li>Arquitectura de sistemas robustos con React, Node.js y SQLite.</li>
+                                <li>Optimización de flujos logísticos y financieros internacionales.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-entry">
+                            <div class="cv-entry-head">
+                                <div class="cv-entry-title">Desarrollador Web (Freelance)</div>
+                                <div class="cv-entry-date">2022 — 2023</div>
+                            </div>
+                            <div class="cv-entry-company">Proyectos Independientes</div>
+                            <p>Diseño y despliegue de soluciones digitales para emprendimientos y medianas empresas.</p>
+                            <ul>
+                                <li>Creación de interfaces premium enfocadas en conversión y UX.</li>
+                                <li>Despliegue y administración de servidores y dominios.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="cv-section">
+                        <div class="cv-section-title">PROYECTOS DESTACADOS</div>
+                        <div class="cv-project"><strong>ProveedHub:</strong> Plataforma de gestión con validación automática por IA.</div>
+                        <div class="cv-project"><strong>Supply Chain ERP:</strong> Sistema integral de compras y finanzas.</div>
+                        <div class="cv-project"><strong>MIP Group:</strong> Sitio web corporativo de alto rendimiento SEO.</div>
+                    </section>
+                </div>
+
+                <div class="cv-sidebar">
+                    <section class="cv-section">
+                        <div class="cv-section-title">HABILIDADES</div>
+                        <div class="cv-skill-cat">
+                            <strong>LENGUAJES</strong>
+                            <p>JavaScript (ES6+), TypeScript, Python, HTML5, CSS3/SASS</p>
+                        </div>
+                        <div class="cv-skill-cat">
+                            <strong>FRAMEWORKS</strong>
+                            <p>React, Next.js, Express, Tailwind, GSAP, Electron</p>
+                        </div>
+                        <div class="cv-skill-cat">
+                            <strong>HERRAMIENTAS</strong>
+                            <p>Git, Docker, Figma, Adobe Suite, Gemini/OpenAI API</p>
+                        </div>
+                    </section>
+
+                    <section class="cv-section">
+                        <div class="cv-section-title">EDUCACIÓN</div>
+                        <div class="cv-edu">
+                            <strong>Ingeniería de Sistemas</strong>
+                            <span>Universidad Incca de Colombia</span>
+                        </div>
+                    </section>
+
+                    <section class="cv-section">
+                        <div class="cv-section-title">IDIOMAS</div>
+                        <div class="cv-lang">
+                            <span>Español: Nativo</span>
+                            <span>Inglés: B2 (Conversacional)</span>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // ═══ Initialize GSAP & Lenis (Apple Smooth Scroll) ═══
         const isMobile = globalThis.innerWidth <= 1024;
@@ -458,9 +554,9 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    entry.target.querySelectorAll('.stat-big[data-target]').forEach(num => {
-                        const target = parseInt(num.dataset.target);
-                        let current = 0;
+                        entry.target.querySelectorAll('.stat-big[data-target]').forEach(num => {
+                            const target = Number.parseInt(num.dataset.target);
+                            let current = 0;
                         const timer = setInterval(() => {
                             current++;
                             if (current >= target) { num.textContent = target + '+'; clearInterval(timer); }
