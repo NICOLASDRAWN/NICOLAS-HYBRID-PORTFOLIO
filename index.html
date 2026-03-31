@@ -114,11 +114,14 @@
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
             <span></span><span></span><span></span>
         </button>
-        <div class="nav-links" id="navLinks">
+        <!-- Duplicated links removed to favor the Bottom Dock & Side Nav (Apple Style) -->
+        <div class="nav-links mobile-only" id="navLinks">
             <a href="#hero">Inicio</a>
+            <a href="#pulse">Pulse</a>
             <a href="#stack">Skills</a>
             <a href="#experience">Experiencia</a>
             <a href="#projects">Proyectos</a>
+            <a href="#hobbies">Hobbies</a>
             <a href="#contact">Contacto</a>
         </div>
     </nav>
@@ -142,7 +145,8 @@
         <button class="side-nav-item" onclick="lenis.scrollTo('#stack')" aria-label="Ir a Skills"><span>03</span></button>
         <button class="side-nav-item" onclick="lenis.scrollTo('#experience')" aria-label="Ir a Experiencia"><span>04</span></button>
         <button class="side-nav-item" onclick="lenis.scrollTo('#projects')" aria-label="Ir a Proyectos"><span>05</span></button>
-        <button class="side-nav-item" onclick="lenis.scrollTo('#contact')" aria-label="Ir a Contacto"><span>06</span></button>
+        <button class="side-nav-item" onclick="lenis.scrollTo('#hobbies')" aria-label="Ir a Hobbies"><span>06</span></button>
+        <button class="side-nav-item" onclick="lenis.scrollTo('#contact')" aria-label="Ir a Contacto"><span>07</span></button>
     </nav>
 
     <!-- ═══════════ HERO ═══════════ -->
@@ -190,7 +194,7 @@
     <!-- ═══════════ PULSE (Activity Log) ═══════════ -->
     <section id="pulse" class="section pulse-section">
         <div class="container">
-            <div class="section-label scroll-reveal"><span>01</span> BITÁCORA DE ACTIVIDAD</div>
+            <div class="section-label scroll-reveal"><span>02</span> BITÁCORA DE ACTIVIDAD</div>
             <div class="pulse-header scroll-reveal-title">
                 <h2 class="section-title">
                     <span class="line"><span class="word">LATEST</span></span>
@@ -304,7 +308,7 @@
     <!-- ═══════════ SKILLS ═══════════ -->
     <section id="stack" class="section skills-section">
         <div class="container">
-            <div class="section-label scroll-reveal"><span>02</span> STACK TECNOLÓGICO</div>
+            <div class="section-label scroll-reveal"><span>03</span> STACK TECNOLÓGICO</div>
             <h2 class="section-title scroll-reveal-title">
                 <span class="line"><span class="word">TECH</span></span>
                 <span class="line"><span class="word gradient-text">&</span> <span class="word">SKILLS</span></span>
@@ -378,7 +382,7 @@
     <!-- ═══════════ EXPERIENCE ═══════════ -->
     <section id="experience" class="section experience-section">
         <div class="container">
-            <div class="section-label scroll-reveal"><span>03</span> TRAYECTORIA</div>
+            <div class="section-label scroll-reveal"><span>04</span> TRAYECTORIA</div>
             <h2 class="section-title scroll-reveal-title">
                 <span class="line"><span class="word">CAREER</span></span>
                 <span class="line"><span class="word gradient-text">PATH</span></span>
@@ -435,7 +439,7 @@
     <!-- ═══════════ PROJECTS ═══════════ -->
     <section id="projects" class="section projects-section">
         <div class="container">
-            <div class="section-label scroll-reveal"><span>04</span> PROYECTOS SELECCIONADOS</div>
+            <div class="section-label scroll-reveal"><span>05</span> PROYECTOS SELECCIONADOS</div>
             <h2 class="section-title scroll-reveal-title">
                 <span class="line"><span class="word">FEATURED</span></span>
                 <span class="line"><span class="word gradient-text">WORK</span></span>
@@ -504,7 +508,7 @@
     <!-- ═══════════ HOBBIES / PASSIONS ═══════════ -->
     <section id="hobbies" class="section hobbies-section">
         <div class="container">
-            <div class="section-label scroll-reveal"><span>05</span> FLOW CREATIVO</div>
+            <div class="section-label scroll-reveal"><span>06</span> FLOW CREATIVO</div>
             <h2 class="section-title scroll-reveal-title">
                 <span class="line"><span class="word">BEYOND</span></span>
                 <span class="line"><span class="word gradient-text">THE SCREEN</span></span>
@@ -522,10 +526,8 @@
                 <div class="hobby-card scroll-reveal">
                     <div class="hobby-content">
                         <span class="hobby-number">02</span>
-                        <h3>Daily Rhythm</h3>
-                        <div class="spotify-embed-container">
-                            <iframe title="Spotify Daily Rhythm" style="border-radius:12px" src="https://open.spotify.com/embed/track/2plbrSXY9vAF606teatnvo?utm_source=generator&theme=0" width="100%" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                        </div>
+                        <h3>Journalism & Storytelling</h3>
+                        <p>Como Comunicador Social, mi pasión por la narrativa se extiende a la crónica periodística y el análisis de medios digitales.</p>
                     </div>
                 </div>
                 <div class="hobby-card scroll-reveal">
@@ -542,6 +544,7 @@
     <!-- ═══════════ CONTACT ═══════════ -->
     <section id="contact" class="section contact-section">
         <div class="container">
+            <div class="section-label scroll-reveal"><span>07</span> CONTACTO</div>
             <h2 class="contact-title scroll-reveal-title">
                 <span class="line"><span class="word">LET'S</span></span>
                 <span class="line"><span class="word gradient-text">TALK</span></span>

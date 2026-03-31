@@ -1125,7 +1125,7 @@ body {
 
 .project-card.featured .project-tech-row span {
     background: rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.9);
     border-color: transparent;
 }
 
@@ -1437,8 +1437,14 @@ footer {
         text-transform: uppercase;
         letter-spacing: 2px;
     }
-    .nav-links a:hover {
-        color: var(--accent);
+    .nav-links.mobile-only { 
+        display: flex;
+    }
+}
+
+@media (min-width: 1025px) {
+    .nav-links.mobile-only {
+        display: none !important;
     }
 }
 
