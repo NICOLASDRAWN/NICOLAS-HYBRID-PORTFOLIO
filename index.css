@@ -8,6 +8,8 @@
     --fg-light: #86868b;
     --accent: #0071e3;
     --accent-dark: #0077ed;
+    --accent-green: #34c759;
+    --accent-green-glow: rgba(52, 199, 89, 0.15);
     --white: #fff;
     --radius: 12px;
     --radius-full: 100px;
@@ -102,7 +104,7 @@ body {
 .blob-2 {
     width: 400px;
     height: 400px;
-    background: rgba(0, 0, 0, 0.02);
+    background: rgba(52, 199, 89, 0.05);
     bottom: -50px;
     left: -100px;
 }
@@ -115,12 +117,25 @@ body {
     left: 20vw;
 }
 
+.blob-4 {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(52, 199, 89, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    bottom: 20%;
+    right: 15%;
+    filter: blur(80px);
+}
+
 /* ═══════════ SPOTLIGHT ═══════════ */
 .spotlight {
     position: fixed;
     width: 800px;
     height: 800px;
-    background: radial-gradient(circle, rgba(0, 113, 227, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(circle, rgba(52, 199, 89, 0.05) 0%, rgba(0, 113, 227, 0.02) 40%, transparent 75%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 0;
@@ -263,9 +278,9 @@ body {
 .status-dot {
     width: 8px;
     height: 8px;
-    background: #34c759;
+    background: var(--accent-green);
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(52, 199, 89, 0.4);
+    box-shadow: 0 0 12px var(--accent-green-glow);
     animation: blink 2s ease-in-out infinite;
 }
 
@@ -893,8 +908,17 @@ body {
 }
 
 .project-card:hover {
-    transform: scale(0.99);
-    background: #f0f0f2;
+    transform: translateY(-10px) scale(1.01);
+    background: var(--white);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 0 25px var(--accent-green-glow);
+    border-color: rgba(52, 199, 89, 0.15);
+}
+
+.project-card:hover .card-arrow {
+    background: var(--accent-green);
+    color: var(--white);
+    border-color: var(--accent-green);
+    transform: rotate(-45deg);
 }
 
 .project-card.featured {
@@ -906,6 +930,8 @@ body {
 
 .project-card.featured:hover {
     background: #000;
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.25), 0 0 40px rgba(52, 199, 89, 0.08);
 }
 
 .project-card.featured .project-tag {
@@ -972,7 +998,7 @@ body {
 .card-arrow {
     width: 52px;
     height: 52px;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.06);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -981,17 +1007,11 @@ body {
     transition: var(--transition);
 }
 
-.project-card.featured .card-arrow {
-    color: var(--white);
-    border-color: rgba(255,255,255,0.2);
-}
+/* Logic moved to line 910 */
 
-.project-card:hover .card-arrow {
-    background: var(--accent);
-    color: var(--white);
-    border-color: var(--accent);
-    transform: rotate(-45deg);
-}
+/* card-arrow logic moved to main hover block */
+
+/* Merged featured hover above */
 
 @media (max-width: 768px) {
     .projects-grid { grid-template-columns: 1fr; }
