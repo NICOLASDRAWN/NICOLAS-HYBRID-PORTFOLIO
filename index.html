@@ -828,31 +828,38 @@
 
         const updateNav = () => {
             const scrollY = globalThis.scrollY;
-            document.getElementById('navbar').classList.toggle('scrolled', scrollY > 80);
+            const navbar = document.getElementById('navbar');
+            if (navbar) navbar.classList.toggle('scrolled', scrollY > 80);
 
             let current = "";
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute("id");
+            const sectionsElement = document.querySelectorAll('.section');
+            sectionsElement.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                // Detect section if it occupies the top part of the viewport
+                if (rect.top <= 300) {
+                    current = section.getAttribute("id") || "";
                 }
             });
 
-            stepItems.forEach((item) => {
-                item.classList.remove("active");
-                if (item.getAttribute("href") === `#${current}`) {
-                    item.classList.add("active");
-                }
-            });
+            if (current) {
+                const stepItemsElement = document.querySelectorAll('.step');
+                stepItemsElement.forEach((item) => {
+                    item.classList.remove("active");
+                    const href = item.getAttribute("href");
+                    if (href && href.includes(current)) {
+                        item.classList.add("active");
+                    }
+                });
 
-            sideNavItems.forEach((item) => {
-                item.classList.remove("active");
-                // Check onclick scroll Target
-                const attr = item.getAttribute("onclick");
-                if (attr && attr.includes(current)) {
-                    item.classList.add("active");
-                }
-            });
+                const sideNavItemsElement = document.querySelectorAll('.side-nav-item');
+                sideNavItemsElement.forEach((item) => {
+                    item.classList.remove("active");
+                    const attr = item.getAttribute("onclick");
+                    if (attr && attr.includes(current)) {
+                        item.classList.add("active");
+                    }
+                });
+            }
         };
 
         if (lenis) {
@@ -860,6 +867,8 @@
         } else {
             globalThis.addEventListener('scroll', updateNav);
         }
+        // Initial call
+        updateNav();
 
         // ═══ Mobile menu ═══
         const navToggle = document.getElementById('navToggle');
