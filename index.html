@@ -570,21 +570,24 @@
         const allSectionsGSAP = document.querySelectorAll('.section');
         const isMobile = globalThis.innerWidth <= 768;
         
-        allSectionsGSAP.forEach((section, i) => {
-            if (i < allSectionsGSAP.length - 1) {
-                gsap.to(section, {
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top top',
-                        end: isMobile ? 'bottom 40%' : 'bottom top',
-                        scrub: true
-                    },
-                    scale: isMobile ? 0.9 : 0.85,
-                    opacity: 0,
-                    y: isMobile ? -50 : -100
-                });
-            }
-        });
+        // Sticky Sections Stacking Effect (Desktop Only)
+        if (!isMobile) {
+            allSectionsGSAP.forEach((section, i) => {
+                if (i < allSectionsGSAP.length - 1) {
+                    gsap.to(section, {
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top top',
+                            end: 'bottom top',
+                            scrub: true
+                        },
+                        scale: 0.85,
+                        opacity: 0,
+                        y: -100
+                    });
+                }
+            });
+        }
 
         // Horizontal Parallax for Skills
         gsap.from('.skill-col', {

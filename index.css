@@ -15,7 +15,17 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: none;
+}
+
+@media (max-width: 1024px) {
+    html {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: initial;
+    }
+}
 
 ::selection { background: var(--accent); color: var(--fg); }
 
@@ -365,8 +375,7 @@ body {
 
 /* ═══════════ SECTIONS ═══════════ */
 .section {
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 1;
     min-height: 100vh;
     background: #f0ece2;
@@ -375,7 +384,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.02);
+    scroll-snap-align: start;
+}
+
+@media (min-width: 1025px) {
+    .section {
+        position: sticky;
+        top: 0;
+    }
 }
 
 .container {
