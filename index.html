@@ -444,7 +444,7 @@
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
-            <button class="btn-pill btn-dark print-btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> IMPRIMIR CV</button>
+            <button class="btn-pill btn-dark print-btn" onclick="globalThis.print()"><i class="fas fa-file-pdf"></i> IMPRIMIR CV</button>
         </div>
     </section>
 
@@ -568,18 +568,20 @@
 
         // Sticky Sections Stacking Effect
         const allSectionsGSAP = document.querySelectorAll('.section');
+        const isMobile = globalThis.innerWidth <= 768;
+        
         allSectionsGSAP.forEach((section, i) => {
             if (i < allSectionsGSAP.length - 1) {
                 gsap.to(section, {
                     scrollTrigger: {
                         trigger: section,
                         start: 'top top',
-                        end: 'bottom top',
+                        end: isMobile ? 'bottom 40%' : 'bottom top',
                         scrub: true
                     },
-                    scale: 0.85,
+                    scale: isMobile ? 0.9 : 0.85,
                     opacity: 0,
-                    y: -100
+                    y: isMobile ? -50 : -100
                 });
             }
         });
@@ -668,7 +670,7 @@
         // Fallback: Si no carga en 4s, forzar entrada
         const loaderFallback = setTimeout(hideLoader, 4000);
 
-        window.addEventListener('load', () => {
+        globalThis.addEventListener('load', () => {
              clearTimeout(loaderFallback);
              const progress = document.getElementById('loaderProgress');
              
@@ -793,7 +795,7 @@
 
         globalThis.addEventListener('scroll', () => {
             if (!ticking) {
-                window.requestAnimationFrame(updateScrollEffects);
+                globalThis.requestAnimationFrame(updateScrollEffects);
                 ticking = true;
             }
         });
