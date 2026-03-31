@@ -125,11 +125,26 @@
     <!-- Section Step Indicator (Floating Dock) -->
     <div class="step-bar" id="stepBar">
         <a href="#hero" class="step active" data-step="1">INTRO</a>
-        <a href="#stack" class="step" data-step="2">SKILLS</a>
-        <a href="#experience" class="step" data-step="3">CARRERA</a>
-        <a href="#projects" class="step" data-step="4">WORK</a>
-        <a href="#contact" class="step" data-step="5">CONTACTO</a>
+        <a href="#pulse" class="step" data-step="2"><span class="live-dot"></span>PULSE</a>
+        <a href="#stack" class="step" data-step="3">SKILLS</a>
+        <a href="#experience" class="step" data-step="4">CARRERA</a>
+        <a href="#projects" class="step" data-step="5">WORK</a>
+        <a href="#contact" class="step" data-step="6">CONTACTO</a>
     </div>
+
+    <!-- Live Hub FAB (Novedoso) -->
+    <button class="live-hub-fab scroll-reveal" 
+            onclick="lenis.scrollTo('#pulse')" 
+            aria-label="Ver actualizaciones en vivo">
+        <div class="hub-icon">
+            <span class="live-pulse"></span>
+            <i class="fas fa-bolt"></i>
+        </div>
+        <div class="hub-text">
+            <strong>LEARNING LIVE</strong>
+            <span>Syncing knowledge...</span>
+        </div>
+    </button>
 
     <!-- Side Progress (Desktop Only) -->
     <nav class="side-nav-desktop" id="sideNav" aria-label="Navegación lateral de escritorio">
