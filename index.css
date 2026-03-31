@@ -328,12 +328,97 @@ body {
     color: var(--fg-light);
 }
 
-@media (max-width: 768px) {
-    .pulse-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-    .pulse-feed { padding-left: 20px; }
-    .pulse-entry { padding: 20px; }
-    .pulse-entry::before { left: -25px; }
+.pulse-entry.featured {
+    border: 2px solid var(--accent-green);
+    background: rgba(189, 230, 0, 0.02);
 }
+
+.pulse-image {
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.pulse-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.pulse-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Spotify Card */
+.pulse-spotify {
+    background: #000 !important;
+    border: none !important;
+    padding: 20px !important;
+}
+
+.pulse-spotify::before {
+    background: #1DB954 !important;
+    box-shadow: 0 0 20px #1DB954 !important;
+}
+
+.spotify-inner {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.spotify-icon i {
+    color: #1DB954;
+    font-size: 1.5rem;
+}
+
+.spotify-info .label {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: #1DB954;
+    letter-spacing: 1.5px;
+}
+
+.spotify-info .song {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.spotify-waves {
+    display: flex;
+    gap: 3px;
+    height: 15px;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.spotify-waves span {
+    width: 3px;
+    background: #1DB954;
+    border-radius: 2px;
+    animation: wave 1s ease-in-out infinite alternate;
+}
+
+.spotify-waves span:nth-child(2) { animation-delay: 0.2s; height: 100%; }
+.spotify-waves span:nth-child(3) { animation-delay: 0.4s; height: 60%; }
+.spotify-waves span:nth-child(4) { animation-delay: 0.6s; height: 80%; }
+
+@keyframes wave {
+    0% { height: 20%; }
+    100% { height: 100%; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.bounce { animation: bounce 2s infinite ease-in-out; }
+
 .cursor-dot, .cursor-follower {
     position: fixed;
     border-radius: 50%;
