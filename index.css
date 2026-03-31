@@ -68,7 +68,7 @@ body {
 
 @media (max-width: 768px) {
     .section {
-        padding: 100px 0 120px;
+        padding: 80px 0 160px; /* More bottom padding to clear the Dock */
         min-height: initial;
     }
 }
@@ -233,7 +233,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin-top: 20px; /* Spacer from label */
     margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+    .pulse-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        margin-top: 10px;
+    }
 }
 
 .pulse-live-tag {
@@ -256,7 +266,13 @@ body {
     flex-direction: column;
     gap: 40px;
     position: relative;
-    padding-left: 30px;
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .pulse-feed {
+        padding-left: 15px;
+    }
 }
 
 .pulse-feed::before {
@@ -542,8 +558,14 @@ body {
     opacity: 0.99;
     will-change: transform;
     pointer-events: auto;
-    max-width: 90%;
+    max-width: 95%;
     overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.step-bar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .step {
@@ -613,16 +635,19 @@ body {
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--fg-dim);
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     display: flex;
     align-items: center;
     gap: 12px;
+    position: relative;
+    z-index: 10;
 }
 
 .section-label span {
-    font-family: 'Space Grotesk', monospace;
-    color: var(--fg-light);
-    font-size: 0.65rem;
+    font-family: 'Inter', monospace;
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 800;
 }
 
 /* ═══════════ MEGA TYPOGRAPHY ═══════════ */
@@ -639,9 +664,11 @@ body {
 }
 
 .section-title {
-    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     margin-bottom: 48px;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    position: relative;
+    z-index: 2;
 }
 
 .contact-title {
@@ -1452,13 +1479,26 @@ footer {
     :root { --container-padding: 24px; }
     
     .mega-title, .name-reveal, .contact-title, .big-text-wrapper { 
-        font-size: clamp(2rem, 10vw, 4rem) !important;
+        font-size: clamp(2.2rem, 12vw, 4rem) !important;
+        margin-bottom: 20px;
     }
 
-    .section-title { font-size: 2.5rem !important; }
+    .section-title { 
+        font-size: clamp(2rem, 10vw, 3.5rem) !important; 
+        line-height: 1.1;
+    }
 
-    .hero-bottom { grid-template-columns: 1fr; gap: 32px; text-align: left; }
-    .hero-ctas { justify-content: flex-start; }
+    .section-label {
+        margin-bottom: 20px;
+        font-size: 0.65rem;
+    }
+
+    .hero-bottom { grid-template-columns: 1fr; gap: 24px; text-align: left; }
+    .hero-ctas { justify-content: flex-start; margin-top: 10px; }
+    
+    /* Ensure nothing hits the Dock */
+    .contact-section { padding-bottom: 200px; }
+    footer { padding-bottom: 120px; }
     
     .exp-entry { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
     
@@ -1838,6 +1878,14 @@ footer {
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
+@media (max-width: 768px) {
+    .spotify-inner {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+    .spotify-icon i { font-size: 1.2rem; }
+}
+
 .spotify-icon i {
     color: #1DB954;
     font-size: 1.5rem;
@@ -1918,6 +1966,16 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
     gap: 32px;
+}
+
+@media (max-width: 768px) {
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .hobby-card.large {
+        grid-column: span 1;
+    }
 }
 
 .hobby-card {
