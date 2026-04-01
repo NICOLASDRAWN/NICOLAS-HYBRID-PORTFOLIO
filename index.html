@@ -42,7 +42,7 @@
             "url": "https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/",
             "sameAs": [
                 "https://github.com/NICOLASDRAWN",
-                "https://www.linkedin.com/in/nicolasdrawn",
+                "https://www.linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/",
                 "https://www.mipgroup.com.co"
             ],
             "email": "nicolasmonroypabon@gmail.com",
@@ -173,7 +173,7 @@
                 </div>
                 <div class="hero-ctas">
                     <a href="#projects" class="btn-pill btn-dark">VER PROYECTOS <i class="fas fa-arrow-down"></i></a>
-                    <a href="https://www.linkedin.com/in/nicolasdrawn" target="_blank" rel="noopener noreferrer" class="btn-pill btn-outline">LINKEDIN <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://www.linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/" target="_blank" rel="noopener noreferrer" class="btn-pill btn-outline">LINKEDIN <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
 
@@ -561,7 +561,7 @@
                     <span>EMAIL</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/nicolasdrawn" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <a href="https://www.linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/" target="_blank" rel="noopener noreferrer" class="contact-link">
                     <i class="fab fa-linkedin-in"></i>
                     <span>LINKEDIN</span>
                     <i class="fas fa-arrow-right"></i>
@@ -963,9 +963,23 @@
         // ═══ Mobile menu ═══
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
-        navToggle.addEventListener('click', () => {
+        const navItems = navLinks.querySelectorAll('a');
+
+        const toggleMenu = () => {
             navToggle.classList.toggle('active');
             navLinks.classList.toggle('open');
+            document.body.classList.toggle('menu-open');
+        };
+
+        navToggle.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (navLinks.classList.contains('open')) {
+                    toggleMenu();
+                }
+            });
         });
     </script>
 </body>
