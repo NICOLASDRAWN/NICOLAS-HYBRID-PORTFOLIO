@@ -5,7 +5,7 @@
 [![Portfolio](https://img.shields.io/badge/🌐_Ver_Portfolio-00f2ff?style=for-the-badge&logoColor=black)](https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicolasdrawn)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/573150135016)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nicolasdrawn@gmail.com)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nicolasmonroypabon@gmail.com)
 
 ---
 
@@ -98,7 +98,7 @@ Portal de ventas mayoristas con catálogos dinámicos, 13 páginas, SEO optimiza
 | Canal | Enlace |
 |---|---|
 | 📱 **WhatsApp** | [+57 315 013 5016](https://wa.me/573150135016) |
-| 📧 **Email** | [nicolasdrawn@gmail.com](mailto:nicolasdrawn@gmail.com) |
+| 📧 **Email** | [nicolasmonroypabon@gmail.com](mailto:nicolasmonroypabon@gmail.com) |
 | 🔗 **LinkedIn** | [linkedin.com/in/nicolasdrawn](https://www.linkedin.com/in/nicolasdrawn) |
 | 🐙 **GitHub** | [github.com/NICOLASDRAWN](https://github.com/NICOLASDRAWN) |
 | 🌐 **Portfolio** | [nicolasdrawn.github.io](https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/) |
