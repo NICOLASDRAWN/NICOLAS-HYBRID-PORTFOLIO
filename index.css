@@ -1645,10 +1645,14 @@ footer {
         color: #000;
         border-left: 4px solid var(--accent-green);
         padding-left: 10px;
+        page-break-after: avoid;
+        break-after: avoid;
     }
 
     .cv-entry {
         margin-bottom: 24px;
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .cv-entry-head {
@@ -1698,6 +1702,8 @@ footer {
 
     .cv-skill-cat {
         margin-bottom: 18px;
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .cv-skill-cat strong {
@@ -1721,6 +1727,8 @@ footer {
         gap: 2px;
         font-size: 9pt !important;
         margin-bottom: 15px;
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .cv-edu strong, .cv-lang span {
@@ -1737,6 +1745,8 @@ footer {
         font-size: 9pt !important;
         margin-bottom: 8px;
         color: #444;
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .cv-project strong {
