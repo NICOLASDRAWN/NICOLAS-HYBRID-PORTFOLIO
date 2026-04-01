@@ -1527,11 +1527,11 @@ footer {
 }
 
 
-/* ═══════════ PRINT / CV (Luxury Tech Style) ═══════════ */
+/* ═══════════ PRINT / CV (Minimal ATS Style) ═══════════ */
 .cv-print { display: none; }
 
 @media print {
-    @page { margin: 0; size: A4; }
+    @page { margin: 15mm; size: A4 portrait; }
     
     .navbar, .step-bar, .blob, .progress-bar, .hero-marquee, .scroll-indicator,
     .divider-section, .education-section, .contact-section, .container, footer,
@@ -1544,113 +1544,91 @@ footer {
         background: #fff !important; 
         color: #1a1a1a !important; 
         font-family: 'Inter', -apple-system, sans-serif !important;
-        -webkit-print-color-adjust: exact; 
+        margin: 0; padding: 0;
+        -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
-        margin: 0;
-        padding: 0;
     }
-    
+
     .cv-print {
         display: block !important;
-        background: #fff;
-        min-height: 297mm;
-        width: 210mm;
+        width: 100%;
+        max-width: 210mm;
         margin: 0 auto;
-        padding: 50px;
         box-sizing: border-box;
     }
 
-    .cv-container {
-        max-width: 100%;
-    }
-
+    /* Header */
     .cv-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        padding-bottom: 25px;
-        border-bottom: 5px solid var(--accent-green);
-        margin-bottom: 35px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .cv-header::before {
-        content: '';
-        position: absolute;
-        top: -50px;
-        right: -50px;
-        width: 150px;
-        height: 150px;
-        background: radial-gradient(circle, rgba(189, 230, 0, 0.1) 0%, transparent 70%);
-        border-radius: 50%;
+        text-align: center;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid #e2e8f0;
     }
 
     .cv-name-box h1 {
-        font-family: 'Inter', sans-serif;
-        font-size: 34pt !important;
+        font-size: 26pt !important;
         font-weight: 900 !important;
-        letter-spacing: -2px !important;
-        margin: 0 0 5px 0 !important;
-        line-height: 0.9;
-        color: #000;
+        letter-spacing: -1px !important;
+        color: #0f172a;
+        margin: 0 0 6px 0 !important;
+        text-transform: uppercase;
+        line-height: 1;
     }
 
     .cv-tagline {
-        font-size: 10.5pt !important;
-        font-weight: 800 !important;
-        letter-spacing: 1.5px !important;
-        color: var(--accent-green);
+        font-size: 11pt !important;
+        font-weight: 600 !important;
+        color: #3b82f6;
+        letter-spacing: 2px !important;
         text-transform: uppercase;
-        margin-top: 5px;
+        margin-bottom: 14px;
     }
 
     .cv-contact-info {
+        font-size: 9.5pt !important;
+        color: #475569;
         display: flex;
-        flex-direction: column;
-        gap: 4px;
-        text-align: right;
-        font-size: 8.5pt !important;
-        color: #555;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
     }
 
-    .cv-contact-info span i {
-        color: var(--accent-green);
-        width: 14px;
-        margin-right: 4px;
+    .cv-contact-info span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
     }
 
-    .cv-content {
-        display: flex;
-        gap: 40px;
-    }
-
-    .cv-main-col {
-        flex: 2;
-    }
-
-    .cv-sidebar {
-        flex: 1;
-        padding-left: 25px;
-        border-left: 2px solid var(--accent-green);
-        background: rgba(189, 230, 0, 0.03); /* New Lime Green */
+    /* Sections */
+    .cv-section {
+        margin-bottom: 24px;
     }
 
     .cv-section-title {
-        font-size: 11pt !important;
+        font-size: 11.5pt !important;
         font-weight: 800 !important;
-        letter-spacing: 1px !important;
+        color: #0f172a;
         text-transform: uppercase;
-        margin-bottom: 18px !important;
-        color: #000;
-        border-left: 4px solid var(--accent-green);
-        padding-left: 10px;
+        letter-spacing: 1px !important;
+        margin-bottom: 14px !important;
+        padding-bottom: 4px;
+        border-bottom: 1.5px solid #cbd5e1;
         page-break-after: avoid;
         break-after: avoid;
     }
 
+    /* Summary */
+    .cv-summary {
+        font-size: 10pt !important;
+        line-height: 1.5 !important;
+        color: #334155;
+        margin: 0;
+        text-align: justify;
+    }
+
+    /* Experience Entries */
     .cv-entry {
-        margin-bottom: 24px;
+        margin-bottom: 18px;
         page-break-inside: avoid;
         break-inside: avoid;
     }
@@ -1663,94 +1641,105 @@ footer {
     }
 
     .cv-entry-title {
-        font-size: 11pt !important;
-        font-weight: 700 !important;
-        color: #000;
+        font-size: 11.5pt !important;
+        font-weight: 800 !important;
+        color: #0f172a;
+    }
+
+    .cv-entry-title span {
+        font-weight: 500 !important;
+        color: #64748b;
+        font-size: 10.5pt !important;
     }
 
     .cv-entry-date {
-        font-size: 8pt !important;
-        color: #888;
-        font-weight: 600;
-    }
-
-    .cv-entry-company {
         font-size: 9.5pt !important;
-        font-weight: 600 !important;
-        color: #444;
-        margin-bottom: 8px;
+        color: #64748b;
+        font-weight: 600;
+        text-transform: uppercase;
     }
 
     .cv-entry p {
-        font-size: 9pt !important;
-        line-height: 1.4 !important;
-        color: #555;
-        margin-bottom: 8px !important;
+        font-size: 10pt !important;
+        line-height: 1.5 !important;
+        color: #334155;
+        margin: 0 0 8px 0 !important;
     }
 
     .cv-entry ul {
-        padding-left: 14px;
         margin: 0;
+        padding-left: 18px;
     }
 
     .cv-entry li {
-        font-size: 8.5pt !important;
+        font-size: 9.5pt !important;
         line-height: 1.5 !important;
-        color: #666;
-        margin-bottom: 3px;
-    }
-
-    .cv-skill-cat {
-        margin-bottom: 18px;
-        page-break-inside: avoid;
-        break-inside: avoid;
-    }
-
-    .cv-skill-cat strong {
-        display: block;
-        font-size: 8pt !important;
-        color: #888;
+        color: #475569;
         margin-bottom: 4px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
     }
 
-    .cv-skill-cat p {
-        font-size: 9pt !important;
-        color: #333;
-        font-weight: 500;
-    }
-
-    .cv-edu, .cv-lang {
+    /* Skills Grid */
+    .cv-skills-grid {
         display: flex;
         flex-direction: column;
-        gap: 2px;
-        font-size: 9pt !important;
-        margin-bottom: 15px;
+        gap: 8px;
+        font-size: 10pt !important;
+        color: #334155;
         page-break-inside: avoid;
-        break-inside: avoid;
     }
 
-    .cv-edu strong, .cv-lang span {
-        color: #1a1a1a;
+    .cv-skill-group strong {
+        color: #0f172a;
+        font-weight: 700;
+        width: 140px;
+        display: inline-block;
+    }
+
+    /* Projects */
+    .cv-projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cv-project-card {
+        page-break-inside: avoid;
+        font-size: 10pt !important;
+        line-height: 1.5;
+        color: #334155;
+    }
+    
+    .cv-project-card strong {
+        color: #0f172a;
         font-weight: 700;
     }
 
-    .cv-edu span {
-        color: #666;
-        font-size: 8.5pt;
-    }
-
-    .cv-project {
-        font-size: 9pt !important;
-        margin-bottom: 8px;
-        color: #444;
+    /* Bottom Row (Edu & Lang) */
+    .cv-bottom-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
         page-break-inside: avoid;
-        break-inside: avoid;
     }
 
-    .cv-project strong {
-        color: #000;
+    .cv-bottom-col {
+        flex: 1;
+    }
+
+    .cv-school {
+        font-size: 10pt !important;
+        color: #475569;
+        margin-top: 4px;
+    }
+
+    .cv-lang {
+        font-size: 10pt !important;
+        color: #334155;
+        margin-bottom: 6px;
+    }
+    
+    .cv-lang strong {
+        color: #0f172a;
     }
 }
 
