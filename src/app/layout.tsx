@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Archivo, Space_Grotesk } from "next/font/google";
+import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${archivo.variable} ${spaceGrotesk.variable} scroll-smooth antialiased`}>
-      <body className="font-body bg-background text-foreground selection:bg-blue-600 selection:text-white">
+    <html lang="es" className={`${jetbrainsMono.variable} ${spaceGrotesk.variable} scroll-smooth antialiased dark`}>
+      <body className="font-body bg-bg text-ink selection:bg-acid selection:text-bg">
         {children}
       </body>
     </html>

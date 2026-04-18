@@ -1,75 +1,109 @@
-import { ExternalLink, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 const projects = [
     {
-        title: "Conquista la Ciudad",
-        category: "EN DESARROLLO — MOBILE NATIVE",
-        problem: "Las apps de running tradicionales son solitarias y pierden engagement.",
-        solution: "App Android nativa que convierte la ciudad en un mapa de territorios conquistables por km recorridos.",
-        tech: ["Kotlin", "Jetpack Compose", "Google Maps SDK"],
-        link: "https://github.com/NICOLASDRAWN/ConquistaLaCiudad",
-        color: "text-red-500"
-    },
-    {
+        num: "01",
         title: "ProveedHub Platform",
-        category: "VENDOR MANAGEMENT + AI · EN PRODUCCIÓN",
-        problem: "Validar manualmente documentos de proveedores tomaba horas.",
-        solution: "Plataforma con IA Gemini que extrae, valida y clasifica documentos automáticamente.",
-        tech: ["React", "Express", "Gemini API", "Electron"],
-        link: "#",
-        color: "text-blue-500"
+        tags: ["REACT", "EXPRESS", "GEMINI API", "ELECTRON"],
+        stat: "99.8%",
+        statLabel: "ACCURACY",
+        color: "bg-acid",
+        link: "https://github.com/NICOLASDRAWN",
     },
     {
+        num: "02",
         title: "ERP Supply Chain",
-        category: "ENTERPRISE ERP · EN PRODUCCIÓN",
-        problem: "El proceso de compras dependía de Excel y firmas físicas.",
-        solution: "ERP full-stack con 15+ módulos y firma digital Certicámara.",
-        tech: ["React", "Node.js", "SQLite", "Electron"],
-        link: "#",
-        color: "text-indigo-500"
+        tags: ["REACT", "NODE.JS", "SQLITE", "CERTICÁMARA"],
+        stat: "15+",
+        statLabel: "MODULES",
+        color: "bg-ink",
+        link: "https://github.com/NICOLASDRAWN",
+    },
+    {
+        num: "03",
+        title: "Conquista la Ciudad",
+        tags: ["KOTLIN", "JETPACK COMPOSE", "GOOGLE MAPS SDK"],
+        stat: "10K",
+        statLabel: "USERS",
+        color: "bg-warn",
+        link: "https://github.com/NICOLASDRAWN/ConquistaLaCiudad",
     }
 ]
 
 export const Projects = () => {
     return (
-        <section id="projects" className="py-24 bg-zinc-50 dark:bg-zinc-900/50">
-            <div className="max-w-5xl mx-auto px-6">
-                <div className="text-xs font-bold text-blue-600 mb-2 uppercase tracking-widest">05 PROYECTOS SELECCIONADOS</div>
-                <h2 className="text-4xl md:text-5xl font-heading font-bold tracking-tighter text-zinc-900 dark:text-white mb-16">
-                    Featured <span className="text-blue-600">Work</span>
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((p, i) => (
-                        <div key={i} className="group relative bg-white dark:bg-zinc-950 rounded-3xl border border-zinc-100 dark:border-zinc-800 overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col">
-                            <div className="p-8 flex-grow">
-                                <div className={`text-[10px] font-bold ${p.color} uppercase tracking-widest mb-4`}>
-                                    {p.category}
-                                </div>
-                                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4 group-hover:text-blue-600 transition-colors">
-                                    {p.title}
-                                </h3>
-                                <div className="space-y-4 mb-8">
-                                    <p className="text-xs text-zinc-500 leading-relaxed">
-                                        <strong className="text-zinc-700 dark:text-zinc-300">Problema:</strong> {p.problem}
-                                    </p>
-                                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                                        <strong className="text-zinc-700 dark:text-zinc-300">Solución:</strong> {p.solution}
-                                    </p>
-                                </div>
-                                <div className="flex flex-wrap gap-2 pt-4">
-                                    {p.tech.map((t, j) => (
-                                        <span key={j} className="text-[10px] font-medium text-zinc-400">#{t}</span>
-                                    ))}
-                                </div>
-                            </div>
-                            <Link href={p.link} target={p.link.startsWith('http') ? '_blank' : '_self'} className="p-6 border-t border-zinc-50 dark:border-zinc-900 flex justify-between items-center group-hover:bg-blue-600 group-hover:text-white transition-all">
-                                <span className="text-sm font-bold uppercase tracking-widest">Ver Detalles</span>
-                                <ArrowRight size={18} className="transform group-hover:translate-x-1 transition-transform" />
-                            </Link>
+        <section id="portfolio" className="shell py-24">
+            <div className="border border-line bg-bg-2">
+                <div className="flex items-center justify-between px-6 py-3.5 border-b border-line bg-bg-3 font-mono text-[11px] text-ink-dim uppercase tracking-widest">
+                    <div className="flex gap-1.5">
+                        <span className="w-[9px] h-[9px] rounded-full bg-warn"></span>
+                        <span className="w-[9px] h-[9px] rounded-full bg-line-2"></span>
+                        <span className="w-[9px] h-[9px] rounded-full bg-acid"></span>
+                    </div>
+                    <span>/PORTFOLIO_DB</span>
+                </div>
+                
+                <div className="p-8 md:p-12">
+                    <div className="grid grid-cols-1 md:grid-cols-[2.4fr_1fr] gap-10 pb-10 border-b border-line mb-0">
+                        <h2 className="text-[clamp(44px,7vw,100px)] font-bold tracking-[-0.05em] leading-[0.86]">
+                            <span className="block text-ink">Sistemas</span>
+                            <span className="block text-acid">en prod.</span>
+                        </h2>
+                        <div className="font-mono text-[12px] text-ink-dim leading-[1.7] uppercase tracking-widest">
+                            [ FOCUS ]
+                            <strong className="block text-ink font-medium mt-1 mb-3.5 tracking-normal normal-case text-[13px]">B2B & Enterprise</strong>
+                            [ CORE SKILLS ]
+                            <strong className="block text-ink font-medium mt-1 tracking-normal normal-case text-[13px]">Full-Stack Monorepos<br/>Desktop/Web/Mobile Native</strong>
                         </div>
-                    ))}
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 border-y border-line -mx-8 md:-mx-12">
+                        <div className="px-7 py-8 border-r border-line border-b border-line md:border-b-0">
+                            <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-2.5">PROYECTOS LIVE</div>
+                            <div className="text-[clamp(32px,4vw,54px)] font-bold tracking-[-0.03em] leading-none text-ink">14</div>
+                        </div>
+                        <div className="px-7 py-8 border-r border-line border-b border-line md:border-b-0">
+                            <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-2.5">TIEMPO MEDIO DEV</div>
+                            <div className="text-[clamp(32px,4vw,54px)] font-bold tracking-[-0.03em] leading-none text-ink">3<span className="text-[0.45em] text-acid ml-1 font-medium">MESES</span></div>
+                        </div>
+                        <div className="px-7 py-8 border-r border-line">
+                            <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-2.5">CLIENTES B2B</div>
+                            <div className="text-[clamp(32px,4vw,54px)] font-bold tracking-[-0.03em] leading-none text-ink">4</div>
+                        </div>
+                        <div className="px-7 py-8">
+                            <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-2.5">AHORRO TAREAS</div>
+                            <div className="text-[clamp(32px,4vw,54px)] font-bold tracking-[-0.03em] leading-none text-ink">-85<span className="text-[0.45em] text-acid ml-1 font-medium">%</span></div>
+                        </div>
+                    </div>
+
+                    <div className="pt-12">
+                        {projects.map((p, i) => (
+                            <Link href={p.link} key={i} target="_blank" className="group grid grid-cols-[50px_1fr] md:grid-cols-[60px_1fr_auto] gap-6 md:gap-8 items-center py-8 border-b border-line last:border-b-0 relative transition-all duration-300 hover:pl-4">
+                                <span className="font-mono text-[13px] text-ink-dim tracking-widest">{p.num}</span>
+                                <div>
+                                    <h3 className="text-[clamp(24px,3vw,44px)] font-bold tracking-[-0.03em] leading-none text-ink transition-colors duration-200 group-hover:text-acid mb-2.5">
+                                        {p.title}
+                                    </h3>
+                                    <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest">
+                                        {p.tags.join(" · ")}
+                                    </div>
+                                    <div className="h-1 bg-line mt-5 w-full relative">
+                                        <div className={`absolute top-0 bottom-0 left-0 w-2/3 ${p.color}`}></div>
+                                        <div className="absolute top-[-1px] left-1/3 w-[1px] h-[6px] bg-line-2"></div>
+                                        <div className="absolute top-[-1px] left-2/3 w-[1px] h-[6px] bg-line-2"></div>
+                                    </div>
+                                </div>
+                                <div className="hidden md:block text-right font-mono text-[11px] text-ink-dim uppercase tracking-widest">
+                                    {p.statLabel}
+                                    <strong className="block text-acid text-[28px] font-bold tracking-[-0.02em] normal-case mt-1">{p.stat}</strong>
+                                </div>
+                                <div className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <ArrowRight className="text-acid w-8 h-8"/>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

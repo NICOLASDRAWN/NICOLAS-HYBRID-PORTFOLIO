@@ -177,69 +177,10 @@ const Scene = () => {
 };
 
 export const HeroFuturistic = () => {
-  const titleWords = 'Exploring the AI Frontier'.split(' ');
-  const subtitle = 'Full Stack Architecture with Intelligence natively integrated.';
-  const [visibleWords, setVisibleWords] = useState(0);
-  const [subtitleVisible, setSubtitleVisible] = useState(false);
-  const [delays, setDelays] = useState<number[]>([]);
-  const [subtitleDelay, setSubtitleDelay] = useState(0);
-
-  useEffect(() => {
-    // Client-side only randomize
-    setDelays(titleWords.map(() => Math.random() * 0.07));
-    setSubtitleDelay(Math.random() * 0.1);
-  }, [titleWords.length]);
-
-  useEffect(() => {
-    if (visibleWords < titleWords.length) {
-      const timeout = setTimeout(() => setVisibleWords(visibleWords + 1), 400);
-      return () => clearTimeout(timeout);
-    } else {
-      const timeout = setTimeout(() => setSubtitleVisible(true), 600);
-      return () => clearTimeout(timeout);
-    }
-  }, [visibleWords, titleWords.length]);
 
   return (
-    <div className="relative h-screen overflow-hidden bg-black">
-      <div className="h-full uppercase items-center w-full absolute z-20 pointer-events-none px-10 flex justify-center flex-col">
-        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-heading">
-          <div className="flex flex-wrap justify-center gap-x-2 lg:gap-x-6 overflow-hidden text-white">
-            {titleWords.map((word, index) => (
-              <div
-                key={index}
-                className={index < visibleWords ? 'fade-in' : ''}
-                style={{ animationDelay: `${index * 0.13 + (delays[index] || 0)}s`, opacity: index < visibleWords ? undefined : 0 }}
-              >
-                {word}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-blue-500 font-bold font-body">
-          <div
-            className={subtitleVisible ? 'fade-in-subtitle' : ''}
-            style={{ animationDelay: `${titleWords.length * 0.13 + 0.2 + subtitleDelay}s`, opacity: subtitleVisible ? undefined : 0 }}
-          >
-            {subtitle}
-          </div>
-        </div>
-      </div>
-
-      <button
-        className="explore-btn absolute bottom-10 left-1/2 -translate-x-1/2 z-20 group"
-        style={{ animationDelay: '2.2s' }}
-      >
-        <span>Desplazar para explorar</span>
-        <span className="explore-arrow mt-2 block">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-svg mx-auto animate-bounce">
-            <path d="M11 5V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            <path d="M6 12L11 17L16 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
-        </span>
-      </button>
-
-      <div className="absolute inset-0 z-10">
+    <div className="relative min-h-screen overflow-hidden bg-bg" id="manifesto">
+      <div className="absolute inset-0 z-10 opacity-60 mix-blend-screen pointer-events-none">
         <Canvas
             flat
             gl={async (props) => {
@@ -251,6 +192,67 @@ export const HeroFuturistic = () => {
             <PostProcessing fullScreenEffect={true} strength={0.6} />
             <Scene />
         </Canvas>
+      </div>
+
+      <div className="shell relative z-20 min-h-[calc(100vh-60px)] flex flex-col justify-between pt-10 pb-6 pointer-events-none">
+        <div className="flex justify-between font-mono text-[11px] text-ink-dim uppercase tracking-widest mb-10">
+          <span className="hidden sm:inline">[ BRAND OPERATING SYSTEM ]</span>
+          <span className="hidden sm:inline">INDEX / 01 — 07</span>
+          <span>REV. 2026.04</span>
+          <span>NICOLÁS · DESIGN+ENG</span>
+        </div>
+
+        <div className="mt-auto">
+          <div className="text-[clamp(60px,15vw,300px)] font-bold leading-[0.82] tracking-[-0.055em] relative">
+            NCLS<span className="text-acid">.</span>DEV
+            <span className="inline-block w-[0.42em] h-[0.82em] bg-acid ml-[0.04em] align-[-0.12em] animate-[blink_1s_steps(2)_infinite]"></span>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] gap-8 lg:gap-12 mt-12 pt-8 border-t border-line items-start pointer-events-auto bg-bg/20 backdrop-blur-sm p-4 -ml-4">
+            <div>
+              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">// Thesis</h3>
+              <p className="text-[18px] md:text-[22px] leading-[1.35] font-medium tracking-[-0.015em] max-w-[28ch]">
+                Diseño lo que construyo. <span className="acid-hl">Construyo lo que diseño.</span> La creatividad es una función técnica.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">// Stack</h3>
+              <div className="text-[11px] font-mono leading-[1.6]">
+                <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1">Design</span>
+                <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1">Systems</span>
+                <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1">Automation</span>
+                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim">Brand</span>
+                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim">UI/UX</span>
+                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim">Full-Stack</span>
+                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim">AI</span>
+              </div>
+            </div>
+            <div>
+              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">// Status</h3>
+              <p className="font-mono text-[12px] text-ink-dim leading-[1.7]">
+                ACEPTANDO PROYECTOS<br/>
+                → Q3 2026<br/>
+                <span className="text-acid">● LIBRE 3 SLOTS</span><br/>
+                RESPUESTA &lt; 24h
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="overflow-hidden border-y border-line py-4 -mx-5 md:-mx-10 mt-6 text-[clamp(22px,3vw,44px)] font-bold tracking-[-0.02em] whitespace-nowrap pointer-events-auto bg-bg/60 backdrop-blur-md">
+          <div className="ticker-track">
+            <span>CREATIVIDAD TÉCNICA</span><span className="text-acid">✺</span>
+            <span>DISEÑO + INGENIERÍA</span><span className="text-acid">✺</span>
+            <span>SISTEMAS QUE SE VEN BIEN</span><span className="text-acid">✺</span>
+            <span>AUTOMATIZACIÓN CON INTENCIÓN</span><span className="text-acid">✺</span>
+            <span>PIXEL-PERFECT · CODE-READY</span><span className="text-acid">✺</span>
+            <span>CREATIVIDAD TÉCNICA</span><span className="text-acid">✺</span>
+            <span>DISEÑO + INGENIERÍA</span><span className="text-acid">✺</span>
+            <span>SISTEMAS QUE SE VEN BIEN</span><span className="text-acid">✺</span>
+            <span>AUTOMATIZACIÓN CON INTENCIÓN</span><span className="text-acid">✺</span>
+            <span>PIXEL-PERFECT · CODE-READY</span><span className="text-acid">✺</span>
+          </div>
+        </div>
       </div>
     </div>
   );
