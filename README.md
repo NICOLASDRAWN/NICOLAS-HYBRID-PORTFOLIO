@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nicolás Monroy Pabón | Full Stack Developer & AI Specialist
 
-## Getting Started
+<div align="center">
+  <img src="public/assets/og-cover.png" alt="Nicolás Monroy Portfolio" width="100%" />
+</div>
 
-First, run the development server:
+## 🚀 Sobre el Proyecto
+Este es mi portafolio profesional híbrido, reconstruido desde cero con **Next.js 15+ (Turbopack)**, **TypeScript**, **Tailwind CSS v4** y **Shadcn UI**. El ecosistema está diseñado para demostrar capacidades avanzadas en arquitectura de software y la integración nativa de Inteligencia Artificial.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Stack Tecnológico
+- **Core:** Next.js (App Router), React 19, TypeScript
+- **Styling:** Tailwind CSS, Lucide Icons, Archivo & Space Grotesk Fonts
+- **AI Integration:** Gemini API, Claude API, OpenAI
+- **3D/Graphics:** Three.js (WebGPU), React Three Fiber
+- **Deployment:** GitHub Pages (Automated via GitHub Actions)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📄 Secciones Principales
+- **[Home Page](https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/):** Experiencia inmersiva con secciones dinámicas de proyectos, skills y bitácora de actividad (Pulse).
+- **[Curriculum Vitae (CV)](https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/cv):** Hoja de vida digital con diseño premium minimalista optimizada para exportación a PDF.
+- **[Carta de Presentación](https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/carta):** Documento estratégico que detalla mi visión como desarrollador y comunicador.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📂 Estructura de Proyectos Destacados
+1.  **ProveedHub Platform:** Gestión de proveedores con validación de documentos mediante IA Gemini.
+2.  **ERP Supply Chain:** Ecosistema empresarial full-stack con firmas digitales Certicámara.
+3.  **Conquista la Ciudad:** App móvil nativa gamificada (Kotlin + Jetpack Compose).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⚙️ Desarrollo Local
+1.  **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
+2.  **Ejecutar servidor de desarrollo:**
+    ```bash
+    npm run dev
+    ```
+3.  **Generar versión estática:**
+    ```bash
+    npm run build
+    ```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📫 Contacto
+- **LinkedIn:** [nicolas-monroy-pabón](https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/)
+- **Email:** nicolasmonroypabon@gmail.com
+- **WhatsApp:** [+57 322 2841441](https://wa.me/573150135016)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+<div align="center">
+  <p>© 2026 Nicolás Monroy Pabón — Bogotá, Colombia</p>
+</div>
