@@ -124,7 +124,7 @@ const Scene = () => {
     const dist = float(tiledUv.length());
     const dot = float(smoothstep(0.5, 0.49, dist)).mul(brightness);
 
-    const depth = tDepthMap;
+    const depth = tDepthMap.r;
 
     const flow = oneMinus(smoothstep(0, 0.02, abs(depth.sub(uProgress))));
 

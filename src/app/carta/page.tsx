@@ -1,3 +1,5 @@
+'use client';
+
 export default function CartaPage() {
   const today = new Date().toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
 

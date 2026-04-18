@@ -1,3 +1,5 @@
+'use client';
+
 import { Mail, Phone, MapPin, Globe, Link as LinkIcon, GitBranch } from "lucide-react"
 
 export default function CVPage() {
