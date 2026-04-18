@@ -15,6 +15,7 @@ export function Topbar() {
           <Link href="#avatar" className="text-ink-dim hover:text-acid transition-colors">02 Perfil</Link>
           <Link href="#portfolio" className="text-ink-dim hover:text-acid transition-colors">03 Portafolio</Link>
           <Link href="#contact" className="text-ink-dim hover:text-acid transition-colors">04 Contacto</Link>
+          <Link href="/carta" className="text-acid font-bold hover:text-white transition-colors border border-line px-2 rounded-sm bg-bg-2">VER CARTA</Link>
         </nav>
         <div className="flex gap-4 text-ink-dim items-center">
           <span className="hidden md:inline">LATAM / REMOTE</span>
