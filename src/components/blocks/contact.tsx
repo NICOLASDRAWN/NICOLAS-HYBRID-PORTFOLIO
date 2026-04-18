@@ -32,8 +32,8 @@ export const Contact = () => {
                             <span className="font-mono text-[12px] text-ink-dim group-hover:text-acid">nicolasmonroypabon@gmail.com</span>
                             <ArrowRight className="text-line-2 group-hover:text-acid transition-colors w-4 h-4"/>
                         </a>
-                        <a href="https://wa.me/573222841441" target="_blank" className="group flex items-center justify-between p-5 border border-line bg-bg hover:border-acid transition-colors">
-                            <span className="font-mono text-[12px] text-ink-dim group-hover:text-acid">+57 322 2841441</span>
+                        <a href="https://wa.me/573150135016" target="_blank" className="group flex items-center justify-between p-5 border border-line bg-bg hover:border-acid transition-colors">
+                            <span className="font-mono text-[12px] text-ink-dim group-hover:text-acid">+57 315 0135016</span>
                             <ArrowRight className="text-line-2 group-hover:text-acid transition-colors w-4 h-4"/>
                         </a>
                     </div>

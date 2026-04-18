@@ -3,67 +3,72 @@ import { Code, Database, Cpu, Paintbrush } from "lucide-react"
 const skillCategories = [
   {
     title: "Frontend",
-    icon: <Code className="text-blue-600" />,
+    icon: <Code className="text-bg w-6 h-6" />,
     skills: ["React / Next.js", "TypeScript", "Tailwind CSS", "GSAP / Framer Motion"]
   },
   {
     title: "Backend",
-    icon: <Database className="text-blue-600" />,
+    icon: <Database className="text-bg w-6 h-6" />,
     skills: ["Node.js / Express", "Python / Flask", "SQLite / PostgreSQL", "REST APIs / JWT"]
   },
   {
     title: "IA & Tools",
-    icon: <Cpu className="text-blue-600" />,
+    icon: <Cpu className="text-bg w-6 h-6" />,
     skills: ["Gemini / Claude / OpenAI", "Prompt Engineering", "Electron (Desktop)", "Git / Docker"]
   },
   {
     title: "Diseño & Arte",
-    icon: <Paintbrush className="text-blue-600" />,
+    icon: <Paintbrush className="text-bg w-6 h-6" />,
     skills: ["Affinity Suite", "Figma / UI-UX", "Photoshop", "Generative Art"]
   }
 ]
 
 export const Skills = () => {
     return (
-        <section id="stack" className="py-24 bg-zinc-50 dark:bg-zinc-900/50">
-            <div className="max-w-5xl mx-auto px-6">
-                <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
-                    <div>
-                        <div className="text-xs font-bold text-blue-600 mb-2 uppercase tracking-widest">03 STACK TECNOLÓGICO</div>
-                        <h2 className="text-4xl md:text-5xl font-heading font-bold tracking-tighter text-zinc-900 dark:text-white">
-                            Tech <span className="text-blue-600">&</span> Skills
-                        </h2>
+        <section id="stack" className="shell py-24 border-t border-line">
+            <div className="flex items-end justify-between gap-10 mb-14 fade-in">
+                <div>
+                    <div className="font-mono text-[11px] text-ink-dim uppercase tracking-widest flex gap-3 items-center mb-3.5">
+                        <span className="text-acid">05</span><span>/</span><span>CAPABILITIES · STACK</span>
                     </div>
+                    <h2 className="text-[clamp(44px,6.5vw,100px)] font-bold leading-[0.9] tracking-[-0.04em] text-wrap-balance text-ink">
+                        Arquitectura<br/>y herramientas.
+                    </h2>
                 </div>
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {skillCategories.map((cat, i) => (
-                        <div key={i} className="p-8 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-100 dark:border-zinc-800 hover:border-blue-600 transition-colors group">
-                            <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {skillCategories.map((cat, i) => (
+                    <div key={i} className="group relative p-8 border border-line bg-bg-2 hover:bg-bg-3 hover:border-acid transition-all duration-300 overflow-hidden flex flex-col">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-acid/5 rounded-bl-full translate-x-12 -translate-y-12 group-hover:bg-acid/20 group-hover:scale-150 transition-all duration-500 ease-out"></div>
+                        
+                        <div className="relative z-10">
+                            <div className="w-12 h-12 mb-8 bg-acid flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-[0_0_15px_rgba(198,255,61,0.2)]">
                                 {cat.icon}
                             </div>
-                            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                                <span className="text-zinc-300 dark:text-zinc-700 font-mono text-sm">0{i+1}</span> {cat.title}
+                            <h3 className="text-2xl font-bold mb-6 flex flex-col gap-2 text-ink">
+                                <span className="text-ink-dim font-mono text-[10px] tracking-widest uppercase">0{i+1} // DOMAIN</span>
+                                {cat.title}
                             </h3>
-                            <ul className="space-y-2">
+                            <ul className="space-y-3 font-mono text-[12px] text-ink-dim">
                                 {cat.skills.map((skill, j) => (
-                                    <li key={j} className="text-sm text-zinc-600 dark:text-zinc-400 flex items-center gap-2">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-blue-600/30"></div>
-                                        {skill}
+                                    <li key={j} className="flex items-center gap-3 group/item">
+                                        <div className="w-1.5 h-1.5 bg-line-2 group-hover/item:bg-acid group-hover/item:shadow-[0_0_8px_var(--color-acid)] transition-all duration-200"></div>
+                                        <span className="group-hover/item:text-ink transition-colors duration-200">{skill}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
-                    ))}
-                </div>
-                
-                <div className="mt-16 flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                    <img src="https://html.tailus.io/blocks/customers/nvidia.svg" className="h-6 dark:invert" alt="Nvidia" />
-                    <img src="https://html.tailus.io/blocks/customers/github.svg" className="h-5 dark:invert" alt="Github" />
-                    <img src="https://html.tailus.io/blocks/customers/openai.svg" className="h-6 dark:invert" alt="OpenAI" />
-                    <img src="https://html.tailus.io/blocks/customers/tailwindcss.svg" className="h-5 dark:invert" alt="Tailwind" />
-                    <img src="https://html.tailus.io/blocks/customers/vercel.svg" className="h-6 dark:invert" alt="Vercel" />
-                </div>
+                    </div>
+                ))}
+            </div>
+            
+            <div className="mt-20 pt-8 border-t border-line flex flex-wrap justify-center md:justify-between items-center gap-12 font-mono text-[11px] text-ink-dim uppercase tracking-widest opacity-80">
+                <span className="hover:text-acid hover:opacity-100 transition-colors duration-300">React Ecosystem</span>
+                <span className="hover:text-acid hover:opacity-100 transition-colors duration-300">Node Architecture</span>
+                <span className="hover:text-acid hover:opacity-100 transition-colors duration-300">Python Automation</span>
+                <span className="hover:text-acid hover:opacity-100 transition-colors duration-300">AI Integration</span>
+                <span className="hover:text-acid hover:opacity-100 transition-colors duration-300">UX Engineering</span>
             </div>
         </section>
     )
