@@ -70,6 +70,55 @@
     }
     </script>
 
+    <!-- JSON-LD — Individual Projects (CreativeWork) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CreativeWork",
+                "@id": "https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/projects/proveedhub/index.html",
+                "name": "ProveedHub Platform",
+                "description": "Plataforma de gestión de proveedores con IA Gemini para validación automática de documentos, desplegada en producción en MIP Trading.",
+                "creator": { "@type": "Person", "name": "Nicolás Monroy Pabón" },
+                "keywords": "React, Express, Electron, Gemini API, Vendor Management, AI OCR",
+                "inLanguage": "es"
+            },
+            {
+                "@type": "CreativeWork",
+                "@id": "https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/projects/gestor-compras/index.html",
+                "name": "ERP Supply Chain — Enterprise Procurement System",
+                "description": "ERP full-stack con 15+ módulos, firma digital Certicámara, aprobaciones multi-nivel y reportes automatizados. Desplegado como app web y de escritorio.",
+                "creator": { "@type": "Person", "name": "Nicolás Monroy Pabón" },
+                "keywords": "React, Node.js, SQLite, Electron, ERP, Procurement, Certicamara, Digital Signature",
+                "inLanguage": "es"
+            },
+            {
+                "@type": "CreativeWork",
+                "@id": "https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/projects/ecommerce/index.html",
+                "name": "B2B Wholesale Portal",
+                "description": "Portal de ventas mayoristas con 13 páginas dinámicas, SEO optimizado por categoría y autenticación JWT.",
+                "creator": { "@type": "Person", "name": "Nicolás Monroy Pabón" },
+                "keywords": "Vite, TypeScript, React Router, B2B E-Commerce, SEO",
+                "inLanguage": "es"
+            },
+            {
+                "@type": "CreativeWork",
+                "@id": "https://github.com/NICOLASDRAWN/ConquistaLaCiudad",
+                "name": "Conquista la Ciudad — Gamified Running App",
+                "description": "App nativa Android con geofencing y Google Maps SDK. Convierte la ciudad en un mapa de territorios por conquistar con km recorridos.",
+                "creator": { "@type": "Person", "name": "Nicolás Monroy Pabón" },
+                "keywords": "Kotlin, Jetpack Compose, Google Maps SDK, Health Connect, Android Native",
+                "inLanguage": "es"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Plausible Analytics (privacy-first, sin cookies) -->
+    <!-- Reemplaza el data-domain con tu dominio cuando configures tu cuenta en https://plausible.io -->
+    <script defer data-domain="nicolasdrawn.github.io" src="https://plausible.io/js/script.js"></script>
+
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -155,25 +204,38 @@
         <div class="hero-code-bg" id="heroCodeBg"></div>
         <div class="container hero-container">
             <div class="hero-top">
-                <div class="hero-badge scroll-reveal visible">
-                    <span class="badge-dot"></span>
-                    DISPONIBLE PARA OPORTUNIDADES
+                <div class="hero-badge hero-badge-live scroll-reveal visible">
+                    <span class="badge-dot-pulse"></span>
+                    <span class="badge-text-main">DISPONIBLE INMEDIATAMENTE</span>
+                    <span class="badge-text-sub">· Respuesta en &lt; 24h</span>
                 </div>
             </div>
 
             <h1 class="mega-title scroll-reveal-title">
                 <span class="line"><span class="word">FULL</span> <span class="word">STACK</span></span>
-                <span class="line"><span class="word gradient-text">DEVELOPER</span></span>
-                <span class="line"><span class="word">&</span> <span class="word gradient-text">AI</span> <span class="word">SPECIALIST</span></span>
+                <span class="line"><span class="word gradient-text" data-scramble>DEVELOPER</span></span>
+                <span class="line"><span class="word">&</span> <span class="word gradient-text" data-scramble>AI</span> <span class="word">SPECIALIST</span></span>
             </h1>
 
             <div class="hero-bottom scroll-reveal">
                 <div class="hero-intro">
-                    <p><strong>Creative Strategist & Full Stack Developer</strong>. Fusiono el poder de la Inteligencia Artificial con el branding estratégico para construir ecosistemas digitales de alto impacto.</p>
+                    <p><strong>Remoto · Bogotá · LatAm · Global.</strong> Busco rol Full Stack, Frontend o AI Engineer en equipo de producto. +3 años construyendo ERPs, portales B2B y plataformas con IA en producción real — no demos.</p>
                 </div>
                 <div class="hero-ctas">
-                    <a href="#projects" class="btn-pill btn-dark">VER PROYECTOS <i class="fas fa-arrow-down"></i></a>
-                    <a href="https://www.linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/" target="_blank" rel="noopener noreferrer" class="btn-pill btn-outline">LINKEDIN <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://calendly.com/nicolasmonroypabon/15min" target="_blank" rel="noopener noreferrer" class="btn-pill btn-primary">
+                        <i class="fas fa-calendar-check"></i> AGENDAR LLAMADA 15 MIN
+                    </a>
+                    <a href="assets/Nicolas_Monroy_CV.pdf" download class="btn-pill btn-dark">
+                        <i class="fas fa-file-pdf"></i> DESCARGAR CV
+                    </a>
+                    <a href="#projects" class="btn-pill btn-outline">
+                        VER PROYECTOS <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+                <div class="hero-availability-meta">
+                    <span><i class="fas fa-circle-check"></i> Full-time · Contract · Freelance</span>
+                    <span><i class="fas fa-earth-americas"></i> Zona horaria GMT-5 · flexible</span>
+                    <span><i class="fas fa-language"></i> ES Nativo · EN B2</span>
                 </div>
             </div>
 
@@ -448,13 +510,19 @@
             <div class="projects-grid">
                 <a href="https://github.com/NICOLASDRAWN/ConquistaLaCiudad" target="_blank" rel="noopener noreferrer" class="project-card featured scroll-reveal">
                     <div class="project-content">
-                        <span class="project-tag" style="color: #ff3b30; border-color: rgba(255, 59, 48, 0.3);">EN DESARROLLO — GEOFENCING APP</span>
+                        <span class="project-tag" style="color: #ff3b30; border-color: rgba(255, 59, 48, 0.3);">EN DESARROLLO — MOBILE NATIVE</span>
                         <h3>Conquista la Ciudad</h3>
-                        <p>App nativa Android de gamificación deportiva. Permite reclamar territorios en la ciudad calculando el dominio por kilómetros recorridos usando servicios en segundo plano y Google Maps Compose.</p>
+                        <p class="project-problem"><strong>Problema:</strong> las apps de running tradicionales son solitarias y pierden engagement a las 3 semanas.</p>
+                        <p class="project-solution"><strong>Solución:</strong> app Android nativa que convierte la ciudad en un mapa de territorios conquistables por km recorridos, con geofencing en background y notificaciones de "invasión" en tiempo real.</p>
+                        <ul class="project-impact">
+                            <li><i class="fas fa-check"></i> Arquitectura Kotlin + Jetpack Compose + Google Maps SDK</li>
+                            <li><i class="fas fa-check"></i> Servicios en background optimizados para batería</li>
+                            <li><i class="fas fa-check"></i> Integración con Health Connect API</li>
+                        </ul>
                     </div>
                     <div class="project-footer">
                         <div class="project-tech-row">
-                            <span>Kotlin</span><span>Jetpack Compose</span><span>Google Maps API</span>
+                            <span>Kotlin</span><span>Jetpack Compose</span><span>Google Maps API</span><span>Health Connect</span>
                         </div>
                         <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
                     </div>
@@ -462,9 +530,15 @@
 
                 <a href="projects/proveedhub/index.html" class="project-card scroll-reveal">
                     <div class="project-content">
-                        <span class="project-tag">VENDOR MANAGEMENT + AI</span>
+                        <span class="project-tag">VENDOR MANAGEMENT + AI · EN PRODUCCIÓN</span>
                         <h3>ProveedHub Platform</h3>
-                        <p>Ecosistema de gestión de proveedores con IA Gemini integrada para validación automática de documentos, CRUD completo y métricas en tiempo real.</p>
+                        <p class="project-problem"><strong>Problema:</strong> validar manualmente RUT, cámaras de comercio y certificaciones de proveedores tomaba horas y los errores humanos generaban cuellos de botella.</p>
+                        <p class="project-solution"><strong>Solución:</strong> plataforma con IA Gemini que extrae, valida y clasifica documentos automáticamente, con CRUD de proveedores, dashboard de estado y modo desktop vía Electron.</p>
+                        <ul class="project-impact">
+                            <li><i class="fas fa-check"></i> Pipeline OCR + validación semántica con Gemini API</li>
+                            <li><i class="fas fa-check"></i> Autenticación multi-rol (JWT + bcrypt)</li>
+                            <li><i class="fas fa-check"></i> Desplegado en producción real en MIP Trading</li>
+                        </ul>
                     </div>
                     <div class="project-footer">
                         <div class="project-tech-row">
@@ -476,13 +550,19 @@
 
                 <a href="projects/gestor-compras/index.html" class="project-card scroll-reveal">
                     <div class="project-content">
-                        <span class="project-tag">ENTERPRISE ERP</span>
+                        <span class="project-tag">ENTERPRISE ERP · EN PRODUCCIÓN</span>
                         <h3>ERP Supply Chain</h3>
-                        <p>Sistema integral de gestión de compras con aprobaciones multi-nivel, reportes mensuales inteligentes y firmas digitales integradas.</p>
+                        <p class="project-problem"><strong>Problema:</strong> el proceso de compras corporativo dependía de Excel compartido, emails y firmas físicas — sin trazabilidad ni control de aprobaciones.</p>
+                        <p class="project-solution"><strong>Solución:</strong> ERP full-stack con 15+ módulos (órdenes, aprobaciones multi-nivel, firma digital Certicámara, inventario, reportes PDF), desplegado como app de escritorio y web.</p>
+                        <ul class="project-impact">
+                            <li><i class="fas fa-check"></i> Flujo de aprobación configurable por monto y rol</li>
+                            <li><i class="fas fa-check"></i> Integración con Certicámara para firma jurídicamente válida</li>
+                            <li><i class="fas fa-check"></i> Reportes globales mensuales generados automáticamente</li>
+                        </ul>
                     </div>
                     <div class="project-footer">
                         <div class="project-tech-row">
-                            <span>React</span><span>Node.js</span><span>SQLite</span><span>Certicamara</span>
+                            <span>React</span><span>Node.js</span><span>SQLite</span><span>Electron</span><span>jsPDF</span>
                         </div>
                         <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
                     </div>
@@ -492,11 +572,17 @@
                     <div class="project-content">
                         <span class="project-tag">E-COMMERCE B2B</span>
                         <h3>Wholesale Portal</h3>
-                        <p>Portal de ventas mayoristas con catálogos dinámicos y SEO optimizado.</p>
+                        <p class="project-problem"><strong>Problema:</strong> un portal mayorista necesitaba que cada categoría tuviera su propia landing page SEO para competir en búsquedas por producto.</p>
+                        <p class="project-solution"><strong>Solución:</strong> portal con 13 páginas dinámicas, catálogos por categoría, meta tags y structured data inyectados por ruta vía react-helmet-async.</p>
+                        <ul class="project-impact">
+                            <li><i class="fas fa-check"></i> SEO on-page optimizado por categoría</li>
+                            <li><i class="fas fa-check"></i> Routing SPA con preview social correcto</li>
+                            <li><i class="fas fa-check"></i> Build Vite con tree-shaking agresivo</li>
+                        </ul>
                     </div>
                     <div class="project-footer">
                         <div class="project-tech-row">
-                            <span>Vite</span><span>TypeScript</span><span>React</span>
+                            <span>Vite</span><span>TypeScript</span><span>React Router</span><span>react-helmet</span>
                         </div>
                         <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
                     </div>
@@ -504,9 +590,15 @@
 
                 <a href="https://www.mipgroup.com.co" target="_blank" rel="noopener noreferrer" class="project-card featured scroll-reveal">
                     <div class="project-content">
-                        <span class="project-tag">CORPORATE WEBSITE — EN VIVO</span>
+                        <span class="project-tag">CORPORATE WEBSITE · EN VIVO</span>
                         <h3>MIP Internacional Trading</h3>
-                        <p>Sitio web corporativo para empresa de maquinaria pesada. Diseño premium con SEO de alto rendimiento.</p>
+                        <p class="project-problem"><strong>Problema:</strong> una empresa de trading internacional de maquinaria pesada necesitaba presencia digital premium que transmitiera seriedad frente a compradores corporativos.</p>
+                        <p class="project-solution"><strong>Solución:</strong> sitio corporativo con diseño premium minimalista, SEO técnico completo, responsive en todos los dispositivos y tiempos de carga optimizados.</p>
+                        <ul class="project-impact">
+                            <li><i class="fas fa-check"></i> Meta tags + Open Graph + JSON-LD estructurado</li>
+                            <li><i class="fas fa-check"></i> Lighthouse score alto en Performance y SEO</li>
+                            <li><i class="fas fa-check"></i> Indexado y rankeando orgánico en Google</li>
+                        </ul>
                     </div>
                     <div class="project-footer">
                         <div class="project-tech-row">
@@ -519,10 +611,88 @@
         </div>
     </section>
 
+    <!-- ═══════════ MODALIDADES DE CONTRATACIÓN ═══════════ -->
+    <section id="modalidades" class="section modalidades-section">
+        <div class="container">
+            <div class="section-label scroll-reveal"><span>06</span> MODALIDADES DISPONIBLES</div>
+            <h2 class="section-title scroll-reveal-title">
+                <span class="line"><span class="word">WORK</span></span>
+                <span class="line"><span class="word gradient-text">WITH ME</span></span>
+            </h2>
+            <p class="modalidades-intro scroll-reveal">Tres formas de trabajar juntos. Todas comparten el mismo estándar: código limpio, comunicación proactiva y entregas en producción real.</p>
+
+            <div class="modalidades-grid">
+                <div class="modalidad-card scroll-reveal">
+                    <div class="modalidad-head">
+                        <span class="modalidad-num">01</span>
+                        <span class="modalidad-badge badge-fulltime">PREFERIDO</span>
+                    </div>
+                    <h3 class="modalidad-title">Full-Time Remoto</h3>
+                    <p class="modalidad-sub">Empleo fijo en equipo de producto</p>
+                    <ul class="modalidad-features">
+                        <li><i class="fas fa-arrow-right"></i> CDI o equivalente según país</li>
+                        <li><i class="fas fa-arrow-right"></i> Integración total con squad/equipo</li>
+                        <li><i class="fas fa-arrow-right"></i> Zona horaria LatAm (GMT-5) flexible</li>
+                        <li><i class="fas fa-arrow-right"></i> Disponible desde YA</li>
+                    </ul>
+                    <div class="modalidad-cta">
+                        <a href="https://www.linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/" target="_blank" rel="noopener noreferrer" class="btn-pill btn-primary full-width">
+                            <i class="fab fa-linkedin-in"></i> APLICAR VÍA LINKEDIN
+                        </a>
+                    </div>
+                </div>
+
+                <div class="modalidad-card featured scroll-reveal">
+                    <div class="modalidad-head">
+                        <span class="modalidad-num">02</span>
+                        <span class="modalidad-badge badge-contract">ABIERTO</span>
+                    </div>
+                    <h3 class="modalidad-title">Contract / Project</h3>
+                    <p class="modalidad-sub">Proyectos de 3 a 6 meses</p>
+                    <ul class="modalidad-features">
+                        <li><i class="fas fa-arrow-right"></i> Scope definido, deadlines claros</li>
+                        <li><i class="fas fa-arrow-right"></i> Integración con equipos existentes</li>
+                        <li><i class="fas fa-arrow-right"></i> Ideal para: lanzar producto nuevo o rescatar uno existente</li>
+                        <li><i class="fas fa-arrow-right"></i> Facturación mensual</li>
+                    </ul>
+                    <div class="modalidad-cta">
+                        <a href="https://calendly.com/nicolasmonroypabon/15min" target="_blank" rel="noopener noreferrer" class="btn-pill btn-primary full-width">
+                            <i class="fas fa-calendar-check"></i> AGENDAR BRIEFING
+                        </a>
+                    </div>
+                </div>
+
+                <div class="modalidad-card scroll-reveal">
+                    <div class="modalidad-head">
+                        <span class="modalidad-num">03</span>
+                        <span class="modalidad-badge badge-freelance">PUNTUAL</span>
+                    </div>
+                    <h3 class="modalidad-title">Freelance / Sprint</h3>
+                    <p class="modalidad-sub">Entregables de 2 a 4 semanas</p>
+                    <ul class="modalidad-features">
+                        <li><i class="fas fa-arrow-right"></i> Rediseño web + automatización</li>
+                        <li><i class="fas fa-arrow-right"></i> Landing page + integración con IA</li>
+                        <li><i class="fas fa-arrow-right"></i> Auditoría técnica + roadmap</li>
+                        <li><i class="fas fa-arrow-right"></i> Precio cerrado por proyecto</li>
+                    </ul>
+                    <div class="modalidad-cta">
+                        <a href="https://wa.me/573150135016?text=Hola%20Nicol%C3%A1s%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="btn-pill btn-primary full-width">
+                            <i class="fab fa-whatsapp"></i> COTIZAR POR WHATSAPP
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modalidades-footer scroll-reveal">
+                <p><i class="fas fa-lightbulb"></i> <strong>¿No sabe cuál es la correcta?</strong> Agende una llamada de 15 minutos y lo definimos juntos.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- ═══════════ HOBBIES / PASSIONS ═══════════ -->
     <section id="hobbies" class="section hobbies-section">
         <div class="container">
-            <div class="section-label scroll-reveal"><span>06</span> FLOW CREATIVO</div>
+            <div class="section-label scroll-reveal"><span>07</span> FLOW CREATIVO</div>
             <h2 class="section-title scroll-reveal-title">
                 <span class="line"><span class="word">BEYOND</span></span>
                 <span class="line"><span class="word gradient-text">THE SCREEN</span></span>
@@ -558,12 +728,22 @@
     <!-- ═══════════ CONTACT ═══════════ -->
     <section id="contact" class="section contact-section">
         <div class="container">
-            <div class="section-label scroll-reveal"><span>07</span> CONTACTO</div>
+            <div class="section-label scroll-reveal"><span>08</span> CONTACTO</div>
             <h2 class="contact-title scroll-reveal-title">
                 <span class="line"><span class="word">LET'S</span></span>
                 <span class="line"><span class="word gradient-text">TALK</span></span>
             </h2>
-            <p class="contact-sub scroll-reveal">Disponible para posiciones Full Stack, Frontend Engineer, o roles híbridos. Remoto o Bogotá.</p>
+            <p class="contact-sub scroll-reveal">Disponible para posiciones Full Stack, Frontend Engineer, AI Engineer, o roles híbridos. Remoto o Bogotá. Respuesta en menos de 24 horas.</p>
+
+            <div class="contact-primary-ctas scroll-reveal">
+                <a href="https://calendly.com/nicolasmonroypabon/15min" target="_blank" rel="noopener noreferrer" class="btn-pill btn-primary btn-xl">
+                    <i class="fas fa-calendar-check"></i> AGENDAR LLAMADA 15 MIN
+                </a>
+                <a href="assets/Nicolas_Monroy_CV.pdf" download class="btn-pill btn-dark btn-xl">
+                    <i class="fas fa-file-pdf"></i> DESCARGAR CV (PDF)
+                </a>
+            </div>
+
             <div class="contact-links scroll-reveal">
                 <a href="https://wa.me/573150135016?text=Hola%20Nicol%C3%A1s%2C%20vi%20tu%20portafolio" target="_blank" rel="noopener noreferrer" class="contact-link">
                     <i class="fab fa-whatsapp"></i>
@@ -580,8 +760,13 @@
                     <span>LINKEDIN</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
+                <a href="https://github.com/NICOLASDRAWN" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <i class="fab fa-github"></i>
+                    <span>GITHUB</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-            <button class="btn-pill btn-dark print-btn" onclick="globalThis.print()"><i class="fas fa-file-pdf"></i> IMPRIMIR CV</button>
+            <button class="btn-pill btn-outline print-btn" onclick="globalThis.print()"><i class="fas fa-print"></i> IMPRIMIR CV INTEGRADO</button>
         </div>
     </section>
 

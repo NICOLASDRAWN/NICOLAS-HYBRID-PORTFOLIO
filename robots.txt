@@ -1,0 +1,35 @@
+# Portfolio — Nicolás Monroy Pabón
+# Permitido el indexado por motores de búsqueda y crawlers de AI
+
+User-agent: *
+Allow: /
+Disallow: /projects/*/node_modules/
+Disallow: /projects/*/dist/
+Disallow: /projects/*/.git/
+Disallow: /projects/*/backend/data/
+
+# Crawlers de motores de búsqueda tradicionales
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawlers de asistentes de IA (para descubrimiento en AI search)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap
+Sitemap: https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/sitemap.xml
