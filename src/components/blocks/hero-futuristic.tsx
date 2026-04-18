@@ -2,10 +2,12 @@
 
 import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
 import { useAspect, useTexture } from '@react-three/drei';
-import { useMemo, useRef, useState, useEffect } from 'react';
+import { Suspense, useMemo, useRef, useState, useEffect } from 'react';
 import * as THREE from 'three/webgpu';
 import { bloom } from 'three/examples/jsm/tsl/display/BloomNode.js';
 import { Mesh } from 'three';
+
+// ... other imports stay the same
 
 import {
   abs,
@@ -189,8 +191,10 @@ export const HeroFuturistic = () => {
             return renderer;
             }}
         >
-            <PostProcessing fullScreenEffect={true} strength={0.6} />
-            <Scene />
+            <Suspense fallback={null}>
+                <PostProcessing fullScreenEffect={true} strength={0.6} />
+                <Scene />
+            </Suspense>
         </Canvas>
       </div>
 
