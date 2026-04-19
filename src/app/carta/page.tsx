@@ -28,13 +28,13 @@ export default function CartaPage() {
 
         .carta-container .page-wrap { max-width: 900px; margin: 40px auto; padding: 0 20px; }
         .carta-container .page {
-          width: 210mm; min-height: 297mm;
+          width: 210mm; height: 297mm;
           background: var(--c-bg);
           color: var(--c-ink);
           margin: 0 auto 30px;
-          padding: 22mm 20mm;
+          padding: 12mm 20mm; /* Reduced padding to fit more content */
           position: relative;
-          overflow: hidden;
+          overflow: hidden; /* Restore strict boundaries */
           box-shadow: 0 30px 80px rgba(0,0,0,0.5);
           page-break-after: always;
           display: flex;
@@ -60,7 +60,7 @@ export default function CartaPage() {
         /* ========== HEADER ========== */
         .carta-container .doc-head {
           display: flex; justify-content: space-between; align-items: flex-start;
-          padding-bottom: 14px; border-bottom: 1px solid var(--c-line);
+          padding-bottom: 12px; border-bottom: 1px solid var(--c-line);
           font-family: 'JetBrains Mono', monospace; font-size: 9px;
           color: var(--c-ink-dim); text-transform: uppercase; letter-spacing: 0.14em;
         }
@@ -70,55 +70,55 @@ export default function CartaPage() {
 
         .carta-container .doc-foot {
           margin-top: auto;
-          padding-top: 14px; border-top: 1px solid var(--c-line);
+          padding-top: 12px; border-top: 1px solid var(--c-line);
           display: flex; justify-content: space-between;
           font-family: 'JetBrains Mono', monospace; font-size: 9px;
           color: var(--c-ink-dim); text-transform: uppercase; letter-spacing: 0.12em;
         }
 
         /* ========== PAGE 1 : COVER ========== */
-        .carta-container .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 28px 0; }
-        .carta-container .cover-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+        .carta-container .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 24px 0; }
+        .carta-container .cover-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
         .carta-container .cover-meta .field { border-top: 1px solid var(--c-line); padding-top: 10px; }
         .carta-container .cover-meta .field .k { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--c-ink-dim); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px; }
         .carta-container .cover-meta .field .v { font-size: 12px; font-weight: 500; }
         .carta-container .cover-meta .field .v.acid { color: var(--c-acid); }
 
         .carta-container .cover-mark {
-          font-size: 92px;
+          font-size: 84px; /* Slightly smaller */
           font-weight: 700;
           letter-spacing: -0.055em;
           line-height: 0.84;
           color: var(--c-ink);
-          margin: 14px 0 10px;
+          margin: 10px 0 8px;
         }
         .carta-container .cover-mark .dot { color: var(--c-acid); }
 
         .carta-container .cover-tag {
           font-family: 'JetBrains Mono', monospace; font-size: 10px;
           color: var(--c-ink-dim); letter-spacing: 0.22em; text-transform: uppercase;
-          margin-bottom: 34px;
+          margin-bottom: 28px;
         }
 
         .carta-container .cover-headline {
-          font-size: 54px;
+          font-size: 48px; /* Restrict font to fit */
           font-weight: 700;
           letter-spacing: -0.04em;
           line-height: 0.95;
           max-width: 18ch;
-          margin-bottom: 28px;
+          margin-bottom: 24px;
         }
         .carta-container .cover-headline .hl { background: var(--c-acid); color: var(--c-bg); padding: 0 0.12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 
         .carta-container .cover-lede {
-          font-size: 14px;
-          line-height: 1.55;
+          font-size: 13.5px;
+          line-height: 1.5;
           max-width: 52ch;
           color: var(--c-ink);
         }
 
         .carta-container .cover-chips {
-          margin-top: 20px;
+          margin-top: 16px;
           display: flex; flex-wrap: wrap; gap: 6px;
         }
         .carta-container .chip {
@@ -141,7 +141,7 @@ export default function CartaPage() {
         .carta-container .cover-signature .line { display: inline-block; width: 120px; height: 1px; background: var(--c-acid); vertical-align: middle; margin: 0 8px; }
 
         .carta-container .cover-seal {
-          width: 120px; height: 120px;
+          width: 110px; height: 110px;
           border: 1.5px solid var(--c-acid);
           border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
@@ -159,40 +159,40 @@ export default function CartaPage() {
 
         /* ========== PAGE 2 : LETTER ========== */
         .carta-container .letter-head {
-          display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
-          padding: 28px 0 24px;
+          display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
+          padding: 16px 0 14px;
           border-bottom: 1px solid var(--c-line);
-          margin-bottom: 28px;
+          margin-bottom: 16px;
         }
         .carta-container .letter-head .from strong, .carta-container .letter-head .to strong {
           display: block; font-family: 'JetBrains Mono', monospace;
           font-size: 9px; color: var(--c-acid);
           text-transform: uppercase; letter-spacing: 0.16em;
-          margin-bottom: 10px;
+          margin-bottom: 8px;
         }
         .carta-container .letter-head .from p, .carta-container .letter-head .to p {
-          font-size: 12px; line-height: 1.65; color: var(--c-ink-dim);
+          font-size: 11.5px; line-height: 1.55; color: var(--c-ink-dim);
         }
         .carta-container .letter-head .from p .ink { color: var(--c-ink); font-weight: 500; }
 
         .carta-container .letter-subject {
           font-family: 'JetBrains Mono', monospace; font-size: 9px;
           color: var(--c-ink-dim); text-transform: uppercase; letter-spacing: 0.14em;
-          margin-bottom: 8px;
+          margin-bottom: 6px;
         }
         .carta-container .letter-title {
-          font-size: 40px;
+          font-size: 34px; /* Reduced to fit tightly */
           font-weight: 700;
           letter-spacing: -0.035em;
           line-height: 0.95;
-          margin-bottom: 28px;
+          margin-bottom: 18px;
         }
         .carta-container .letter-title .acid { color: var(--c-acid); }
 
         .carta-container .letter-body p {
-          font-size: 13px;
-          line-height: 1.65;
-          margin-bottom: 14px;
+          font-size: 12.5px; /* Optimize line fit */
+          line-height: 1.55;
+          margin-bottom: 12px;
           max-width: 62ch;
           color: var(--c-ink);
         }
@@ -200,44 +200,45 @@ export default function CartaPage() {
         .carta-container .letter-body p strong { color: var(--c-acid); font-weight: 500; }
 
         .carta-container .letter-list {
-          margin: 10px 0 18px;
-          padding: 14px 0;
+          margin: 8px 0 14px;
+          padding: 12px 0;
           border-top: 1px solid var(--c-line);
           border-bottom: 1px solid var(--c-line);
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 14px 24px;
+          gap: 12px 20px;
         }
-        .carta-container .letter-list .item { display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: baseline; }
+        .carta-container .letter-list .item { display: grid; grid-template-columns: 36px 1fr; gap: 8px; align-items: baseline; }
         .carta-container .letter-list .item .n { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--c-acid); letter-spacing: 0.08em; }
-        .carta-container .letter-list .item .t { font-size: 11.5px; line-height: 1.5; }
+        .carta-container .letter-list .item .t { font-size: 11px; line-height: 1.45; }
         .carta-container .letter-list .item .t strong { display: block; font-weight: 600; color: var(--c-ink); margin-bottom: 1px; }
         .carta-container .letter-list .item .t span { color: var(--c-ink-dim); }
 
         .carta-container .letter-kpis {
           display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
           background: var(--c-line); border: 1px solid var(--c-line);
-          margin: 20px 0 22px;
+          margin: 14px 0 16px;
         }
-        .carta-container .letter-kpis .kpi { background: var(--c-bg); padding: 14px 16px; }
-        .carta-container .letter-kpis .kpi .l { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--c-ink-dim); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 6px; }
-        .carta-container .letter-kpis .kpi .v { font-size: 26px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
-        .carta-container .letter-kpis .kpi .v .u { font-size: 0.42em; color: var(--c-acid); margin-left: 3px; font-weight: 500; }
+        .carta-container .letter-kpis .kpi { background: var(--c-bg); padding: 12px 14px; }
+        .carta-container .letter-kpis .kpi .l { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--c-ink-dim); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 4px; }
+        .carta-container .letter-kpis .kpi .v { font-size: 20px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+        .carta-container .letter-kpis .kpi .v.acid-txt { color: var(--c-acid); }
+        .carta-container .letter-kpis .kpi .v .u { font-size: 0.52em; color: var(--c-ink-dim); margin-left: 3px; font-weight: 400; letter-spacing: 0.02em; }
 
         .carta-container .letter-sig {
-          display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
-          padding-top: 22px; border-top: 1px solid var(--c-line);
-          margin-top: 18px;
+          display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: center;
+          padding-top: 16px; border-top: 1px solid var(--c-line);
+          margin-top: 12px;
         }
-        .carta-container .letter-sig .name-block .big { font-size: 26px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+        .carta-container .letter-sig .name-block .big { font-size: 22px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
         .carta-container .letter-sig .name-block .big .dot { color: var(--c-acid); }
-        .carta-container .letter-sig .name-block .role { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--c-ink-dim); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 4px; }
-        .carta-container .letter-sig .scribble { font-family: 'Space Grotesk', sans-serif; font-style: italic; font-weight: 500; font-size: 38px; color: var(--c-acid); transform: rotate(-6deg); letter-spacing: -0.03em; }
-        .carta-container .letter-sig .date { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--c-ink-dim); letter-spacing: 0.14em; text-transform: uppercase; text-align: right; line-height: 1.7; }
+        .carta-container .letter-sig .name-block .role { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--c-ink-dim); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 4px; }
+        .carta-container .letter-sig .scribble { font-family: 'Space Grotesk', sans-serif; font-style: italic; font-weight: 500; font-size: 34px; color: var(--c-acid); transform: rotate(-6deg); letter-spacing: -0.03em; }
+        .carta-container .letter-sig .date { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--c-ink-dim); letter-spacing: 0.14em; text-transform: uppercase; text-align: right; line-height: 1.7; }
 
         /* Cover right-side rail */
         .carta-container .cover-rail {
-          position: absolute; right: 6mm; top: 22mm; bottom: 22mm;
+          position: absolute; right: 6mm; top: 12mm; bottom: 12mm;
           width: 10mm;
           display: flex; flex-direction: column; justify-content: space-between;
           font-family: 'JetBrains Mono', monospace; font-size: 8px;
@@ -248,18 +249,30 @@ export default function CartaPage() {
         .carta-container .cover-rail .acid { color: var(--c-acid); }
 
         @media print {
-          html, body { background: white; margin: 0; padding: 0; }
-          body::before { display: none !important; } /* Ocultar grain global */
-          
-          .carta-container { padding: 0; background: transparent; }
-          .carta-container .page-wrap { margin: 0; padding: 0; max-width: none; }
-          .carta-container .page {
-             margin: 0; box-shadow: none; width: 210mm; height: 297mm; min-height: 297mm; border: none;
-             /* Ensure exact reproduction on printing engines */
-             -webkit-print-color-adjust: exact;
-             print-color-adjust: exact;
+          html, body { 
+            background: var(--c-bg) !important; 
+            margin: 0 !important; padding: 0 !important; 
+            color: var(--c-ink) !important; 
           }
-          .print-bar { display: none; }
+          
+          /* TOTAL UI PURGE */
+          body::before, .print-bar, .scroll-indicator, button, .lucide,
+          [class*="fixed"], [class*="absolute"]:not(.dot):not(.cover-rail):not(.cover-mark):not(.cover-seal):not(.name-block):not(.scribble) { 
+            display: none !important; 
+          }
+          
+          .carta-container { padding: 0 !important; background: var(--c-bg) !important; }
+          .carta-container .page-wrap { margin: 0 !important; padding: 0 !important; max-width: none !important; }
+          .carta-container .page {
+             margin: 0 !important; box-shadow: none !important; width: 210mm !important; height: 297mm !important; border: none !important;
+             -webkit-print-color-adjust: exact !important;
+             print-color-adjust: exact !important;
+             page-break-after: always !important;
+             page-break-inside: avoid !important;
+             padding: 12mm 20mm !important;
+             overflow: hidden !important;
+             background: var(--c-bg) !important;
+          }
         }
       `}} />
 
@@ -274,7 +287,7 @@ export default function CartaPage() {
           {/* ==================== PAGE 1 : COVER ==================== */}
           <article className="page" data-screen-label="P1 Portada">
             <header className="doc-head">
-              <div className="left"><span className="dot"></span><strong>NICOLASDRAWN</strong><span>CARTA DE PRESENTACIÓN</span></div>
+              <div className="left"><span className="dot"></span><strong>NICOLASDEV</strong><span>CARTA DE PRESENTACIÓN</span></div>
               <div>DOC-001 · REV 2026.04 · 01 / 02</div>
             </header>
 
@@ -286,7 +299,7 @@ export default function CartaPage() {
             <div className="cover-body">
               <div>
                 <div className="cover-tag">[ COVER LETTER · BOGOTÁ · 2026 ]</div>
-                <div className="cover-mark">nicolas<span className="dot">●</span>drawn</div>
+                <div className="cover-mark">nicolas<span className="dot">●</span>dev</div>
                 <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "var(--c-ink-dim)", letterSpacing: "0.18em", textTransform: "uppercase" }}>
                   Full Stack Developer &nbsp;&amp;&nbsp; AI Specialist
                 </div>
@@ -320,8 +333,8 @@ export default function CartaPage() {
 
               <div className="cover-bottom">
                 <div className="cover-signature">
-                  <div><strong>NICOLÁS MONROY PABÓN</strong> <span className="line"></span> <strong>@NICOLASDRAWN</strong></div>
-                  <div style={{ marginTop: "6px" }}>NICOLASMONROYPABON@GMAIL.COM &nbsp;·&nbsp; +57 315 0135016 &nbsp;·&nbsp; NICOLASDRAWN.PW</div>
+                  <div><strong>NICOLÁS MONROY PABÓN</strong> <span className="line"></span> <strong>@NICOLASDEV</strong></div>
+                  <div style={{ marginTop: "6px" }}>NICOLASMONROYPABON@GMAIL.COM &nbsp;·&nbsp; +57 315 0135016 &nbsp;·&nbsp; NICOLASDEV.COM</div>
                 </div>
                 <div className="cover-seal">
                   <span style={{ fontSize: "8px" }}>ND</span>
@@ -342,7 +355,7 @@ export default function CartaPage() {
           {/* ==================== PAGE 2 : LETTER ==================== */}
           <article className="page" data-screen-label="P2 Carta">
             <header className="doc-head">
-              <div className="left"><span className="dot"></span><strong>NICOLASDRAWN</strong><span>CARTA DE PRESENTACIÓN</span></div>
+              <div className="left"><span className="dot"></span><strong>NICOLASDEV</strong><span>CARTA DE PRESENTACIÓN</span></div>
               <div>DOC-001 · REV 2026.04 · 02 / 02</div>
             </header>
 
@@ -350,7 +363,7 @@ export default function CartaPage() {
               <div className="from">
                 <strong>// DE</strong>
                 <p>
-                  <span className="ink">Nicolás Monroy Pabón &nbsp;/&nbsp; @nicolasdrawn</span><br/>
+                  <span className="ink">Nicolás Monroy Pabón &nbsp;/&nbsp; @nicolasdev</span><br/>
                   Full Stack Developer &amp; AI Specialist<br/>
                   Bogotá, D.C. · Colombia<br/>
                   nicolasmonroypabon@gmail.com · +57 315 0135016
@@ -375,7 +388,7 @@ export default function CartaPage() {
 
             <div className="letter-body">
               <p>
-                Me pongo en contacto para expresar mi firme interés en integrarme a su equipo como <strong>Full Stack Developer &amp; AI Specialist</strong>. Con más de 3 años desarrollando soluciones escalables, mi enfoque se centra en la intersección entre arquitectura técnica robusta e <span className="hl">implementación estratégica de IA</span> en entornos de producción.
+                Me pongo en contacto para expresar mi firme interés en integrarme a su equipo como <strong>Full Stack Developer &amp; AI Specialist</strong>. Mi enfoque se centra en la intersección entre arquitectura técnica robusta e <span className="hl">implementación estratégica de IA</span> en entornos de producción real — no demos, no prototipos de laboratorio: código desplegado que resuelve problemas concretos de negocio.
               </p>
 
               <p>
@@ -402,13 +415,13 @@ export default function CartaPage() {
               </div>
 
               <p>
-                Entre mis logros recientes destaco <strong>ProveedHub</strong>, plataforma con LLMs (Gemini/Claude) para validación automática de documentos corporativos — RUT, Cámara de Comercio — desplegada en producción en MIP Trading y optimizando procesos operativos en más del 70%. También lidero el ERP Supply Chain con firma digital certificada y coordiné productos digitales en Partido Cambio Radical.
+                En <strong>MIP International Trading</strong> lidero la digitalización interna: construí <strong>ProveedHub</strong> — plataforma con LLMs (Gemini, Claude) que valida automáticamente documentos corporativos como RUT y Cámara de Comercio — y el <strong>ERP Supply Chain</strong> con firma digital Certicámara y aprobaciones multi-nivel. Antes coordiné productos digitales en el <strong>Partido Cambio Radical</strong> y trade marketing nacional en <strong>Districol</strong>. Perfil 100% ejecución, nada en diapositivas.
               </p>
 
               <div className="letter-kpis">
-                <div className="kpi"><div className="l">Años de experiencia</div><div className="v">3<span className="u">+</span></div></div>
-                <div className="kpi"><div className="l">Eficiencia ProveedHub</div><div className="v">+70<span className="u">%</span></div></div>
-                <div className="kpi"><div className="l">Proyectos en producción</div><div className="v">3<span className="u">/3</span></div></div>
+                <div className="kpi"><div className="l">Enfoque</div><div className="v acid-txt">B2B<span className="u"> · Enterprise</span></div></div>
+                <div className="kpi"><div className="l">Modalidad</div><div className="v acid-txt">Remoto<span className="u"> · GMT-5</span></div></div>
+                <div className="kpi"><div className="l">Estado</div><div className="v acid-txt">Abierto<span className="u"> a ofertas</span></div></div>
               </div>
 
               <p>
@@ -435,7 +448,7 @@ export default function CartaPage() {
 
             <footer className="doc-foot" style={{ marginTop: "26px" }}>
               <span>© 2026 NICOLÁS MONROY PABÓN</span>
-              <span>NICOLASMONROYPABON@GMAIL.COM · @NICOLASDRAWN</span>
+              <span>NICOLASMONROYPABON@GMAIL.COM · @NICOLASDEV</span>
               <span>PÁGINA 02 / 02</span>
             </footer>
           </article>

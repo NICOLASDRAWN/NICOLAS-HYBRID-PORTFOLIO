@@ -1,13 +1,14 @@
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { Reveal } from "@/components/ui/reveal"
 
 const projects = [
     {
         num: "01",
         title: "ProveedHub Platform",
         tags: ["REACT", "EXPRESS", "GEMINI API", "ELECTRON"],
-        stat: "99.8%",
-        statLabel: "ACCURACY",
+        stat: "LIVE",
+        statLabel: "EN PRODUCCIÓN",
         color: "bg-acid",
         link: "https://github.com/NICOLASDRAWN",
     },
@@ -15,8 +16,8 @@ const projects = [
         num: "02",
         title: "ERP Supply Chain",
         tags: ["REACT", "NODE.JS", "SQLITE", "CERTICÁMARA"],
-        stat: "15+",
-        statLabel: "MODULES",
+        stat: "B2B",
+        statLabel: "ENTERPRISE",
         color: "bg-ink",
         link: "https://github.com/NICOLASDRAWN",
     },
@@ -24,8 +25,8 @@ const projects = [
         num: "03",
         title: "Conquista la Ciudad",
         tags: ["KOTLIN", "JETPACK COMPOSE", "GOOGLE MAPS SDK"],
-        stat: "10K",
-        statLabel: "USERS",
+        stat: "GEO",
+        statLabel: "NATIVE APP",
         color: "bg-warn",
         link: "https://github.com/NICOLASDRAWN/ConquistaLaCiudad",
     }
@@ -34,21 +35,21 @@ const projects = [
 export const Projects = () => {
     return (
         <section id="portfolio" className="shell py-24">
-            <div className="border border-line bg-bg-2">
+            <Reveal as="div" variant="scale" className="border border-line bg-bg-2">
                 <div className="flex items-center justify-between px-6 py-3.5 border-b border-line bg-bg-3 font-mono text-[11px] text-ink-dim uppercase tracking-widest">
                     <div className="flex gap-1.5">
                         <span className="w-[9px] h-[9px] rounded-full bg-warn"></span>
                         <span className="w-[9px] h-[9px] rounded-full bg-line-2"></span>
-                        <span className="w-[9px] h-[9px] rounded-full bg-acid"></span>
+                        <span className="w-[9px] h-[9px] rounded-full bg-acid acid-pulse"></span>
                     </div>
                     <span>/PORTFOLIO_DB</span>
                 </div>
-                
+
                 <div className="p-8 md:p-12">
                     <div className="grid grid-cols-1 md:grid-cols-[2.4fr_1fr] gap-10 pb-10 border-b border-line mb-0">
                         <h2 className="text-[clamp(44px,7vw,100px)] font-bold tracking-[-0.05em] leading-[0.86]">
                             <span className="block text-ink">Sistemas</span>
-                            <span className="block text-acid">en prod.</span>
+                            <span className="block text-shine">en prod.</span>
                         </h2>
                         <div className="font-mono text-[12px] text-ink-dim leading-[1.7] uppercase tracking-widest">
                             [ FOCUS ]
@@ -59,53 +60,62 @@ export const Projects = () => {
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 border-y border-line -mx-8 md:-mx-12">
-                        <div className="px-7 py-8 border-r border-line border-b border-line md:border-b-0">
-                            <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-2.5">PROYECTOS LIVE</div>
-                            <div className="text-[clamp(32px,4vw,54px)] font-bold tracking-[-0.03em] leading-none text-ink">14</div>
-                        </div>
-                        <div className="px-7 py-8 border-r border-line border-b border-line md:border-b-0">
-                            <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-2.5">TIEMPO MEDIO DEV</div>
-                            <div className="text-[clamp(32px,4vw,54px)] font-bold tracking-[-0.03em] leading-none text-ink">3<span className="text-[0.45em] text-acid ml-1 font-medium">MESES</span></div>
-                        </div>
-                        <div className="px-7 py-8 border-r border-line">
-                            <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-2.5">CLIENTES B2B</div>
-                            <div className="text-[clamp(32px,4vw,54px)] font-bold tracking-[-0.03em] leading-none text-ink">4</div>
-                        </div>
-                        <div className="px-7 py-8">
-                            <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-2.5">AHORRO TAREAS</div>
-                            <div className="text-[clamp(32px,4vw,54px)] font-bold tracking-[-0.03em] leading-none text-ink">-85<span className="text-[0.45em] text-acid ml-1 font-medium">%</span></div>
-                        </div>
+                        {[
+                            { label: "FOCO", value: "B2B & Enterprise", accent: null },
+                            { label: "MODALIDAD", value: "Remoto", accent: "GMT-5" },
+                            { label: "STACK", value: "Full-Stack", accent: "+ AI" },
+                            { label: "ESTADO", value: "● Disponible", accent: null, valueClass: "text-acid acid-pulse" },
+                        ].map((it, i) => (
+                            <Reveal
+                              as="div"
+                              key={i}
+                              delay={(i + 1) as 1 | 2 | 3 | 4}
+                              className={`px-7 py-8 border-r border-line ${i < 2 ? "border-b md:border-b-0" : ""} ${i === 3 ? "border-r-0" : ""} transition-colors duration-300 hover:bg-bg-3`}
+                            >
+                                <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-2.5">{it.label}</div>
+                                <div className={`text-[clamp(20px,2.6vw,32px)] font-bold tracking-[-0.02em] leading-tight ${it.valueClass ?? "text-ink"}`}>
+                                    {it.value}
+                                    {it.accent && <span className="text-[0.6em] text-acid ml-2">{it.accent}</span>}
+                                </div>
+                            </Reveal>
+                        ))}
                     </div>
 
                     <div className="pt-12">
                         {projects.map((p, i) => (
-                            <Link href={p.link} key={i} target="_blank" className="group grid grid-cols-[50px_1fr] md:grid-cols-[60px_1fr_auto] gap-6 md:gap-8 items-center py-8 border-b border-line last:border-b-0 relative transition-all duration-300 hover:pl-4">
-                                <span className="font-mono text-[13px] text-ink-dim tracking-widest">{p.num}</span>
-                                <div>
-                                    <h3 className="text-[clamp(24px,3vw,44px)] font-bold tracking-[-0.03em] leading-none text-ink transition-colors duration-200 group-hover:text-acid mb-2.5">
-                                        {p.title}
-                                    </h3>
-                                    <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest">
-                                        {p.tags.join(" · ")}
+                            <Reveal key={i} variant="left" delay={(i + 1) as 1 | 2 | 3}>
+                                <Link
+                                    href={p.link}
+                                    target="_blank"
+                                    className="group grid grid-cols-[50px_1fr] md:grid-cols-[60px_1fr_auto] gap-6 md:gap-8 items-center py-8 border-b border-line last:border-b-0 relative transition-all duration-300 hover:pl-4"
+                                >
+                                    <span className="font-mono text-[13px] text-ink-dim tracking-widest transition-colors duration-200 group-hover:text-acid">{p.num}</span>
+                                    <div>
+                                        <h3 className="text-[clamp(24px,3vw,44px)] font-bold tracking-[-0.03em] leading-none text-ink transition-colors duration-200 group-hover:text-acid mb-2.5">
+                                            {p.title}
+                                        </h3>
+                                        <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest">
+                                            {p.tags.join(" · ")}
+                                        </div>
+                                        <div className="h-1 bg-line mt-5 w-full relative overflow-hidden">
+                                            <div className={`absolute top-0 bottom-0 left-0 w-2/3 ${p.color} transition-all duration-500 group-hover:w-full`}></div>
+                                            <div className="absolute top-[-1px] left-1/3 w-[1px] h-[6px] bg-line-2"></div>
+                                            <div className="absolute top-[-1px] left-2/3 w-[1px] h-[6px] bg-line-2"></div>
+                                        </div>
                                     </div>
-                                    <div className="h-1 bg-line mt-5 w-full relative">
-                                        <div className={`absolute top-0 bottom-0 left-0 w-2/3 ${p.color}`}></div>
-                                        <div className="absolute top-[-1px] left-1/3 w-[1px] h-[6px] bg-line-2"></div>
-                                        <div className="absolute top-[-1px] left-2/3 w-[1px] h-[6px] bg-line-2"></div>
+                                    <div className="hidden md:block text-right font-mono text-[11px] text-ink-dim uppercase tracking-widest">
+                                        {p.statLabel}
+                                        <strong className="block text-acid text-[28px] font-bold tracking-[-0.02em] normal-case mt-1">{p.stat}</strong>
                                     </div>
-                                </div>
-                                <div className="hidden md:block text-right font-mono text-[11px] text-ink-dim uppercase tracking-widest">
-                                    {p.statLabel}
-                                    <strong className="block text-acid text-[28px] font-bold tracking-[-0.02em] normal-case mt-1">{p.stat}</strong>
-                                </div>
-                                <div className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <ArrowRight className="text-acid w-8 h-8"/>
-                                </div>
-                            </Link>
+                                    <div className="absolute right-0 opacity-0 translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                                        <ArrowRight className="text-acid w-8 h-8"/>
+                                    </div>
+                                </Link>
+                            </Reveal>
                         ))}
                     </div>
                 </div>
-            </div>
+            </Reveal>
         </section>
     )
 }
