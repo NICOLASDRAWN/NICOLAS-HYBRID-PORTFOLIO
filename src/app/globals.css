@@ -64,8 +64,18 @@
     font-size: 15px;
     line-height: 1.5;
     background-image:
+      linear-gradient(rgba(198,255,61,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(198,255,61,0.03) 1px, transparent 1px),
       radial-gradient(ellipse 80% 50% at 50% -10%, rgba(198,255,61,0.04), transparent 70%),
       linear-gradient(var(--color-bg), var(--color-bg));
+    background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+    /* Subtle breathing animation for the grid */
+    animation: gridPulse 8s ease-in-out infinite;
+  }
+
+  @keyframes gridPulse {
+    0%, 100% { background-position: 0 0, 0 0, 0 0, 0 0; }
+    50% { background-position: 2px 2px, 2px 2px, 0 0, 0 0; }
   }
 
   /* Grain overlay - Optimized for performance */

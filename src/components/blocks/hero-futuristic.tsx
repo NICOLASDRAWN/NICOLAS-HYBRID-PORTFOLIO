@@ -207,7 +207,7 @@ export const HeroFuturistic = () => {
         </div>
 
         <div className="mt-auto">
-          <div className="text-[clamp(60px,15vw,300px)] font-bold leading-[0.82] tracking-[-0.055em] relative">
+          <div className="text-[clamp(50px,15vw,300px)] font-bold leading-[0.82] tracking-[-0.055em] relative">
             NCLS<span className="text-acid">.</span>DEV
             <span className="inline-block w-[0.42em] h-[0.82em] bg-acid ml-[0.04em] align-[-0.12em] animate-[blink_1s_steps(2)_infinite]"></span>
           </div>
