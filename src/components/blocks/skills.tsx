@@ -3,24 +3,24 @@ import { Reveal } from "@/components/ui/reveal"
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "Engineering",
     icon: <Code className="text-bg w-6 h-6" />,
-    skills: ["React / Next.js", "TypeScript", "Tailwind CSS", "GSAP / Framer Motion"]
+    skills: ["React / Next.js 16", "TypeScript (Strict)", "Shadcn / Tailwind v4", "GSAP Inmersive"]
   },
   {
-    title: "Backend",
+    title: "Orchestration",
     icon: <Database className="text-bg w-6 h-6" />,
-    skills: ["Node.js / Express", "Python / Flask", "SQLite / PostgreSQL", "REST APIs / JWT"]
+    skills: ["Node.js / Python", "PostgreSQL / Prisma", "Agentic Workflows", "API Systems (B2B)"]
   },
   {
-    title: "IA & Tools",
+    title: "Intelligence",
     icon: <Cpu className="text-bg w-6 h-6" />,
-    skills: ["Gemini / Claude / OpenAI", "Prompt Engineering", "Electron (Desktop)", "Git / Docker"]
+    skills: ["RAG Systems / Vector", "LLM Fine-tuning", "Gemini / Claude / GPT", "Prompt Engineering"]
   },
   {
-    title: "Diseño & Arte",
+    title: "Product Design",
     icon: <Paintbrush className="text-bg w-6 h-6" />,
-    skills: ["Affinity Suite", "Figma / UI-UX", "Photoshop", "Generative Art"]
+    skills: ["Brand OS Systems", "UI/UX Engineering", "Adobe / Affinity", "Technical Writing"]
   }
 ]
 

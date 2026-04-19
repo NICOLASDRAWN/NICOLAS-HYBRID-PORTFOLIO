@@ -274,6 +274,16 @@
 .ticker-track { display: inline-flex; animation: marquee 40s linear infinite; }
 .ticker-track span { padding: 0 32px; }
 
+/* Performance Optimizations */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+#hero, header, .shell:first-of-type {
+  content-visibility: visible;
+}
+
 @media (max-width: 900px) {
   .shell { padding: 0 20px; }
 }
