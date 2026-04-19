@@ -96,12 +96,26 @@ export const Profile = () => {
                     <div className="absolute top-4.5 right-5 font-mono text-[10px] text-bg/65 tracking-[0.1em] uppercase">● HIRING</div>
                     <div className="flex-1 flex flex-col justify-center">
                         <div className="text-[clamp(48px,7vw,90px)] font-bold tracking-[-0.04em] leading-[0.9]">
-                            <span className="block transition-transform duration-300 group-hover:translate-x-1">Full-Time</span>
-                            <span className="block transition-transform duration-300 delay-75 group-hover:translate-x-1">Contract</span>
-                            <span className="block transition-transform duration-300 delay-150 group-hover:translate-x-1">Freelance</span>
+                            <span className="block">Full-Time</span>
+                            <span className="block">Contract</span>
+                            <span className="block">Freelance</span>
                         </div>
-                        <div className="text-[13px] font-medium tracking-[0.02em] mt-4 max-w-[22ch]">
-                            Tres modalidades abiertas · Remoto GMT-5 · ES/EN B2.
+                        
+                        <div className="flex gap-2 mt-6">
+                            <a 
+                                href="/NICOLAS-HYBRID-PORTFOLIO/assets/Nicolas_Monroy_CV.pdf" 
+                                download 
+                                className="flex-1 bg-bg text-ink font-mono text-[9px] py-3 text-center border border-bg hover:bg-bg-3 transition-colors uppercase tracking-wider"
+                            >
+                                DESC. CV
+                            </a>
+                            <a 
+                                href="/NICOLAS-HYBRID-PORTFOLIO/assets/Carta_de_Presentacion_Nicolas_Monroy.pdf" 
+                                download 
+                                className="flex-1 bg-bg text-ink font-mono text-[9px] py-3 text-center border border-bg hover:bg-bg-3 transition-colors uppercase tracking-wider"
+                            >
+                                DESC. CARTA
+                            </a>
                         </div>
                     </div>
                     <div className="absolute bottom-3.5 left-8 right-8 flex justify-between font-mono text-[9px] text-bg/55 tracking-[0.12em] uppercase pt-3 border-t border-bg/20">

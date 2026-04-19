@@ -81,11 +81,13 @@ export const Contact = () => {
 
             <div className="flex flex-col md:flex-row justify-between gap-6 py-8 border-t border-line font-mono text-[11px] text-ink-dim uppercase tracking-widest">
                 <div>© 2026 NICOLÁS MONROY PABÓN</div>
-                <div className="flex gap-8">
+                <div className="flex flex-wrap gap-x-8 gap-y-4">
                     <a href="https://github.com/NICOLASDRAWN" target="_blank" className="nav-underline hover:text-acid transition-colors">GITHUB</a>
                     <a href="https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/" target="_blank" className="nav-underline hover:text-acid transition-colors">LINKEDIN</a>
-                    <Link href="/cv" className="nav-underline hover:text-acid transition-colors">VER C.V.</Link>
-                    <Link href="/carta" className="nav-underline hover:text-acid transition-colors">CARTA PRES.</Link>
+                    <Link href="/cv" className="nav-underline hover:text-acid transition-colors">CV (WEB)</Link>
+                    <a href="/NICOLAS-HYBRID-PORTFOLIO/assets/Nicolas_Monroy_CV.pdf" download className="nav-underline hover:text-acid transition-colors">CV (PDF)</a>
+                    <Link href="/carta" className="nav-underline hover:text-acid transition-colors">CARTA (WEB)</Link>
+                    <a href="/NICOLAS-HYBRID-PORTFOLIO/assets/Carta_de_Presentacion_Nicolas_Monroy.pdf" download className="nav-underline hover:text-acid transition-colors">CARTA (PDF)</a>
                 </div>
             </div>
         </footer>
