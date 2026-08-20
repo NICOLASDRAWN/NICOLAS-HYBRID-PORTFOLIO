@@ -36,7 +36,7 @@ export const Projects = () => {
     return (
         <section id="portfolio" className="shell py-24">
             <Reveal as="div" variant="scale" className="border border-line bg-bg-2">
-                <div className="flex items-center justify-between px-6 py-3.5 border-b border-line bg-bg-3 font-mono text-[11px] text-ink-dim uppercase tracking-widest">
+                <div className="flex items-center justify-between px-6 py-3.5 border-b border-line bg-bg-3 font-mono text-[11px] text-ink-dim uppercase tracking-widest" aria-hidden="true">
                     <div className="flex gap-1.5">
                         <span className="w-[9px] h-[9px] rounded-full bg-warn"></span>
                         <span className="w-[9px] h-[9px] rounded-full bg-line-2"></span>
@@ -87,6 +87,7 @@ export const Projects = () => {
                                 <Link
                                     href={p.link}
                                     target="_blank"
+                                    aria-label={`${p.title} — ${p.tags.join(', ')} — Ver en GitHub`}
                                     className="group grid grid-cols-[50px_1fr] md:grid-cols-[60px_1fr_auto] gap-6 md:gap-8 items-center py-8 border-b border-line last:border-b-0 relative transition-all duration-300 hover:pl-4"
                                 >
                                     <span className="font-mono text-[13px] text-ink-dim tracking-widest transition-colors duration-200 group-hover:text-acid">{p.num}</span>
