@@ -115,46 +115,146 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // JSON-LD Person schema — ayuda a que ChatGPT, Claude, Gemini y buscadores
-  // entiendan quién es Nicolás y qué hace cuando se le pregunta por él.
-  const personSchema = {
+  // JSON-LD Multi-Entity Schema Graph (GEO & Search Engine Optimization)
+  // Permite que ChatGPT, Claude, Perplexity, Gemini y Google comprendan la entidad completa
+  const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Nicolás Monroy Pabón",
-    alternateName: "nicolasdrawn",
-    url: SITE_URL,
-    email: "mailto:nicolasmonroypabon@gmail.com",
-    jobTitle: "Diseñador Gráfico & Full Stack Developer",
-    worksFor: {
-      "@type": "Organization",
-      name: "MIP International Trading SAS",
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Bogotá",
-      addressCountry: "CO",
-    },
-    sameAs: [
-      "https://github.com/NICOLASDRAWN",
-      "https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
+        name: "Nicolás Monroy Pabón",
+        alternateName: ["nicolasdrawn", "nicolasdev", "NCLS.DEV"],
+        url: SITE_URL,
+        email: "mailto:nicolasmonroypabon@gmail.com",
+        telephone: "+573150135016",
+        jobTitle: ["Diseñador Gráfico", "Full Stack Developer", "AI Specialist"],
+        description:
+          "Diseñador Gráfico y Full Stack Developer híbrido basado en Bogotá. Combino diseño visual con ingeniería de software e inteligencia artificial aplicada en producción real.",
+        worksFor: {
+          "@type": "Organization",
+          name: "MIP International Trading SAS",
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Bogotá",
+          addressRegion: "Cundinamarca",
+          addressCountry: "CO",
+        },
+        alumniOf: {
+          "@type": "EducationalOrganization",
+          name: "Comunicación Social",
+        },
+        sameAs: [
+          "https://github.com/NICOLASDRAWN",
+          "https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/",
+        ],
+        knowsAbout: [
+          "Full Stack Development",
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Node.js",
+          "Python",
+          "Kotlin / Jetpack Compose",
+          "Generative AI",
+          "Claude API",
+          "Gemini API",
+          "OpenAI API",
+          "ERP Systems",
+          "B2B Platforms",
+          "Graphic Design",
+          "Brand Identity",
+          "Adobe Illustrator",
+          "Adobe Photoshop",
+          "Adobe InDesign",
+          "After Effects",
+          "UI/UX Engineering",
+          "Wayfinding & Signage",
+        ],
+        knowsLanguage: ["Spanish", "English"],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: "Nicolás Monroy Pabón · Portfolio",
+        description:
+          "Portafolio oficial de Nicolás Monroy Pabón — Diseñador Gráfico & Full Stack Developer.",
+        publisher: {
+          "@id": `${SITE_URL}/#person`,
+        },
+        inLanguage: "es-CO",
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": `${SITE_URL}/#webpage`,
+        url: SITE_URL,
+        name: "Nicolás Monroy Pabón · Diseñador Gráfico & Full Stack Developer",
+        isPartOf: {
+          "@id": `${SITE_URL}/#website`,
+        },
+        about: {
+          "@id": `${SITE_URL}/#person`,
+        },
+        mainEntity: {
+          "@id": `${SITE_URL}/#person`,
+        },
+      },
+      {
+        "@type": "ItemList",
+        name: "Proyectos Destacados de Ingeniería y Diseño",
+        itemListElement: [
+          {
+            "@type": "SoftwareApplication",
+            position: 1,
+            name: "ProveedHub AI Platform",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Web, Windows, macOS",
+            description:
+              "Validación automática de documentos legales mediante Gemini API y Computer Vision.",
+          },
+          {
+            "@type": "SoftwareApplication",
+            position: 2,
+            name: "ERP Supply Chain",
+            applicationCategory: "BusinessApplication",
+            description:
+              "Sistema de gestión de compras internacionales y comercio exterior con firma digital Certicámara.",
+          },
+          {
+            "@type": "SoftwareApplication",
+            position: 3,
+            name: "Conquista la Ciudad",
+            applicationCategory: "GameApplication",
+            operatingSystem: "Android",
+            description:
+              "Aplicación móvil nativa con Kotlin y Google Maps SDK para gamificación territorial urbana.",
+          },
+          {
+            "@type": "CreativeWork",
+            position: 4,
+            name: "Langers para Mobil",
+            description:
+              "Identidad de marca corporativa y diseño gráfico para operaciones de distribución de hidrocarburos.",
+          },
+          {
+            "@type": "CreativeWork",
+            position: 5,
+            name: "San Juan Plaza",
+            description:
+              "Identidad visual y sistema de señalética comercial interior y exterior.",
+          },
+          {
+            "@type": "CreativeWork",
+            position: 6,
+            name: "Manual de Marca",
+            description:
+              "Guía integral de identidad visual, tipografía, paleta cromática y aplicaciones.",
+          },
+        ],
+      },
     ],
-    knowsAbout: [
-      "Full Stack Development",
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "Python",
-      "Kotlin / Jetpack Compose",
-      "Generative AI",
-      "Claude API",
-      "Gemini API",
-      "ERP Systems",
-      "B2B Platforms",
-      "Graphic Design",
-      "Brand Communication",
-    ],
-    knowsLanguage: ["Spanish", "English"],
   };
 
   return (
@@ -165,7 +265,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body className="font-body bg-bg text-ink selection:bg-acid selection:text-bg">

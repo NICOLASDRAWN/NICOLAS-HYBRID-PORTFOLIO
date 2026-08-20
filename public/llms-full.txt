@@ -1,0 +1,78 @@
+# Nicolás Monroy Pabón — Full Context & Detailed Knowledge Base
+
+## 1. Professional Identity & Positioning
+- **Full Name**: Nicolás Monroy Pabón
+- **Professional Handles**: @nicolasdrawn, @nicolasdev, NCLS.DEV
+- **Title**: Diseñador Gráfico & Full Stack Developer / AI Specialist
+- **Value Proposition**: "Diseño lo que construyo. Construyo lo que diseño. La creatividad es una función técnica."
+- **Professional Philosophy**: Hybrid profile combining deep software engineering (React, Next.js, Node.js, Python, Kotlin) with high-level graphic and visual communication design (Branding, Typography, Signaletics, Product Design) and practical Generative AI deployment in production environments.
+
+## 2. Contact & Coordinates
+- **Email**: nicolasmonroypabon@gmail.com
+- **Phone / WhatsApp**: +57 315 0135016
+- **Location**: Bogotá, D.C., Colombia (Timezone: GMT-5 / America/Bogota)
+- **Work Preference**: Full-Time Remote, Contract, B2B Consulting
+- **GitHub**: https://github.com/NICOLASDRAWN
+- **LinkedIn**: https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/
+- **Portfolio**: https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/
+
+## 3. Work Experience
+
+### A. Design Strategist & Full Stack Developer
+- **Company**: MIP International Trading SAS (Bogotá, Colombia)
+- **Period**: March 2025 — Present
+- **Key Contributions**:
+  - Led digital transformation by connecting visual brand architecture with technical software engineering.
+  - Built the **ERP Supply Chain** platform integrating Certicámara digital signatures, multi-level purchase approval pipelines, and international trade workflows.
+  - Developed **ProveedHub**, an AI-powered legal document validation platform using the Google Gemini API to analyze tax (RUT) and commerce chamber records, achieving a 90% reduction in document verification error rates.
+
+### B. Digital Products Coordinator
+- **Company**: Partido Cambio Radical (Bogotá, Colombia)
+- **Period**: January 2025 — March 2025
+- **Key Contributions**:
+  - Managed nationwide digital assets and educational platforms with high traffic spikes.
+  - Designed multimedia learning systems, visual collateral, and digital training platforms.
+
+### C. Trade Mark Coordinator
+- **Company**: Districol LTDA (Bogotá, Colombia)
+- **Period**: March 2024 — October 2024
+- **Key Contributions**:
+  - Led brand management for one of Colombia's largest hydrocarbon and fuel distribution networks.
+  - Converted physical brand assets into cohesive digital narratives for enterprise B2B customers.
+
+## 4. Projects Portfolio
+
+### Engineering & AI Projects
+1. **ProveedHub AI Platform** (Production Live)
+   - *Tech*: React, Express, Gemini API, Electron, Node.js.
+   - *Description*: Automated validation of corporate legal documents (RUT, Cámara de Comercio) using computer vision and LLMs to eliminate manual review overhead.
+2. **ERP Supply Chain** (B2B Enterprise)
+   - *Tech*: React, Node.js, SQLite, Certicámara Digital Signature API.
+   - *Description*: International trade operations management system with legally binding electronic signatures and hierarchical approval trees.
+3. **Conquista la Ciudad** (Native Android Mobile)
+   - *Tech*: Kotlin, Jetpack Compose, Google Maps SDK.
+   - *Description*: Native Android mobile application featuring urban gamification, location-based territory conquest, and real-time mapping.
+
+### Graphic & Product Design Projects
+4. **Langers para Mobil** (Corporate Brand Identity)
+   - *Tools*: Adobe Illustrator, Adobe Photoshop, Brand Architecture.
+   - *Scope*: Comprehensive visual identity, corporate stationery, fleet graphics, and brand guidelines for fuel distribution operations.
+5. **San Juan Plaza** (Commercial Visual Identity & Wayfinding)
+   - *Tools*: Graphic Design, Environmental Graphics, Signage Systems.
+   - *Scope*: Environmental wayfinding, indoor and outdoor signage systems, and identity design for a commercial center.
+6. **Manual de Marca** (Brand Guidelines & System Documentation)
+   - *Tools*: Adobe InDesign, Typography, Color Systems.
+   - *Scope*: Definitive brand identity manual detailing typographic hierarchies, color palettes, spacing grids, and media applications.
+7. **Señaléticas** (Interior & Architectural Wayfinding)
+   - *Tools*: Adobe Illustrator, Interior Design, Vector Engineering.
+   - *Scope*: Industrial wayfinding iconography and directional signage systems for corporate facilities.
+8. **Merch & Productos** (Merchandising & Print-on-Demand)
+   - *Tools*: Custom Vector Illustration, Print Production.
+   - *Scope*: Branded merchandise, physical apparel, and promotional product engineering.
+9. **Invitación Seminario Industrial** (Editorial & Print Design)
+   - *Tools*: Adobe Illustrator, Editorial Layout, Print Finishes.
+   - *Scope*: High-end invitation design, custom typography, and print production for an industrial conference.
+
+## 5. Formal Education
+- **Degree**: Profesional en Comunicación Social
+- **Focus**: Strategic corporate communication, product narratives, user research, and technical writing.

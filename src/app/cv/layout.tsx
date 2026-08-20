@@ -5,16 +5,16 @@ const SITE_URL = "https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO";
 export const metadata: Metadata = {
   title: "Curriculum Vitae",
   description:
-    "Hoja de vida de Nicolás Monroy Pabón — Full Stack Developer & AI Specialist. Experiencia en ERPs empresariales, plataformas B2B e integración de IA generativa. Disponible para roles remotos.",
+    "Hoja de vida de Nicolás Monroy Pabón — Diseñador Gráfico & Full Stack Developer. Experiencia en ERPs empresariales, plataformas B2B, diseño de marca e integración de IA generativa.",
   alternates: {
     canonical: `${SITE_URL}/cv`,
   },
   openGraph: {
     type: "profile",
     url: `${SITE_URL}/cv`,
-    title: "CV · Nicolás Monroy Pabón",
+    title: "CV · Nicolás Monroy Pabón · Diseñador Gráfico & Full Stack Developer",
     description:
-      "Hoja de vida web · Full Stack Developer & AI Specialist · Bogotá, Colombia.",
+      "Hoja de vida web · Diseñador Gráfico & Full Stack Developer · Bogotá, Colombia.",
     images: [
       {
         url: `${SITE_URL}/assets/og-cover.png`,

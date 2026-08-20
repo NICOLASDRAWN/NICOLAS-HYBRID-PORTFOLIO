@@ -36,7 +36,7 @@ const designProjects = [
     {
         num: "04",
         title: "Langers para Mobil",
-        tags: ["ILUSTRATOR", "PHOTOSHOP", "BRANDING"],
+        tags: ["ILLUSTRATOR", "PHOTOSHOP", "BRANDING"],
         stat: "CORP",
         statLabel: "BRAND IDENTITY",
         color: "bg-acid",
@@ -63,7 +63,7 @@ const designProjects = [
     {
         num: "07",
         title: "Señaleticas",
-        tags: ["SEÑALÉTICA", "ILUSTRATOR", "DISEÑO INTERIOR"],
+        tags: ["SEÑALÉTICA", "ILLUSTRATOR", "DISEÑO INTERIOR"],
         stat: "SIG",
         statLabel: "WAYFINDING",
         color: "bg-acid",
@@ -81,7 +81,7 @@ const designProjects = [
     {
         num: "09",
         title: "Invitación Seminario Industrial",
-        tags: ["ILUSTRATOR", "EDICIÓN", "PRINT"],
+        tags: ["ILLUSTRATOR", "EDICIÓN", "PRINT"],
         stat: "PRT",
         statLabel: "IMPRESIÓN",
         color: "bg-warn",

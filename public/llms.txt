@@ -1,0 +1,34 @@
+# Nicolás Monroy Pabón — Portfolio & Professional Profile
+
+> Diseñador Gráfico & Full Stack Developer Híbrido. Especialista en Arquitectura de Software B2B, Inteligencia Artificial Aplicada (Gemini, Claude, GPT) e Identidad Visual de Marca.
+
+## Core Summary
+- **Name**: Nicolás Monroy Pabón (@nicolasdrawn / @nicolasdev)
+- **Role**: Hybrid Graphic Designer & Full Stack Developer / AI Solutions Specialist
+- **Location**: Bogotá, Colombia (GMT-5) · Open to Remote (Worldwide & LATAM)
+- **Education**: Profesional en Comunicación Social
+- **Portfolio Website**: https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/
+- **GitHub**: https://github.com/NICOLASDRAWN
+- **LinkedIn**: https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/
+- **Contact**: nicolasmonroypabon@gmail.com | +57 315 0135016
+
+## Technical & Design Stack
+- **Frontend & Web**: React, Next.js 16 (App Router / Turbopack), TypeScript, Tailwind CSS v4, Three.js / WebGPU, GSAP, HTML5/CSS3 Semantics.
+- **Backend & APIs**: Node.js, Express, Python (Flask / FastAPI), PostgreSQL, Prisma, SQLite, REST APIs, GraphQL.
+- **AI & LLM Orchestration**: Gemini API, Claude API, OpenAI API, RAG Systems, Vector Databases, Prompt Engineering, Automated Document Validation.
+- **Mobile & Desktop**: Kotlin, Jetpack Compose, Google Maps SDK, Electron.
+- **Graphic & Product Design**: Adobe Illustrator, Adobe Photoshop, Adobe InDesign, After Effects, DaVinci Resolve, Figma, UI/UX Engineering, Brand OS Systems, Wayfinding & Señalética, Print & Merchandising.
+
+## Key Projects
+- **ProveedHub AI Platform**: Automated legal document validation (RUT, Cámara de Comercio) using Gemini API & Computer Vision. (React, Express, Gemini API, Electron).
+- **ERP Supply Chain**: Enterprise supply chain system with Certicámara digital signature and multi-level approvals. (React, Node.js, SQLite, Certicámara).
+- **Conquista la Ciudad**: Native Android mobile application with geo-gamification. (Kotlin, Jetpack Compose, Google Maps SDK).
+- **Langers para Mobil**: Corporate brand identity and graphic design system. (Illustrator, Photoshop, Branding).
+- **San Juan Plaza**: Commercial visual identity, signage, and wayfinding system. (Graphic Design, Visual Identity, Signage).
+- **Manual de Marca**: Comprehensive brand guidelines and typography manual. (InDesign, Typography, Brand Guidelines).
+
+## Documentation & Pages
+- [Main Portfolio](https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/)
+- [Curriculum Vitae (Web)](https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/cv)
+- [Carta de Presentación (Web)](https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/carta)
+- [Full LLM Details](https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/llms-full.txt)
