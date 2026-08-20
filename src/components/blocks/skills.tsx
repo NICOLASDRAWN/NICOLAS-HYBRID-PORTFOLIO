@@ -18,9 +18,14 @@ const skillCategories = [
     skills: ["RAG Systems / Vector", "LLM Fine-tuning", "Gemini / Claude / GPT", "Prompt Engineering"]
   },
   {
+    title: "Diseño Gráfico",
+    icon: <Paintbrush className="text-bg w-6 h-6" />,
+    skills: ["Illustrator / Photoshop", "After Effects / DaVinci", "Adobe InDesign / XD", "Branding & Identidad"]
+  },
+  {
     title: "Product Design",
     icon: <Paintbrush className="text-bg w-6 h-6" />,
-    skills: ["Brand OS Systems", "UI/UX Engineering", "Adobe / Affinity", "Technical Writing"]
+    skills: ["Brand OS Systems", "UI/UX Engineering", "Señalética / Wayfinding", "Technical Writing"]
   }
 ]
 
@@ -38,7 +43,7 @@ export const Skills = () => {
                 </div>
             </Reveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list" aria-label="Categorías de habilidades">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6" role="list" aria-label="Categorías de habilidades">
                 {skillCategories.map((cat, i) => (
                     <Reveal
                       key={i}

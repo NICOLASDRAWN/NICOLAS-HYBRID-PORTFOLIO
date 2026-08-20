@@ -19,7 +19,7 @@ export const Contact = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Reveal variant="left" delay={1} className="border border-line bg-bg-2 p-8 md:p-10 flex flex-col justify-between hover-lift group relative overflow-hidden">
-                    <div className="scanline-layer"></div>
+                    <div className="scanline-layer" aria-hidden="true"></div>
                     <div>
                         <h4 className="font-mono text-[11px] text-ink-dim tracking-[0.12em] uppercase mb-6">OPCIÓN_A // DIRECTO</h4>
                         <div className="text-[clamp(24px,2.6vw,38px)] font-bold tracking-[-0.025em] leading-[1.05] text-ink mb-6">
@@ -32,6 +32,7 @@ export const Contact = () => {
                     <div className="space-y-3">
                         <a
                             href="mailto:nicolasmonroypabon@gmail.com"
+                            aria-label="Enviar correo a nicolasmonroypabon@gmail.com"
                             className="group/item flex items-center justify-between p-5 border border-line bg-bg hover:border-acid hover:bg-bg-3 transition-all duration-300"
                         >
                             <span className="font-mono text-[12px] text-ink-dim group-hover/item:text-acid transition-colors">nicolasmonroypabon@gmail.com</span>
@@ -40,6 +41,8 @@ export const Contact = () => {
                         <a
                             href="https://wa.me/573150135016"
                             target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Contactar por WhatsApp +57 315 0135016"
                             className="group/item flex items-center justify-between p-5 border border-line bg-bg hover:border-acid hover:bg-bg-3 transition-all duration-300"
                         >
                             <span className="font-mono text-[12px] text-ink-dim group-hover/item:text-acid transition-colors">+57 315 0135016</span>
@@ -64,6 +67,8 @@ export const Contact = () => {
                     <a
                         href="https://calendly.com/nicolasmonroypabon/15min"
                         target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Agendar llamada de arquitectura en Calendly"
                         className="group/cta mt-12 flex items-center justify-between p-5 bg-bg text-ink hover:text-acid transition-colors relative overflow-hidden"
                     >
                         <span className="font-mono text-[12px] uppercase relative z-10">Agendar en Calendly</span>
@@ -82,8 +87,8 @@ export const Contact = () => {
             <div className="flex flex-col md:flex-row justify-between gap-6 py-8 border-t border-line font-mono text-[11px] text-ink-dim uppercase tracking-widest">
                 <div>© 2026 NICOLÁS MONROY PABÓN</div>
                 <div className="flex flex-wrap gap-x-8 gap-y-4">
-                    <a href="https://github.com/NICOLASDRAWN" target="_blank" className="nav-underline hover:text-acid transition-colors">GITHUB</a>
-                    <a href="https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/" target="_blank" className="nav-underline hover:text-acid transition-colors">LINKEDIN</a>
+                    <a href="https://github.com/NICOLASDRAWN" target="_blank" rel="noopener noreferrer" className="nav-underline hover:text-acid transition-colors">GITHUB</a>
+                    <a href="https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/" target="_blank" rel="noopener noreferrer" className="nav-underline hover:text-acid transition-colors">LINKEDIN</a>
                     <Link href="/cv" className="nav-underline hover:text-acid transition-colors">CV (WEB)</Link>
                     <a href="/NICOLAS-HYBRID-PORTFOLIO/assets/Nicolas_Monroy_CV.pdf" download className="nav-underline hover:text-acid transition-colors">CV (PDF)</a>
                     <Link href="/carta" className="nav-underline hover:text-acid transition-colors">CARTA (WEB)</Link>

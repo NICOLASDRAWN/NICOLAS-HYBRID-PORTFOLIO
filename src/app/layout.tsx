@@ -17,19 +17,19 @@ const SITE_URL = "https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Nicolás Monroy Pabón · Full Stack Developer & AI Specialist",
+    default: "Nicolás Monroy Pabón · Diseñador Gráfico & Full Stack Developer",
     template: "%s · Nicolás Monroy Pabón",
   },
   description:
-    "Full Stack Developer híbrido basado en Bogotá. Construyo ERPs empresariales, plataformas B2B y productos con IA generativa (Claude, Gemini, OpenAI) en entornos de producción real. Disponible para oportunidades remotas.",
+    "Diseñador Gráfico y Full Stack Developer híbrido basado en Bogotá. Combino diseño visual con ingeniería de software para crear productos completos. Disponible para oportunidades remotas.",
   applicationName: "Nicolás Monroy · Portfolio",
   authors: [{ name: "Nicolás Monroy Pabón", url: SITE_URL }],
   creator: "Nicolás Monroy Pabón",
   publisher: "Nicolás Monroy Pabón",
   keywords: [
     "Nicolás Monroy",
+    "Diseñador Gráfico",
     "Full Stack Developer",
-    "AI Specialist",
     "React",
     "Next.js",
     "TypeScript",
@@ -44,6 +44,10 @@ export const metadata: Metadata = {
     "Remote developer",
     "ERP",
     "B2B",
+    "Branding",
+    "Identidad Visual",
+    "Diseño Gráfico",
+    "UI/UX",
   ],
   category: "technology",
   alternates: {
@@ -57,23 +61,23 @@ export const metadata: Metadata = {
     locale: "es_CO",
     url: SITE_URL,
     siteName: "Nicolás Monroy Pabón · Portfolio",
-    title: "Nicolás Monroy Pabón · Full Stack Developer & AI Specialist",
+    title: "Nicolás Monroy Pabón · Diseñador Gráfico & Full Stack Developer",
     description:
-      "Construyo ERPs, plataformas B2B y productos con IA generativa en producción real. Disponible para oportunidades remotas.",
+      "Diseñador Gráfico y Full Stack Developer híbrido. Combino diseño visual con ingeniería de software para crear productos completos.",
     images: [
       {
         url: "/NICOLAS-HYBRID-PORTFOLIO/assets/og-cover.png",
         width: 1200,
         height: 630,
-        alt: "Nicolás Monroy Pabón — Portfolio Full Stack · AI",
+        alt: "Nicolás Monroy Pabón — Portfolio Diseño + Desarrollo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nicolás Monroy Pabón · Full Stack Developer & AI Specialist",
+    title: "Nicolás Monroy Pabón · Diseñador Gráfico & Full Stack Developer",
     description:
-      "Full Stack híbrido · IA aplicada en producción real · Disponible remoto.",
+      "Diseñador + Developer híbrido · Diseño visual + Ingeniería · Disponible remoto.",
     images: ["/NICOLAS-HYBRID-PORTFOLIO/assets/og-cover.png"],
     creator: "@nicolasdrawn",
   },
@@ -120,7 +124,7 @@ export default function RootLayout({
     alternateName: "nicolasdrawn",
     url: SITE_URL,
     email: "mailto:nicolasmonroypabon@gmail.com",
-    jobTitle: "Full Stack Developer & AI Specialist",
+    jobTitle: "Diseñador Gráfico & Full Stack Developer",
     worksFor: {
       "@type": "Organization",
       name: "MIP International Trading SAS",
@@ -165,8 +169,16 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body bg-bg text-ink selection:bg-acid selection:text-bg">
+        {/* Skip to main content - accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-acid focus:text-bg focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:outline-none"
+        >
+          Saltar al contenido principal
+        </a>
+
         {/* UNIQUE HUD OVERLAY - MOBILE ONLY */}
-        <div className="lg:hidden fixed inset-0 z-[120] pointer-events-none p-4 font-mono text-[8px] text-acid/25 tracking-widest uppercase flex flex-col justify-between mix-blend-screen opacity-60">
+        <div className="lg:hidden fixed inset-0 z-[120] pointer-events-none p-4 font-mono text-[8px] text-acid/25 tracking-widest uppercase flex flex-col justify-between mix-blend-screen opacity-60" aria-hidden="true">
             <div className="flex justify-between items-start">
                 <div className="flex flex-col gap-1">
                     <span>[ SIGNAL_STR: 98% ]</span>

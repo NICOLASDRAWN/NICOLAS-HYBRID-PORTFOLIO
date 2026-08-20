@@ -17,10 +17,10 @@ export const Profile = () => {
                 </aside>
             </Reveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5" role="list" aria-label="Perfiles de identidad">
                 {/* Typographic avatar */}
-                <Reveal variant="up" delay={1} className="group bg-bg border border-line aspect-square flex items-center justify-center relative overflow-hidden hover-lift">
-                    <div className="scanline-layer"></div>
+                <Reveal variant="up" delay={1} className="group bg-bg border border-line aspect-square flex items-center justify-center relative overflow-hidden hover-lift" role="listitem">
+                    <div className="scanline-layer" aria-hidden="true"></div>
                     <div className="flex flex-col items-center gap-1 relative z-10">
                         <div className="text-[clamp(80px,11vw,130px)] font-bold tracking-[-0.07em] leading-[0.85] text-ink">
                             nd<span className="text-acid acid-pulse inline-block">●</span>
@@ -34,7 +34,7 @@ export const Profile = () => {
 
                 {/* Duotone Placeholder */}
                 <Reveal variant="up" delay={2} className="group bg-gradient-to-br from-bg to-bg-3 border border-line aspect-square relative overflow-hidden hover-lift">
-                    <div className="scanline-layer"></div>
+                    <div className="scanline-layer" aria-hidden="true"></div>
                     <div className="absolute inset-0 opacity-85">
                          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-acid/10 backdrop-blur-md transition-all duration-500 group-hover:h-3/5 group-hover:bg-acid/15"></div>
                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border border-acid/20 transition-all duration-700 group-hover:w-40 group-hover:h-40 group-hover:border-acid/40"></div>
@@ -61,7 +61,7 @@ export const Profile = () => {
 
                 {/* Terminal Avatar */}
                 <Reveal variant="up" delay={4} className="group bg-bg border border-line aspect-square relative overflow-hidden hover-lift">
-                    <div className="scanline-layer"></div>
+                    <div className="scanline-layer" aria-hidden="true"></div>
                     <div className="font-mono text-left text-[clamp(12px,1.5vw,16px)] leading-[1.7] text-ink p-7">
                         <div className="text-ink-dim">~/nicolas $</div>
                         <div>whoami</div>
@@ -77,7 +77,7 @@ export const Profile = () => {
             {/* Posts / Feed section directly below as "Latest Pulse" */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
                 <Reveal variant="up" delay={1} className="group aspect-square bg-bg-2 border border-line p-8 relative overflow-hidden flex flex-col hover-lift">
-                    <div className="scanline-layer"></div>
+                    <div className="scanline-layer" aria-hidden="true"></div>
                     <div className="font-mono text-[10px] text-ink-dim tracking-[0.1em] uppercase">01 / LATEST PULSE</div>
                     <div className="absolute top-4.5 right-5 font-mono text-[10px] text-ink-dim tracking-[0.1em] uppercase">HOY</div>
                     <div className="flex-1 flex flex-col justify-center">
@@ -124,7 +124,7 @@ export const Profile = () => {
                 </Reveal>
 
                 <Reveal variant="up" delay={3} className="group aspect-square bg-bg p-8 relative overflow-hidden flex flex-col hover-lift">
-                    <div className="scanline-layer"></div>
+                    <div className="scanline-layer" aria-hidden="true"></div>
                     <div className="font-mono text-[10px] text-ink-dim tracking-[0.1em] uppercase">03 / LISTENING</div>
                     <div className="absolute top-4.5 right-5 font-mono text-[10px] text-acid tracking-[0.1em] uppercase acid-pulse">● NOW PLAYING</div>
                     <div className="flex-1 flex flex-col justify-center">

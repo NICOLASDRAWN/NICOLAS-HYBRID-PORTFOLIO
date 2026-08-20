@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="bg-bg min-h-screen">
       <Topbar />
-      <main>
+      <main id="main-content">
         <HeroFuturistic />
         <Profile />
         <Skills />

@@ -188,7 +188,7 @@ export const HeroFuturistic = () => {
           <span className="hidden sm:inline">[ BRAND OPERATING SYSTEM ]</span>
           <span className="hidden sm:inline">INDEX / 01 — 07</span>
           <span>REV. 2026.04</span>
-          <span>NICOLÁS · DESIGN+ENG</span>
+          <span>NICOLÁS · DISEÑO+ENG</span>
         </div>
 
         <div className="mt-auto">
@@ -199,7 +199,7 @@ export const HeroFuturistic = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] gap-8 lg:gap-12 mt-12 pt-8 border-t border-line items-start pointer-events-auto bg-bg/20 backdrop-blur-sm p-4 -ml-4">
             <div>
-              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">{`// Thesis`}</h3>
+              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">{`// Tesis`}</h3>
               <p className="text-[18px] md:text-[22px] leading-[1.35] font-medium tracking-[-0.015em] max-w-[28ch]">
                 Diseño lo que construyo. <span className="acid-hl">Construyo lo que diseño.</span> La creatividad es una función técnica.
               </p>
@@ -207,17 +207,17 @@ export const HeroFuturistic = () => {
             <div>
               <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">{`// Stack`}</h3>
               <div className="text-[11px] font-mono leading-[1.6]">
-                <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1">Design</span>
-                <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1">Systems</span>
-                <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1">Automation</span>
-                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim">Brand</span>
+                <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1">Diseño</span>
+                <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1">Desarrollo</span>
+                <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1">Automatización</span>
+                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim">Branding</span>
                 <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim">UI/UX</span>
                 <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim">Full-Stack</span>
-                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim">AI</span>
+                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim">IA</span>
               </div>
             </div>
             <div>
-              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">{`// Status`}</h3>
+              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">{`// Estado`}</h3>
               <p className="font-mono text-[12px] text-ink-dim leading-[1.7]">
                 ACEPTANDO PROYECTOS<br/>
                 → Q3 2026<br/>
@@ -232,13 +232,13 @@ export const HeroFuturistic = () => {
           <div className="ticker-track">
             <span>CREATIVIDAD TÉCNICA</span><span className="text-acid">✺</span>
             <span>DISEÑO + INGENIERÍA</span><span className="text-acid">✺</span>
+            <span>BRAND IDENTITY + CODE</span><span className="text-acid">✺</span>
             <span>SISTEMAS QUE SE VEN BIEN</span><span className="text-acid">✺</span>
-            <span>AUTOMATIZACIÓN CON INTENCIÓN</span><span className="text-acid">✺</span>
             <span>PIXEL-PERFECT · CODE-READY</span><span className="text-acid">✺</span>
             <span>CREATIVIDAD TÉCNICA</span><span className="text-acid">✺</span>
             <span>DISEÑO + INGENIERÍA</span><span className="text-acid">✺</span>
+            <span>BRAND IDENTITY + CODE</span><span className="text-acid">✺</span>
             <span>SISTEMAS QUE SE VEN BIEN</span><span className="text-acid">✺</span>
-            <span>AUTOMATIZACIÓN CON INTENCIÓN</span><span className="text-acid">✺</span>
             <span>PIXEL-PERFECT · CODE-READY</span><span className="text-acid">✺</span>
           </div>
         </div>

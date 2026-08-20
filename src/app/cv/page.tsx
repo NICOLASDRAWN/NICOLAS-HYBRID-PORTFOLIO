@@ -348,7 +348,7 @@ export default function CVPage() {
             <header className="hdr">
               <div>
                 <h1>Nicolás<br/>Monroy Pabón<span style={{color:"var(--c-acid)"}}>.</span></h1>
-                <div className="role">Full Stack Developer &amp; AI Specialist</div>
+                <div className="role">Diseñador Gráfico &amp; Full Stack Developer</div>
               </div>
               <div className="contact">
                 <a href="mailto:nicolasmonroypabon@gmail.com"><Mail size={12}/> nicolasmonroypabon@gmail.com</a>
@@ -373,7 +373,7 @@ export default function CVPage() {
                 <section>
                   <h2>Perfil Híbrido</h2>
                   <p>
-                    Comunicador Social Profesional y Desarrollador Full Stack. Diseño narrativas funcionales con visión estratégica. Me especializo en orquestar soluciones de IA (Gemini, Claude, GPT) en infraestructuras de producción real para el sector B2B.
+                    Diseñador Gráfico y Desarrollador Full Stack. Combino diseño visual con ingeniería de software para crear productos completos. Me especializo en orquestar soluciones de IA (Gemini, Claude, GPT) en infraestructuras de producción real para el sector B2B.
                   </p>
                 </section>
                 <section>
@@ -405,10 +405,10 @@ export default function CVPage() {
                           <li><span>Python / Flask</span><span>PRO</span></li>
                         </ul>
                         <ul>
-                          <li><span>Kotlin / Compose</span><span>INT</span></li>
-                          <li><span>PostgreSQL</span><span>PRO</span></li>
-                          <li><span>Electron</span><span>INT</span></li>
-                          <li><span>Tailwind / UI-UX</span><span>PRO</span></li>
+                          <li><span>Illustrator / Photoshop</span><span>PRO</span></li>
+                          <li><span>After Effects / DaVinci</span><span>PRO</span></li>
+                          <li><span>Adobe InDesign / XD</span><span>PRO</span></li>
+                          <li><span>Branding &amp; Identidad</span><span>PRO</span></li>
                         </ul>
                     </div>
                  </section>
@@ -497,6 +497,24 @@ export default function CVPage() {
                     <div className="prj">
                       <div className="prj-name">Conquista la Ciudad</div>
                       <p>App nativa Android con Kotlin/Compose y Google Maps SDK para gamificación urbana.</p>
+                    </div>
+                  </div>
+                </section>
+
+                <section>
+                  <h2>Proyectos de Diseño</h2>
+                  <div className="prj-grid">
+                    <div className="prj">
+                      <div className="prj-name">Langers para Mobil</div>
+                      <p>Identidad de marca y diseño gráfico para empresa de distribución.</p>
+                    </div>
+                    <div className="prj">
+                      <div className="prj-name">San Juan Plaza</div>
+                      <p>Identidad visual y señalética para proyecto comercial.</p>
+                    </div>
+                    <div className="prj">
+                      <div className="prj-name">Manual de Marca</div>
+                      <p>Guía de identidad visual con tipografía, colores y aplicaciones.</p>
                     </div>
                   </div>
                 </section>
