@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nicolás Monroy — Creative Technology &amp; Brand OS 3D</title>
+  <title>nicolas●dev — BRAND OS v2.0 | Creative Technology</title>
   
-  <!-- SEO & High-Tech Meta -->
-  <meta name="description" content="Ecosistema digital inmersivo de Nicolás Monroy: Desarrollo Frontend de alto nivel, 3D WebGL, soluciones con Tags NFC y Soporte Técnico Remoto 24/7." />
-  <meta name="keywords" content="Nicolás Monroy, Brand OS, Creative Technologist, WebGL 3D, Frontend Senior, Tags NFC, Menús Digitales, Soporte Remoto, UI/UX" />
+  <!-- SEO & Brand Metadata -->
+  <meta name="description" content="Diseño lo que construyo. Construyo lo que diseño. Portafolio de Nicolás Monroy: Desarrollo Frontend, Soluciones NFC para Negocios y Soporte Técnico Remoto." />
+  <meta name="keywords" content="Nicolás Monroy, Brand OS, Frontend Developer, NFC Tags, Menús Digitales, Soporte Remoto, UI/UX, Creative Technology" />
   <meta name="author" content="Nicolás Monroy Pabón" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph / WhatsApp / LinkedIn -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/" />
-  <meta property="og:title" content="Nicolás Monroy — Brand OS // Creative Technology 3D" />
-  <meta property="og:description" content="Diseño lo que construyo. Construyo lo que diseño. WebGL 3D, Frontend Senior, Hardware NFC &amp; Soporte Remoto." />
+  <meta property="og:title" content="nicolas●dev — BRAND OS v2.0" />
+  <meta property="og:description" content="Diseño lo que construyo. Construyo lo que diseño. La creatividad es una función técnica." />
   <meta property="og:image" content="https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/assets/img/og-preview.svg" />
 
   <!-- Stylesheets -->
@@ -26,312 +26,299 @@
 </head>
 <body>
 
-  <!-- Ambient Mesh & Matrix Layers -->
-  <div class="ambient-glow-mesh"></div>
-  <div class="bg-matrix-grid"></div>
-
   <!-- ========================================================================
-       1. Navigation Header (Brand OS 3D)
+       1. Topbar Navigation
        ======================================================================== -->
-  <header class="site-header">
-    <a href="#inicio" class="brand-logo" aria-label="Ir al inicio" data-magnetic>
-      <span class="logo-dot"></span>
-      <span>nicolas<span>●</span>dev</span>
-      <span class="brand-badge">BRAND OS 3D</span>
-    </a>
-
-    <nav aria-label="Navegación principal">
-      <ul class="nav-links">
-        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-        <li><a href="#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="#nfc" class="nav-link">Tags NFC</a></li>
-        <li><a href="#soporte" class="nav-link">Soporte Remoto</a></li>
-        <li><a href="#demos" class="nav-link">Demos</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-actions">
-      <!-- Command Palette Quick Launcher (Ctrl+K) -->
-      <button class="cmd-palette-btn" id="openPaletteBtn" title="Abrir paleta de comandos (Ctrl+K)">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <span>Buscar</span>
-        <span class="cmd-key">Ctrl K</span>
-      </button>
-
-      <!-- Audio FX Synthesizer Toggle -->
-      <button class="audio-toggle-btn" id="audioToggleBtn" title="Activar/Desactivar efectos de audio táctiles" aria-label="Sonido táctil" data-magnetic>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-        </svg>
-      </button>
-
-      <a href="#contacto" class="btn btn-acid btn-sm" data-magnetic>
-        <span>Cotizar</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
+  <header class="topbar">
+    <div class="topbar-container">
+      <a href="#inicio" class="brand-wrap">
+        <span class="brand-title">nicolas<span class="brand-dot">●</span>dev</span>
+        <span class="brand-tag">BRAND OS</span>
       </a>
 
-      <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
+      <nav aria-label="Navegación principal">
+        <ul class="topbar-nav" id="topbarNav">
+          <li><a href="#inicio" class="topbar-link active">Inicio</a></li>
+          <li><a href="#demos" class="topbar-link">Proyectos Demos</a></li>
+          <li><a href="#nfc" class="topbar-link">Tags NFC</a></li>
+          <li><a href="#soporte" class="topbar-link">Soporte Remoto</a></li>
+          <li><a href="#contacto" class="topbar-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="topbar-actions">
+        <a href="#contacto" class="btn-acid-cta">
+          <span>Iniciar Proyecto</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Abrir menú">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- ========================================================================
-       2. Hero Section (3D WebGL Core + High-Impact Typography)
+       2. Hero Section (Manifesto & Editorial Masterpiece)
        ======================================================================== -->
-  <section id="inicio" class="section hero-section" style="padding-top: 11rem; padding-bottom: 6rem;">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3.5rem; align-items: center;" class="hero-grid-responsive">
-        
-        <!-- Left: Editorial Headline & Actions -->
+  <section id="inicio" class="hero-manifesto-section">
+    <div class="shell">
+      
+      <!-- Telemetry Viewfinder Frame -->
+      <div class="hero-viewfinder-hud">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="color: var(--color-acid); font-weight: 700;">● REC [00:26:04:18]</span>
+          <span style="color: var(--color-ink-dimmer);">// FPS: 60.0</span>
+        </div>
         <div>
-          <div class="reveal">
-            <div class="section-tag-hud">
-              <span class="live-dot"></span>
-              <span>● SYSTEM ACTIVE // DISPONIBLE PARA PROYECTOS &amp; SOPORTE</span>
-            </div>
-          </div>
-
-          <h1 class="section-title reveal reveal-delay-1">
-            Diseño Multimedia, <span class="text-acid">Desarrollo Web</span> &amp; Soporte Remoto
-          </h1>
-
-          <p class="section-subtitle reveal reveal-delay-2" style="margin-bottom: 2.25rem;">
-            "Diseño lo que construyo. Construyo lo que diseño." Experiencias digitales de alta gama con <strong>física 3D interactiva</strong>, hardware con <strong>Tags NFC para empresas</strong> y <strong>asistencia técnica remota 24/7</strong>.
-          </p>
-
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap;" class="reveal reveal-delay-3">
-            <a href="#demos" class="btn btn-acid btn-lg" data-magnetic>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-              </svg>
-              <span>Explorar Demos en Vivo</span>
-            </a>
-
-            <a href="#nfc" class="btn btn-outline-dark btn-lg" data-magnetic>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 11a9 9 0 0 1 9 9"></path>
-                <path d="M4 4a16 16 0 0 1 16 16"></path>
-                <circle cx="5" cy="19" r="1"></circle>
-              </svg>
-              <span>Soluciones NFC</span>
-            </a>
-
-            <a href="#soporte" class="btn btn-secondary btn-lg" data-magnetic>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-              <span>Soporte</span>
-            </a>
-          </div>
-
-          <!-- Quick Telemetry Row -->
-          <div style="display: flex; gap: 2.5rem; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle);" class="reveal reveal-delay-4">
-            <div>
-              <div class="mono" style="font-size: 1.6rem; font-weight: 800; color: var(--color-acid);">+7 AÑOS</div>
-              <div class="mono" style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase;">Experiencia Técnica</div>
-            </div>
-            <div>
-              <div class="mono" style="font-size: 1.6rem; font-weight: 800; color: var(--text-main);">100%</div>
-              <div class="mono" style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase;">Disponibilidad Remota</div>
-            </div>
-            <div>
-              <div class="mono" style="font-size: 1.6rem; font-weight: 800; color: #00F0FF;">&lt; 15 MIN</div>
-              <div class="mono" style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase;">Tiempo de Respuesta</div>
-            </div>
-          </div>
+          <span>BOGOTÁ / REMOTO</span>
+          <span style="color: var(--color-acid); margin-left: 0.75rem;">REV. 2026.04</span>
         </div>
-
-        <!-- Right: Real-Time Interactive 3D WebGL Core -->
-        <div class="reveal reveal-delay-2 hero-canvas-wrapper" id="threeCanvasWrapper" title="Haz clic en el núcleo 3D o mueve el cursor para interactuar">
-          <div id="threeCanvasContainer"></div>
-          <div class="canvas-hint-pill">[ NÚCLEO 3D WEBGL // MUEVE EL CURSOR O HAZ CLIC ]</div>
-        </div>
-
       </div>
+
+      <!-- Massive Brand Heading -->
+      <div class="reveal">
+        <div class="hero-big-title">
+          NCLS<span style="color: var(--color-acid);">.</span>DEV<span class="hero-cursor-block"></span>
+        </div>
+      </div>
+
+      <!-- 3-Column Manifesto & Stack Box -->
+      <div class="manifesto-box reveal reveal-delay-1">
+        <div>
+          <div class="manifesto-box-header">// 01. Tesis</div>
+          <p class="manifesto-thesis">
+            Diseño lo que construyo. <span class="acid-hl">Construyo lo que diseño.</span> La creatividad es una función técnica.
+          </p>
+        </div>
+
+        <div>
+          <div class="manifesto-box-header">// 02. Stack &amp; Capacidades</div>
+          <div class="stack-pill-grid">
+            <span class="stack-pill highlight">Diseño UI/UX</span>
+            <span class="stack-pill highlight">Frontend</span>
+            <span class="stack-pill highlight">Tags NFC</span>
+            <span class="stack-pill">Next.js 16</span>
+            <span class="stack-pill">Tailwind</span>
+            <span class="stack-pill">Soporte 24/7</span>
+            <span class="stack-pill">Automatización</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="manifesto-box-header">// 03. Disponibilidad</div>
+          <div class="mono" style="font-size: 0.75rem; color: var(--color-ink-dim); line-height: 1.7;">
+            ACEPTANDO PROYECTOS<br />
+            → Q3 2026<br />
+            <span style="color: var(--color-acid); font-weight: 600;">● 3 SLOTS DISPONIBLES</span><br />
+            RESPUESTA &lt; 24H
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Marquee Ticker -->
-  <div class="ticker-wrap">
+  <!-- Big Bold Editorial Ticker -->
+  <div class="ticker-container">
     <div class="ticker-track">
-      <span class="ticker-item"><strong>WEBGL 3D CORE</strong> // THREE.JS ACCELERATED</span>
-      <span class="ticker-item"><strong>HARDWARE NFC</strong> // NTAG213 • NTAG216</span>
-      <span class="ticker-item"><strong>REMOTE HELP DESK</strong> // ANYDESK TLS 1.3</span>
-      <span class="ticker-item"><strong>GOURMET BISTRO</strong> // NFC DIGITAL MENU</span>
-      <span class="ticker-item"><strong>AURA WELLNESS</strong> // CLINICAL &amp; SPA PORTAL</span>
-      <span class="ticker-item"><strong>URBAN LUXE</strong> // PRIME REAL ESTATE</span>
-      <span class="ticker-item"><strong>WEBGL 3D CORE</strong> // THREE.JS ACCELERATED</span>
-      <span class="ticker-item"><strong>HARDWARE NFC</strong> // NTAG213 • NTAG216</span>
+      <span class="ticker-item">CREATIVIDAD TÉCNICA <span class="star-sep">✺</span></span>
+      <span class="ticker-item">DISEÑO + INGENIERÍA <span class="star-sep">✺</span></span>
+      <span class="ticker-item">HARDWARE NFC PARA NEGOCIOS <span class="star-sep">✺</span></span>
+      <span class="ticker-item">SISTEMAS QUE SE VEN BIEN <span class="star-sep">✺</span></span>
+      <span class="ticker-item">SOPORTE REMOTO 24/7 <span class="star-sep">✺</span></span>
+      <span class="ticker-item">CREATIVIDAD TÉCNICA <span class="star-sep">✺</span></span>
+      <span class="ticker-item">DISEÑO + INGENIERÍA <span class="star-sep">✺</span></span>
+      <span class="ticker-item">HARDWARE NFC PARA NEGOCIOS <span class="star-sep">✺</span></span>
     </div>
   </div>
 
   <!-- ========================================================================
-       3. Servicios Freelance (Bento Grid con Spotlight)
+       3. Selected Work / Demos (Editorial Project Showcase)
        ======================================================================== -->
-  <section id="servicios" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag-hud">
-          <span class="live-dot"></span>
-          <span>Especialización &amp; Capacidades</span>
+  <section id="demos" class="section">
+    <div class="shell">
+      <div class="section-head-bar reveal">
+        <div>
+          <div class="section-tag-mono"><span class="dot-pulse"></span> Producción Real // Demos</div>
+          <h2 class="section-title-large">Sitios Web de Demostración</h2>
         </div>
-        <h2 class="section-title">Soluciones Digitales <span class="text-acid">de Alto Impacto</span></h2>
-        <p class="section-subtitle">Arquitectura modular de software, hardware interactivo para negocios y soporte técnico continuo.</p>
-      </div>
-
-      <div class="bento-grid grid-cols-3">
-        <!-- Card 1 -->
-        <div class="bento-card reveal reveal-delay-1">
-          <span class="corner-cross corner-tl"></span>
-          <span class="corner-cross corner-tr"></span>
-          <div class="card-hud-corner">[ 01 // FRONTEND ]</div>
-          <div class="card-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-              <polyline points="2 17 12 22 22 17"></polyline>
-              <polyline points="2 12 12 17 22 12"></polyline>
-            </svg>
-          </div>
-          <h3 class="card-title">Desarrollo Web &amp; UX</h3>
-          <p class="card-text">
-            Landing pages de alto rendimiento, microinteracciones aceleradas por hardware y plataformas optimizadas para máxima conversión.
-          </p>
-          <ul class="feature-list">
-            <li><span class="dot-ok"></span> Arquitectura modular &amp; 100% responsive</li>
-            <li><span class="dot-ok"></span> Animaciones con física natural (GPU)</li>
-            <li><span class="dot-ok"></span> Integración de APIs y formularios serverless</li>
-          </ul>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="bento-card highlight reveal reveal-delay-2">
-          <span class="corner-cross corner-tl"></span>
-          <span class="corner-cross corner-tr"></span>
-          <div class="card-hud-corner">[ 02 // NFC IOT ]</div>
-          <div class="card-icon-box" style="background: rgba(198, 255, 61, 0.18); border-color: var(--color-acid);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 11a9 9 0 0 1 9 9"></path>
-              <path d="M4 4a16 16 0 0 1 16 16"></path>
-              <circle cx="5" cy="19" r="1"></circle>
-            </svg>
-          </div>
-          <h3 class="card-title">Integración con Tags NFC</h3>
-          <p class="card-text">
-            Puente directo entre el mundo físico y digital. Acerca cualquier smartphone para abrir menús, reseñas de Google o tarjetas de contacto vCard.
-          </p>
-          <ul class="feature-list">
-            <li><span class="dot-ok"></span> Menús digitales con comanda a WhatsApp</li>
-            <li><span class="dot-ok"></span> Multiplicador de Google Reviews en 1-tap</li>
-            <li><span class="dot-ok"></span> Tarjetas vCard digitales con perfil web</li>
-          </ul>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="bento-card reveal reveal-delay-3">
-          <span class="corner-cross corner-tl"></span>
-          <span class="corner-cross corner-tr"></span>
-          <div class="card-hud-corner">[ 03 // SUPPORT ]</div>
-          <div class="card-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-            </svg>
-          </div>
-          <h3 class="card-title">Soporte Técnico Remoto</h3>
-          <p class="card-text">
-            Diagnóstico preventivo, eliminación profunda de malware y optimización de velocidad de Windows/Mac mediante conexión remota supervisada.
-          </p>
-          <ul class="feature-list">
-            <li><span class="dot-ok"></span> Desinfección de virus, troyanos y adware</li>
-            <li><span class="dot-ok"></span> Aceleración de arranque y optimización SSD</li>
-            <li><span class="dot-ok"></span> Asistencia remota cifrada de punto a punto</li>
-          </ul>
+        <div class="mono" style="color: var(--color-ink-dim); font-size: 0.8125rem;">
+          [ 03 PROYECTOS ACTIVOS ]
         </div>
       </div>
+
+      <!-- Demo Row 01: Gastronomía -->
+      <article class="demo-row reveal">
+        <div>
+          <div class="demo-row-index">[ 01 // GASTRONOMÍA &amp; NFC ]</div>
+          <h3 class="demo-row-title">Gourmet Bistro &amp; Menú Digital</h3>
+          <p class="demo-row-desc">
+            Carta gastronómica digital interactiva diseñada para lectura rápida en mesas mediante Tags NFC. Incluye filtros por alérgenos y comanda directa a cocina vía WhatsApp.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <span class="stack-pill highlight">Dark Luxury</span>
+            <span class="stack-pill">NTAG213</span>
+            <span class="stack-pill">Comanda en Mesa</span>
+          </div>
+          <a href="demos/gastronomia/" class="btn-acid-cta" style="padding: 0.75rem 1.5rem;">
+            <span>Abrir Demo en Vivo</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
+        <div class="demo-preview-canvas">
+          <div style="font-size: 3rem; margin-bottom: 0.5rem;">🍷</div>
+          <div class="mono" style="font-weight: 800; font-size: 1.25rem; color: #F59E0B;">GOURMET BISTRO</div>
+          <span class="mono" style="font-size: 0.8rem; color: var(--color-ink-dim);">Haute Cuisine &amp; Wine Bar</span>
+        </div>
+      </article>
+
+      <!-- Demo Row 02: Salud & Spa -->
+      <article class="demo-row reveal reveal-delay-1">
+        <div>
+          <div class="demo-row-index">[ 02 // SALUD &amp; BIENESTAR ]</div>
+          <h3 class="demo-row-title">Aura Wellness Center</h3>
+          <p class="demo-row-desc">
+            Plataforma estética y clínica para centros de medicina estética y bienestar. Cuenta con catálogo detallado de tratamientos y módulo dinámico de agendamiento de citas médicas.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <span class="stack-pill highlight">Clean Light</span>
+            <span class="stack-pill">Citas Médicas</span>
+            <span class="stack-pill">Especialistas</span>
+          </div>
+          <a href="demos/salud/" class="btn-acid-cta" style="padding: 0.75rem 1.5rem;">
+            <span>Abrir Demo en Vivo</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
+        <div class="demo-preview-canvas" style="background: #0F2D2A; border-color: #14B8A6;">
+          <div style="font-size: 3rem; margin-bottom: 0.5rem;">🌿</div>
+          <div class="mono" style="font-weight: 800; font-size: 1.25rem; color: #5EEAD4;">AURA WELLNESS</div>
+          <span class="mono" style="font-size: 0.8rem; color: #CCFBF1;">Clínica &amp; Spa Holístico</span>
+        </div>
+      </article>
+
+      <!-- Demo Row 03: Inmobiliaria -->
+      <article class="demo-row reveal reveal-delay-2">
+        <div>
+          <div class="demo-row-index">[ 03 // REAL ESTATE PRIME ]</div>
+          <h3 class="demo-row-title">Urban Luxe Real Estate</h3>
+          <p class="demo-row-desc">
+            Portal inmobiliario minimalista con filtrado en tiempo real de residencias y penthouses exclusivos, acompañado de un simulador interactivo de créditos hipotecarios.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <span class="stack-pill highlight">Minimalista</span>
+            <span class="stack-pill">Filtro Inmuebles</span>
+            <span class="stack-pill">Calculadora Hipotecaria</span>
+          </div>
+          <a href="demos/inmobiliaria/" class="btn-acid-cta" style="padding: 0.75rem 1.5rem;">
+            <span>Abrir Demo en Vivo</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
+        <div class="demo-preview-canvas" style="background: #141328; border-color: #6366F1;">
+          <div style="font-size: 3rem; margin-bottom: 0.5rem;">🏢</div>
+          <div class="mono" style="font-weight: 800; font-size: 1.25rem; color: #C7D2FE;">URBAN LUXE</div>
+          <span class="mono" style="font-size: 0.8rem; color: #E0E7FF;">Residencias &amp; Penthouses</span>
+        </div>
+      </article>
+
     </div>
   </section>
 
   <!-- ========================================================================
-       4. Módulo NFC para Negocios (Tarjeta Holográfica 3D & Smartphone Shell)
+       4. Módulo NFC para Negocios
        ======================================================================== -->
-  <section id="nfc" class="section" style="background: rgba(10, 10, 14, 0.6); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag-hud">
-          <span class="live-dot"></span>
-          <span>Transmisión por Inducción 13.56 MHz</span>
+  <section id="nfc" class="section" style="background: var(--color-bg-2);">
+    <div class="shell">
+      <div class="section-head-bar reveal">
+        <div>
+          <div class="section-tag-mono"><span class="dot-pulse"></span> Hardware Inteligente // 13.56 MHz</div>
+          <h2 class="section-title-large">Soluciones con Tags NFC</h2>
         </div>
-        <h2 class="section-title">Ecosistema <span class="text-acid">NFC para Negocios</span></h2>
-        <p class="section-subtitle">
-          Cero aplicaciones requeridas. El cliente solo aproxima su smartphone y activa una experiencia instantánea.
-        </p>
+        <div class="mono" style="color: var(--color-ink-dim); font-size: 0.8125rem;">
+          [ CERO APPS REQUERIDAS ]
+        </div>
       </div>
 
-      <div class="nfc-showcase-grid">
-        <!-- Left: Holographic 3D Smart Card & Modes -->
+      <div class="nfc-grid-split">
         <div class="reveal">
-          <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-            <button class="btn btn-acid btn-sm active" data-nfc-mode="menu">Menú Digital</button>
-            <button class="btn btn-secondary btn-sm" data-nfc-mode="review">Google Reviews</button>
-            <button class="btn btn-secondary btn-sm" data-nfc-mode="vcard">Tarjeta vCard</button>
-          </div>
+          <p style="font-size: 1.15rem; color: var(--color-ink); margin-bottom: 2rem; line-height: 1.6;">
+            Conecta el mundo físico con el digital en 0.1 segundos. Los usuarios acercan su smartphone y acceden de inmediato a tu ecosistema.
+          </p>
 
-          <!-- 3D Holographic Card Interactive -->
-          <div class="holo-card-container">
-            <div class="holo-card" id="holoCard" title="Pasa el cursor para ver el reflejo holográfico 3D">
-              <div class="card-chip"></div>
-              <div class="card-wifi-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                  <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                  <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                  <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                </svg>
-              </div>
-
-              <div class="card-owner-info">
-                <div class="card-owner-name">NICOLÁS MONROY</div>
-                <div class="card-owner-role">CREATIVE TECHNOLOGIST // BRAND OS</div>
-                <div class="mono" style="font-size: 0.65rem; color: var(--text-dim); margin-top: 0.25rem;">NTAG216 • 13.56 MHz ENCRYPTED</div>
-              </div>
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <div style="border-left: 2px solid var(--color-acid); padding-left: 1.25rem;">
+              <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem;">01. Menús Digitales para Mesas</h4>
+              <p style="color: var(--color-ink-dim); font-size: 0.9rem;">
+                Placas NFC resistentes al agua para cada mesa. El comensal toca y pide sin esperar al mesero.
+              </p>
             </div>
-          </div>
 
-          <div style="margin-top: 2rem;" class="bento-card">
-            <h4 style="font-size: 1.15rem; color: #FFF; margin-bottom: 0.4rem;">Sensor de Proximidad NFC</h4>
-            <p style="color: var(--text-dim); font-size: 0.875rem; margin-bottom: 1rem;">
-              Haz clic en el sensor para simular el intercambio de datos entre la tarjeta física y el smartphone:
-            </p>
-            <div class="nfc-touch-sensor" id="nfcTouchTarget" style="width: 110px; height: 110px;" title="Haz clic para simular tap NFC">
-              <div class="nfc-pulse-wave"></div>
-              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="var(--color-acid)" stroke-width="2">
-                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
-              </svg>
+            <div style="border-left: 2px solid var(--color-acid); padding-left: 1.25rem;">
+              <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem;">02. Multiplicador de Google Reviews</h4>
+              <p style="color: var(--color-ink-dim); font-size: 0.9rem;">
+                Placa para mostrador que abre directamente la calificación 5 estrellas de Google Maps.
+              </p>
+            </div>
+
+            <div style="border-left: 2px solid var(--color-acid); padding-left: 1.25rem;">
+              <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem;">03. Tarjetas vCard Inteligentes</h4>
+              <p style="color: var(--color-ink-dim); font-size: 0.9rem;">
+                Una sola tarjeta de presentación para siempre. Guarda tu contacto en la libreta del cliente en 1-tap.
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- Right: Glass Phone Mockup Shell with Dynamic Screen -->
-        <div class="reveal reveal-delay-2">
-          <div class="phone-mockup-shell">
-            <div class="phone-island-notch"></div>
-            <div class="phone-screen" id="phoneScreenContent">
-              <!-- Dynamically populated by js/main.js -->
+        <!-- Interactive Simulator -->
+        <div class="nfc-device-card reveal reveal-delay-1">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <span class="mono" style="font-size: 0.75rem; color: var(--color-ink-dim);">SIMULADOR INTERACTIVO</span>
+            <span class="mono" style="font-size: 0.75rem; color: var(--color-acid);">FREQ: 13.56 MHz</span>
+          </div>
+
+          <div style="display: flex; gap: 0.4rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+            <button class="nfc-interactive-button active" data-nfc-mode="menu">Menú Digital</button>
+            <button class="nfc-interactive-button" data-nfc-mode="review">Google Reviews</button>
+            <button class="nfc-interactive-button" data-nfc-mode="vcard">Tarjeta vCard</button>
+          </div>
+
+          <div class="nfc-touch-sensor-disk" id="nfcTouchTarget" title="Haz clic para simular lectura NFC">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--color-acid)" stroke-width="2">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+            </svg>
+          </div>
+
+          <div class="mono text-center" style="font-size: 0.75rem; color: var(--color-acid); margin-bottom: 1rem;">
+            [ HAZ CLIC EN EL DISCO PARA TRANSMITIR ]
+          </div>
+
+          <div id="nfcResultDisplay" style="background: var(--color-bg); border: 1px solid var(--color-line); padding: 1.25rem; font-family: var(--font-mono); font-size: 0.8rem;">
+            <div style="color: var(--color-ink-dim);">
+              MODO ACTIVO: <strong style="color: var(--color-ink);">Menú Digital Bistro</strong>.<br />
+              <em>Toca el sensor arriba para probar la lectura.</em>
             </div>
           </div>
         </div>
@@ -340,102 +327,89 @@
   </section>
 
   <!-- ========================================================================
-       5. Módulo de Soporte Técnico Remoto (Live Triage Matrix)
+       5. Módulo de Soporte Técnico Remoto
        ======================================================================== -->
   <section id="soporte" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag-hud">
-          <span class="live-dot"></span>
-          <span>Help Desk Cifrado &amp; Mantenimiento</span>
+    <div class="shell">
+      <div class="section-head-bar reveal">
+        <div>
+          <div class="section-tag-mono"><span class="dot-pulse"></span> Asistencia Inmediata // AnyDesk</div>
+          <h2 class="section-title-large">Soporte Técnico Remoto</h2>
         </div>
-        <h2 class="section-title">Soporte Técnico <span class="text-acid">Remoto</span></h2>
-        <p class="section-subtitle">
-          Recupera el 100% de la velocidad de tu equipo con diagnóstico profesional y asistencia remota supervisada en tiempo real.
-        </p>
+        <div class="mono" style="color: var(--color-ink-dim); font-size: 0.8125rem;">
+          [ CONEXIÓN CIFRADA ]
+        </div>
       </div>
 
-      <div class="bento-grid grid-cols-2" style="gap: 3rem; align-items: start;">
-        <!-- Selector de Fallas -->
+      <div class="support-triage-grid">
+        <!-- Triage Options -->
         <div class="reveal">
-          <h3 class="mono" style="font-size: 0.95rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 1.25rem;">
-            // 01. Selecciona el síntoma de tu equipo:
-          </h3>
+          <div class="mono" style="font-size: 0.8rem; color: var(--color-ink-dim); margin-bottom: 1.25rem;">
+            // 01. Selecciona el problema de tu equipo:
+          </div>
 
-          <div style="display: flex; flex-direction: column; gap: 1rem;">
-            <div class="diag-card selected" data-issue="lento">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <strong style="color: var(--text-main);">Computador Lento / Se Congela</strong>
-                <span class="tag-pill-acid">RECOMENDADO</span>
-              </div>
-              <p style="color: var(--text-dim); font-size: 0.875rem; margin-top: 0.4rem;">
-                Optimización de servicios de inicio, limpieza de temporales, ajuste de registros y aceleración de SSD.
-              </p>
+          <div class="triage-option-card selected" data-issue="lento">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+              <strong style="color: var(--color-ink);">Computador Lento / Se Congela</strong>
+              <span class="mono" style="color: var(--color-acid); font-size: 0.75rem;">[ RECOMENDADO ]</span>
             </div>
+            <p style="color: var(--color-ink-dim); font-size: 0.85rem;">
+              Optimización de servicios, limpieza de archivos temporales y ajuste de arranque.
+            </p>
+          </div>
 
-            <div class="diag-card" data-issue="malware">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <strong style="color: var(--text-main);">Ventanas Emergentes / Virus o Malware</strong>
-                <span class="tag-pill-acid" style="color: var(--color-warn); border-color: rgba(255,77,77,0.3);">CRÍTICO</span>
-              </div>
-              <p style="color: var(--text-dim); font-size: 0.875rem; margin-top: 0.4rem;">
-                Escaneo heurístico profundo, desinfección de troyanos, extensiones maliciosas y adware.
-              </p>
+          <div class="triage-option-card" data-issue="malware">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+              <strong style="color: var(--color-ink);">Ventanas Emergentes / Virus o Malware</strong>
+              <span class="mono" style="color: var(--color-warn); font-size: 0.75rem;">[ CRÍTICO ]</span>
             </div>
+            <p style="color: var(--color-ink-dim); font-size: 0.85rem;">
+              Escaneo heurístico profundo, desinfección de troyanos y spyware.
+            </p>
+          </div>
 
-            <div class="diag-card" data-issue="formato">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <strong style="color: var(--text-main);">Mantenimiento Preventivo &amp; Copias de Seguridad</strong>
-                <span class="tag-pill-acid">COMPLETO</span>
-              </div>
-              <p style="color: var(--text-dim); font-size: 0.875rem; margin-top: 0.4rem;">
-                Configuración de backups en la nube, actualización de controladores y parches críticos del sistema.
-              </p>
+          <div class="triage-option-card" data-issue="formato">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+              <strong style="color: var(--color-ink);">Mantenimiento Preventivo &amp; Backups</strong>
+              <span class="mono" style="color: var(--color-acid); font-size: 0.75rem;">[ COMPLETO ]</span>
             </div>
+            <p style="color: var(--color-ink-dim); font-size: 0.85rem;">
+              Configuración de copias de seguridad en la nube y parches de seguridad.
+            </p>
+          </div>
 
-            <div class="diag-card" data-issue="software">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <strong style="color: var(--text-main);">Instalación de Programas &amp; Configuración</strong>
-                <span class="tag-pill-acid">RÁPIDO</span>
-              </div>
-              <p style="color: var(--text-dim); font-size: 0.875rem; margin-top: 0.4rem;">
-                Instalación de software de diseño, suites de oficina, impresoras de red y VPNs seguras.
-              </p>
+          <div class="triage-option-card" data-issue="software">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+              <strong style="color: var(--color-ink);">Instalación de Programas &amp; Configuración</strong>
+              <span class="mono" style="color: var(--color-ink-dim); font-size: 0.75rem;">[ RÁPIDO ]</span>
             </div>
+            <p style="color: var(--color-ink-dim); font-size: 0.85rem;">
+              Instalación de suites de diseño, ofimática e impresoras remotas.
+            </p>
           </div>
         </div>
 
-        <!-- Estimador en Vivo & WhatsApp -->
-        <div class="bento-card highlight reveal reveal-delay-2">
-          <div class="card-hud-corner">[ TLS 1.3 ENCRYPTED ]</div>
-          <h3 class="mono" style="font-size: 0.95rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 1.25rem;">
-            // 02. Diagnóstico &amp; Estimación:
-          </h3>
+        <!-- Estimate & Booking -->
+        <div class="nfc-device-card reveal reveal-delay-1">
+          <div class="mono" style="font-size: 0.8rem; color: var(--color-ink-dim); margin-bottom: 1.25rem;">
+            // 02. Diagnóstico Estimado:
+          </div>
 
-          <div id="diagEstimateOutput" style="background: #09090E; border: 1px solid var(--border-line); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
-              <span class="mono" style="color: var(--color-acid); font-weight: 700;">Optimización de Rendimiento &amp; Limpieza SSD</span>
-              <span class="tag-pill-acid">NIVEL MEDIO</span>
+          <div id="diagEstimateOutput" style="background: var(--color-bg); border: 1px solid var(--color-line); padding: 1.5rem; margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span class="mono" style="color: var(--color-acid); font-weight: 700;">Optimización de Rendimiento SSD</span>
+              <span class="stack-pill highlight" style="font-size: 0.7rem;">NIVEL MEDIO</span>
             </div>
-            <p style="color: var(--text-main); font-size: 0.925rem; margin-bottom: 0.35rem;">
+            <p style="color: var(--color-ink); font-size: 0.9rem; margin-bottom: 0.25rem;">
               ⏱ <strong>Tiempo estimado:</strong> 45 - 60 min | 🏷 <strong>Tarifa base:</strong> $25 USD
             </p>
-            <p style="color: var(--text-dim); font-size: 0.8rem;">
-              Conexión 100% segura mediante AnyDesk / TeamViewer con supervisión en vivo en tu pantalla.
+            <p style="color: var(--color-ink-dim); font-size: 0.8rem;">
+              Supervisas en vivo cada acción en tu pantalla mediante AnyDesk.
             </p>
           </div>
 
-          <div style="margin-bottom: 1.75rem;">
-            <h4 class="mono" style="font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.6rem; text-transform: uppercase;">Pasos para la sesión remota:</h4>
-            <ol style="padding-left: 1.25rem; color: var(--text-dim); font-size: 0.875rem; display: flex; flex-direction: column; gap: 0.4rem;">
-              <li>Descargas la app oficial y segura de AnyDesk.</li>
-              <li>Me compartes tu ID numérico temporal vía WhatsApp.</li>
-              <li>Supervisas cada movimiento en tiempo real con total control.</li>
-            </ol>
-          </div>
-
-          <a id="diagWhatsappBtn" href="https://wa.me/573150135016?text=Hola%20Nicolás,%20requiero%20soporte%20técnico%20remoto" target="_blank" rel="noopener noreferrer" class="btn btn-acid" style="width: 100%;" data-magnetic>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <a id="diagWhatsappBtn" href="https://wa.me/573150135016?text=Hola%20Nicolás,%20requiero%20soporte%20técnico%20remoto" target="_blank" rel="noopener noreferrer" class="btn-acid-cta" style="width: 100%; justify-content: center; padding: 0.9rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
             </svg>
             <span>Iniciar Sesión de Soporte por WhatsApp</span>
@@ -446,184 +420,38 @@
   </section>
 
   <!-- ========================================================================
-       6. Sección de Demos en Vivo (Marcos de Navegador Mac)
-       ======================================================================== -->
-  <section id="demos" class="section" style="background: rgba(10, 10, 14, 0.5); border-top: 1px solid var(--border-subtle);">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag-hud">
-          <span class="live-dot"></span>
-          <span>Prototipos Interactivos en Producción</span>
-        </div>
-        <h2 class="section-title">Sitios Web de <span class="text-acid">Demostración</span></h2>
-        <p class="section-subtitle">
-          Proyectos web interactivos creados con arquitectura modular, diseño UI/UX de alta fidelidad y listos para producción.
-        </p>
-      </div>
-
-      <div class="bento-grid grid-cols-3">
-        <!-- Demo 1: Gastronomía -->
-        <article class="browser-frame reveal reveal-delay-1">
-          <div class="browser-header-bar">
-            <div class="browser-dots">
-              <span class="browser-dot dot-red"></span>
-              <span class="browser-dot dot-yellow"></span>
-              <span class="browser-dot dot-green"></span>
-            </div>
-            <div class="browser-address">https://nicolas.dev/demos/gastronomia/</div>
-          </div>
-
-          <div class="browser-content-preview" style="background: linear-gradient(135deg, #1C1C24 0%, #0E0E14 100%);">
-            <div style="text-align: center; padding: 1.5rem;" class="preview-vector">
-              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🍷</div>
-              <div class="mono" style="font-size: 1.15rem; font-weight: 800; color: #F59E0B;">GOURMET BISTRO</div>
-              <span class="mono" style="font-size: 0.75rem; color: var(--text-dim);">Menú Digital NFC &amp; Dark Mode</span>
-            </div>
-          </div>
-
-          <div class="browser-body">
-            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
-              <span class="tag-pill-acid">RESTAURANTES</span>
-              <span class="tag-pill-acid" style="color: #38BDF8; border-color: rgba(56,189,248,0.3);">NFC TAGS</span>
-              <span class="tag-pill-acid">COMANDA WHATSAPP</span>
-            </div>
-            <h3 class="card-title" style="font-size: 1.35rem;">Gourmet Bistro &amp; Menú Digital</h3>
-            <p class="card-text">
-              Carta gastronómica interactiva para lectura rápida en mesas vía NFC, filtros de dieta y comanda directa a cocina.
-            </p>
-            <div style="margin-top: auto; padding-top: 1rem;">
-              <a href="demos/gastronomia/" class="btn btn-outline-dark" style="width: 100%;" data-magnetic>
-                <span>Abrir Menú Digital</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Demo 2: Salud & Bienestar -->
-        <article class="browser-frame reveal reveal-delay-2">
-          <div class="browser-header-bar">
-            <div class="browser-dots">
-              <span class="browser-dot dot-red"></span>
-              <span class="browser-dot dot-yellow"></span>
-              <span class="browser-dot dot-green"></span>
-            </div>
-            <div class="browser-address">https://nicolas.dev/demos/salud/</div>
-          </div>
-
-          <div class="browser-content-preview" style="background: linear-gradient(135deg, #0F766E 0%, #115E59 100%);">
-            <div style="text-align: center; padding: 1.5rem;" class="preview-vector">
-              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌿</div>
-              <div class="mono" style="font-size: 1.15rem; font-weight: 800; color: #5EEAD4;">AURA WELLNESS</div>
-              <span class="mono" style="font-size: 0.75rem; color: #CCFBF1;">Clínica Médica &amp; Spa Holístico</span>
-            </div>
-          </div>
-
-          <div class="browser-body">
-            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
-              <span class="tag-pill-acid" style="color: #5EEAD4; border-color: rgba(94,234,212,0.3);">SALUD &amp; SPA</span>
-              <span class="tag-pill-acid">CITAS ONLINE</span>
-              <span class="tag-pill-acid">CLEAN LIGHT</span>
-            </div>
-            <h3 class="card-title" style="font-size: 1.35rem;">Aura Wellness Center</h3>
-            <p class="card-text">
-              Portal clínico y spa de bienestar con catálogo de terapias dermatológicas y agendamiento interactivo de citas médicas.
-            </p>
-            <div style="margin-top: auto; padding-top: 1rem;">
-              <a href="demos/salud/" class="btn btn-outline-dark" style="width: 100%;" data-magnetic>
-                <span>Ver Portal de Salud</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Demo 3: Inmobiliaria -->
-        <article class="browser-frame reveal reveal-delay-3">
-          <div class="browser-header-bar">
-            <div class="browser-dots">
-              <span class="browser-dot dot-red"></span>
-              <span class="browser-dot dot-yellow"></span>
-              <span class="browser-dot dot-green"></span>
-            </div>
-            <div class="browser-address">https://nicolas.dev/demos/inmobiliaria/</div>
-          </div>
-
-          <div class="browser-content-preview" style="background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%);">
-            <div style="text-align: center; padding: 1.5rem;" class="preview-vector">
-              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏢</div>
-              <div class="mono" style="font-size: 1.15rem; font-weight: 800; color: #C7D2FE;">URBAN LUXE</div>
-              <span class="mono" style="font-size: 0.75rem; color: #E0E7FF;">Real Estate &amp; Residencias Prime</span>
-            </div>
-          </div>
-
-          <div class="browser-body">
-            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
-              <span class="tag-pill-acid" style="color: #A5B4FC; border-color: rgba(165,180,252,0.3);">REAL ESTATE</span>
-              <span class="tag-pill-acid">FILTROS EN VIVO</span>
-              <span class="tag-pill-acid">CALCULADORA</span>
-            </div>
-            <h3 class="card-title" style="font-size: 1.35rem;">Urban Luxe Real Estate</h3>
-            <p class="card-text">
-              Catálogo inmobiliario minimalista con filtrado dinámico de residencias y simulador interactivo de cuotas hipotecarias.
-            </p>
-            <div style="margin-top: auto; padding-top: 1rem;">
-              <a href="demos/inmobiliaria/" class="btn btn-outline-dark" style="width: 100%;" data-magnetic>
-                <span>Explorar Propiedades</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       7. Sección de Contacto Serverless
+       6. Sección de Contacto Serverless
        ======================================================================== -->
   <section id="contacto" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag-hud">
-          <span class="live-dot"></span>
-          <span>Canal Directo de Comunicación</span>
+    <div class="shell">
+      <div class="section-head-bar reveal">
+        <div>
+          <div class="section-tag-mono"><span class="dot-pulse"></span> Canal Directo // Cotizaciones</div>
+          <h2 class="section-title-large">Inicia tu Proyecto</h2>
         </div>
-        <h2 class="section-title">Inicia tu <span class="text-acid">Proyecto Tecnológico</span></h2>
-        <p class="section-subtitle">¿Tienes un proyecto en mente, deseas implementar Tags NFC o requieres soporte remoto urgente? Conversemos hoy mismo.</p>
+        <div class="mono" style="color: var(--color-ink-dim); font-size: 0.8125rem;">
+          [ RESPUESTA EN MINUTOS ]
+        </div>
       </div>
 
-      <div class="bento-grid grid-cols-2" style="gap: 3.5rem; max-width: 1150px; margin: 0 auto; align-items: start;">
-        <!-- Formulario Serverless -->
-        <div class="bento-card reveal">
-          <div class="card-hud-corner">[ FORM // ENCRYPTED ]</div>
+      <div class="contact-grid">
+        <!-- Form -->
+        <div class="nfc-device-card reveal">
           <form id="contactForm" method="POST" action="">
             <div class="form-group">
               <label for="formName" class="form-label">Nombre Completo *</label>
-              <input type="text" id="formName" name="name" class="form-input" placeholder="Ej. Carlos Mendoza" required />
+              <input type="text" id="formName" name="name" class="form-input" placeholder="Tu nombre" required />
               <div class="form-feedback"></div>
             </div>
 
             <div class="form-group">
               <label for="formEmail" class="form-label">Correo Electrónico *</label>
-              <input type="email" id="formEmail" name="email" class="form-input" placeholder="carlos@empresa.com" required />
+              <input type="email" id="formEmail" name="email" class="form-input" placeholder="correo@empresa.com" required />
               <div class="form-feedback"></div>
             </div>
 
             <div class="form-group">
-              <label for="formService" class="form-label">Servicio de Interés</label>
+              <label for="formService" class="form-label">Servicio Requerido</label>
               <select id="formService" name="service" class="form-select">
                 <option value="Desarrollo Web">Desarrollo Web / Landing Page</option>
                 <option value="Soluciones NFC">Soluciones &amp; Tags NFC para Negocios</option>
@@ -633,61 +461,50 @@
             </div>
 
             <div class="form-group">
-              <label for="formMessage" class="form-label">Mensaje o Detalle del Requerimiento *</label>
-              <textarea id="formMessage" name="message" class="form-textarea" placeholder="Describe brevemente los objetivos de tu proyecto o el diagnóstico que necesitas..." required></textarea>
+              <label for="formMessage" class="form-label">Detalle del Requerimiento *</label>
+              <textarea id="formMessage" name="message" class="form-textarea" placeholder="Cuéntame sobre tu proyecto o la necesidad de tu negocio..." required></textarea>
               <div class="form-feedback"></div>
             </div>
 
-            <button type="submit" class="btn btn-acid" style="width: 100%;" data-magnetic>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-              <span>Enviar Solicitud</span>
+            <button type="submit" class="btn-acid-cta" style="width: 100%; justify-content: center; padding: 0.85rem;">
+              <span>Enviar Mensaje</span>
             </button>
           </form>
         </div>
 
-        <!-- Canales Directos -->
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;" class="reveal reveal-delay-2">
-          <div class="bento-card">
-            <div class="card-hud-corner">[ DIRECT CHANNELS ]</div>
-            <h3 class="card-title" style="font-size: 1.35rem;">Atención Inmediata</h3>
-            <p class="card-text">
-              Para cotizaciones urgentes, diagnósticos en vivo o implementación de hardware NFC:
+        <!-- Direct Info -->
+        <div class="reveal reveal-delay-1">
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">Atención Directa &amp; Inmediata</h3>
+            <p style="color: var(--color-ink-dim); font-size: 0.95rem; line-height: 1.6;">
+              Disponible para proyectos freelance de alto impacto, implementaciones de hardware NFC y soporte remoto 24/7.
             </p>
-
-            <div style="display: flex; flex-direction: column; gap: 1.15rem; margin-top: 0.5rem;">
-              <a href="https://wa.me/573150135016" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.85rem; color: var(--color-acid); font-weight: 700; font-size: 1.05rem;" data-magnetic>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
-                <span>WhatsApp: +57 315 013 5016</span>
-              </a>
-
-              <a href="mailto:nicolasmonroypabon@gmail.com" style="display: flex; align-items: center; gap: 0.85rem; color: var(--text-main); font-weight: 500;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                <span>nicolasmonroypabon@gmail.com</span>
-              </a>
-
-              <a href="https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.85rem; color: var(--text-dim); font-weight: 500;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                  <rect x="2" y="9" width="4" height="12"></rect>
-                  <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-                <span>LinkedIn / Nicolás Monroy Pabón</span>
-              </a>
-            </div>
           </div>
 
-          <div class="bento-card" style="padding: 1.75rem; background: rgba(16, 16, 23, 0.6);">
-            <div class="mono" style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.5;">
-              🔒 <strong>Garantía &amp; Privacidad:</strong> Cada sesión remota y proyecto está respaldado por cifrado de extremo a extremo y acuerdos de confidencialidad estricta.
-            </div>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <a href="https://wa.me/573150135016" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.75rem; color: var(--color-acid); font-weight: 700; font-size: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              <span>WhatsApp: +57 315 013 5016</span>
+            </a>
+
+            <a href="mailto:nicolasmonroypabon@gmail.com" style="display: flex; align-items: center; gap: 0.75rem; color: var(--color-ink); font-size: 0.95rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>nicolasmonroypabon@gmail.com</span>
+            </a>
+
+            <a href="https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.75rem; color: var(--color-ink-dim); font-size: 0.95rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <span>LinkedIn / Nicolás Monroy Pabón</span>
+            </a>
           </div>
         </div>
       </div>
@@ -695,101 +512,35 @@
   </section>
 
   <!-- ========================================================================
-       8. Footer & Legal
+       7. Footer
        ======================================================================== -->
-  <footer style="background: #050507; border-top: 1px solid var(--border-subtle); padding: 3.5rem 0; margin-top: 4rem;">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
-      <div style="display: flex; align-items: center; gap: 0.85rem;">
-        <a href="#inicio" class="brand-logo" style="font-size: 1.15rem;">
-          <span class="logo-dot"></span>
-          <span>nicolas<span>●</span>dev</span>
-        </a>
-        <span style="color: var(--border-line);">|</span>
-        <span class="mono" style="color: var(--text-dim); font-size: 0.8125rem;">© 2026 Nicolás Monroy // Creative Technology</span>
+  <footer style="padding: 3rem 0; background: #070707;">
+    <div class="shell" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div class="brand-wrap">
+        <span class="brand-title" style="font-size: 1.1rem;">nicolas<span class="brand-dot">●</span>dev</span>
+        <span class="mono" style="color: var(--color-ink-dimmer); font-size: 0.75rem;">© 2026 // Creative Technology</span>
       </div>
 
-      <div style="display: flex; gap: 2rem; font-size: 0.875rem; color: var(--text-dim);">
-        <a href="#inicio" class="nav-link">Inicio</a>
-        <a href="#servicios" class="nav-link">Servicios</a>
-        <a href="#nfc" class="nav-link">Tags NFC</a>
-        <a href="#soporte" class="nav-link">Soporte</a>
-        <a href="#demos" class="nav-link">Demos</a>
+      <div style="display: flex; gap: 1.5rem; font-size: 0.85rem; color: var(--color-ink-dim);">
+        <a href="#inicio">Inicio</a>
+        <a href="#demos">Demos</a>
+        <a href="#nfc">Tags NFC</a>
+        <a href="#soporte">Soporte</a>
       </div>
     </div>
   </footer>
 
-  <!-- ========================================================================
-       9. Command Palette HUD Modal (Ctrl + K)
-       ======================================================================== -->
-  <div class="command-palette-overlay" id="commandPalette" role="dialog" aria-modal="true" aria-label="Paleta de comandos">
-    <div class="command-modal">
-      <div class="command-search-wrap">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-acid)" stroke-width="2">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="text" id="commandInput" class="command-search-input" placeholder="Escribe un comando o busca una sección..." autocomplete="off" />
-      </div>
-
-      <div class="command-list" id="commandList">
-        <div class="command-item" data-href="#inicio">
-          <span>⚡ Ir a Inicio / Hero 3D</span>
-          <span class="command-item-badge">#inicio</span>
-        </div>
-        <div class="command-item" data-href="#servicios">
-          <span>🛠 Ver Servicios &amp; Capacidades</span>
-          <span class="command-item-badge">#servicios</span>
-        </div>
-        <div class="command-item" data-href="#nfc">
-          <span>📶 Soluciones con Tags NFC para Negocios</span>
-          <span class="command-item-badge">#nfc</span>
-        </div>
-        <div class="command-item" data-href="#soporte">
-          <span>🛡 Calculadora de Soporte Técnico Remoto</span>
-          <span class="command-item-badge">#soporte</span>
-        </div>
-        <div class="command-item" data-href="demos/gastronomia/">
-          <span>🍷 Demo 1: Gourmet Bistro (Menú Digital NFC)</span>
-          <span class="command-item-badge">DEMO</span>
-        </div>
-        <div class="command-item" data-href="demos/salud/">
-          <span>🌿 Demo 2: Aura Wellness Center (Clínica &amp; Citas)</span>
-          <span class="command-item-badge">DEMO</span>
-        </div>
-        <div class="command-item" data-href="demos/inmobiliaria/">
-          <span>🏢 Demo 3: Urban Luxe (Inmobiliaria &amp; Hipotecas)</span>
-          <span class="command-item-badge">DEMO</span>
-        </div>
-        <div class="command-item" data-action="toggle-audio">
-          <span>🔊 Alternar Efectos de Sonido Táctiles</span>
-          <span class="command-item-badge">AUDIO</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================================================
-       10. Cookie Banner (HUD Privacidad)
-       ======================================================================== -->
+  <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite">
-    <div style="display: flex; align-items: center; gap: 0.6rem;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-acid)" stroke-width="2">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-      </svg>
-      <strong class="mono" style="color: var(--text-main); font-size: 0.9rem;">PRIVACY // PROTOCOL HUD</strong>
-    </div>
-    <p>
-      Este sitio emplea almacenamiento local esencial para telemetría interactiva, simulación de hardware y rendimiento óptimo.
-    </p>
-    <div style="display: flex; gap: 0.75rem;">
-      <button class="btn btn-acid btn-sm" id="acceptCookiesBtn">Aceptar Todo</button>
-      <button class="btn btn-secondary btn-sm" id="rejectCookiesBtn">Solo Esenciales</button>
+    <strong class="mono" style="color: var(--color-ink); font-size: 0.85rem;">[ PRIVACY PROTOCOL ]</strong>
+    <p>Este sitio utiliza almacenamiento local esencial para garantizar el funcionamiento técnico del portafolio.</p>
+    <div style="display: flex; gap: 0.5rem;">
+      <button class="btn-acid-cta" id="acceptCookiesBtn" style="padding: 0.4rem 0.9rem; font-size: 0.75rem;">Aceptar</button>
+      <button class="stack-pill" id="rejectCookiesBtn" style="cursor: pointer;">Cerrar</button>
     </div>
   </div>
 
-  <!-- Libraries & Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="js/three-hero.js"></script>
+  <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/forms.js"></script>
 </body>
