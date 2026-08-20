@@ -1,27 +1,30 @@
 /* ==========================================================================
-   NICOLAS-HYBRID-PORTFOLIO — Authentic Brand OS v2.0
-   Design DNA: Space Grotesk + JetBrains Mono + Obsidian Void & Acid Lime (#C6FF3D)
+   NICOLAS-HYBRID-PORTFOLIO — Master Stylesheet (Brand OS v2.0)
+   Obsidian Void (#0A0A0A) • Electric Acid Lime (#C6FF3D) • Ink (#F2EFE8)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Brand Obsidian Scale */
+  /* Obsidian Void Scale */
   --color-bg: #0A0A0A;
-  --color-bg-2: #131313;
-  --color-bg-3: #1C1C1C;
-  --color-line: #262626;
-  --color-line-2: #333333;
-  --color-line-3: rgba(255, 255, 255, 0.12);
+  --color-bg-2: #121212;
+  --color-bg-3: #181818;
+  --color-bg-card: rgba(18, 18, 18, 0.85);
+
+  /* Hairline Borders */
+  --color-line: #222222;
+  --color-line-2: #303030;
+  --color-line-3: rgba(255, 255, 255, 0.1);
 
   /* Typography */
   --color-ink: #F2EFE8;
-  --color-ink-dim: #8A8A85;
-  --color-ink-dimmer: #555555;
+  --color-ink-dim: #90908C;
+  --color-ink-dimmer: #505050;
 
   /* Brand Accents */
   --color-acid: #C6FF3D;          /* Electric Acid Lime */
-  --color-acid-deep: #9FD81A;
+  --color-acid-glow: rgba(198, 255, 61, 0.22);
   --color-warn: #FF5E3A;
   --color-cyan: #00F0FF;
 
@@ -30,22 +33,21 @@
   --font-body: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Layout */
-  --container-max: 1440px;
-  --header-height: 70px;
+  /* Dimensions */
+  --container-max: 1360px;
+  --header-height: 72px;
 
-  /* Easing */
+  /* Transitions */
   --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: 150ms ease;
-  --transition-normal: 300ms var(--ease-smooth);
+  --transition-normal: 280ms var(--ease-smooth);
 }
 
-/* --- 1. Global Reset & Ambient Layer --- */
+/* --- 1. Global Reset & Base Setup --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border-color: var(--color-line);
 }
 
 html {
@@ -66,23 +68,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Subtle Engineered Grid */
+  /* Precision Technical Grid */
   background-image:
     linear-gradient(rgba(198, 255, 61, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(198, 255, 61, 0.02) 1px, transparent 1px),
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(198, 255, 61, 0.05), transparent 70%);
-  background-size: 40px 40px, 40px 40px, 100% 100%;
+    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(198, 255, 61, 0.04), transparent 70%);
+  background-size: 48px 48px, 48px 48px, 100% 100%;
 }
 
-/* Grain Overlay */
+/* Subtle Film Grain */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.022;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
 }
 
 /* Typography Base */
@@ -111,7 +113,7 @@ a {
   text-decoration: none;
 }
 
-/* Containers */
+/* Layout Containers */
 .shell {
   max-width: var(--container-max);
   margin: 0 auto;
@@ -127,8 +129,8 @@ a {
 }
 
 .section {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
   position: relative;
   z-index: 2;
   border-bottom: 1px solid var(--color-line);
@@ -141,7 +143,7 @@ a {
   }
 }
 
-/* Section Header */
+/* Section Head Bar */
 .section-head-bar {
   display: flex;
   justify-content: space-between;
@@ -162,6 +164,7 @@ a {
   display: flex;
   align-items: center;
   gap: 0.65rem;
+  margin-bottom: 0.5rem;
 }
 
 .section-tag-mono .dot-pulse {
@@ -170,6 +173,12 @@ a {
   border-radius: 50%;
   background: var(--color-acid);
   box-shadow: 0 0 8px var(--color-acid);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
 }
 
 .section-title-large {
@@ -179,10 +188,11 @@ a {
   letter-spacing: -0.04em;
 }
 
-/* Ticker Marquee Track */
+/* Ticker Marquee */
 .ticker-container {
   overflow: hidden;
-  border-y: 1px solid var(--color-line);
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
   background: var(--color-bg-2);
   padding: 1.25rem 0;
   white-space: nowrap;
@@ -195,10 +205,10 @@ a {
 
 .ticker-item {
   font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-size: clamp(1.25rem, 2.5vw, 1.85rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
   display: inline-flex;
   align-items: center;
   gap: 1.5rem;
@@ -214,7 +224,7 @@ a {
   100% { transform: translateX(-50%); }
 }
 
-/* Reveal Observer */
+/* Scroll Reveal */
 .reveal {
   opacity: 0;
   transform: translateY(28px);

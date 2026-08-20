@@ -1,6 +1,6 @@
 /* ==========================================================================
-   NICOLAS-HYBRID-PORTFOLIO — Authentic Brand OS Components
-   Topbar, Manifesto Hero, Editorial Project Rows, NFC Showcase & Contact
+   NICOLAS-HYBRID-PORTFOLIO — Master Components Stylesheet
+   Topbar, Manifesto Hero, Editorial Demos, NFC Hardware & Remote Support
    ========================================================================== */
 
 /* --- 1. Topbar Navigation --- */
@@ -59,12 +59,6 @@
 .brand-dot {
   color: var(--color-acid);
   display: inline-block;
-  animation: pulseDot 2s infinite ease-in-out;
-}
-
-@keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
 }
 
 .brand-tag {
@@ -119,26 +113,6 @@
   gap: 1rem;
 }
 
-/* Version Toggle Pill in Navbar */
-.version-switch-pill {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  background: var(--color-bg-2);
-  border: 1px solid var(--color-line-2);
-  color: var(--color-ink-dim);
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all var(--transition-fast);
-}
-
-.version-switch-pill:hover {
-  border-color: var(--color-acid);
-  color: var(--color-acid);
-}
-
 .btn-acid-cta {
   background: var(--color-acid);
   color: #0A0A0A;
@@ -153,6 +127,7 @@
   gap: 0.5rem;
   cursor: pointer;
   transition: all var(--transition-fast);
+  text-decoration: none;
 }
 
 .btn-acid-cta:hover {
@@ -244,7 +219,6 @@
   50% { opacity: 0; }
 }
 
-/* Hero 3-Column Manifesto Box */
 .manifesto-box {
   display: grid;
   grid-template-columns: 1.3fr 1fr 0.9fr;
@@ -306,9 +280,9 @@
 /* --- 3. Demos Showcase Rows (Editorial Architecture) --- */
 .demo-row {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 3rem;
-  padding: 3rem 0;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  padding: 3.5rem 0;
   border-bottom: 1px solid var(--color-line);
   align-items: center;
 }
@@ -316,7 +290,7 @@
 @media (max-width: 900px) {
   .demo-row {
     grid-template-columns: 1fr;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     gap: 2rem;
   }
 }
@@ -334,7 +308,7 @@
 }
 
 .demo-row-title {
-  font-size: 2.25rem;
+  font-size: 2.35rem;
   font-weight: 800;
   letter-spacing: -0.035em;
   margin-bottom: 0.75rem;
@@ -347,27 +321,41 @@
   margin-bottom: 1.5rem;
 }
 
-.demo-preview-canvas {
+.demo-preview-card {
   background: var(--color-bg-2);
   border: 1px solid var(--color-line-2);
   border-radius: 12px;
   overflow: hidden;
-  padding: 2.5rem;
-  text-align: center;
-  position: relative;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
   transition: transform var(--transition-normal), border-color var(--transition-normal);
 }
 
-.demo-preview-canvas:hover {
+.demo-preview-card:hover {
   transform: translateY(-4px);
   border-color: var(--color-acid);
+}
+
+.demo-card-topbar {
+  background: #0D0D12;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--color-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-ink-dim);
+}
+
+.demo-card-inner {
+  padding: 2rem;
 }
 
 /* --- 4. NFC Hardware & Mobile Interaction --- */
 .nfc-grid-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 3.5rem;
   align-items: center;
 }
 
@@ -377,9 +365,25 @@
   }
 }
 
+.nfc-feature-card {
+  padding: 1.5rem;
+  background: var(--color-bg-2);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-bottom: 1rem;
+}
+
+.nfc-feature-card:hover, .nfc-feature-card.active {
+  border-color: var(--color-acid);
+  background: rgba(198, 255, 61, 0.04);
+}
+
 .nfc-device-card {
   background: var(--color-bg-2);
   border: 1px solid var(--color-line-2);
+  border-radius: 12px;
   padding: 2.25rem;
   position: relative;
 }
@@ -391,6 +395,7 @@
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   padding: 0.6rem 1.1rem;
+  border-radius: 6px;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
@@ -425,7 +430,7 @@
 .support-triage-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 3.5rem;
   align-items: start;
 }
 
@@ -438,6 +443,7 @@
 .triage-option-card {
   background: var(--color-bg-2);
   border: 1px solid var(--color-line);
+  border-radius: 8px;
   padding: 1.5rem;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -481,6 +487,7 @@
   width: 100%;
   background: var(--color-bg-2);
   border: 1px solid var(--color-line-2);
+  border-radius: 6px;
   padding: 0.9rem 1.25rem;
   color: var(--color-ink);
   font-family: var(--font-body);
@@ -521,6 +528,7 @@
 .toast {
   background: var(--color-bg-2);
   border: 1px solid var(--color-line-3);
+  border-radius: 8px;
   padding: 1rem 1.5rem;
   color: var(--color-ink);
   font-family: var(--font-mono);
@@ -541,6 +549,7 @@
   max-width: 420px;
   background: var(--color-bg-2);
   border: 1px solid var(--color-line-3);
+  border-radius: 10px;
   padding: 1.5rem;
   z-index: 1500;
   box-shadow: 0 20px 50px rgba(0,0,0,0.9);

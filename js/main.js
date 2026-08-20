@@ -1,356 +1,167 @@
 /**
- * NICOLAS-HYBRID-PORTFOLIO — Brand OS v2.0 Client Engine
- * Spotlight Mouse Tracking, 3D Holographic Tilt, Magnetic Physics, Web Audio & Command Palette
+ * NICOLAS-HYBRID-PORTFOLIO — Brand OS Client Engine
+ * Smooth Navigation, Scroll Observers, NFC Simulator & Remote Diagnostics
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
-  initSpotlightSystem();
-  initMagneticElements();
-  initHolographicCardTilt();
-  initNfcPhoneSimulator();
+  initNfcSimulator();
   initRemoteDiagnostics();
-  initCommandPalette();
-  initAudioSystem();
   initScrollAnimations();
   initCookieBanner();
 });
 
 /* ==========================================================================
-   1. Dynamic Mouse Spotlight System
+   1. Navbar & Mobile Menu Interaction
    ========================================================================== */
-function initSpotlightSystem() {
-  const cards = document.querySelectorAll('.bento-card, .browser-frame, .diag-card');
-  const spotlightOrb = document.createElement('div');
-  spotlightOrb.className = 'cursor-spotlight';
-  document.body.appendChild(spotlightOrb);
+function initNavbar() {
+  const topbar = document.querySelector('.topbar');
+  const mobileToggle = document.getElementById('mobileNavToggle');
+  const navList = document.getElementById('topbarNav');
+  const links = document.querySelectorAll('.topbar-link');
 
-  window.addEventListener('mousemove', (e) => {
-    spotlightOrb.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-
-    cards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    });
+  // Sticky Topbar
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) {
+      topbar?.classList.add('is-scrolled');
+    } else {
+      topbar?.classList.remove('is-scrolled');
+    }
+    updateActiveNavLink();
   }, { passive: true });
-}
 
-/* ==========================================================================
-   2. Magnetic Physics for Buttons & Badges (Snellenberg Style)
-   ========================================================================== */
-function initMagneticElements() {
-  const magneticEls = document.querySelectorAll('[data-magnetic]');
+  // Mobile Menu
+  mobileToggle?.addEventListener('click', () => {
+    navList?.classList.toggle('is-open');
+  });
 
-  magneticEls.forEach(el => {
-    el.addEventListener('mousemove', (e) => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - (rect.left + rect.width / 2);
-      const y = e.clientY - (rect.top + rect.height / 2);
-
-      el.style.transform = `translate3d(${x * 0.25}px, ${y * 0.25}px, 0)`;
-    });
-
-    el.addEventListener('mouseleave', () => {
-      el.style.transform = 'translate3d(0, 0, 0)';
+  links.forEach(l => {
+    l.addEventListener('click', () => {
+      navList?.classList.remove('is-open');
     });
   });
-}
 
-/* ==========================================================================
-   3. 3D Holographic Card Tilt Effect with Rainbow Shimmer
-   ========================================================================== */
-function initHolographicCardTilt() {
-  const card = document.getElementById('holoCard');
-  if (!card) return;
+  function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const scrollY = window.pageYOffset + 120;
 
-  const container = card.parentElement;
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop;
+      const sectionId = current.getAttribute('id');
+      const navTarget = document.querySelector(`.topbar-nav a[href*="${sectionId}"]`);
 
-  container.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rotateX = ((y - centerY) / centerY) * -16;
-    const rotateY = ((x - centerX) / centerX) * 16;
-
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.04, 1.04, 1.04)`;
-  });
-
-  container.addEventListener('mouseleave', () => {
-    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-  });
-}
-
-/* ==========================================================================
-   4. Web Audio API Cyber Synthesizer (Micro-FX)
-   ========================================================================== */
-let audioCtx = null;
-let audioEnabled = false;
-
-function initAudioSystem() {
-  const audioBtn = document.getElementById('audioToggleBtn');
-
-  function playCyberBlip(freq = 880, type = 'sine', duration = 0.06) {
-    if (!audioEnabled) return;
-    try {
-      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      if (audioCtx.state === 'suspended') audioCtx.resume();
-
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(freq * 1.6, audioCtx.currentTime + duration);
-
-      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      osc.start();
-      osc.stop(audioCtx.currentTime + duration);
-    } catch (e) {
-      console.warn('Audio FX not supported or blocked:', e);
-    }
-  }
-
-  audioBtn?.addEventListener('click', () => {
-    audioEnabled = !audioEnabled;
-    audioBtn.classList.toggle('is-active', audioEnabled);
-    audioBtn.setAttribute('title', audioEnabled ? 'Efectos de audio activados' : 'Activar efectos de audio');
-    
-    if (audioEnabled) {
-      playCyberBlip(1200, 'triangle', 0.1);
-      showToast('Efectos de sonido táctiles activados', 'success');
-    }
-  });
-
-  document.querySelectorAll('.btn, .nfc-touch-sensor, .diag-card, .menu-tab, .browser-frame').forEach(el => {
-    el.addEventListener('mouseenter', () => playCyberBlip(520, 'sine', 0.04));
-    el.addEventListener('click', () => playCyberBlip(980, 'triangle', 0.08));
-  });
-}
-
-/* ==========================================================================
-   5. Command Palette (Ctrl + K / Cmd + K HUD)
-   ========================================================================== */
-function initCommandPalette() {
-  const palette = document.getElementById('commandPalette');
-  const input = document.getElementById('commandInput');
-  const items = document.querySelectorAll('.command-item');
-  const triggerBtn = document.getElementById('openPaletteBtn');
-
-  if (!palette || !input) return;
-
-  const openPalette = () => {
-    palette.classList.add('is-open');
-    input.value = '';
-    filterItems('');
-    setTimeout(() => input.focus(), 80);
-  };
-
-  const closePalette = () => {
-    palette.classList.remove('is-open');
-  };
-
-  triggerBtn?.addEventListener('click', openPalette);
-
-  // Keyboard shortcut Ctrl+K / Cmd+K / Esc
-  window.addEventListener('keydown', (e) => {
-    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      if (palette.classList.contains('is-open')) {
-        closePalette();
-      } else {
-        openPalette();
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        links.forEach(l => l.classList.remove('active'));
+        navTarget?.classList.add('active');
       }
-    }
-    if (e.key === 'Escape' && palette.classList.contains('is-open')) {
-      closePalette();
-    }
-  });
-
-  palette.addEventListener('click', (e) => {
-    if (e.target === palette) closePalette();
-  });
-
-  input.addEventListener('input', () => {
-    filterItems(input.value.trim().toLowerCase());
-  });
-
-  function filterItems(query) {
-    items.forEach(item => {
-      const text = item.textContent.toLowerCase();
-      item.style.display = text.includes(query) ? 'flex' : 'none';
     });
   }
-
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      const action = item.getAttribute('data-action');
-      const href = item.getAttribute('data-href');
-
-      if (href) {
-        if (href.startsWith('#')) {
-          const target = document.querySelector(href);
-          target?.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          window.location.href = href;
-        }
-      }
-
-      if (action === 'toggle-audio') {
-        document.getElementById('audioToggleBtn')?.click();
-      }
-
-      closePalette();
-    });
-  });
 }
 
 /* ==========================================================================
-   6. NFC Smartphone Simulator & Dynamic State Machine
+   2. NFC Interactive Simulator
    ========================================================================== */
-function initNfcPhoneSimulator() {
+function initNfcSimulator() {
   const touchTarget = document.getElementById('nfcTouchTarget');
-  const screenContent = document.getElementById('phoneScreenContent');
+  const resultDisplay = document.getElementById('nfcResultDisplay');
   const modeButtons = document.querySelectorAll('[data-nfc-mode]');
+  const featureCards = document.querySelectorAll('[data-nfc-trigger]');
 
-  if (!touchTarget || !screenContent) return;
+  if (!touchTarget || !resultDisplay) return;
 
   let currentMode = 'menu';
 
-  const modesData = {
+  const nfcData = {
     menu: {
+      title: 'Menú Digital Gourmet Bistro',
+      payload: 'https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/demos/gastronomia/',
       tag: 'NTAG213 // 144 BYTES',
-      title: 'Gourmet Bistro',
-      badge: 'CARTA DIGITAL NFC',
-      preview: `
-        <div style="text-align: center; padding: 0.5rem 0;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🍷</div>
-          <h4 style="font-size: 1.25rem; color: #FFFFFF; font-weight: 800;">Gourmet Bistro</h4>
-          <span style="font-size: 0.8rem; color: var(--color-acid); font-family: var(--font-mono);">Mesa #07 • Menú Activo</span>
-        </div>
-        <div style="margin-top: 1rem; background: #09090D; border: 1px solid var(--border-subtle); border-radius: 12px; padding: 0.85rem; text-align: left;">
-          <div style="font-size: 0.85rem; font-weight: 700; color: #FFF;">Carpaccio Trufado</div>
-          <div style="font-size: 0.75rem; color: var(--text-dim);">$16.50 USD • Añadido a orden</div>
-        </div>
-        <a href="demos/gastronomia/" class="btn btn-acid btn-sm" style="width: 100%; margin-top: 1.25rem;">
-          Ver Carta Completa
-        </a>
-      `
+      speed: '0.18s de lectura instantánea',
+      actionText: 'Abriendo comanda digital de mesa #07...'
     },
     review: {
+      title: 'Google Business Reviews Boost',
+      payload: 'https://g.page/r/nicolas-tech-reviews/review',
       tag: 'NTAG215 // 504 BYTES',
-      title: 'Google Reviews Boost',
-      badge: 'RESEÑAS EN 1-TAP',
-      preview: `
-        <div style="text-align: center; padding: 0.5rem 0;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⭐⭐⭐⭐⭐</div>
-          <h4 style="font-size: 1.2rem; color: #FFFFFF; font-weight: 800;">¿Cómo fue tu experiencia?</h4>
-          <span style="font-size: 0.8rem; color: #38BDF8; font-family: var(--font-mono);">Google Maps Business</span>
-        </div>
-        <div style="margin-top: 1rem; background: #09090D; border: 1px solid var(--border-subtle); border-radius: 12px; padding: 0.85rem; text-align: left;">
-          <div style="font-size: 0.8rem; color: var(--text-main);">"Excelente servicio y atención rápida."</div>
-          <div style="font-size: 0.7rem; color: var(--color-acid); margin-top: 0.25rem;">+48% incremento de reviews</div>
-        </div>
-        <button class="btn btn-acid btn-sm" style="width: 100%; margin-top: 1.25rem;" onclick="showToast('¡Redirigiendo a formulario Google 5 estrellas!', 'success')">
-          Publicar Reseña en Google
-        </button>
-      `
+      speed: '0.12s a formulario 5 estrellas',
+      actionText: 'Redirigiendo a calificación en Google Maps...'
     },
     vcard: {
+      title: 'Tarjeta de Contacto Inteligente (vCard)',
+      payload: 'BEGIN:VCARD\nVERSION:3.0\nN:Monroy;Nicolás\nTEL:+573150135016\nEND:VCARD',
       tag: 'NTAG216 // 888 BYTES',
-      title: 'Tarjeta vCard Inteligente',
-      badge: 'NETWORKING DIGITAL',
-      preview: `
-        <div style="text-align: center; padding: 0.5rem 0;">
-          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--color-acid); color: #000; font-weight: 800; font-size: 1.25rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem auto;">NM</div>
-          <h4 style="font-size: 1.2rem; color: #FFFFFF; font-weight: 800;">Nicolás Monroy</h4>
-          <span style="font-size: 0.8rem; color: var(--color-acid); font-family: var(--font-mono);">Creative Technologist</span>
-        </div>
-        <div style="margin-top: 1rem; background: #09090D; border: 1px solid var(--border-subtle); border-radius: 12px; padding: 0.85rem; text-align: left; font-size: 0.75rem; color: var(--text-dim);">
-          <div>📱 +57 315 013 5016</div>
-          <div>✉️ nicolasmonroypabon@gmail.com</div>
-        </div>
-        <button class="btn btn-acid btn-sm" style="width: 100%; margin-top: 1.25rem;" onclick="showToast('Contacto vCard descargado', 'success')">
-          Guardar en Contactos
-        </button>
-      `
+      speed: 'Contacto guardado en libreta',
+      actionText: 'Descargando tarjeta de contacto...'
     }
   };
 
+  function setMode(modeKey) {
+    currentMode = modeKey;
+    modeButtons.forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-nfc-mode') === modeKey);
+    });
+    featureCards.forEach(c => {
+      c.classList.toggle('active', c.getAttribute('data-nfc-trigger') === modeKey);
+    });
+    renderNfcOutput(false);
+  }
+
   modeButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      modeButtons.forEach(b => {
-        b.classList.remove('btn-acid', 'active');
-        b.classList.add('btn-secondary');
-      });
-      btn.classList.remove('btn-secondary');
-      btn.classList.add('btn-acid', 'active');
-      currentMode = btn.getAttribute('data-nfc-mode') || 'menu';
-      renderPhoneScreen(false);
+      setMode(btn.getAttribute('data-nfc-mode') || 'menu');
+    });
+  });
+
+  featureCards.forEach(card => {
+    card.addEventListener('click', () => {
+      setMode(card.getAttribute('data-nfc-trigger') || 'menu');
     });
   });
 
   touchTarget.addEventListener('click', () => {
-    renderPhoneScreen(true);
+    renderNfcOutput(true);
   });
 
-  function renderPhoneScreen(isTriggered) {
-    const data = modesData[currentMode];
+  function renderNfcOutput(isTriggered) {
+    const data = nfcData[currentMode];
     if (isTriggered) {
-      if ('vibrate' in navigator) navigator.vibrate([30, 40, 30]);
-
-      screenContent.innerHTML = `
-        <div class="phone-status-hud">
-          <span>● NFC TAG CONNECTED</span>
-          <span style="color: var(--color-acid);">${data.tag}</span>
+      if ('vibrate' in navigator) navigator.vibrate([25, 40, 25]);
+      
+      resultDisplay.innerHTML = `
+        <div class="mono" style="color: var(--color-acid); font-weight: 700; margin-bottom: 0.4rem;">
+          [✔] NFC TAG DETECTADO — ${data.tag}
         </div>
-        <div class="phone-live-card">
-          ${data.preview}
+        <p style="color: var(--color-ink); margin-bottom: 0.2rem;"><strong>Destino:</strong> ${data.title}</p>
+        <p class="mono" style="color: var(--color-ink-dim); font-size: 0.75rem; word-break: break-all;"><strong>Payload:</strong> ${data.payload}</p>
+        <div class="mono" style="margin-top: 0.6rem; color: var(--color-acid); font-size: 0.8rem;">
+          ⚡ ${data.speed} — ${data.actionText}
         </div>
       `;
-      showToast(`¡NFC detectado! (${data.title})`, 'success');
+      showToast(`¡Tag NFC leído con éxito! (${data.title})`, 'success');
     } else {
-      screenContent.innerHTML = `
-        <div class="phone-status-hud">
-          <span>NFC SCANNER READY</span>
-          <span>13.56 MHz</span>
-        </div>
-        <div class="phone-live-card">
-          <div style="font-size: 0.85rem; color: var(--text-dim); padding: 1.5rem 0;">
-            Modo: <strong style="color: var(--text-main);">${data.title}</strong>.<br /><br />
-            <em>Haz clic en la tarjeta o sensor NFC para simular el tap inalámbrico.</em>
-          </div>
+      resultDisplay.innerHTML = `
+        <div style="color: var(--color-ink-dim);">
+          MODO ACTIVO: <strong style="color: var(--color-ink);">${data.title}</strong>.<br />
+          <em>Haz clic en el disco para simular la transmisión inalámbrica.</em>
         </div>
       `;
     }
   }
-
-  renderPhoneScreen(false);
 }
 
 /* ==========================================================================
-   7. Remote Diagnostics Matrix
+   3. Remote Diagnostics Interactive Matrix
    ========================================================================== */
 function initRemoteDiagnostics() {
-  const cards = document.querySelectorAll('.diag-card');
+  const cards = document.querySelectorAll('.triage-option-card');
   const estimateOutput = document.getElementById('diagEstimateOutput');
   const whatsappCta = document.getElementById('diagWhatsappBtn');
 
   if (!cards.length || !estimateOutput) return;
 
   const diagnosticsMap = {
-    'lento': { title: 'Optimización de Rendimiento & Limpieza SSD', time: '45 - 60 min', cost: '$25 USD', level: 'NIVEL MEDIO' },
+    'lento': { title: 'Optimización de Rendimiento SSD & Limpieza', time: '45 - 60 min', cost: '$25 USD', level: 'NIVEL MEDIO' },
     'malware': { title: 'Eliminación de Virus, Spyware & Adware', time: '60 - 90 min', cost: '$30 USD', level: 'CRÍTICO' },
     'formato': { title: 'Mantenimiento Preventivo & Backups', time: '90 - 120 min', cost: '$40 USD', level: 'COMPLETO' },
     'software': { title: 'Instalación de Software & Configuración', time: '30 - 45 min', cost: '$20 USD', level: 'RÁPIDO' }
@@ -364,15 +175,15 @@ function initRemoteDiagnostics() {
       const info = diagnosticsMap[issueKey];
 
       estimateOutput.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
           <span class="mono" style="color: var(--color-acid); font-weight: 700;">${info.title}</span>
-          <span class="tag-pill-acid">${info.level}</span>
+          <span class="stack-pill highlight" style="font-size: 0.7rem;">${info.level}</span>
         </div>
-        <p style="color: var(--text-main); font-size: 0.925rem; margin-bottom: 0.35rem;">
+        <p style="color: var(--color-ink); font-size: 0.9rem; margin-bottom: 0.25rem;">
           ⏱ <strong>Tiempo estimado:</strong> ${info.time} | 🏷 <strong>Tarifa base:</strong> ${info.cost}
         </p>
-        <p style="color: var(--text-dim); font-size: 0.8rem;">
-          Conexión 100% segura mediante AnyDesk / TeamViewer con cifrado TLS 1.3 de extremo a extremo.
+        <p style="color: var(--color-ink-dim); font-size: 0.8rem;">
+          Supervisas en vivo cada acción en tu pantalla mediante AnyDesk con total control.
         </p>
       `;
 
@@ -385,53 +196,8 @@ function initRemoteDiagnostics() {
 }
 
 /* ==========================================================================
-   8. Navigation & Scroll Engine
+   4. Scroll & Reveal Animations
    ========================================================================== */
-function initNavbar() {
-  const header = document.querySelector('.site-header');
-  const mobileBtn = document.querySelector('.mobile-menu-btn');
-  const navLinks = document.querySelector('.nav-links');
-  const links = document.querySelectorAll('.nav-link');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header?.classList.add('is-scrolled');
-    } else {
-      header?.classList.remove('is-scrolled');
-    }
-    updateActiveNavLink();
-  }, { passive: true });
-
-  mobileBtn?.addEventListener('click', () => {
-    navLinks?.classList.toggle('is-open');
-    const isExpanded = navLinks?.classList.contains('is-open');
-    mobileBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-  });
-
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks?.classList.remove('is-open');
-    });
-  });
-
-  function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset + 140;
-
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop;
-      const sectionId = current.getAttribute('id');
-      const navTarget = document.querySelector(`.nav-links a[href*="${sectionId}"]`);
-
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        links.forEach(l => l.classList.remove('active'));
-        navTarget?.classList.add('active');
-      }
-    });
-  }
-}
-
 function initScrollAnimations() {
   const reveals = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {
@@ -451,6 +217,9 @@ function initScrollAnimations() {
   reveals.forEach(el => observer.observe(el));
 }
 
+/* ==========================================================================
+   5. Cookie Consent Banner
+   ========================================================================== */
 function initCookieBanner() {
   const banner = document.getElementById('cookieBanner');
   const acceptBtn = document.getElementById('acceptCookiesBtn');
