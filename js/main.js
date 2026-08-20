@@ -1,14 +1,16 @@
 /**
  * NICOLAS-HYBRID-PORTFOLIO — Brand OS v2.0 Client Engine
- * Spotlight Mouse Tracking, 3D Holographic Tilt, Web Audio Micro-FX & Phone Simulator
+ * Spotlight Mouse Tracking, 3D Holographic Tilt, Magnetic Physics, Web Audio & Command Palette
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initSpotlightSystem();
+  initMagneticElements();
   initHolographicCardTilt();
   initNfcPhoneSimulator();
   initRemoteDiagnostics();
+  initCommandPalette();
   initAudioSystem();
   initScrollAnimations();
   initCookieBanner();
@@ -24,10 +26,8 @@ function initSpotlightSystem() {
   document.body.appendChild(spotlightOrb);
 
   window.addEventListener('mousemove', (e) => {
-    // Global spotlight orb
     spotlightOrb.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
 
-    // Per-card border gradient spotlight
     cards.forEach(card => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -39,7 +39,28 @@ function initSpotlightSystem() {
 }
 
 /* ==========================================================================
-   2. 3D Holographic Card Tilt Effect
+   2. Magnetic Physics for Buttons & Badges (Snellenberg Style)
+   ========================================================================== */
+function initMagneticElements() {
+  const magneticEls = document.querySelectorAll('[data-magnetic]');
+
+  magneticEls.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - (rect.left + rect.width / 2);
+      const y = e.clientY - (rect.top + rect.height / 2);
+
+      el.style.transform = `translate3d(${x * 0.25}px, ${y * 0.25}px, 0)`;
+    });
+
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = 'translate3d(0, 0, 0)';
+    });
+  });
+}
+
+/* ==========================================================================
+   3. 3D Holographic Card Tilt Effect with Rainbow Shimmer
    ========================================================================== */
 function initHolographicCardTilt() {
   const card = document.getElementById('holoCard');
@@ -55,10 +76,10 @@ function initHolographicCardTilt() {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     
-    const rotateX = ((y - centerY) / centerY) * -14;
-    const rotateY = ((x - centerX) / centerX) * 14;
+    const rotateX = ((y - centerY) / centerY) * -16;
+    const rotateY = ((x - centerX) / centerX) * 16;
 
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.04, 1.04, 1.04)`;
   });
 
   container.addEventListener('mouseleave', () => {
@@ -67,7 +88,7 @@ function initHolographicCardTilt() {
 }
 
 /* ==========================================================================
-   3. Web Audio API Cyber Synthesizer (Micro-FX)
+   4. Web Audio API Cyber Synthesizer (Micro-FX)
    ========================================================================== */
 let audioCtx = null;
 let audioEnabled = false;
@@ -86,7 +107,7 @@ function initAudioSystem() {
 
       osc.type = type;
       osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(freq * 1.5, audioCtx.currentTime + duration);
+      osc.frequency.exponentialRampToValueAtTime(freq * 1.6, audioCtx.currentTime + duration);
 
       gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
@@ -112,15 +133,91 @@ function initAudioSystem() {
     }
   });
 
-  // Attach subtle audio blips to buttons and cards
-  document.querySelectorAll('.btn, .nfc-touch-sensor, .diag-card, .menu-tab').forEach(el => {
+  document.querySelectorAll('.btn, .nfc-touch-sensor, .diag-card, .menu-tab, .browser-frame').forEach(el => {
     el.addEventListener('mouseenter', () => playCyberBlip(520, 'sine', 0.04));
     el.addEventListener('click', () => playCyberBlip(980, 'triangle', 0.08));
   });
 }
 
 /* ==========================================================================
-   4. NFC Smartphone Simulator & Dynamic State Machine
+   5. Command Palette (Ctrl + K / Cmd + K HUD)
+   ========================================================================== */
+function initCommandPalette() {
+  const palette = document.getElementById('commandPalette');
+  const input = document.getElementById('commandInput');
+  const items = document.querySelectorAll('.command-item');
+  const triggerBtn = document.getElementById('openPaletteBtn');
+
+  if (!palette || !input) return;
+
+  const openPalette = () => {
+    palette.classList.add('is-open');
+    input.value = '';
+    filterItems('');
+    setTimeout(() => input.focus(), 80);
+  };
+
+  const closePalette = () => {
+    palette.classList.remove('is-open');
+  };
+
+  triggerBtn?.addEventListener('click', openPalette);
+
+  // Keyboard shortcut Ctrl+K / Cmd+K / Esc
+  window.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (palette.classList.contains('is-open')) {
+        closePalette();
+      } else {
+        openPalette();
+      }
+    }
+    if (e.key === 'Escape' && palette.classList.contains('is-open')) {
+      closePalette();
+    }
+  });
+
+  palette.addEventListener('click', (e) => {
+    if (e.target === palette) closePalette();
+  });
+
+  input.addEventListener('input', () => {
+    filterItems(input.value.trim().toLowerCase());
+  });
+
+  function filterItems(query) {
+    items.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = text.includes(query) ? 'flex' : 'none';
+    });
+  }
+
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const action = item.getAttribute('data-action');
+      const href = item.getAttribute('data-href');
+
+      if (href) {
+        if (href.startsWith('#')) {
+          const target = document.querySelector(href);
+          target?.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.location.href = href;
+        }
+      }
+
+      if (action === 'toggle-audio') {
+        document.getElementById('audioToggleBtn')?.click();
+      }
+
+      closePalette();
+    });
+  });
+}
+
+/* ==========================================================================
+   6. NFC Smartphone Simulator & Dynamic State Machine
    ========================================================================== */
 function initNfcPhoneSimulator() {
   const touchTarget = document.getElementById('nfcTouchTarget');
@@ -239,12 +336,11 @@ function initNfcPhoneSimulator() {
     }
   }
 
-  // Initial render
   renderPhoneScreen(false);
 }
 
 /* ==========================================================================
-   5. Remote Diagnostics Matrix
+   7. Remote Diagnostics Matrix
    ========================================================================== */
 function initRemoteDiagnostics() {
   const cards = document.querySelectorAll('.diag-card');
@@ -289,7 +385,7 @@ function initRemoteDiagnostics() {
 }
 
 /* ==========================================================================
-   6. Navigation & Scroll Engine
+   8. Navigation & Scroll Engine
    ========================================================================== */
 function initNavbar() {
   const header = document.querySelector('.site-header');
