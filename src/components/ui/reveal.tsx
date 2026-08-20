@@ -45,25 +45,26 @@ export function Reveal({
   className = '',
   ...rest
 }: Props) {
-  const ref = useRef<HTMLElement | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const ref = useRef<any>(null);
   const [isIn, setIsIn] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    // SSR fallback o navegadores viejos → ya está visible.
     if (typeof IntersectionObserver === 'undefined') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR fallback: safe to set once
       setIsIn(true);
       return;
     }
 
-    const io = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             setIsIn(true);
-            if (once) io.unobserve(entry.target);
+            if (once) observer.unobserve(entry.target);
           } else if (!once) {
             setIsIn(false);
           }
@@ -72,11 +73,11 @@ export function Reveal({
       { threshold, rootMargin: '0px 0px -40px 0px' }
     );
 
-    io.observe(el);
-    return () => io.disconnect();
+    observer.observe(el);
+    return () => observer.disconnect();
   }, [once, threshold]);
 
-  const Tag = as as any;
+  const Tag = as as 'div' | 'section' | 'article' | 'li' | 'span' | 'header' | 'footer';
   const revealAttr = variant === 'up' ? '' : variant;
 
   return (

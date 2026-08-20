@@ -2,12 +2,10 @@
 
 import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
 import { useAspect, useTexture } from '@react-three/drei';
-import { Suspense, useMemo, useRef, useState, useEffect } from 'react';
+import { Suspense, useMemo, useRef } from 'react';
 import * as THREE from 'three/webgpu';
 import { bloom } from 'three/examples/jsm/tsl/display/BloomNode.js';
-import { Mesh } from 'three';
-
-// ... other imports stay the same
+import type { Mesh as ThreeMesh } from 'three';
 
 import {
   abs,
@@ -30,9 +28,9 @@ import {
 const TEXTUREMAP = { src: 'https://i.postimg.cc/XYwvXN8D/img-4.png' };
 const DEPTHMAP = { src: 'https://i.postimg.cc/2SHKQh2q/raw-4.webp' };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 extend(THREE as any);
 
-// Post Processing component
 const PostProcessing = ({
   strength = 1,
   threshold = 1,
@@ -46,30 +44,28 @@ const PostProcessing = ({
   const progressRef = useRef({ value: 0 });
 
   const render = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const postProcessing = new THREE.PostProcessing(gl as any);
     const scenePass = pass(scene, camera);
     const scenePassColor = scenePass.getTextureNode('output');
     const bloomPass = bloom(scenePassColor, strength, 0.5, threshold);
 
-    // Create the scanning effect uniform
     const uScanProgress = uniform(0);
+    // eslint-disable-next-line react-hooks/refs -- R3F pattern: store uniform ref for useFrame
     progressRef.current = uScanProgress;
 
-    // Create a red overlay that follows the scan line
     const scanPos = float(uScanProgress.value);
     const uvY = uv().y;
     const scanWidth = float(0.05);
     const scanLine = smoothstep(0, scanWidth, abs(uvY.sub(scanPos)));
     const redOverlay = vec3(1, 0, 0).mul(oneMinus(scanLine)).mul(0.4);
 
-    // Mix the original scene with the red overlay
     const withScanEffect = mix(
       scenePassColor,
       add(scenePassColor, redOverlay),
       fullScreenEffect ? smoothstep(0.9, 1.0, oneMinus(scanLine)) : 1.0
     );
 
-    // Add bloom effect after scan effect
     const final = withScanEffect.add(bloomPass);
 
     postProcessing.outputNode = final;
@@ -78,7 +74,6 @@ const PostProcessing = ({
   }, [camera, gl, scene, strength, threshold, fullScreenEffect]);
 
   useFrame(({ clock }) => {
-    // Animate the scan line from top to bottom
     progressRef.current.value = (Math.sin(clock.getElapsedTime() * 0.5) * 0.5 + 0.5);
     render.renderAsync();
   }, 1);
@@ -91,17 +86,11 @@ const HEIGHT = 300;
 
 const Scene = () => {
   const [rawMap, depthMap] = useTexture([TEXTUREMAP.src, DEPTHMAP.src]);
+  const visible = rawMap && depthMap;
 
-  const meshRef = useRef<Mesh>(null);
-  const [visible, setVisible] = useState(false);
+  const meshRef = useRef<ThreeMesh>(null);
 
-  useEffect(() => {
-    // Show image after textures are loaded
-    if (rawMap && depthMap) {
-      setVisible(true);
-    }
-  }, [rawMap, depthMap]);
-
+  /* eslint-disable react-hooks/immutability */
   const { material, uniforms } = useMemo(() => {
     const uPointer = uniform(new THREE.Vector2(0));
     const uProgress = uniform(0);
@@ -134,14 +123,14 @@ const Scene = () => {
 
     const final = blendScreen(tMap, mask);
 
-    const material = new THREE.MeshBasicNodeMaterial({
+    const mat = new THREE.MeshBasicNodeMaterial({
       colorNode: final,
       transparent: true,
       opacity: 0,
     });
 
     return {
-      material,
+      material: mat,
       uniforms: {
         uPointer,
         uProgress,
@@ -151,18 +140,13 @@ const Scene = () => {
 
   const [w, h] = useAspect(WIDTH, HEIGHT);
 
+  const targetOpacity = visible ? 1 : 0;
+
   useFrame(({ clock }) => {
     uniforms.uProgress.value = (Math.sin(clock.getElapsedTime() * 0.5) * 0.5 + 0.5);
-    // Smooth fade in
-    if (meshRef.current && 'material' in meshRef.current && meshRef.current.material) {
-      const mat = meshRef.current.material as any;
-      if ('opacity' in mat) {
-        mat.opacity = THREE.MathUtils.lerp(
-          mat.opacity,
-          visible ? 1 : 0,
-          0.05
-        );
-      }
+    const mat = meshRef.current?.material as THREE.MeshBasicNodeMaterial | undefined;
+    if (mat && 'opacity' in mat) {
+      mat.opacity = THREE.MathUtils.lerp(mat.opacity, targetOpacity, 0.05);
     }
   });
 
@@ -181,11 +165,12 @@ const Scene = () => {
 export const HeroFuturistic = () => {
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-bg" id="manifesto">
-      <div className="absolute inset-0 z-10 opacity-60 mix-blend-screen pointer-events-none">
+    <div className="relative min-h-screen overflow-hidden bg-bg" id="manifesto" role="banner">
+      <div className="absolute inset-0 z-10 opacity-60 mix-blend-screen pointer-events-none" aria-hidden="true">
         <Canvas
             flat
             gl={async (props) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const renderer = new THREE.WebGPURenderer(props as any);
             await renderer.init();
             return renderer;
@@ -199,7 +184,7 @@ export const HeroFuturistic = () => {
       </div>
 
       <div className="shell relative z-20 min-h-[calc(100vh-60px)] flex flex-col justify-between pt-10 pb-6 pointer-events-none">
-        <div className="flex justify-between font-mono text-[11px] text-ink-dim uppercase tracking-widest mb-10">
+        <div className="flex justify-between font-mono text-[11px] text-ink-dim uppercase tracking-widest mb-10" aria-hidden="true">
           <span className="hidden sm:inline">[ BRAND OPERATING SYSTEM ]</span>
           <span className="hidden sm:inline">INDEX / 01 — 07</span>
           <span>REV. 2026.04</span>
@@ -214,13 +199,13 @@ export const HeroFuturistic = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] gap-8 lg:gap-12 mt-12 pt-8 border-t border-line items-start pointer-events-auto bg-bg/20 backdrop-blur-sm p-4 -ml-4">
             <div>
-              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">// Thesis</h3>
+              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">{`// Thesis`}</h3>
               <p className="text-[18px] md:text-[22px] leading-[1.35] font-medium tracking-[-0.015em] max-w-[28ch]">
                 Diseño lo que construyo. <span className="acid-hl">Construyo lo que diseño.</span> La creatividad es una función técnica.
               </p>
             </div>
             <div>
-              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">// Stack</h3>
+              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">{`// Stack`}</h3>
               <div className="text-[11px] font-mono leading-[1.6]">
                 <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1">Design</span>
                 <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1">Systems</span>
@@ -232,7 +217,7 @@ export const HeroFuturistic = () => {
               </div>
             </div>
             <div>
-              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">// Status</h3>
+              <h3 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">{`// Status`}</h3>
               <p className="font-mono text-[12px] text-ink-dim leading-[1.7]">
                 ACEPTANDO PROYECTOS<br/>
                 → Q3 2026<br/>
@@ -243,7 +228,7 @@ export const HeroFuturistic = () => {
           </div>
         </div>
 
-        <div className="overflow-hidden border-y border-line py-4 -mx-5 md:-mx-10 mt-6 text-[clamp(22px,3vw,44px)] font-bold tracking-[-0.02em] whitespace-nowrap pointer-events-auto bg-bg/60 backdrop-blur-md">
+        <div className="overflow-hidden border-y border-line py-4 -mx-5 md:-mx-10 mt-6 text-[clamp(22px,3vw,44px)] font-bold tracking-[-0.02em] whitespace-nowrap pointer-events-auto bg-bg/60 backdrop-blur-md" aria-hidden="true">
           <div className="ticker-track">
             <span>CREATIVIDAD TÉCNICA</span><span className="text-acid">✺</span>
             <span>DISEÑO + INGENIERÍA</span><span className="text-acid">✺</span>

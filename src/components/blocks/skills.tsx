@@ -38,15 +38,16 @@ export const Skills = () => {
                 </div>
             </Reveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list" aria-label="Categorías de habilidades">
                 {skillCategories.map((cat, i) => (
                     <Reveal
                       key={i}
                       variant="up"
                       delay={(i + 1) as 1 | 2 | 3 | 4}
                       className="group relative p-8 border border-line bg-bg-2 hover:bg-bg-3 hover:border-acid transition-all duration-300 overflow-hidden flex flex-col hover-lift"
+                      role="listitem"
                     >
-                        <div className="scanline-layer"></div>
+                        <div className="scanline-layer" aria-hidden="true"></div>
                         <div className="absolute top-0 right-0 w-24 h-24 bg-acid/5 rounded-bl-full translate-x-12 -translate-y-12 group-hover:bg-acid/20 group-hover:scale-150 transition-all duration-500 ease-out"></div>
 
                         <div className="relative z-10">
@@ -54,7 +55,7 @@ export const Skills = () => {
                                 {cat.icon}
                             </div>
                             <h3 className="text-2xl font-bold mb-6 flex flex-col gap-2 text-ink">
-                                <span className="text-ink-dim font-mono text-[10px] tracking-widest uppercase">0{i+1} // DOMAIN</span>
+                                <span className="text-ink-dim font-mono text-[10px] tracking-widest uppercase">{`0${i+1} // DOMAIN`}</span>
                                 {cat.title}
                             </h3>
                             <ul className="space-y-3 font-mono text-[12px] text-ink-dim">

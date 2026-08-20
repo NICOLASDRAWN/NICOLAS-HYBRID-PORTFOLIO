@@ -1,12 +1,10 @@
 'use client';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
 
 export function Topbar() {
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -43,7 +41,7 @@ export function Topbar() {
           <span className="text-ink-dim hidden xl:inline">Brand OS — v1.0</span>
         </div>
 
-        <nav className="hidden lg:flex gap-6">
+        <nav className="hidden lg:flex gap-6" aria-label="Navegación principal">
           {menuItems.map((item) => (
             <Link key={item.label} href={item.href} className="nav-underline text-ink-dim hover:text-acid transition-colors">
               {item.label}
@@ -76,9 +74,9 @@ export function Topbar() {
     </header>
 
     {/* UNIQUE MOBILE DOCK NAVIGATION */}
-    <nav className="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-[400px]">
+    <nav className="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-[400px]" aria-label="Navegación móvil">
         <div className="bg-bg/85 backdrop-blur-2xl border border-line p-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group">
-            <div className="scanline-layer opacity-10"></div>
+            <div className="scanline-layer opacity-10" aria-hidden="true"></div>
             
             <div className="flex items-center justify-between relative z-10">
                 {menuItems.map((item) => (
@@ -99,7 +97,7 @@ export function Topbar() {
             </div>
 
             {/* Sub-dock for labels/feedback */}
-            <div className="absolute -top-7 left-0 right-0 flex justify-between px-2 font-mono text-[8px] text-acid/40 tracking-[0.2em] uppercase pointer-events-none">
+            <div className="absolute -top-7 left-0 right-0 flex justify-between px-2 font-mono text-[8px] text-acid/40 tracking-[0.2em] uppercase pointer-events-none" aria-hidden="true">
                 <span>[ NAV_SYST ]</span>
                 <span>CORE_V1.0</span>
             </div>

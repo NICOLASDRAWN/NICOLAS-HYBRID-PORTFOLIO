@@ -361,7 +361,7 @@ export default function CartaPage() {
 
             <div className="letter-head">
               <div className="from">
-                <strong>// DE</strong>
+                <strong>{`// DE`}</strong>
                 <p>
                   <span className="ink">Nicolás Monroy Pabón &nbsp;/&nbsp; @nicolasdev</span><br/>
                   Full Stack Developer &amp; AI Specialist<br/>
@@ -370,7 +370,7 @@ export default function CartaPage() {
                 </p>
               </div>
               <div className="to">
-                <strong>// PARA</strong>
+                <strong>{`// PARA`}</strong>
                 <p>
                   A la atención del equipo de Selección /<br/>
                   Dirección Técnica.<br/>
