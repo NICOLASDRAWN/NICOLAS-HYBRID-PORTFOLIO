@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban Luxe | Real Estate & Luxury Living</title>
+  
+  <meta name="description" content="Catálogo exclusivo de residencias arquitectónicas, penthouses y propiedades de alta gama. Filtros en vivo y calculadora hipotecaria." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>" />
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="luxe-header">
+    <div class="luxe-container nav-flex">
+      <div class="brand-group">
+        <a href="../../index.html" class="back-btn" title="Volver al Portafolio">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </a>
+        <div>
+          <span class="luxe-logo">URBAN LUXE</span>
+          <span class="luxe-sub">PRIME REAL ESTATE</span>
+        </div>
+      </div>
+
+      <div class="luxe-nav-links">
+        <a href="#propiedades">Propiedades</a>
+        <a href="#calculadora">Calculadora</a>
+        <button class="btn-tour" id="openTourModalBtn">Agendar Visita</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="luxe-hero">
+    <div class="luxe-container">
+      <span class="hero-tag">Colección Exclusiva 2026</span>
+      <h1>Arquitectura de vanguardia & espacios excepcionales</h1>
+      <p>Descubre residencias de lujo seleccionadas meticulosamente por su diseño, ubicación estratégica y acabados premium.</p>
+    </div>
+  </section>
+
+  <!-- Properties Filter Bar -->
+  <section class="filter-section">
+    <div class="luxe-container">
+      <div class="filter-bar">
+        <div class="filter-group">
+          <label>Tipo de Inmueble</label>
+          <select id="filterType" class="filter-select">
+            <option value="todos">Todos los Tipos</option>
+            <option value="Penthouse">Penthouses</option>
+            <option value="Villa">Villas de Lujo</option>
+            <option value="Loft">Lofts de Diseño</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Rango de Presupuesto</label>
+          <select id="filterPrice" class="filter-select">
+            <option value="todos">Cualquier Precio</option>
+            <option value="under500k">Hasta $500,000 USD</option>
+            <option value="over500k">Más de $500,000 USD</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Properties Grid -->
+  <section id="propiedades" class="properties-section">
+    <div class="luxe-container">
+      <div class="properties-grid" id="propertiesGrid">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Mortgage Calculator -->
+  <section id="calculadora" class="calc-section">
+    <div class="luxe-container">
+      <div class="calc-card">
+        <div class="calc-header">
+          <h2>Simulador de Crédito Hipotecario</h2>
+          <p>Calcula tu cuota mensual estimada en segundos de forma transparente.</p>
+        </div>
+
+        <div class="calc-grid">
+          <div class="calc-inputs">
+            <div class="input-item">
+              <label>Valor de la Propiedad (USD)</label>
+              <input type="number" id="calcPrice" value="450000" step="10000" class="calc-input" />
+            </div>
+
+            <div class="input-item">
+              <label>Cuota Inicial (Enganche %)</label>
+              <input type="number" id="calcDownPct" value="20" min="10" max="80" class="calc-input" />
+            </div>
+
+            <div class="input-item">
+              <label>Plazo del Préstamo (Años)</label>
+              <select id="calcYears" class="calc-input">
+                <option value="15">15 Años</option>
+                <option value="20" selected>20 Años</option>
+                <option value="30">30 Años</option>
+              </select>
+            </div>
+
+            <div class="input-item">
+              <label>Tasa de Interés Anual Estimada (%)</label>
+              <input type="number" id="calcRate" value="6.5" step="0.1" class="calc-input" />
+            </div>
+          </div>
+
+          <div class="calc-result-box">
+            <span class="res-tag">Cuota Mensual Estimada</span>
+            <div class="res-number" id="monthlyPaymentOutput">$2,684 USD</div>
+            <div class="res-breakdown">
+              <div>Monto financiado: <strong id="loanAmountOutput">$360,000 USD</strong></div>
+              <div>Cuota inicial requerida: <strong id="downPaymentOutput">$90,000 USD</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tour Booking Modal -->
+  <div class="tour-modal" id="tourModal">
+    <div class="tour-modal-content">
+      <div class="modal-top">
+        <h3>Agendar Visita Privada</h3>
+        <button class="btn-close-modal" id="closeTourBtn">&times;</button>
+      </div>
+
+      <form id="tourForm" class="modal-form">
+        <div class="form-field">
+          <label>Propiedad de Interés</label>
+          <select id="tourPropertySelect" class="calc-input" required>
+            <option value="Skyline Glass Penthouse">Skyline Glass Penthouse ($850,000 USD)</option>
+            <option value="Villa Serena & Garden Pool">Villa Serena & Garden Pool ($620,000 USD)</option>
+            <option value="Metropolitan Minimalist Loft">Metropolitan Minimalist Loft ($340,000 USD)</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label>Nombre y Apellidos</label>
+          <input type="text" id="tourName" class="calc-input" placeholder="Tu nombre" required />
+        </div>
+
+        <div class="form-field">
+          <label>WhatsApp / Teléfono</label>
+          <input type="tel" id="tourPhone" class="calc-input" placeholder="+57 300 000 0000" required />
+        </div>
+
+        <button type="submit" class="btn-submit-tour">Solicitar Agendamiento</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

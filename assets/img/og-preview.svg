@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Ambient glowing orbs -->
+  <circle cx="200" cy="150" r="280" fill="#2563EB" opacity="0.15" filter="blur(60px)" />
+  <circle cx="1000" cy="480" r="320" fill="#06B6D4" opacity="0.12" filter="blur(70px)" />
+
+  <!-- Grid accent lines -->
+  <path d="M 100 0 L 100 630 M 300 0 L 300 630 M 500 0 L 500 630 M 700 0 L 700 630 M 900 0 L 900 630 M 1100 0 L 1100 630" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+  <path d="M 0 100 L 1200 100 M 0 250 L 1200 250 M 0 400 L 1200 400 M 0 550 L 1200 550" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+
+  <!-- Logo Pill -->
+  <rect x="120" y="100" width="180" height="42" rx="21" fill="rgba(6, 182, 212, 0.1)" stroke="#06B6D4" stroke-width="1.5" />
+  <circle cx="145" cy="121" r="6" fill="#06B6D4" />
+  <text x="165" y="127" font-family="'Inter', sans-serif" font-size="15" font-weight="700" fill="#F8FAFC" letter-spacing="1">NICOLAS.DEV</text>
+
+  <!-- Main Headline -->
+  <text x="120" y="240" font-family="'Inter', sans-serif" font-size="56" font-weight="800" fill="#F8FAFC" letter-spacing="-1">
+    Diseño Multimedia,
+  </text>
+  <text x="120" y="310" font-family="'Inter', sans-serif" font-size="56" font-weight="800" fill="url(#cyan-glow)" letter-spacing="-1">
+    Desarrollo Web &amp; Soporte Remoto
+  </text>
+
+  <!-- Subtitle -->
+  <text x="120" y="380" font-family="'Inter', sans-serif" font-size="24" fill="#94A3B8">
+    Portafolio Híbrido • Soluciones con Tags NFC para Negocios • Soporte Informático 24/7
+  </text>
+
+  <!-- Badges footer -->
+  <g transform="translate(120, 450)">
+    <!-- Badge 1 -->
+    <rect x="0" y="0" width="220" height="48" rx="12" fill="rgba(30, 41, 59, 0.8)" stroke="rgba(255,255,255,0.1)" />
+    <text x="24" y="30" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#F8FAFC">⚡ Frontend Senior</text>
+
+    <!-- Badge 2 -->
+    <rect x="240" y="0" width="230" height="48" rx="12" fill="rgba(30, 41, 59, 0.8)" stroke="rgba(255,255,255,0.1)" />
+    <text x="264" y="30" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#38BDF8">📶 Tags NFC Interactivos</text>
+
+    <!-- Badge 3 -->
+    <rect x="490" y="0" width="240" height="48" rx="12" fill="rgba(30, 41, 59, 0.8)" stroke="rgba(255,255,255,0.1)" />
+    <text x="514" y="30" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#34D399">🛡 Soporte Remoto 24/7</text>
+  </g>
+</svg>

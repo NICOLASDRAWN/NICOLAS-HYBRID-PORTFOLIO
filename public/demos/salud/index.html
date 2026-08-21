@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Wellness Center | Clínica & Spa Holístico</title>
+  
+  <meta name="description" content="Centro integral de medicina estética, fisioterapia y bienestar holístico. Agendamiento de citas en línea." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="aura-header">
+    <div class="aura-nav-container">
+      <div class="aura-brand">
+        <a href="../../index.html" class="back-link" title="Volver al Portafolio">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </a>
+        <div>
+          <span class="brand-name">AURA</span>
+          <span class="brand-tagline">WELLNESS & CLINICAL SPA</span>
+        </div>
+      </div>
+
+      <div class="aura-nav-actions">
+        <a href="#tratamientos" class="nav-btn">Tratamientos</a>
+        <a href="#especialistas" class="nav-btn">Especialistas</a>
+        <button class="btn-book-header" id="openBookingModalBtn">Agendar Cita</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="aura-hero">
+    <div class="aura-container hero-grid">
+      <div class="hero-text">
+        <span class="pill-badge">Medicina Estética & Bienestar</span>
+        <h1>Equilibrio y ciencia para tu salud integral</h1>
+        <p>Terapias dermatológicas avanzadas, spa holístico y tratamientos corporales personalizados supervisados por médicos especialistas.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="openBooking('Medicina Estética')">Reservar Consulta</button>
+          <a href="#tratamientos" class="btn-secondary">Ver Catálogo de Terapias</a>
+        </div>
+      </div>
+      <div class="hero-card-preview">
+        <div class="preview-stat-card">
+          <div class="stat-num">99.4%</div>
+          <div class="stat-desc">Índice de satisfacción en tratamientos clínicos</div>
+        </div>
+        <div class="preview-badge-bottom">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span>Certificación Médica Internacional</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatments Catalog -->
+  <section id="tratamientos" class="aura-section">
+    <div class="aura-container">
+      <div class="section-title-wrap">
+        <h2>Catálogo de Tratamientos Especializados</h2>
+        <p>Tecnología no invasiva y protocolos avalados científicamente.</p>
+      </div>
+
+      <div class="treatments-grid" id="treatmentsContainer">
+        <!-- Rendered via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialists Team -->
+  <section id="especialistas" class="aura-section bg-soft">
+    <div class="aura-container">
+      <div class="section-title-wrap">
+        <h2>Cuerpo Médico & Terapeutas</h2>
+        <p>Profesionales dedicados a brindarte una experiencia transformadora.</p>
+      </div>
+
+      <div class="specialists-grid">
+        <div class="specialist-card">
+          <div class="avatar-circle">DR</div>
+          <h3>Dra. Valeria Restrepo</h3>
+          <span class="spec-role">Dermatología Clínica & Láser</span>
+          <p>Especialista en rejuvenecimiento no invasivo y protocolos de micropigmentación médica.</p>
+          <button class="btn-sm-outline" onclick="openBookingWithDoc('Dra. Valeria Restrepo')">Agendar con Valeria</button>
+        </div>
+
+        <div class="specialist-card">
+          <div class="avatar-circle">LM</div>
+          <h3>Lic. Mateo Sotomayor</h3>
+          <span class="spec-role">Fisioterapia Deportiva & Kinesiología</span>
+          <p>Certificado en recuperación muscular profunda, drenaje linfático y terapia manual postural.</p>
+          <button class="btn-sm-outline" onclick="openBookingWithDoc('Lic. Mateo Sotomayor')">Agendar con Mateo</button>
+        </div>
+
+        <div class="specialist-card">
+          <div class="avatar-circle">DS</div>
+          <h3>Dra. Sofía Alarcón</h3>
+          <span class="spec-role">Medicina Estética & Nutrición</span>
+          <p>Enfoque integral en anti-envejecimiento, bioestimuladores de colágeno y salud celular.</p>
+          <button class="btn-sm-outline" onclick="openBookingWithDoc('Dra. Sofía Alarcón')">Agendar con Sofía</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Agendamiento de Cita Médica</h3>
+        <button class="modal-close" id="closeModalBtn">&times;</button>
+      </div>
+
+      <form id="appointmentForm" class="modal-body">
+        <div class="form-group">
+          <label>Tratamiento Seleccionado</label>
+          <select id="modalTreatmentSelect" class="form-control" required>
+            <option value="Hidrafacial & Limpieza Médica">Hidrafacial & Limpieza Médica ($65 USD)</option>
+            <option value="Drenaje Linfático Postural">Drenaje Linfático Postural ($50 USD)</option>
+            <option value="Terapia Láser Rejuvenecedora">Terapia Láser Rejuvenecedora ($120 USD)</option>
+            <option value="Masaje Holístico Anti-Estrés">Masaje Holístico Anti-Estrés ($45 USD)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Especialista Preferido</label>
+          <select id="modalDoctorSelect" class="form-control">
+            <option value="Primer Especialista Disponible">Primer Especialista Disponible</option>
+            <option value="Dra. Valeria Restrepo">Dra. Valeria Restrepo</option>
+            <option value="Lic. Mateo Sotomayor">Lic. Mateo Sotomayor</option>
+            <option value="Dra. Sofía Alarcón">Dra. Sofía Alarcón</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Fecha de la Cita</label>
+            <input type="date" id="modalDate" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>Horario</label>
+            <select id="modalTime" class="form-control" required>
+              <option value="09:00 AM">09:00 AM</option>
+              <option value="11:00 AM">11:00 AM</option>
+              <option value="02:30 PM">02:30 PM</option>
+              <option value="04:30 PM">04:30 PM</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Nombre del Paciente</label>
+          <input type="text" id="modalPatientName" class="form-control" placeholder="Tu nombre completo" required />
+        </div>
+
+        <div class="form-group">
+          <label>Teléfono de Contacto (WhatsApp)</label>
+          <input type="tel" id="modalPatientPhone" class="form-control" placeholder="+57 300 000 0000" required />
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Confirmar Reserva</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
