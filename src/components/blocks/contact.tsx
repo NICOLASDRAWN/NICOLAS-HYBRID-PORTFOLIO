@@ -90,9 +90,9 @@ export const Contact = () => {
                     <a href="https://github.com/NICOLASDRAWN" target="_blank" rel="noopener noreferrer" className="nav-underline hover:text-acid transition-colors">GITHUB</a>
                     <a href="https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/" target="_blank" rel="noopener noreferrer" className="nav-underline hover:text-acid transition-colors">LINKEDIN</a>
                     <Link href="/cv" className="nav-underline hover:text-acid transition-colors">CV (WEB)</Link>
-                    <a href="/NICOLAS-HYBRID-PORTFOLIO/assets/Nicolas_Monroy_CV.pdf" download className="nav-underline hover:text-acid transition-colors">CV (PDF)</a>
+                    <a href="/assets/Nicolas_Monroy_CV.pdf" download className="nav-underline hover:text-acid transition-colors">CV (PDF)</a>
                     <Link href="/carta" className="nav-underline hover:text-acid transition-colors">CARTA (WEB)</Link>
-                    <a href="/NICOLAS-HYBRID-PORTFOLIO/assets/Carta_de_Presentacion_Nicolas_Monroy.pdf" download className="nav-underline hover:text-acid transition-colors">CARTA (PDF)</a>
+                    <a href="/assets/Carta_de_Presentacion_Nicolas_Monroy.pdf" download className="nav-underline hover:text-acid transition-colors">CARTA (PDF)</a>
                 </div>
             </div>
         </footer>

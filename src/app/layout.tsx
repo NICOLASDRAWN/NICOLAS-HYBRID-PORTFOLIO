@@ -12,7 +12,7 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO";
+const SITE_URL = "https://ncls.lat";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
       "Diseñador Gráfico y Full Stack Developer híbrido. Combino diseño visual con ingeniería de software para crear productos completos.",
     images: [
       {
-        url: "/NICOLAS-HYBRID-PORTFOLIO/assets/og-cover.png",
+        url: "/assets/og-cover.png",
         width: 1200,
         height: 630,
         alt: "Nicolás Monroy Pabón — Portfolio Diseño + Desarrollo",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     title: "Nicolás Monroy Pabón · Diseñador Gráfico & Full Stack Developer",
     description:
       "Diseñador + Developer híbrido · Diseño visual + Ingeniería · Disponible remoto.",
-    images: ["/NICOLAS-HYBRID-PORTFOLIO/assets/og-cover.png"],
+    images: ["/assets/og-cover.png"],
     creator: "@nicolasdrawn",
   },
   robots: {
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/NICOLAS-HYBRID-PORTFOLIO/favicon.ico",
+    icon: "/favicon.ico",
   },
   verification: {
     // Agregar códigos aquí si se activan Google Search Console, Bing Webmaster, etc.

@@ -103,14 +103,14 @@ export const Profile = () => {
                         
                         <div className="flex gap-2 mt-6">
                             <a 
-                                href="/NICOLAS-HYBRID-PORTFOLIO/assets/Nicolas_Monroy_CV.pdf" 
+                                href="/assets/Nicolas_Monroy_CV.pdf" 
                                 download 
                                 className="flex-1 bg-bg text-ink font-mono text-[9px] py-3 text-center border border-bg hover:bg-bg-3 transition-colors uppercase tracking-wider"
                             >
                                 DESC. CV
                             </a>
                             <a 
-                                href="/NICOLAS-HYBRID-PORTFOLIO/assets/Carta_de_Presentacion_Nicolas_Monroy.pdf" 
+                                href="/assets/Carta_de_Presentacion_Nicolas_Monroy.pdf" 
                                 download 
                                 className="flex-1 bg-bg text-ink font-mono text-[9px] py-3 text-center border border-bg hover:bg-bg-3 transition-colors uppercase tracking-wider"
                             >

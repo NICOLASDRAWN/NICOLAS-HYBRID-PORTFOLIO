@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const SITE_URL = "https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO";
+const SITE_URL = "https://ncls.lat";
 
 export const metadata: Metadata = {
   title: "Carta de Presentación",

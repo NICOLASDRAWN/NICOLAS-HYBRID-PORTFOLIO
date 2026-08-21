@@ -10,7 +10,7 @@ import type { MetadataRoute } from "next";
  *     https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO/sitemap.xml
  */
 
-const BASE_URL = "https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO";
+const BASE_URL = "https://ncls.lat";
 
 export const dynamic = "force-static";
 

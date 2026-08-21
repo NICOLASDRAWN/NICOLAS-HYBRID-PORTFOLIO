@@ -9,7 +9,7 @@ import type { MetadataRoute } from "next";
  * optimizando el posicionamiento en motores de búsqueda generativos (GEO / Generative Engine Optimization).
  */
 
-const BASE_URL = "https://nicolasdrawn.github.io/NICOLAS-HYBRID-PORTFOLIO";
+const BASE_URL = "https://ncls.lat";
 
 export const dynamic = "force-static";
 

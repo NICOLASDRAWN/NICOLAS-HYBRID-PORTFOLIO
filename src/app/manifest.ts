@@ -8,13 +8,13 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "NCLS.DEV",
     description:
       "Diseñador Gráfico y Full Stack Developer híbrido. Arquitectura de Software B2B, Inteligencia Artificial e Identidad de Marca.",
-    start_url: "/NICOLAS-HYBRID-PORTFOLIO/",
+    start_url: "/",
     display: "standalone",
     background_color: "#0A0A0A",
     theme_color: "#0A0A0A",
     icons: [
       {
-        src: "/NICOLAS-HYBRID-PORTFOLIO/favicon.ico",
+        src: "/favicon.ico",
         sizes: "any",
         type: "image/x-icon",
       },
