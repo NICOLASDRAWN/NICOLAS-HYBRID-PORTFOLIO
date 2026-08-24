@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
 // Importar dinámicamente el Canvas 3D de WebGPU para evitar bloquear el hilo principal
@@ -11,6 +11,18 @@ const ThreeCanvas = dynamic(() => import('./three-canvas'), {
 });
 
 export const HeroFuturistic = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    // Solo activar en pantallas grandes (Escritorio > 1024px) y evitar en móviles/Lighthouse móviles
+    const mediaQuery = window.matchMedia('(min-width: 1024px)');
+    setIsDesktop(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-bg" id="manifesto" role="banner">
       {/* SEO Title - Optimizado para indexación del nombre del usuario */}
@@ -34,11 +46,13 @@ export const HeroFuturistic = () => {
         aria-hidden="true"
       />
 
-      {/* 3D WebGPU Canvas with Cinematic Shaders (Lazy Loaded) */}
+      {/* 3D WebGPU Canvas with Cinematic Shaders (Lazy Loaded y solo en Escritorio) */}
       <div className="absolute inset-0 z-0 opacity-75 mix-blend-screen pointer-events-none" aria-hidden="true">
-        <Suspense fallback={<div className="absolute inset-0 bg-bg" />}>
-          <ThreeCanvas />
-        </Suspense>
+        {isDesktop && (
+          <Suspense fallback={<div className="absolute inset-0 bg-bg" />}>
+            <ThreeCanvas />
+          </Suspense>
+        )}
       </div>
 
       {/* HUD Telemetry Frame (Cinematic Viewfinder Overlay) */}
