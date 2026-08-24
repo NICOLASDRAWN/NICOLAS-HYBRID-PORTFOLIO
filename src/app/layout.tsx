@@ -274,6 +274,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-M3CTP538');`}
         </Script>
         {/* End Google Tag Manager */}
+        <link rel="preconnect" href="https://i.postimg.cc" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://i.postimg.cc" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -299,7 +301,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </a>
 
         {/* UNIQUE HUD OVERLAY - MOBILE ONLY */}
-        <div className="lg:hidden fixed inset-0 z-[120] pointer-events-none p-4 font-mono text-[8px] text-acid/25 tracking-widest uppercase flex flex-col justify-between mix-blend-screen opacity-60" aria-hidden="true">
+        <div className="lg:hidden fixed inset-0 z-[120] pointer-events-none p-4 font-mono text-[8px] text-acid/85 tracking-widest uppercase flex flex-col justify-between mix-blend-screen" aria-hidden="true">
             <div className="flex justify-between items-start">
                 <div className="flex flex-col gap-1">
                     <span>[ SIGNAL_STR: 98% ]</span>

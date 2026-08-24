@@ -69,13 +69,6 @@
       radial-gradient(ellipse 80% 50% at 50% -10%, rgba(198,255,61,0.04), transparent 70%),
       linear-gradient(var(--color-bg), var(--color-bg));
     background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
-    /* Subtle breathing animation for the grid */
-    animation: gridPulse 8s ease-in-out infinite;
-  }
-
-  @keyframes gridPulse {
-    0%, 100% { background-position: 0 0, 0 0, 0 0, 0 0; }
-    50% { background-position: 2px 2px, 2px 2px, 0 0, 0 0; }
   }
 
   /* Grain overlay - Optimized for performance */
@@ -193,10 +186,10 @@
   100% { background-position: 200% center; }
 }
 
-.acid-glow        { animation: acidGlow 3.6s ease-in-out infinite; }
-.acid-pulse       { animation: acidPulse 2.4s ease-in-out infinite; }
-.float-y          { animation: floatY 5s ease-in-out infinite; }
-.flicker          { animation: flicker 5.2s linear infinite; }
+.acid-glow        { animation: acidGlow 3.6s ease-in-out infinite; will-change: box-shadow; }
+.acid-pulse       { animation: acidPulse 2.4s ease-in-out infinite; will-change: transform, opacity; }
+.float-y          { animation: floatY 5s ease-in-out infinite; will-change: transform; }
+.flicker          { animation: flicker 5.2s linear infinite; will-change: opacity; }
 
 .text-shine {
   background: linear-gradient(
@@ -212,6 +205,7 @@
           background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textShine 6s linear infinite;
+  will-change: background-position;
 }
 
 /* Hover micro-interaction para tiles */
