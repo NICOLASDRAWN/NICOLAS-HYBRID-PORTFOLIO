@@ -221,6 +221,7 @@ export default function RootLayout({
             position: 2,
             name: "ERP Supply Chain",
             applicationCategory: "BusinessApplication",
+            operatingSystem: "Web, Windows, macOS",
             description:
               "Sistema de gestión de compras internacionales y comercio exterior con firma digital Certicámara.",
           },
