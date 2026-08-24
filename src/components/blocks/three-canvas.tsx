@@ -25,8 +25,8 @@ import {
   add
 } from 'three/tsl';
 
-const TEXTUREMAP = { src: 'https://i.postimg.cc/XYwvXN8D/img-4.png' };
-const DEPTHMAP = { src: 'https://i.postimg.cc/2SHKQh2q/raw-4.webp' };
+const TEXTUREMAP = { src: '/assets/hero-texture.png' };
+const DEPTHMAP = { src: '/assets/hero-depth.webp' };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 extend(THREE as any);
