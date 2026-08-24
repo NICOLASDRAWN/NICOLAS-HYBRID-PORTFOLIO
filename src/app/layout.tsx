@@ -19,15 +19,15 @@ const SITE_URL = "https://ncls.lat";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Nicolás Monroy Pabón · Diseñador Gráfico & Full Stack Developer",
-    template: "%s · Nicolás Monroy Pabón",
+    default: "Nicolas Monroy Pabon | Portafolio Profesional",
+    template: "%s · Nicolas Monroy Pabon",
   },
   description:
-    "Diseñador Gráfico y Full Stack Developer híbrido basado en Bogotá. Combino diseño visual con ingeniería de software para crear productos completos. Disponible para oportunidades remotas.",
-  applicationName: "Nicolás Monroy · Portfolio",
-  authors: [{ name: "Nicolás Monroy Pabón", url: SITE_URL }],
-  creator: "Nicolás Monroy Pabón",
-  publisher: "Nicolás Monroy Pabón",
+    "Sitio web oficial de Nicolas Monroy Pabon. Portafolio profesional, proyectos y contacto.",
+  applicationName: "Nicolas Monroy · Portfolio",
+  authors: [{ name: "Nicolas Monroy Pabon", url: SITE_URL }],
+  creator: "Nicolas Monroy Pabon",
+  publisher: "Nicolas Monroy Pabon",
   keywords: [
     "Nicolás Monroy",
     "Diseñador Gráfico",
@@ -62,24 +62,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CO",
     url: SITE_URL,
-    siteName: "Nicolás Monroy Pabón · Portfolio",
-    title: "Nicolás Monroy Pabón · Diseñador Gráfico & Full Stack Developer",
+    siteName: "Nicolas Monroy Pabon · Portfolio",
+    title: "Nicolas Monroy Pabon | Portafolio Profesional",
     description:
-      "Diseñador Gráfico y Full Stack Developer híbrido. Combino diseño visual con ingeniería de software para crear productos completos.",
+      "Sitio web oficial de Nicolas Monroy Pabon. Portafolio profesional, proyectos y contacto.",
     images: [
       {
         url: "/assets/og-cover.png",
         width: 1200,
         height: 630,
-        alt: "Nicolás Monroy Pabón — Portfolio Diseño + Desarrollo",
+        alt: "Nicolas Monroy Pabon — Portfolio Diseño + Desarrollo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nicolás Monroy Pabón · Diseñador Gráfico & Full Stack Developer",
+    title: "Nicolas Monroy Pabon | Portafolio Profesional",
     description:
-      "Diseñador + Developer híbrido · Diseño visual + Ingeniería · Disponible remoto.",
+      "Sitio web oficial de Nicolas Monroy Pabon. Portafolio profesional, proyectos y contacto.",
     images: ["/assets/og-cover.png"],
     creator: "@nicolasdrawn",
   },
@@ -125,14 +125,14 @@ export default function RootLayout({
       {
         "@type": "Person",
         "@id": `${SITE_URL}/#person`,
-        name: "Nicolás Monroy Pabón",
+        name: "Nicolas Monroy Pabon",
         alternateName: ["nicolasdrawn", "nicolasdev", "NCLS.DEV"],
         url: SITE_URL,
         email: "mailto:nicolasmonroypabon@gmail.com",
         telephone: "+573150135016",
-        jobTitle: ["Diseñador Gráfico", "Full Stack Developer", "AI Specialist"],
+        jobTitle: ["Desarrollador / Profesional", "Diseñador Gráfico", "Full Stack Developer", "AI Specialist"],
         description:
-          "Diseñador Gráfico y Full Stack Developer híbrido basado en Bogotá. Combino diseño visual con ingeniería de software e inteligencia artificial aplicada en producción real.",
+          "Sitio web oficial de Nicolas Monroy Pabon. Portafolio profesional, proyectos y contacto.",
         worksFor: {
           "@type": "Organization",
           name: "MIP International Trading SAS",

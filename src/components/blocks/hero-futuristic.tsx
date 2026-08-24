@@ -26,7 +26,7 @@ export const HeroFuturistic = () => {
   return (
     <div className="relative min-h-screen overflow-hidden bg-bg" id="manifesto" role="banner">
       {/* SEO Title - Optimizado para indexación del nombre del usuario */}
-      <h1 className="sr-only">Nicolás Monroy Pabón — Creative Technologist & Full Stack Developer Portafolio</h1>
+      <h1 className="sr-only">Nicolas Monroy Pabon</h1>
 
       {/* Cinematic Vignette & Radial Glow Layer */}
       <div 
