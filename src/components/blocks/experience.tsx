@@ -3,24 +3,45 @@ import { Reveal } from "@/components/ui/reveal"
 const experiences = [
     {
         date: "MAR 2025 — PRESENTE",
-        role: "Design Strategist & B2B Branding Specialist",
+        role: "Lead Systems Architect & Creative Technologist",
         company: "MIP Internacional Trading SAS",
-        description: "Liderazgo en transformación digital y arquitectura visual de activos industriales. Desarrollo de ecosistemas ERP avanzados con inteligencia artificial.",
-        tags: ["React", "Node.js", "Python", "Gemini AI"]
+        description: "Liderazgo en transformación digital integral y arquitectura del catálogo de 7 productos SaaS comerciales (ProcureCore 2.0, BroadCast OS 365, ProveedHub AI, EvalPro). Gestión de plataformas para 501+ colaboradores, modelo matemático de bonos de nómina sin discrepancias y extracción inteligente con IA multimodal en red LAN.",
+        tags: ["Next.js 16", "React 19", "Electron", "Ollama / Gemini", "PostgreSQL", "Tailwind v4", "Nómina Paramétrica"]
     },
     {
         date: "ENE 2025 — MAR 2025",
-        role: "Digital Products Coordinator",
-        company: "Partido Cambio Radical",
-        description: "Gestión de activos digitales y producción multimedia para campañas nacionales. Diseño de materiales para capacitación y e-learning.",
-        tags: ["Adobe CC", "Multimedia", "Liderazgo"]
+        role: "Digital Products & Multimedia Coordinator",
+        company: "Partido Cambio Radical (Nacional)",
+        description: "Coordinación de activos digitales, producción multimedia y diseño de módulos educativos e-learning para capacitación interna y campañas de comunicación política a nivel nacional.",
+        tags: ["Adobe CC", "Motion Graphics", "E-Learning", "Dirección de Arte", "Campañas Nacionales"]
     },
     {
         date: "MAR 2024 — OCT 2024",
-        role: "Trade Mark Coordinator",
-        company: "Districol LTDA",
-        description: "Coordinación de trade marketing y gestión de marca nacional para distribuidora de combustibles. Estrategia comercial y branding.",
-        tags: ["Branding", "Retail", "Strategy"]
+        role: "Trade Mark Coordinator — ExxonMobil / Mobil 1™",
+        company: "Districol LTDA & ExxonMobil",
+        description: "Coordinación nacional de trade marketing para lubricantes de alta gama Mobil 1™ y campaña nacional Mobil Super Moto 4T ('Siente Tu ADN Motero'). Dirección gráfica del Seminario Industrial Districol - Mobil en Hotel Marriott Cali.",
+        tags: ["Mobil 1™", "Trade Marketing", "Retail B2B", "Gran Formato", "Identidad Corporativa"]
+    },
+    {
+        date: "2023 — 2024",
+        role: "Visual Production & Identity Designer",
+        company: "Centro Comercial San Juan Plaza (Neiva)",
+        description: "Diseño y producción visual de campañas comerciales de alto tráfico (Festival del Café y Cacao, Geek Fest, Bingo San Juan), señalética arquitectónica y cobertura fotográfica de eventos con Miss Universe Colombia.",
+        tags: ["Branding Retail", "Señalética Wayfinding", "Fotografía Institucional", "Campañas B2C"]
+    },
+    {
+        date: "2020 — 2023",
+        role: "Creative Technologist & Brand Consultant",
+        company: "Proyectos Estratégicos (Parrilla Bar 385, Parapente Boyacá, Covtrans)",
+        description: "Creación de identidades visuales normativas, fotografía gastronómica de alta definición, menús digitales interactivos para smartphones y desarrollo web responsive para flotas de logística pesada.",
+        tags: ["Manual de Marca", "Fotografía Gastronómica", "Web Mobile UX", "Diseño Vectorial"]
+    },
+    {
+        date: "GRADUACIÓN 2020",
+        role: "Comunicador Social Profesional",
+        company: "Corporación Universitaria Minuto de Dios (UNIMINUTO)",
+        description: "Formación superior en comunicación estratégica, semiótica, retórica visual y análisis de flujos de información humana y corporativa. Base humanista de todo el desarrollo tecnológico posterior.",
+        tags: ["Comunicación Social", "Semiótica", "Estrategia de Medios", "Investigación", "Titulado"]
     }
 ]
 

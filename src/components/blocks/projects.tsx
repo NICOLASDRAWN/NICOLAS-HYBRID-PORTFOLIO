@@ -1,216 +1,327 @@
-import { ArrowRight } from "lucide-react"
-import Link from "next/link"
-import { Reveal } from "@/components/ui/reveal"
+'use client';
 
-const devProjects = [
-    {
-        num: "01",
-        title: "ProveedHub Platform",
-        tags: ["REACT", "EXPRESS", "GEMINI API", "ELECTRON"],
-        stat: "LIVE",
-        statLabel: "EN PRODUCCIÓN",
-        color: "bg-acid",
-        link: "https://github.com/NICOLASDRAWN",
-    },
-    {
-        num: "02",
-        title: "ERP Supply Chain",
-        tags: ["REACT", "NODE.JS", "SQLITE", "CERTICÁMARA"],
-        stat: "B2B",
-        statLabel: "ENTERPRISE",
-        color: "bg-ink",
-        link: "https://github.com/NICOLASDRAWN",
-    },
-    {
-        num: "03",
-        title: "Conquista la Ciudad",
-        tags: ["KOTLIN", "JETPACK COMPOSE", "GOOGLE MAPS SDK"],
-        stat: "GEO",
-        statLabel: "NATIVE APP",
-        color: "bg-warn",
-        link: "https://github.com/NICOLASDRAWN/ConquistaLaCiudad",
-    }
-]
+import { useState } from "react";
+import { ArrowRight, Sparkles, Layers, Cpu } from "lucide-react";
+import Link from "next/link";
+import { Reveal } from "@/components/ui/reveal";
 
-const designProjects = [
-    {
-        num: "04",
-        title: "Langers para Mobil",
-        tags: ["ILLUSTRATOR", "PHOTOSHOP", "BRANDING"],
-        stat: "CORP",
-        statLabel: "BRAND IDENTITY",
-        color: "bg-acid",
-        link: "#portfolio",
-    },
-    {
-        num: "05",
-        title: "San Juan Plaza",
-        tags: ["DISEÑO GRÁFICO", "IDENTIDAD VISUAL", "SEÑALÉTICA"],
-        stat: "VIS",
-        statLabel: "IDENTIDAD",
-        color: "bg-ink",
-        link: "#portfolio",
-    },
-    {
-        num: "06",
-        title: "Manual de Marca",
-        tags: ["BRAND GUIDELINES", "ADOBE INDESIGN", "TIPOGRAFÍA"],
-        stat: "DOC",
-        statLabel: "MANUAL DE MARCA",
-        color: "bg-warn",
-        link: "#portfolio",
-    },
-    {
-        num: "07",
-        title: "Señaleticas",
-        tags: ["SEÑALÉTICA", "ILLUSTRATOR", "DISEÑO INTERIOR"],
-        stat: "SIG",
-        statLabel: "WAYFINDING",
-        color: "bg-acid",
-        link: "#portfolio",
-    },
-    {
-        num: "08",
-        title: "Merch & Productos",
-        tags: ["MERCH", "ILUSTRACIÓN", "POD"],
-        stat: "PRD",
-        statLabel: "MERCHANDISE",
-        color: "bg-ink",
-        link: "#portfolio",
-    },
-    {
-        num: "09",
-        title: "Invitación Seminario Industrial",
-        tags: ["ILLUSTRATOR", "EDICIÓN", "PRINT"],
-        stat: "PRT",
-        statLabel: "IMPRESIÓN",
-        color: "bg-warn",
-        link: "#portfolio",
-    }
-]
+interface ProjectItem {
+  num: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  tags: string[];
+  stat: string;
+  statLabel: string;
+  color: string;
+  link: string;
+  badge?: string;
+}
+
+const saasProjects: ProjectItem[] = [
+  {
+    num: "01",
+    title: "ProcureCore 2.0",
+    subtitle: "ERP de Compras & Cadena de Suministro",
+    description: "Reensamblaje y unificación de 82,355 archivos y 20,000 SKUs con Watchdog Centinela para prevención de sobrecostos y auditoría de compras.",
+    tags: ["REACT", "EXPRESS 5", "ELECTRON DESKTOP", "SENTINEL WATCHDOG"],
+    stat: "82K+",
+    statLabel: "ARCHIVOS ERP",
+    color: "bg-acid",
+    link: "https://github.com/NICOLASDRAWN",
+    badge: "MIP GROUP"
+  },
+  {
+    num: "02",
+    title: "BroadCast OS 365",
+    subtitle: "Suite Corporativa & Circulares Office 365",
+    description: "Plataforma editorial y generador de actas legales ADM-F-02 integrada a Microsoft 365. Redujo en un 85% el tiempo de emisión de comunicados a 501 empleados.",
+    tags: ["NEXT.JS 16", "REACT 19", "OFFICE 365 API", "TAILWIND V4"],
+    stat: "-85%",
+    statLabel: "TIEMPO OPERATIVO",
+    color: "bg-acid",
+    link: "https://github.com/NICOLASDRAWN",
+    badge: "DESK + WEB"
+  },
+  {
+    num: "03",
+    title: "ProveedHub AI",
+    subtitle: "Auditoría de Proveedores & Visión Multimodal",
+    description: "Homologación y extracción de RUT/certificados con Gemini AI Multimodal Vision, persistencia tolerante a fallos (.bak) y despliegue en red LAN.",
+    tags: ["REACT 19", "EXPRESS LAN", "GEMINI 2.5 FLASH", "DATA RESILIENCY"],
+    stat: "40+",
+    statLabel: "PROVEEDORES SYNC",
+    color: "bg-acid",
+    link: "https://github.com/NICOLASDRAWN",
+    badge: "LAN COMPLIANCE"
+  },
+  {
+    num: "04",
+    title: "EvalPro Enterprise",
+    subtitle: "Desempeño 360° & Nómina Paramétrica",
+    description: "Algoritmo matemático de liquidación de bonos con 67 cargos y 241 tareas desacopladas. Auditó a 501 colaboradores en agosto 2026 sin una sola discrepancia.",
+    tags: ["REACT", "TYPESCRIPT STRICT", "NÓMINA PARAMÉTRICA", "CERO ERRORES"],
+    stat: "501",
+    statLabel: "COLABORADORES (0 ERR)",
+    color: "bg-warn",
+    link: "https://github.com/NICOLASDRAWN",
+    badge: "MISSION CRITICAL"
+  },
+  {
+    num: "05",
+    title: "CommandHub Pro",
+    subtitle: "Control Móvil de Hardware & Telemetría",
+    description: "Trackpad táctil inalámbrico y monitor de recursos por WebSockets de ultra baja latencia (<20ms). Control de hardware, periféricos y apagado remoto.",
+    tags: ["REACT NATIVE", "EXPO GO", "WEBSOCKETS", "ROBOTJS"],
+    stat: "<20ms",
+    statLabel: "LATENCIA WEBSOCKET",
+    color: "bg-acid",
+    link: "https://github.com/NICOLASDRAWN",
+    badge: "ULTRA LOW LATENCY"
+  },
+  {
+    num: "06",
+    title: "NeuroPost Local AI",
+    subtitle: "Agente Autónomo con Inferencia Local $0",
+    description: "Automatización de marketing B2B con modelos LLM ejecutados localmente en Ollama y navegación headless con Playwright. Cero costo de API.",
+    tags: ["OLLAMA LLM LOCAL", "PLAYWRIGHT", "NLP AGENT", "PYTHON DAEMON"],
+    stat: "$0",
+    statLabel: "COSTO DE INFERENCIA",
+    color: "bg-ink",
+    link: "https://github.com/NICOLASDRAWN",
+    badge: "PRIVATE AI"
+  },
+  {
+    num: "07",
+    title: "DocuDispatch Suite",
+    subtitle: "Motor de Actas Legales & Despacho SIG",
+    description: "Generador automatizado de actas ADM-F-02, despacho por correo con trazabilidad de entrega y estricto cumplimiento normativo SIG-SST-F-120.",
+    tags: ["NODE.JS 24", "NODEMAILER", "PDFKIT ENGINE", "SIG COMPLIANCE"],
+    stat: "100%",
+    statLabel: "COMPLIANCE LEGAL",
+    color: "bg-warn",
+    link: "https://github.com/NICOLASDRAWN",
+    badge: "ISO/SIG CERTIFIED"
+  }
+];
+
+const designProjects: ProjectItem[] = [
+  {
+    num: "08",
+    title: "ExxonMobil / Mobil 1™",
+    subtitle: "Trade Mark Coordinator — Campaña Nacional",
+    description: "Estrategia nacional de marca para Mobil Super Moto 4T ('Siente Tu ADN Motero') y sintéticos de alta gama Mobil 1™. Merchandising, POP y retail.",
+    tags: ["BRAND IDENTITY", "TRADE MARKETING", "RETAIL STRATEGY", "EXXONMOBIL"],
+    stat: "COL",
+    statLabel: "COBERTURA NACIONAL",
+    color: "bg-acid",
+    link: "https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/",
+    badge: "DISTRICOL LTDA"
+  },
+  {
+    num: "09",
+    title: "Seminario Industrial Mobil",
+    subtitle: "Producción Visual de Gran Formato (Marriott Cali)",
+    description: "Dirección de arte, señalética, credenciales y material editorial para el Seminario Industrial de lubricantes para el sector energético y minero.",
+    tags: ["ADOBE INDESIGN", "GRAN FORMATO", "SEÑALÉTICA", "EDITORIAL"],
+    stat: "B2B",
+    statLabel: "CONVENCIÓN INDUSTRIAL",
+    color: "bg-warn",
+    link: "https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/",
+    badge: "HOTEL MARRIOTT"
+  },
+  {
+    num: "10",
+    title: "San Juan Plaza (Neiva)",
+    subtitle: "Producción Gráfica & Cobertura Institucional",
+    description: "Campañas visuales para el Festival del Café y Cacao, Geek Fest y eventos institucionales con personalidades de Miss Universe Colombia.",
+    tags: ["DISEÑO GRÁFICO", "FOTOGRAFÍA INSTITUCIONAL", "CAMPAÑAS RETAIL"],
+    stat: "RETAIL",
+    statLabel: "CENTRO COMERCIAL",
+    color: "bg-acid",
+    link: "https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/",
+    badge: "NEIVA, HUILA"
+  },
+  {
+    num: "11",
+    title: "Parrilla Bar 385 / Food",
+    subtitle: "Identidad Visual & Menú Digital Interactivo",
+    description: "Fotografía gastronómica de alta definición, manual de identidad de restaurante y diseño de menú responsive para smartphones.",
+    tags: ["FOTOGRAFÍA GASTRONÓMICA", "BRANDING", "MENÚ MOBILE UX"],
+    stat: "360°",
+    statLabel: "BRANDING + DIGITAL",
+    color: "bg-ink",
+    link: "https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/",
+    badge: "GASTRONOMÍA"
+  },
+  {
+    num: "12",
+    title: "Partido Cambio Radical",
+    subtitle: "Coordinación de Productos Digitales & E-Learning",
+    description: "Diseño y animación de módulos formativos digitales, motion graphics y piezas gráficas de comunicación política a nivel nacional.",
+    tags: ["MOTION GRAPHICS", "E-LEARNING", "POLITICAL COMM", "PREMIERE PRO"],
+    stat: "EDU",
+    statLabel: "FORMACIÓN DIGITAL",
+    color: "bg-warn",
+    link: "https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/",
+    badge: "CAMPAÑA NACIONAL"
+  },
+  {
+    num: "13",
+    title: "Parapente Boyacá",
+    subtitle: "Manual de Marca & Sistema Gráfico Deportivo",
+    description: "Manual normativo de marca completo, paletas H/S/B y RGB, tipografías Aventura/Emprint e indumentaria técnica para pilotos.",
+    tags: ["MANUAL DE MARCA", "ICONOGRAFÍA", "INDUMENTARIA", "TIPOGRAFÍA"],
+    stat: "MANUAL",
+    statLabel: "SISTEMA NORMATIVO",
+    color: "bg-acid",
+    link: "https://linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/",
+    badge: "DEPORTES EXTREMOS"
+  }
+];
 
 export const Projects = () => {
-    return (
-        <section id="portfolio" className="shell py-24">
-            <Reveal as="div" variant="scale" className="border border-line bg-bg-2">
-                <div className="flex items-center justify-between px-6 py-3.5 border-b border-line bg-bg-3 font-mono text-[11px] text-ink-dim uppercase tracking-widest" aria-hidden="true">
-                    <div className="flex gap-1.5">
-                        <span className="w-[9px] h-[9px] rounded-full bg-warn"></span>
-                        <span className="w-[9px] h-[9px] rounded-full bg-line-2"></span>
-                        <span className="w-[9px] h-[9px] rounded-full bg-acid acid-pulse"></span>
-                    </div>
-                    <span>/PORTFOLIO_DB</span>
-                </div>
+  const [activeTab, setActiveTab] = useState<'saas' | 'design'>('saas');
+  const currentList = activeTab === 'saas' ? saasProjects : designProjects;
 
-                <div className="p-8 md:p-12">
-                    <div className="grid grid-cols-1 md:grid-cols-[2.4fr_1fr] gap-10 pb-10 border-b border-line mb-0">
-                        <h2 className="text-[clamp(44px,7vw,100px)] font-bold tracking-[-0.05em] leading-[0.86]">
-                            <span className="block text-ink">Código y</span>
-                            <span className="block text-shine">diseño.</span>
-                        </h2>
-                        <div className="font-mono text-[12px] text-ink-dim leading-[1.7] uppercase tracking-widest">
-                            [ FOCUS ]
-                            <strong className="block text-ink font-medium mt-1 mb-3.5 tracking-normal normal-case text-[13px]">Híbrido: Diseño + Ingeniería</strong>
-                            [ CORE SKILLS ]
-                            <strong className="block text-ink font-medium mt-1 tracking-normal normal-case text-[13px]">Full-Stack · Brand Identity · UI/UX · AI</strong>
-                        </div>
+  return (
+    <section id="portfolio" className="shell py-24">
+      <Reveal as="div" variant="scale" className="border border-line bg-bg-2">
+        {/* Terminal Header */}
+        <div className="flex items-center justify-between px-6 py-3.5 border-b border-line bg-bg-3 font-mono text-[11px] text-ink-dim uppercase tracking-widest" aria-hidden="true">
+          <div className="flex items-center gap-2">
+            <span className="w-[9px] h-[9px] rounded-full bg-warn"></span>
+            <span className="w-[9px] h-[9px] rounded-full bg-line-2"></span>
+            <span className="w-[9px] h-[9px] rounded-full bg-acid acid-pulse"></span>
+            <span className="ml-2 text-ink-dimmer">SYS://PORTFOLIO_ENGINE_V2</span>
+          </div>
+          <div className="flex items-center gap-2 text-acid font-bold">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>{activeTab === 'saas' ? '7 SUITES ACTIVAS' : '6 GRANDES CUENTAS'}</span>
+          </div>
+        </div>
+
+        <div className="p-6 sm:p-10 md:p-12">
+          {/* Main Title & Philosophy */}
+          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8 pb-8 border-b border-line">
+            <div>
+              <div className="font-mono text-[10px] text-acid uppercase tracking-widest mb-2">
+                [ CEREBRO KNOWLEDGE VAULT · PROYECTOS REALES ]
+              </div>
+              <h2 className="text-[clamp(36px,5.5vw,84px)] font-bold tracking-[-0.05em] leading-[0.9] text-ink">
+                Sistemas que <span className="text-acid">eliminan fricción</span>.
+              </h2>
+            </div>
+            <div className="font-mono text-[11px] text-ink-dim leading-[1.7] uppercase tracking-widest flex flex-col justify-end">
+              <div>[ FILOSOFÍA DE ARQUITECTURA ]</div>
+              <strong className="block text-ink font-medium mt-1 normal-case text-[13px]">
+                "La ingeniería sin diseño crea rechazo. El diseño sin ingeniería crea frustración. Construyo la solución completa."
+              </strong>
+            </div>
+          </div>
+
+          {/* Interactive Category Selector Tabs */}
+          <div className="flex flex-wrap items-center justify-between gap-4 py-6 border-b border-line">
+            <div className="inline-flex items-center p-1 bg-bg border border-line rounded-none gap-1 font-mono text-xs">
+              <button
+                onClick={() => setActiveTab('saas')}
+                className={`px-4 py-2 uppercase tracking-wider font-bold transition-all cursor-pointer flex items-center gap-2 ${
+                  activeTab === 'saas'
+                    ? 'bg-acid text-bg shadow-[0_0_12px_rgba(198,255,61,0.25)]'
+                    : 'text-ink-dim hover:text-ink'
+                }`}
+              >
+                <Cpu className="w-3.5 h-3.5" />
+                <span>Suites SaaS B2B (7)</span>
+              </button>
+              <button
+                onClick={() => setActiveTab('design')}
+                className={`px-4 py-2 uppercase tracking-wider font-bold transition-all cursor-pointer flex items-center gap-2 ${
+                  activeTab === 'design'
+                    ? 'bg-acid text-bg shadow-[0_0_12px_rgba(198,255,61,0.25)]'
+                    : 'text-ink-dim hover:text-ink'
+                }`}
+              >
+                <Layers className="w-3.5 h-3.5" />
+                <span>Diseño & Grandes Cuentas (6)</span>
+              </button>
+            </div>
+
+            <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-acid animate-ping"></span>
+              <span>INDEX: {activeTab === 'saas' ? 'SOFTWARE_ENTERPRISE' : 'BRAND_MARKETING'}</span>
+            </div>
+          </div>
+
+          {/* Project Cards List */}
+          <div className="pt-8 space-y-4">
+            {currentList.map((p, i) => (
+              <Reveal key={p.num} variant="left" delay={((i % 3) + 1) as 1 | 2 | 3}>
+                <Link
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 md:p-8 border border-line bg-bg hover:bg-bg-3 hover:border-acid transition-all duration-300 relative overflow-hidden"
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-[60px_1fr_220px] gap-6 items-start">
+                    {/* Number */}
+                    <div className="font-mono text-sm text-ink-dim group-hover:text-acid transition-colors font-bold">
+                      {p.num}
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 border-y border-line -mx-8 md:-mx-12">
-                        {[
-                            { label: "FOCO", value: "Diseño + Dev", accent: null },
-                            { label: "MODALIDAD", value: "Remoto", accent: "GMT-5" },
-                            { label: "STACK", value: "Híbrido", accent: "Design+Code" },
-                            { label: "ESTADO", value: "● Disponible", accent: null, valueClass: "text-acid acid-pulse" },
-                        ].map((it, i) => (
-                            <Reveal
-                              as="div"
-                              key={i}
-                              delay={(i + 1) as 1 | 2 | 3 | 4}
-                              className={`px-7 py-8 border-r border-line ${i < 2 ? "border-b md:border-b-0" : ""} ${i === 3 ? "border-r-0" : ""} transition-colors duration-300 hover:bg-bg-3`}
-                            >
-                                <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-2.5">{it.label}</div>
-                                <div className={`text-[clamp(20px,2.6vw,32px)] font-bold tracking-[-0.02em] leading-tight ${it.valueClass ?? "text-ink"}`}>
-                                    {it.value}
-                                    {it.accent && <span className="text-[0.6em] text-acid ml-2">{it.accent}</span>}
-                                </div>
-                            </Reveal>
+                    {/* Content */}
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                        <h3 className="text-[24px] md:text-[30px] font-bold tracking-tight text-ink group-hover:text-acid transition-colors leading-none">
+                          {p.title}
+                        </h3>
+                        {p.badge && (
+                          <span className="font-mono text-[9px] uppercase px-2 py-0.5 border border-acid/40 bg-acid/10 text-acid tracking-wider">
+                            {p.badge}
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="font-mono text-xs text-acid font-medium tracking-wide mb-3">
+                        {p.subtitle}
+                      </div>
+
+                      <p className="text-[13.5px] text-ink-dim leading-relaxed max-w-3xl mb-4 group-hover:text-ink transition-colors">
+                        {p.description}
+                      </p>
+
+                      <div className="flex flex-wrap gap-2">
+                        {p.tags.map((tag, idx) => (
+                          <span
+                            key={idx}
+                            className="font-mono text-[10px] px-2 py-0.5 border border-line bg-bg-2 text-ink-dimmer uppercase tracking-wider group-hover:border-line-2 group-hover:text-ink-dim transition-colors"
+                          >
+                            {tag}
+                          </span>
                         ))}
+                      </div>
                     </div>
 
-                    <div className="pt-12">
-                        {devProjects.map((p, i) => (
-                            <Reveal key={i} variant="left" delay={(i + 1) as 1 | 2 | 3}>
-                                <Link
-                                    href={p.link}
-                                    target="_blank"
-                                    aria-label={`${p.title} — ${p.tags.join(', ')} — Ver en GitHub`}
-                                    className="group grid grid-cols-[50px_1fr] md:grid-cols-[60px_1fr_auto] gap-6 md:gap-8 items-center py-8 border-b border-line last:border-b-0 relative transition-all duration-300 hover:pl-4"
-                                >
-                                    <span className="font-mono text-[13px] text-ink-dim tracking-widest transition-colors duration-200 group-hover:text-acid">{p.num}</span>
-                                    <div>
-                                        <h3 className="text-[clamp(24px,3vw,44px)] font-bold tracking-[-0.03em] leading-none text-ink transition-colors duration-200 group-hover:text-acid mb-2.5">
-                                            {p.title}
-                                        </h3>
-                                        <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest">
-                                            {p.tags.join(" · ")}
-                                        </div>
-                                        <div className="h-1 bg-line mt-5 w-full relative overflow-hidden">
-                                            <div className={`absolute top-0 bottom-0 left-0 w-2/3 ${p.color} transition-all duration-500 group-hover:w-full`}></div>
-                                            <div className="absolute top-[-1px] left-1/3 w-[1px] h-[6px] bg-line-2"></div>
-                                            <div className="absolute top-[-1px] left-2/3 w-[1px] h-[6px] bg-line-2"></div>
-                                        </div>
-                                    </div>
-                                    <div className="hidden md:block text-right font-mono text-[11px] text-ink-dim uppercase tracking-widest">
-                                        {p.statLabel}
-                                        <strong className="block text-acid text-[28px] font-bold tracking-[-0.02em] normal-case mt-1">{p.stat}</strong>
-                                    </div>
-                                    <div className="absolute right-0 opacity-0 translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                                        <ArrowRight className="text-acid w-8 h-8"/>
-                                    </div>
-                                </Link>
-                            </Reveal>
-                        ))}
+                    {/* Stat / Metric */}
+                    <div className="lg:text-right flex lg:flex-col justify-between items-end pt-4 lg:pt-0 border-t lg:border-t-0 border-line">
+                      <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest">
+                        {p.statLabel}
+                      </div>
+                      <div className="text-[32px] md:text-[38px] font-bold text-acid leading-none my-1 tracking-tight">
+                        {p.stat}
+                      </div>
+                      <div className="flex items-center gap-1.5 font-mono text-[10px] text-ink-dimmer group-hover:text-acid transition-colors uppercase tracking-wider">
+                        <span>Ver repo / caso</span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
-
-                    <div className="pt-12 border-t border-line mt-12">
-                        <div className="font-mono text-[11px] text-ink-dim uppercase tracking-widest flex gap-3 items-center mb-8">
-                            <span className="text-acid">DISEÑO</span><span>/</span><span>PROYECTOS VISUALES</span>
-                        </div>
-                        {designProjects.map((p, i) => (
-                            <Reveal key={i} variant="left" delay={((i % 3) + 1) as 1 | 2 | 3}>
-                                <Link
-                                    href={p.link}
-                                    aria-label={`${p.title} — ${p.tags.join(', ')}`}
-                                    className="group grid grid-cols-[50px_1fr] md:grid-cols-[60px_1fr_auto] gap-6 md:gap-8 items-center py-8 border-b border-line last:border-b-0 relative transition-all duration-300 hover:pl-4"
-                                >
-                                    <span className="font-mono text-[13px] text-ink-dim tracking-widest transition-colors duration-200 group-hover:text-acid">{p.num}</span>
-                                    <div>
-                                        <h3 className="text-[clamp(24px,3vw,44px)] font-bold tracking-[-0.03em] leading-none text-ink transition-colors duration-200 group-hover:text-acid mb-2.5">
-                                            {p.title}
-                                        </h3>
-                                        <div className="font-mono text-[10px] text-ink-dim uppercase tracking-widest">
-                                            {p.tags.join(" · ")}
-                                        </div>
-                                        <div className="h-1 bg-line mt-5 w-full relative overflow-hidden">
-                                            <div className={`absolute top-0 bottom-0 left-0 w-2/3 ${p.color} transition-all duration-500 group-hover:w-full`}></div>
-                                            <div className="absolute top-[-1px] left-1/3 w-[1px] h-[6px] bg-line-2"></div>
-                                            <div className="absolute top-[-1px] left-2/3 w-[1px] h-[6px] bg-line-2"></div>
-                                        </div>
-                                    </div>
-                                    <div className="hidden md:block text-right font-mono text-[11px] text-ink-dim uppercase tracking-widest">
-                                        {p.statLabel}
-                                        <strong className="block text-acid text-[28px] font-bold tracking-[-0.02em] normal-case mt-1">{p.stat}</strong>
-                                    </div>
-                                    <div className="absolute right-0 opacity-0 translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                                        <ArrowRight className="text-acid w-8 h-8"/>
-                                    </div>
-                                </Link>
-                            </Reveal>
-                        ))}
-                    </div>
-                </div>
-            </Reveal>
-        </section>
-    )
-}
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+    </section>
+  );
+};

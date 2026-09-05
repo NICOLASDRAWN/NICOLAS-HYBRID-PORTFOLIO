@@ -3,29 +3,29 @@ import { Reveal } from "@/components/ui/reveal"
 
 const skillCategories = [
   {
-    title: "Engineering",
+    title: "Frontend & UI/UX",
     icon: <Code className="text-bg w-6 h-6" />,
-    skills: ["React / Next.js 16", "TypeScript (Strict)", "Shadcn / Tailwind v4", "GSAP Inmersive"]
+    skills: ["Next.js 16 / Turbopack", "React 19 & 18", "TypeScript 5.9 Estricto", "Tailwind CSS v4", "Framer Motion & Micro-UX"]
   },
   {
-    title: "Orchestration",
+    title: "Backend & Servidores",
     icon: <Database className="text-bg w-6 h-6" />,
-    skills: ["Node.js / Python", "PostgreSQL / Prisma", "Agentic Workflows", "API Systems (B2B)"]
+    skills: ["Node.js 24 / Express 5", "Python (Flask, PyMuPDF)", "WebSockets (<20ms Latencia)", "Bases Autoreparables (.bak)", "REST APIs & Rate Limiting"]
   },
   {
-    title: "Intelligence",
+    title: "IA Privada & Agentes",
     icon: <Cpu className="text-bg w-6 h-6" />,
-    skills: ["RAG Systems / Vector", "LLM Fine-tuning", "Gemini / Claude / GPT", "Prompt Engineering"]
+    skills: ["Ollama LLMs Locales ($0)", "Gemini AI Multimodal Vision", "Playwright Headless Scrapers", "Agentes Autónomos NLP", "Automatización Silenciosa"]
   },
   {
-    title: "Diseño Gráfico",
-    icon: <Paintbrush className="text-bg w-6 h-6" />,
-    skills: ["Illustrator / Photoshop", "After Effects / DaVinci", "Adobe InDesign / XD", "Branding & Identidad"]
+    title: "Datos & Nómina 501p",
+    icon: <Database className="text-bg w-6 h-6" />,
+    skills: ["PostgreSQL + Drizzle ORM", "SQLite / JSON DB", "Excel Paramétrico Avanzado", "Liquidación Matemática Bonos", "Trazabilidad 0 Discrepancias"]
   },
   {
-    title: "Product Design",
+    title: "Desktop & DevOps",
     icon: <Paintbrush className="text-bg w-6 h-6" />,
-    skills: ["Brand OS Systems", "UI/UX Engineering", "Señalética / Wayfinding", "Technical Writing"]
+    skills: ["Electron Desktop Apps", "Cloudflare Zero-Trust Tunnels", "Daemons Windows Silenciosos", "Brand OS Design Systems", "Bóveda Obsidian Cerebro"]
   }
 ]
 
@@ -83,14 +83,22 @@ export const Skills = () => {
             <Reveal
               as="div"
               delay={2}
-              className="mt-20 pt-8 border-t border-line flex flex-wrap justify-center md:justify-between items-center gap-12 font-mono text-[11px] text-ink-dim uppercase tracking-widest opacity-80"
+              className="mt-20 pt-8 border-t border-line flex flex-wrap justify-center md:justify-between items-center gap-6 font-mono text-[10px] text-ink-dim uppercase tracking-widest"
             >
-                {["React Ecosystem", "Node Architecture", "Python Automation", "AI Integration", "UX Engineering"].map((tag, i) => (
+                {[
+                  "501 Colaboradores Auditados (0 Errores)",
+                  "40+ Proveedores LAN (Gemini Vision)",
+                  "-85% Tiempo en Circulares 365",
+                  "82K+ Assets ERP (ProcureCore)",
+                  "<20ms Latencia Móvil (CommandHub)",
+                  "$0 Inferencia Local (Ollama AI)"
+                ].map((tag, i) => (
                     <span
                       key={i}
-                      className="nav-underline hover:text-acid hover:opacity-100 transition-colors duration-300 cursor-default"
+                      className="flex items-center gap-2 px-3 py-1.5 bg-bg-2 border border-line text-ink hover:border-acid hover:text-acid transition-colors duration-300 cursor-default"
                     >
-                      {tag}
+                      <span className="w-1.5 h-1.5 rounded-full bg-acid"></span>
+                      <span>{tag}</span>
                     </span>
                 ))}
             </Reveal>

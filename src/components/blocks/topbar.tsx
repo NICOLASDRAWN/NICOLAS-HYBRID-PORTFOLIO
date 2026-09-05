@@ -20,9 +20,11 @@ export function Topbar() {
 
   const menuItems = [
     { label: 'MNFST', href: '#manifesto' },
-    { label: 'PRFL', href: '#avatar' },
-    { label: 'PRTF', href: '#portfolio' },
-    { label: 'CONT', href: '#contact' },
+    { label: 'PERFIL', href: '#avatar' },
+    { label: 'STACK', href: '#stack' },
+    { label: 'TRAYECTORIA', href: '#experience' },
+    { label: 'SAAS B2B', href: '#portfolio' },
+    { label: 'CONTACTO', href: '#contact' },
   ];
 
   return (

@@ -95,49 +95,90 @@ export const HeroFuturistic = () => {
             <span className="inline-block w-[0.42em] h-[0.82em] bg-acid ml-[0.04em] align-[-0.12em] animate-[blink_1s_steps(2)_infinite]"></span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] gap-8 lg:gap-12 mt-12 pt-8 border-t border-line items-start pointer-events-auto bg-bg/40 backdrop-blur-md p-6 -ml-4 border border-line/60 shadow-[0_30px_90px_rgba(0,0,0,0.6)]">
+          {/* Quantitative Impact Telemetry Band */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pointer-events-auto">
+            {[
+              { label: "NÓMINA & AUDITORÍA", val: "501", sub: "Colaboradores (0 errores)" },
+              { label: "CATÁLOGO B2B", val: "7", sub: "Suites SaaS Comerciales" },
+              { label: "ERP SUPPLY CHAIN", val: "82K+", sub: "Assets unificados" },
+              { label: "LATENCIA HARDWARE", val: "<20ms", sub: "WebSockets Móvil" },
+            ].map((m, idx) => (
+              <div key={idx} className="p-3.5 bg-bg-2/80 border border-line/80 backdrop-blur-sm group hover:border-acid transition-colors">
+                <div className="font-mono text-[9px] text-ink-dim uppercase tracking-widest">{m.label}</div>
+                <div className="text-[26px] md:text-[32px] font-bold text-ink group-hover:text-acid transition-colors leading-none my-1">
+                  {m.val}
+                </div>
+                <div className="font-mono text-[10px] text-ink-dimmer tracking-wide">{m.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr_1fr] gap-8 lg:gap-10 mt-6 pt-6 border-t border-line items-start pointer-events-auto bg-bg/60 backdrop-blur-md p-6 border border-line/60 shadow-[0_30px_90px_rgba(0,0,0,0.6)]">
             <div>
-              <h2 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">{`// Tesis`}</h2>
-              <p className="text-[18px] md:text-[22px] leading-[1.35] font-medium tracking-[-0.015em] max-w-[28ch] text-ink">
-                Diseño lo que construyo. <span className="acid-hl">Construyo lo que diseño.</span> La creatividad es una función técnica.
+              <div className="flex items-center gap-2 mb-2 font-mono text-[10px] text-acid uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 bg-acid rounded-full animate-ping"></span>
+                <span>// CREATIVE TECHNOLOGIST & SYSTEMS ARCHITECT</span>
+              </div>
+              <p className="text-[17px] md:text-[20px] leading-[1.35] font-medium tracking-[-0.015em] text-ink">
+                Diseño lo que construyo. <span className="text-acid font-semibold">Construyo lo que diseño.</span> La creatividad es una función técnica y operativa.
               </p>
-            </div>
-            <div>
-              <h2 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">{`// Stack`}</h2>
-              <div className="text-[11px] font-mono leading-[1.6]">
-                <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1 shadow-[0_0_12px_rgba(198,255,61,0.2)]">Diseño</span>
-                <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1 shadow-[0_0_12px_rgba(198,255,61,0.2)]">Desarrollo</span>
-                <span className="inline-block px-2.5 py-0.5 border border-acid bg-acid text-bg font-medium mr-1 mb-1 shadow-[0_0_12px_rgba(198,255,61,0.2)]">Automatización</span>
-                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim bg-bg-2">Branding</span>
-                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim bg-bg-2">UI/UX</span>
-                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim bg-bg-2">Full-Stack</span>
-                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim bg-bg-2">IA</span>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a 
+                  href="#portfolio" 
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-acid text-bg font-mono text-xs font-bold uppercase tracking-wider hover:bg-white transition-all shadow-[0_0_15px_rgba(198,255,61,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] cursor-pointer"
+                >
+                  <span>Explorar SaaS (7)</span>
+                  <span>↓</span>
+                </a>
+                <a 
+                  href="/cv" 
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-bg-2 border border-line text-ink font-mono text-xs font-medium uppercase tracking-wider hover:border-acid hover:text-acid transition-all cursor-pointer"
+                >
+                  <span>CV Técnico (Dossier)</span>
+                  <span>→</span>
+                </a>
               </div>
             </div>
+
             <div>
-              <h2 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3.5">{`// Estado`}</h2>
-              <p className="font-mono text-[12px] text-ink-dim leading-[1.7]">
-                ACEPTANDO PROYECTOS<br/>
-                → Q3 2026<br/>
-                <span className="text-acid font-medium acid-pulse">● LIBRE 3 SLOTS</span><br/>
-                RESPUESTA &lt; 24h
-              </p>
+              <h2 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3">{`// Dominio & Enfoque`}</h2>
+              <div className="text-[11px] font-mono leading-[1.6]">
+                <span className="inline-block px-2.5 py-0.5 border border-acid/80 bg-acid/10 text-acid font-medium mr-1 mb-1">Next.js 16 + React 19</span>
+                <span className="inline-block px-2.5 py-0.5 border border-acid/80 bg-acid/10 text-acid font-medium mr-1 mb-1">Electron Desktop</span>
+                <span className="inline-block px-2.5 py-0.5 border border-acid/80 bg-acid/10 text-acid font-medium mr-1 mb-1">Ollama / Gemini Multimodal</span>
+                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim bg-bg-2">Tailwind CSS v4</span>
+                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim bg-bg-2">Node 24 / Express 5</span>
+                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim bg-bg-2">Branding ExxonMobil/MIP</span>
+                <span className="inline-block px-2.5 py-0.5 border border-line-2 mr-1 mb-1 text-ink-dim bg-bg-2">Nómina Paramétrica</span>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="font-mono text-[10px] text-ink-dim uppercase tracking-widest mb-3">{`// Estado Operativo`}</h2>
+              <div className="font-mono text-[11px] text-ink-dim leading-[1.7] p-3 bg-bg-2/60 border border-line">
+                <div className="flex items-center justify-between mb-1">
+                  <span>DISPONIBILIDAD:</span>
+                  <span className="text-acid font-bold">● ACTIVO</span>
+                </div>
+                <div>ROL: LEAD SYSTEMS ARCHITECT</div>
+                <div>UBICACIÓN: BOGOTÁ, COL (GMT-5)</div>
+                <div className="text-ink-dimmer pt-1 border-t border-line mt-1">RESPUESTA TÉCNICA &lt; 24H</div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="overflow-hidden border-y border-line py-4 -mx-5 md:-mx-10 mt-6 text-[clamp(22px,3vw,44px)] font-bold tracking-[-0.02em] whitespace-nowrap pointer-events-auto bg-bg/75 backdrop-blur-md" aria-hidden="true">
+        <div className="overflow-hidden border-y border-line py-4 -mx-5 md:-mx-10 mt-6 text-[clamp(20px,2.8vw,40px)] font-bold tracking-[-0.02em] whitespace-nowrap pointer-events-auto bg-bg/75 backdrop-blur-md" aria-hidden="true">
           <div className="ticker-track">
-            <span>CREATIVIDAD TÉCNICA</span><span className="text-acid">✺</span>
-            <span>DISEÑO + INGENIERÍA</span><span className="text-acid">✺</span>
-            <span>BRAND IDENTITY + CODE</span><span className="text-acid">✺</span>
-            <span>SISTEMAS QUE SE VEN BIEN</span><span className="text-acid">✺</span>
-            <span>PIXEL-PERFECT · CODE-READY</span><span className="text-acid">✺</span>
-            <span>CREATIVIDAD TÉCNICA</span><span className="text-acid">✺</span>
-            <span>DISEÑO + INGENIERÍA</span><span className="text-acid">✺</span>
-            <span>BRAND IDENTITY + CODE</span><span className="text-acid">✺</span>
-            <span>SISTEMAS QUE SE VEN BIEN</span><span className="text-acid">✺</span>
-            <span>PIXEL-PERFECT · CODE-READY</span><span className="text-acid">✺</span>
+            <span>PROCURECORE 2.0</span><span className="text-acid">✺</span>
+            <span>BROADCAST OS 365</span><span className="text-acid">✺</span>
+            <span>PROVEEDHUB AI</span><span className="text-acid">✺</span>
+            <span>EVALPRO ENTERPRISE</span><span className="text-acid">✺</span>
+            <span>COMMANDHUB PRO</span><span className="text-acid">✺</span>
+            <span>NEUROPOST LOCAL AI</span><span className="text-acid">✺</span>
+            <span>DOCUDISPATCH SUITE</span><span className="text-acid">✺</span>
+            <span>EXXONMOBIL CAMPAIGNS</span><span className="text-acid">✺</span>
+            <span>SAN JUAN PLAZA</span><span className="text-acid">✺</span>
           </div>
         </div>
       </div>
