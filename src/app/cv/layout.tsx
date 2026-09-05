@@ -3,18 +3,18 @@ import type { Metadata } from "next";
 const SITE_URL = "https://ncls.lat";
 
 export const metadata: Metadata = {
-  title: "Curriculum Vitae",
+  title: "Curriculum Vitae — Nicolás Monroy Pabón",
   description:
-    "Hoja de vida de Nicolás Monroy Pabón — Diseñador Gráfico & Full Stack Developer. Experiencia en ERPs empresariales, plataformas B2B, diseño de marca e integración de IA generativa.",
+    "CV de Nicolás Monroy Pabón — Comunicador Social × Systems Architect & Full Stack Developer. 7 Suites SaaS B2B en producción, 501 colaboradores auditados, IA generativa aplicada.",
   alternates: {
     canonical: `${SITE_URL}/cv`,
   },
   openGraph: {
     type: "profile",
     url: `${SITE_URL}/cv`,
-    title: "CV · Nicolás Monroy Pabón · Diseñador Gráfico & Full Stack Developer",
+    title: "CV · Nicolás Monroy Pabón · Systems Architect & Full Stack Developer",
     description:
-      "Hoja de vida web · Diseñador Gráfico & Full Stack Developer · Bogotá, Colombia.",
+      "Comunicador Social × Systems Architect. 7 Suites SaaS B2B, 501 nómina auditada, IA generativa en producción.",
     images: [
       {
         url: `${SITE_URL}/assets/og-cover.png`,

@@ -3,18 +3,18 @@ import type { Metadata } from "next";
 const SITE_URL = "https://ncls.lat";
 
 export const metadata: Metadata = {
-  title: "Carta de Presentación",
+  title: "Carta de Presentación — Nicolás Monroy Pabón",
   description:
-    "Carta de presentación formal de Nicolás Monroy Pabón. Perfil híbrido Comunicador Social + Full Stack Developer, con experiencia en IA generativa aplicada a producción real.",
+    "Carta de presentación de Nicolás Monroy Pabón. Comunicador Social × Systems Architect & Full Stack Developer, con 7 suites SaaS B2B en producción y experiencia en IA generativa aplicada.",
   alternates: {
     canonical: `${SITE_URL}/carta`,
   },
   openGraph: {
     type: "article",
     url: `${SITE_URL}/carta`,
-    title: "Carta de Presentación · Nicolás Monroy Pabón",
+    title: "Carta de Presentación · Nicolás Monroy Pabón · Systems Architect",
     description:
-      "Perfil híbrido — comunicador y desarrollador. IA aplicada en producción real, no demos.",
+      "Comunicador Social × Systems Architect. IA aplicada en producción real, 501 colaboradores, 7 suites SaaS B2B.",
     images: [
       {
         url: `${SITE_URL}/assets/og-cover.png`,

@@ -14,9 +14,9 @@
   --color-bg-3: #1C1C1C;
   --color-line: #262626;
   --color-line-2: #333333;
-  --color-ink: #F2EFE8;
-  --color-ink-dim: #8A8A85;
-  --color-ink-dimmer: #555555;
+  --color-ink: #F5F3ED;
+  --color-ink-dim: #B2B2AC;
+  --color-ink-dimmer: #80807B;
   --color-acid: #C6FF3D;
   --color-acid-deep: #9FD81A;
   --color-warn: #FF5E3A;
@@ -290,4 +290,25 @@ section {
 
 @media (max-width: 900px) {
   .shell { padding: 0 20px; }
+}
+
+/* ─── GLOBAL PRINT RESET ─── */
+@media print {
+  body {
+    background-image: none !important;
+    background-color: #0A0A0A !important;
+  }
+  body::before,
+  body::after {
+    display: none !important;
+    content: none !important;
+  }
+  section {
+    content-visibility: visible !important;
+    contain-intrinsic-size: auto !important;
+  }
+  /* Kill mobile dock nav on print */
+  nav[aria-label="Navegación móvil"] {
+    display: none !important;
+  }
 }

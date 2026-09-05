@@ -19,12 +19,12 @@ export function Topbar() {
   }, []);
 
   const menuItems = [
-    { label: 'MNFST', href: '#manifesto' },
-    { label: 'PERFIL', href: '#avatar' },
-    { label: 'STACK', href: '#stack' },
-    { label: 'TRAYECTORIA', href: '#experience' },
-    { label: 'SAAS B2B', href: '#portfolio' },
-    { label: 'CONTACTO', href: '#contact' },
+    { label: 'MNFST', short: 'MNF', href: '#manifesto' },
+    { label: 'PERFIL', short: 'PRF', href: '#avatar' },
+    { label: 'STACK', short: 'STK', href: '#stack' },
+    { label: 'TRAYECTORIA', short: 'EXP', href: '#experience' },
+    { label: 'SAAS B2B', short: 'SAAS', href: '#portfolio' },
+    { label: 'CONTACTO', short: 'CONT', href: '#contact' },
   ];
 
   return (
@@ -36,8 +36,8 @@ export function Topbar() {
           : 'bg-bg/70 border-line/60'
       }`}
     >
-      <div className="flex items-center justify-between py-3.5 px-6 md:px-10 font-mono text-[11px] tracking-wider uppercase">
-        <div className="flex items-center gap-5">
+      <div className="flex items-center justify-between py-3.5 px-4 sm:px-6 md:px-10 font-mono text-[11px] tracking-wider uppercase">
+        <div className="flex items-center gap-3 sm:gap-5">
           <span className="w-2.5 h-2.5 bg-acid rounded-full shadow-[0_0_14px_var(--color-acid)] animate-pulse"></span>
           <strong className="font-medium text-ink">NCLS.DEV</strong>
           <span className="text-ink-dim hidden xl:inline">Brand OS — v1.0</span>
@@ -57,10 +57,16 @@ export function Topbar() {
           </Link>
         </nav>
 
-        <div className="flex gap-4 text-ink-dim items-center">
+        <div className="flex gap-3 text-ink-dim items-center">
           <span className="hidden md:inline">LATAM / REMOTE</span>
           
           <div className="flex items-center gap-2 text-acid font-bold lg:hidden">
+            <Link 
+              href="/carta" 
+              className="text-[9px] text-ink hover:text-acid border border-line px-2 py-0.5 bg-bg-2"
+            >
+              CARTA
+            </Link>
             <span className="w-1.5 h-1.5 bg-acid rounded-full animate-pulse"></span>
             SYS: ON
           </div>
@@ -76,8 +82,8 @@ export function Topbar() {
     </header>
 
     {/* UNIQUE MOBILE DOCK NAVIGATION */}
-    <nav className="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-[400px]" aria-label="Navegación móvil">
-        <div className="bg-bg/85 backdrop-blur-2xl border border-line p-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group">
+    <nav className="lg:hidden fixed bottom-5 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-[420px]" aria-label="Navegación móvil">
+        <div className="bg-bg/90 backdrop-blur-2xl border border-line p-1 shadow-[0_20px_50px_rgba(0,0,0,0.85)] relative group">
             <div className="scanline-layer opacity-10" aria-hidden="true"></div>
             
             <div className="flex items-center justify-between relative z-10">
@@ -85,21 +91,21 @@ export function Topbar() {
                     <Link 
                         key={item.label} 
                         href={item.href} 
-                        className="flex-1 py-3 text-center font-mono text-[9px] text-ink-dim hover:text-acid transition-all border-r border-line last:border-r-0 active:scale-95"
+                        className="flex-1 py-2.5 text-center font-mono text-[9px] text-ink-dim hover:text-acid transition-all border-r border-line/60 last:border-r-0 active:scale-95"
                     >
-                        {item.label}
+                        {item.short}
                     </Link>
                 ))}
                 <Link 
                     href="/cv" 
-                    className="flex-none px-4 py-3 bg-acid text-bg font-bold font-mono text-[9px] hover:bg-white transition-colors active:scale-95"
+                    className="flex-none px-3.5 py-2.5 bg-acid text-bg font-bold font-mono text-[9px] hover:bg-white transition-colors active:scale-95 ml-0.5"
                 >
                     CV
                 </Link>
             </div>
 
             {/* Sub-dock for labels/feedback */}
-            <div className="absolute -top-7 left-0 right-0 flex justify-between px-2 font-mono text-[8px] text-acid/40 tracking-[0.2em] uppercase pointer-events-none" aria-hidden="true">
+            <div className="absolute -top-6 left-0 right-0 flex justify-between px-2 font-mono text-[7.5px] text-acid/50 tracking-[0.2em] uppercase pointer-events-none" aria-hidden="true">
                 <span>[ NAV_SYST ]</span>
                 <span>CORE_V1.0</span>
             </div>
