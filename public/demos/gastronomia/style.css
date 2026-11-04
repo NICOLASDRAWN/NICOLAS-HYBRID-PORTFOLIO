@@ -1,0 +1,413 @@
+/* ==========================================================================
+   Gourmet Bistro — Dark Luxury Menu Stylesheet
+   ========================================================================== */
+
+:root {
+  --bistro-bg: #121214;
+  --bistro-card: #1A1A1E;
+  --bistro-gold: #E5A93C;
+  --bistro-gold-hover: #F3BA54;
+  --bistro-text: #F4F4F5;
+  --bistro-muted: #A1A1AA;
+  --bistro-border: rgba(255, 255, 255, 0.08);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bistro-bg);
+  color: var(--bistro-text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  padding-bottom: 5rem;
+}
+
+/* Header */
+.bistro-header {
+  position: sticky;
+  top: 0;
+  background: rgba(18, 18, 20, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--bistro-border);
+  z-index: 100;
+  padding: 0.85rem 1.25rem;
+}
+
+.header-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bistro-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.back-link {
+  color: var(--bistro-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--bistro-border);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.back-link:hover {
+  color: var(--bistro-gold);
+  border-color: var(--bistro-gold);
+}
+
+.brand-title {
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+  color: var(--bistro-gold);
+}
+
+.brand-subtitle {
+  font-size: 0.75rem;
+  color: var(--bistro-muted);
+  display: block;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.nfc-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #34D399;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: #34D399;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #34D399;
+}
+
+.cart-toggle-btn {
+  background: var(--bistro-card);
+  border: 1px solid var(--bistro-border);
+  color: var(--bistro-text);
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.cart-counter {
+  background: var(--bistro-gold);
+  color: #121214;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.1rem 0.45rem;
+  border-radius: 9999px;
+}
+
+/* Hero */
+.bistro-hero {
+  max-width: 1000px;
+  margin: 1.5rem auto;
+  padding: 0 1.25rem;
+}
+
+.hero-content {
+  background: linear-gradient(135deg, #27272A 0%, #18181B 100%);
+  border: 1px solid rgba(229, 169, 60, 0.3);
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-align: center;
+}
+
+.chef-tag {
+  color: var(--bistro-gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+  font-size: 1.5rem;
+  color: var(--bistro-text);
+  margin-bottom: 0.4rem;
+}
+
+.hero-content p {
+  color: var(--bistro-muted);
+  font-size: 0.9rem;
+}
+
+/* Menu Tabs */
+.menu-nav-wrapper {
+  max-width: 1000px;
+  margin: 1.5rem auto 1rem auto;
+  padding: 0 1.25rem;
+  overflow-x: auto;
+}
+
+.menu-nav {
+  display: flex;
+  gap: 0.65rem;
+  white-space: nowrap;
+}
+
+.menu-tab {
+  background: var(--bistro-card);
+  border: 1px solid var(--bistro-border);
+  color: var(--bistro-muted);
+  padding: 0.6rem 1.15rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.menu-tab.active, .menu-tab:hover {
+  background: var(--bistro-gold);
+  color: #121214;
+  border-color: var(--bistro-gold);
+}
+
+/* Dishes Grid */
+.menu-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.dish-card {
+  background: var(--bistro-card);
+  border: 1px solid var(--bistro-border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.dish-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--bistro-gold);
+}
+
+.dish-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dish-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--bistro-gold);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.dish-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.dish-desc {
+  color: var(--bistro-muted);
+  font-size: 0.825rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.dish-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--bistro-border);
+}
+
+.dish-price {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--bistro-gold);
+}
+
+.btn-add-dish {
+  background: rgba(229, 169, 60, 0.15);
+  border: 1px solid var(--bistro-gold);
+  color: var(--bistro-gold);
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-add-dish:hover {
+  background: var(--bistro-gold);
+  color: #121214;
+}
+
+/* Call Waiter Floating */
+.btn-call-waiter {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: #27272A;
+  border: 1px solid var(--bistro-border);
+  color: var(--bistro-text);
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  z-index: 90;
+  transition: all 0.2s;
+}
+
+.btn-call-waiter:hover {
+  border-color: var(--bistro-gold);
+  color: var(--bistro-gold);
+}
+
+/* Cart Drawer */
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 100%;
+  max-width: 380px;
+  height: 100%;
+  background: #18181B;
+  border-left: 1px solid var(--bistro-border);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -8px 0 32px rgba(0,0,0,0.7);
+}
+
+.cart-drawer.open {
+  right: 0;
+}
+
+.cart-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+  display: none;
+}
+
+.cart-backdrop.open {
+  display: block;
+}
+
+.cart-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--bistro-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-close {
+  background: transparent;
+  border: none;
+  color: var(--bistro-muted);
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+.cart-items {
+  flex-grow: 1;
+  padding: 1.25rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cart-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--bistro-border);
+}
+
+.cart-footer {
+  padding: 1.25rem;
+  border-top: 1px solid var(--bistro-border);
+  background: #121214;
+}
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.btn-send-order {
+  width: 100%;
+  background: var(--bistro-gold);
+  color: #121214;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
