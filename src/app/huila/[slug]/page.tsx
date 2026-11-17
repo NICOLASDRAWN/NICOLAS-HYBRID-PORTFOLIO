@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, MapPin, MessageCircle } from "lucide-react";
-import { AnimeAvatar, Eyebrow, Footer, Header, JsonLd, SITE_URL } from "@/components/site/chrome";
+import { Eyebrow, Footer, Header, JsonLd, SITE_URL } from "@/components/site/chrome";
 import { REGIONS, SERVICES, waLink } from "@/components/world/content";
 
 export const dynamicParams = false;
@@ -67,7 +67,7 @@ export default async function RegionPage({ params }: { params: Promise<{ slug: s
               <a href={waLink(`Hola Nicolás, soy de ${r.city} y quiero cotizar un proyecto.`)} target="_blank" rel="noopener noreferrer" className="btn-primary"><MessageCircle size={18} /> Cotizar desde {r.city}</a>
             </div>
           </div>
-          <AnimeAvatar className="mx-auto w-full max-w-[340px]" />
+          <div className="hidden lg:block aspect-[4/5] max-w-[340px] w-full mx-auto rounded-md border border-line bg-bg-2 bg-[url(/assets/avatar-anime.webp)] bg-cover bg-top" aria-hidden="true" />
         </section>
 
         <section className="mt-24">

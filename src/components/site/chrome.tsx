@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
 import { CONTACT, REGIONS, SERVICES, waLink } from "@/components/world/content";
-import { LiveClock } from "./live-clock";
 
 export const SITE_URL = "https://ncls.lat";
 
@@ -22,21 +20,20 @@ export function JsonLd({ data }: { data: object }) {
 export function Header({ home = false }: { home?: boolean }) {
   const h = (id: string) => (home ? `#${id}` : `/#${id}`);
   return (
-    <header className="fixed top-3 inset-x-0 z-50">
-      <div className="shell">
-        <div className="glass flex items-center justify-between h-14 pl-5 pr-2">
-          <Link href="/" className="font-mono text-sm font-bold tracking-[0.2em] text-ink" aria-label="Inicio">
-            NCLS<span className="text-accent">.</span>DEV
-          </Link>
-          <nav className="hidden md:flex items-center gap-7 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-dim">
-            <a href={h("servicios")} className="hover:text-accent transition-colors">Servicios</a>
-            <a href={h("proyectos")} className="hover:text-accent transition-colors">Proyectos</a>
-            <Link href="/huila/" className="hover:text-accent transition-colors">Huila</Link>
-            <a href={h("contacto")} className="hover:text-accent transition-colors">Contacto</a>
+    <header className="fixed top-0 inset-x-0 z-50 bg-bg/80 backdrop-blur-md">
+      <div className="shell flex items-center justify-between h-16">
+        <Link href="/" className="text-[15px] font-semibold tracking-[-0.02em] text-ink" aria-label="Inicio">
+          NCLS.DEV<sup className="text-[9px] ml-0.5 text-accent">®</sup>
+        </Link>
+        <div className="flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7 text-[13px] text-ink-dim">
+            <Link href="/" className="hover:text-ink transition-colors">Inicio</Link>
+            <a href={h("servicios")} className="hover:text-ink transition-colors">Servicios</a>
+            <a href={h("proyectos")} className="hover:text-ink transition-colors">Trabajos</a>
+            <Link href="/huila/" className="hover:text-ink transition-colors">Huila</Link>
           </nav>
-          <LiveClock className="hidden xl:inline text-ink-dimmer" />
-          <a href={waLink("Hola Nicolás, quiero cotizar un proyecto.")} target="_blank" rel="noopener noreferrer" className="btn-primary !py-2 !px-4 text-sm">
-            <MessageCircle size={16} /> Cotizar
+          <a href={waLink("Hola Nicolás, quiero cotizar un proyecto.")} target="_blank" rel="noopener noreferrer" className="text-[13px] text-ink underline underline-offset-4 decoration-accent hover:text-accent">
+            Contacto
           </a>
         </div>
       </div>
