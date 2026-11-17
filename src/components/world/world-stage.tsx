@@ -79,7 +79,7 @@ export function WorldStage() {
       <nav aria-label="Estaciones" className="hidden lg:flex fixed right-8 top-1/2 -translate-y-1/2 z-40 flex-col gap-4">
         {STATIONS.map((s, i) => (
           <a key={s.id} href={`#${s.id}`} className="group flex items-center justify-end gap-3" aria-current={active === i ? "true" : undefined}>
-            <span className={`font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300 ${active === i ? "text-acid opacity-100" : "text-ink-dim opacity-0 group-hover:opacity-100"}`}>
+            <span className={`font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300 ${active === i ? "text-acid" : "text-ink-dim"} opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100`}>
               {String(i).padStart(2, "0")} {s.label}
             </span>
             <span className={`block h-[2px] transition-all duration-300 ${active === i ? "w-8 bg-acid" : "w-4 bg-line-2 group-hover:bg-ink-dim"}`} />

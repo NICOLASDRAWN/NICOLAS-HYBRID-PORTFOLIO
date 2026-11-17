@@ -48,14 +48,14 @@ function buildCurves(narrow: boolean) {
 }
 
 function CameraRig({ reduced }: { reduced: boolean }) {
-  const { camera, size } = useThree();
+  const size = useThree((s) => s.size);
   const narrow = size.width / size.height < 0.9;
   const curves = useMemo(() => buildCurves(narrow), [narrow]);
   const cur = useRef(scrollState.t);
   const lookAt = useRef(new THREE.Vector3());
-  const tmp = useMemo(() => new THREE.Vector3(), []);
+  const tmp = useRef(new THREE.Vector3());
 
-  useFrame((_, dt) => {
+  useFrame(({ camera }, dt) => {
     const target = scrollState.t;
     cur.current = reduced ? target : THREE.MathUtils.damp(cur.current, target, 3.2, dt);
     const u = THREE.MathUtils.clamp(cur.current / (STATIONS.length - 1), 0, 1);
@@ -64,8 +64,8 @@ function CameraRig({ reduced }: { reduced: boolean }) {
       camera.position.x += scrollState.pointerX * 0.8;
       camera.position.y += scrollState.pointerY * 0.5;
     }
-    curves.look.getPoint(u, tmp);
-    lookAt.current.lerp(tmp, reduced ? 1 : 1 - Math.exp(-dt * 6));
+    curves.look.getPoint(u, tmp.current);
+    lookAt.current.lerp(tmp.current, reduced ? 1 : 1 - Math.exp(-dt * 6));
     camera.lookAt(lookAt.current);
   });
   return null;
@@ -254,10 +254,13 @@ function Stars({ count }: { count: number }) {
   const geo = useMemo(() => {
     const g = new THREE.BufferGeometry();
     const p = new Float32Array(count * 3);
+    // PRNG con semilla: mismo cielo en cada render (regla de pureza de React)
+    let seed = 1337;
+    const rand = () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483646;
     for (let i = 0; i < count; i++) {
-      p[i * 3] = (Math.random() - 0.5) * 90;
-      p[i * 3 + 1] = Math.random() * 40 - 6;
-      p[i * 3 + 2] = 25 - Math.random() * (GAP * 5 + 50);
+      p[i * 3] = (rand() - 0.5) * 90;
+      p[i * 3 + 1] = rand() * 40 - 6;
+      p[i * 3 + 2] = 25 - rand() * (GAP * 5 + 50);
     }
     g.setAttribute("position", new THREE.BufferAttribute(p, 3));
     return g;
