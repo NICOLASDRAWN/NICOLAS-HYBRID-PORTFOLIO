@@ -80,7 +80,7 @@ export default function Home() {
               <span className="jp absolute -left-8 top-10 text-[11px] text-accent/70 hidden md:block" aria-hidden="true">ニコラス・モンロイ</span>
               <AnimeAvatar />
               <div className="glass float-card absolute left-[-6%] top-[52%] z-30 px-4 py-3 flex items-center gap-3">
-                <span className="grid place-items-center size-9 rounded-xl bg-accent text-white font-bold">5</span>
+                <span className="grid place-items-center size-9 rounded-xl bg-accent text-bg font-bold">5</span>
                 <span className="text-sm leading-tight"><b>Servicios</b><br /><span className="text-ink-dim">creativos y técnicos</span></span>
               </div>
               <div className="glass float-card [animation-delay:1.5s] absolute right-[-4%] top-[30%] z-30 px-4 py-3 text-sm">
@@ -91,7 +91,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <a href="#servicios" className="absolute bottom-6 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-ink-dim flex flex-col items-center gap-2 hover:text-accent" aria-label="Bajar a servicios">
+          <dl className="hidden lg:grid absolute bottom-8 inset-x-0 shell grid-cols-4 gap-8 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-dimmer">
+            {[["Rol", "Diseñador · Desarrollador"], ["Enfoque", "Marca, video y web"], ["Ingeniería", "Next.js · Three.js · Python"], ["Destacado", "37 municipios · Huila"]].map(([k, v]) => (
+              <div key={k} className="border-t border-line pt-3"><dt className="text-accent">{k}</dt><dd className="mt-1 text-ink-dim">{v}</dd></div>
+            ))}
+          </dl>
+          <a href="#servicios" className="lg:hidden absolute bottom-6 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-ink-dim flex flex-col items-center gap-2 hover:text-accent" aria-label="Bajar a servicios">
             Scroll <ArrowDown size={14} className="animate-bounce" />
           </a>
         </section>
@@ -104,7 +109,7 @@ export default function Home() {
             <ul className="mt-8 grid sm:grid-cols-2 gap-3">
               {SERVICES.map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/servicios/${s.slug}/`} className="group block h-full rounded-2xl border border-line bg-white/70 p-5 hover:border-accent hover:-translate-y-1 transition-all">
+                  <Link href={`/servicios/${s.slug}/`} className="group block h-full rounded-2xl border border-line bg-bg-2/70 p-5 hover:border-accent hover:-translate-y-1 transition-all">
                     <div className="flex items-start justify-between">
                       <span className="font-bold text-2xl text-accent/80" aria-hidden="true">{s.kanji}</span>
                       <ArrowUpRight size={18} className="text-ink-dimmer group-hover:text-accent" />
@@ -144,7 +149,7 @@ export default function Home() {
             </div>
             <ul className="mt-6 flex flex-wrap gap-2">
               {STACK.flatMap((g) => g.items).slice(0, 16).map((it) => (
-                <li key={it} className="px-3 py-1 text-xs rounded-full border border-line bg-white/70">{it}</li>
+                <li key={it} className="px-3 py-1 text-xs rounded-full border border-line bg-bg-2/70">{it}</li>
               ))}
             </ul>
             <Link href="/cv/" className="inline-block mt-6 text-accent font-medium underline underline-offset-4">Ver perfil profesional</Link>
@@ -195,7 +200,7 @@ export default function Home() {
             <ul className="mt-7 grid sm:grid-cols-2 gap-3">
               {REGIONS.map((r) => (
                 <li key={r.slug}>
-                  <Link href={`/huila/${r.slug}/`} className="group block h-full rounded-2xl border border-line bg-white/70 p-5 hover:border-accent transition-colors">
+                  <Link href={`/huila/${r.slug}/`} className="group block h-full rounded-2xl border border-line bg-bg-2/70 p-5 hover:border-accent transition-colors">
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent">{r.region}</p>
                     <h3 className="mt-1 text-xl font-semibold flex items-center justify-between">{r.city} <ArrowUpRight size={18} className="text-ink-dimmer group-hover:text-accent" /></h3>
                     <p className="mt-2 text-xs text-ink-dim leading-relaxed">{r.municipios.join(" · ")}</p>

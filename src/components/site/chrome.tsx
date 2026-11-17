@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import { CONTACT, REGIONS, SERVICES, waLink } from "@/components/world/content";
+import { LiveClock } from "./live-clock";
 
 export const SITE_URL = "https://ncls.lat";
 
@@ -33,6 +34,7 @@ export function Header({ home = false }: { home?: boolean }) {
             <Link href="/huila/" className="hover:text-accent transition-colors">Huila</Link>
             <a href={h("contacto")} className="hover:text-accent transition-colors">Contacto</a>
           </nav>
+          <LiveClock className="hidden xl:inline text-ink-dimmer" />
           <a href={waLink("Hola Nicolás, quiero cotizar un proyecto.")} target="_blank" rel="noopener noreferrer" className="btn-primary !py-2 !px-4 text-sm">
             <MessageCircle size={16} /> Cotizar
           </a>
@@ -76,6 +78,9 @@ export function Footer() {
           <Link href="/carta/" className="hover:text-accent">Carta</Link>
         </span>
       </div>
+      <p aria-hidden="true" className="mt-10 select-none whitespace-nowrap font-bold leading-[0.8] tracking-[-0.06em] text-[13.2vw] text-ink/[0.06] -mx-[2vw]">
+        NICOLÁS<span className="text-accent/40">.</span>MONROY
+      </p>
     </footer>
   );
 }
@@ -94,11 +99,11 @@ export function AnimeAvatar({ className = "" }: { className?: string }) {
       {/* eslint-disable-next-line @next/next/no-img-element -- export estático: imagen ya optimizada a webp */}
       <img
         src="/assets/avatar-anime.webp"
-        alt="Avatar anime de Nicolás Monroy con chaqueta carmesí, extendiendo la mano"
+        alt="Avatar anime de Nicolás Monroy con chaqueta negra y acentos lima, extendiendo la mano"
         width={768}
         height={1152}
         fetchPriority="high"
-        className="relative z-10 w-full h-auto drop-shadow-[0_30px_40px_rgba(120,10,25,0.25)]"
+        className="relative z-10 w-full h-auto drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)]"
       />
       {PIXELS.map(([x, y, s, c], i) => (
         <span

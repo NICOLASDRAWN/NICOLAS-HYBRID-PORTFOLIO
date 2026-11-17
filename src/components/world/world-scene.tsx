@@ -6,9 +6,9 @@ import { useLayoutEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { scrollState } from "./scroll-state";
 
-const ACID = "#E0102B";
-const INK = "#131216";
-const BG = "#F4F1EE";
+const ACID = "#C5F34A";
+const INK = "#FFFFFF";
+const BG = "#101110";
 const GAP = 34;
 
 /** Centro de cada estación y hacia qué lado se corre el encuadre (texto al lado contrario). */
@@ -93,7 +93,7 @@ function Core({ reduced }: { reduced: boolean }) {
       <Float speed={reduced ? 0 : 1.4} floatIntensity={0.6} rotationIntensity={0.3}>
         <mesh>
           <icosahedronGeometry args={[2.1, 24]} />
-          <MeshDistortMaterial color="#ffffff" roughness={0.15} metalness={0.2} distort={reduced ? 0 : 0.32} speed={1.6} />
+          <MeshDistortMaterial color="#1b1c1f" roughness={0.2} metalness={0.85} distort={reduced ? 0 : 0.32} speed={1.6} />
         </mesh>
         <mesh ref={shell}>
           <icosahedronGeometry args={[2.9, 1]} />
@@ -118,8 +118,8 @@ function Pillars() {
         <Float key={i} speed={1 + i * 0.3} floatIntensity={0.5} rotationIntensity={0.1}>
           <mesh position={[(i - 1) * 2.4, height / 2 - 2.2, (i % 2) * -1.2]}>
             <boxGeometry args={[1.3, height, 1.3]} />
-            <meshStandardMaterial color={i === 1 ? "#ffffff" : "#f7f2ef"} roughness={0.3} metalness={0.1} />
-            <Edges color={i === 1 ? ACID : "#b9b0a8"} />
+            <meshStandardMaterial color={i === 1 ? "#222327" : "#18191b"} roughness={0.35} metalness={0.6} />
+            <Edges color={i === 1 ? ACID : "#4a4b50"} />
           </mesh>
         </Float>
       ))}
@@ -186,7 +186,7 @@ function HuilaPins({ reduced }: { reduced: boolean }) {
       <group ref={group} rotation={[0, 0.6, 0]}>
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.5, 0]}>
           <circleGeometry args={[5.6, 6]} />
-          <meshStandardMaterial color="#ffffff" transparent opacity={0.8} />
+          <meshStandardMaterial color="#18191b" transparent opacity={0.85} />
           <Edges color={ACID} />
         </mesh>
         {pins.map((p, i) => (
@@ -212,8 +212,8 @@ function Panels() {
           <Float key={i} speed={1.2} floatIntensity={0.8} rotationIntensity={0.15}>
             <mesh position={[Math.sin(a) * r, (i % 3) - 1, -Math.cos(a) * r + 3]} rotation={[0, -a, 0]}>
               <planeGeometry args={[2.2, 1.4]} />
-              <meshStandardMaterial color={i < 3 ? "#ffe9eb" : "#ffffff"} side={THREE.DoubleSide} transparent opacity={0.85} roughness={0.2} metalness={0.1} />
-              <Edges color={i < 3 ? ACID : "#c9c0b8"} />
+              <meshStandardMaterial color={i < 3 ? "#1e2610" : "#18191b"} side={THREE.DoubleSide} transparent opacity={0.85} roughness={0.2} metalness={0.1} />
+              <Edges color={i < 3 ? ACID : "#3f4045"} />
             </mesh>
           </Float>
         );
@@ -262,7 +262,7 @@ function PixelField({ count, reduced }: { count: number; reduced: boolean }) {
     if (!mesh) return;
     const color = new THREE.Color();
     data.forEach((d, i) => {
-      color.set(d.c < 0.55 ? ACID : d.c < 0.8 ? INK : "#ffffff");
+      color.set(d.c < 0.55 ? ACID : d.c < 0.8 ? INK : "#3a3b3f");
       mesh.setColorAt(i, color);
     });
     if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
@@ -297,7 +297,7 @@ export default function WorldScene({ reduced, mobile }: { reduced: boolean; mobi
     >
       <color attach="background" args={[BG]} />
       <fog attach="fog" args={[BG, 14, 52]} />
-      <ambientLight intensity={0.9} />
+      <ambientLight intensity={0.45} />
       <directionalLight position={[6, 10, 6]} intensity={1.2} />
       <CameraRig reduced={reduced} />
       <PixelField count={mobile ? 220 : 520} reduced={reduced} />
@@ -306,10 +306,10 @@ export default function WorldScene({ reduced, mobile }: { reduced: boolean; mobi
         args={[200, 260]}
         cellSize={1}
         cellThickness={0.5}
-        cellColor="#e6dfd9"
+        cellColor="#1c1d1f"
         sectionSize={6}
         sectionThickness={0.9}
-        sectionColor="#f3b3bb"
+        sectionColor="#3c4a16"
         fadeDistance={48}
         fadeStrength={1.5}
         followCamera

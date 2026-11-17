@@ -90,7 +90,7 @@ export default async function RegionPage({ params }: { params: Promise<{ slug: s
             <Eyebrow>Municipios que atiendo</Eyebrow>
             <ul className="flex flex-wrap gap-2">
               {r.municipios.map((m) => (
-                <li key={m} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-line text-sm"><MapPin size={13} className="text-accent" /> {m}</li>
+                <li key={m} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-bg-2 border border-line text-sm"><MapPin size={13} className="text-accent" /> {m}</li>
               ))}
             </ul>
           </div>

@@ -10,8 +10,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Diseñador Gráfico y Full Stack Developer híbrido. Arquitectura de Software B2B, Inteligencia Artificial e Identidad de Marca.",
     start_url: "/",
     display: "standalone",
-    background_color: "#F4F1EE",
-    theme_color: "#E0102B",
+    background_color: "#101110",
+    theme_color: "#101110",
     icons: [
       {
         src: "/favicon.ico",

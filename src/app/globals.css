@@ -9,16 +9,16 @@
   --font-body: var(--font-space-grotesk), sans-serif;
   --font-mono: var(--font-mono), monospace;
 
-  --color-bg: #F4F1EE;
-  --color-bg-2: #FFFFFF;
-  --color-bg-3: #ECE7E2;
-  --color-line: #E2DCD6;
-  --color-line-2: #CBC3BB;
-  --color-ink: #131216;
-  --color-ink-dim: #55525C;
-  --color-ink-dimmer: #6F6B75;
-  --color-accent: #E0102B;
-  --color-accent-deep: #A80C1F;
+  --color-bg: #101110;
+  --color-bg-2: #17181A;
+  --color-bg-3: #1F2022;
+  --color-line: #2A2B2E;
+  --color-line-2: #3A3B3F;
+  --color-ink: #FFFFFF;
+  --color-ink-dim: #B4B4B8;
+  --color-ink-dimmer: #85858A;
+  --color-accent: #C5F34A;
+  --color-accent-deep: #A8D72F;
   --color-warn: #FF5E3A;
 
   --color-background: var(--bg);
@@ -64,9 +64,9 @@
     font-size: 15px;
     line-height: 1.5;
     background-image:
-      linear-gradient(rgba(224,16,43,0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(224,16,43,0.035) 1px, transparent 1px),
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(224,16,43,0.04), transparent 70%),
+      linear-gradient(rgba(197,243,74,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(197,243,74,0.035) 1px, transparent 1px),
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(197,243,74,0.04), transparent 70%),
       linear-gradient(var(--color-bg), var(--color-bg));
     background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
   }
@@ -140,8 +140,8 @@
    ================================================================ */
 
 @keyframes accentGlow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(224,16,43,0.0), 0 0 24px 0 rgba(224,16,43,0.08); }
-  50%      { box-shadow: 0 0 0 4px rgba(224,16,43,0.12), 0 0 40px 2px rgba(224,16,43,0.22); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(197,243,74,0.0), 0 0 24px 0 rgba(197,243,74,0.08); }
+  50%      { box-shadow: 0 0 0 4px rgba(197,243,74,0.12), 0 0 40px 2px rgba(197,243,74,0.22); }
 }
 
 @keyframes accentPulse {
@@ -216,7 +216,7 @@
 }
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 60px -20px rgba(224,16,43,0.22);
+  box-shadow: 0 24px 60px -20px rgba(197,243,74,0.22);
 }
 
 /* Underline animado para links de navegación */
@@ -328,18 +328,18 @@ section {
 
 /* ─── BRAND OS v3 · mundo 3D con scroll ─── */
 [data-station] { content-visibility: visible; contain-intrinsic-size: auto; }
-.world-bg { background: radial-gradient(ellipse at 72% 28%, #FFE3E6 0%, var(--color-bg) 58%); }
+.world-bg { background: radial-gradient(ellipse at 72% 28%, #1C2410 0%, var(--color-bg) 58%); }
 .world-vignette {
   background:
-    linear-gradient(90deg, rgba(244,241,238,.7) 0%, transparent 38%, transparent 70%, rgba(244,241,238,.35) 100%),
-    linear-gradient(180deg, rgba(244,241,238,.6) 0%, transparent 16%, transparent 82%, rgba(244,241,238,.8) 100%);
+    linear-gradient(90deg, rgba(16,17,16,.7) 0%, transparent 38%, transparent 70%, rgba(16,17,16,.35) 100%),
+    linear-gradient(180deg, rgba(16,17,16,.6) 0%, transparent 16%, transparent 82%, rgba(16,17,16,.8) 100%);
 }
 .panel {
   padding: clamp(24px, 3vw, 40px);
-  background: rgba(255,255,255,.58);
-  border: 1px solid rgba(255,255,255,.9);
+  background: rgba(16,17,16,.62);
+  border: 1px solid rgba(255,255,255,.09);
   border-radius: 22px;
-  box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 30px 60px -30px rgba(80,10,20,.25);
+  box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 30px 60px -30px rgba(0,0,0,.6);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
@@ -348,18 +348,18 @@ section {
 @keyframes hero-in { to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .hero-in { opacity: 1; transform: none; animation: none; } }
 
-/* ─── Tema anime: vidrio, energía carmesí, píxeles ─── */
-.glass { background: rgba(255,255,255,.62); border: 1px solid rgba(255,255,255,.95); border-radius: 18px; -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: 0 1px 0 #fff inset, 0 20px 40px -24px rgba(80,10,20,.3); }
-.btn-primary { display:inline-flex; align-items:center; gap:.5rem; background: var(--color-accent); color:#fff; padding: .85rem 1.5rem; border-radius: 999px; font-weight:600; box-shadow: 0 10px 30px -10px rgba(224,16,43,.7); transition: transform .2s, box-shadow .2s, background .2s; }
-.btn-primary:hover { background: var(--color-accent-deep); transform: translateY(-2px); box-shadow: 0 16px 36px -10px rgba(224,16,43,.8); }
-.btn-ghost { display:inline-flex; align-items:center; gap:.5rem; padding: .85rem 1.5rem; border-radius: 999px; background: rgba(255,255,255,.7); border:1px solid #fff; color: var(--color-ink); box-shadow: 0 8px 24px -14px rgba(0,0,0,.3); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: transform .2s, color .2s; }
+/* ─── Tema anime: vidrio, energía lima, píxeles ─── */
+.glass { background: rgba(23,24,26,.62); border: 1px solid rgba(255,255,255,.09); border-radius: 18px; -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 20px 40px -24px rgba(0,0,0,.7); }
+.btn-primary { display:inline-flex; align-items:center; gap:.5rem; background: var(--color-accent); color:#101110; padding: .85rem 1.5rem; border-radius: 999px; font-weight:600; box-shadow: 0 10px 30px -10px rgba(197,243,74,.7); transition: transform .2s, box-shadow .2s, background .2s; }
+.btn-primary:hover { background: var(--color-accent-deep); transform: translateY(-2px); box-shadow: 0 16px 36px -10px rgba(197,243,74,.8); }
+.btn-ghost { display:inline-flex; align-items:center; gap:.5rem; padding: .85rem 1.5rem; border-radius: 999px; background: rgba(23,24,26,.7); border:1px solid rgba(255,255,255,.12); color: var(--color-ink); box-shadow: 0 8px 24px -14px rgba(0,0,0,.6); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: transform .2s, color .2s; }
 .btn-ghost:hover { color: var(--color-accent); transform: translateY(-2px); }
-.energy-text { background: linear-gradient(100deg, var(--color-accent-deep), var(--color-accent) 45%, #ff4d5e 60%, var(--color-accent-deep)); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: energy 6s linear infinite; }
+.energy-text { background: linear-gradient(100deg, var(--color-accent-deep), var(--color-accent) 45%, #ECFFB0 60%, var(--color-accent-deep)); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: energy 6s linear infinite; }
 @keyframes energy { to { background-position: -200% 0; } }
-.speedlines { background: repeating-conic-gradient(from 0deg at 70% 45%, rgba(224,16,43,.07) 0deg 1.2deg, transparent 1.2deg 7deg); -webkit-mask-image: radial-gradient(circle at 70% 45%, transparent 18%, #000 60%); mask-image: radial-gradient(circle at 70% 45%, transparent 18%, #000 60%); }
+.speedlines { background: repeating-conic-gradient(from 0deg at 70% 45%, rgba(197,243,74,.07) 0deg 1.2deg, transparent 1.2deg 7deg); -webkit-mask-image: radial-gradient(circle at 70% 45%, transparent 18%, #000 60%); mask-image: radial-gradient(circle at 70% 45%, transparent 18%, #000 60%); }
 .avatar-frame { position: relative; border-radius: 34px; }
-.avatar-frame::before { content:""; position:absolute; inset: 14% 6% 0 6%; border-radius: 34px; background: rgba(255,255,255,.55); border:1px solid #fff; box-shadow: 0 40px 80px -30px rgba(120,10,25,.45), 0 1px 0 #fff inset; -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
-.avatar-glow { position:absolute; inset: 20% 10% 10%; background: radial-gradient(circle, rgba(224,16,43,.45), transparent 65%); filter: blur(30px); }
+.avatar-frame::before { content:""; position:absolute; inset: 14% 6% 0 6%; border-radius: 34px; background: rgba(23,24,26,.55); border:1px solid rgba(255,255,255,.1); box-shadow: 0 40px 80px -30px rgba(0,0,0,.7), 0 1px 0 rgba(255,255,255,.06) inset; -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.avatar-glow { position:absolute; inset: 20% 10% 10%; background: radial-gradient(circle, rgba(197,243,74,.45), transparent 65%); filter: blur(30px); }
 .pixel { position:absolute; background: var(--color-accent); animation: pixel-drift 5s ease-in-out infinite; }
 .pixel.w { background:#fff; box-shadow: 0 0 0 1px rgba(0,0,0,.06); }
 .pixel.k { background: var(--color-ink); }
