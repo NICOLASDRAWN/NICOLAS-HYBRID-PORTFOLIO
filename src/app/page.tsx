@@ -15,10 +15,16 @@ function Eyebrow({ n, center, children }: { n: string; center?: boolean; childre
 }
 
 /** Sección = una estación de la cámara. `align` deja libre el lado donde aparece el objeto 3D. */
-function Station({ id, align, className = "", children }: { id: string; align: "left" | "right" | "center"; className?: string; children: React.ReactNode }) {
+/** Anclas de la versión anterior (#avatar, #contact…) para no romper enlaces compartidos. */
+function Aliases({ ids }: { ids: string[] }) {
+  return <>{ids.map((i) => <span key={i} id={i} className="absolute top-0" aria-hidden="true" />)}</>;
+}
+
+function Station({ id, align, className = "", aliases = [], children }: { id: string; align: "left" | "right" | "center"; className?: string; aliases?: string[]; children: React.ReactNode }) {
   const col = align === "left" ? "md:mr-auto" : align === "right" ? "md:ml-auto" : "mx-auto text-center";
   return (
     <section id={id} data-station className={`relative min-h-[135svh] flex items-center py-28 ${className}`}>
+      <Aliases ids={aliases} />
       <div className="shell w-full">
         <div className={`max-w-[640px] ${col}`}>{children}</div>
       </div>
@@ -56,6 +62,7 @@ export default function Home() {
       <main id="main-content" className="relative z-10">
         {/* 00 — INICIO */}
         <section id="inicio" data-station className="relative min-h-[100svh] flex items-end md:items-center pb-24 md:pb-0">
+          <Aliases ids={["hero", "top"]} />
           <div className="shell w-full">
             <div className="max-w-[860px]">
               <p className="hero-in font-mono text-[11px] uppercase tracking-[0.25em] text-ink-dim mb-8">
@@ -84,7 +91,7 @@ export default function Home() {
         </section>
 
         {/* 01 — PERFIL */}
-        <Station id="perfil" align="right">
+        <Station id="perfil" align="right" aliases={["avatar", "profile"]}>
           <Reveal className="panel">
             <Eyebrow n="01">Perfil</Eyebrow>
             <h2 className="h2">Diseño con propósito.<br /><span className="text-acid">Código que lo hace posible.</span></h2>
@@ -106,7 +113,7 @@ export default function Home() {
         </Station>
 
         {/* 02 — STACK */}
-        <Station id="stack" align="left">
+        <Station id="stack" align="left" aliases={["skills"]}>
           <Reveal className="panel">
             <Eyebrow n="02">Stack</Eyebrow>
             <h2 className="h2">Arquitectura<br />y herramientas.</h2>
@@ -126,7 +133,7 @@ export default function Home() {
         </Station>
 
         {/* 03 — EXPERIENCIA */}
-        <Station id="experiencia" align="right">
+        <Station id="experiencia" align="right" aliases={["experience"]}>
           <Reveal className="panel">
             <Eyebrow n="03">Experiencia</Eyebrow>
             <h2 className="h2">Creatividad aplicada<br />a procesos reales.</h2>
@@ -143,6 +150,7 @@ export default function Home() {
 
         {/* 04 — PROYECTOS */}
         <section id="proyectos" data-station className="relative min-h-[140svh] py-32">
+          <Aliases ids={["portfolio", "projects"]} />
           <div className="shell">
             <Reveal className="text-center max-w-[720px] mx-auto mb-14">
               <Eyebrow n="04" center>Proyectos</Eyebrow>
@@ -179,6 +187,7 @@ export default function Home() {
 
         {/* 05 — CONTACTO */}
         <section id="contacto" data-station className="relative min-h-[100svh] flex flex-col justify-center pt-28">
+          <Aliases ids={["contact"]} />
           <div className="shell w-full text-center">
             <Reveal className="max-w-[760px] mx-auto">
               <Eyebrow n="05" center>Contacto</Eyebrow>
