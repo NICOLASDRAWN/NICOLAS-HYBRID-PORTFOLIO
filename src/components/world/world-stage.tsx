@@ -25,7 +25,7 @@ export function WorldStage() {
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const mobile = window.matchMedia("(pointer: coarse), (max-width: 860px)").matches;
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- detección de capacidades del cliente, una sola vez
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- detección de capaccentades del cliente, una sola vez
     setEnv({ gl: webglAvailable(), reduced, mobile });
 
     let raf = 0;
@@ -73,16 +73,16 @@ export function WorldStage() {
       </div>
 
       <div className="fixed top-0 inset-x-0 z-[60] h-[2px] bg-transparent" aria-hidden="true">
-        <div ref={bar} className="h-full bg-acid origin-left" style={{ transform: "scaleX(0)" }} />
+        <div ref={bar} className="h-full bg-accent origin-left" style={{ transform: "scaleX(0)" }} />
       </div>
 
       <nav aria-label="Estaciones" className="hidden lg:flex fixed right-8 top-1/2 -translate-y-1/2 z-40 flex-col gap-4">
         {STATIONS.map((s, i) => (
           <a key={s.id} href={`#${s.id}`} className="group flex items-center justify-end gap-3" aria-current={active === i ? "true" : undefined}>
-            <span className={`font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300 ${active === i ? "text-acid" : "text-ink-dim"} opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100`}>
+            <span className={`font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300 ${active === i ? "text-accent" : "text-ink-dim"} opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100`}>
               {String(i).padStart(2, "0")} {s.label}
             </span>
-            <span className={`block h-[2px] transition-all duration-300 ${active === i ? "w-8 bg-acid" : "w-4 bg-line-2 group-hover:bg-ink-dim"}`} />
+            <span className={`block h-[2px] transition-all duration-300 ${active === i ? "w-8 bg-accent" : "w-4 bg-line-2 group-hover:bg-ink-dim"}`} />
           </a>
         ))}
       </nav>

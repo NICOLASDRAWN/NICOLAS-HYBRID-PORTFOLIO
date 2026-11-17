@@ -19,11 +19,11 @@ const SITE_URL = "https://ncls.lat";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Nicolas Monroy Pabon | Portafolio Profesional",
+    default: "Nicolás Monroy | Diseño, edición de video, web y programación en el Huila",
     template: "%s · Nicolas Monroy Pabon",
   },
   description:
-    "Sitio web oficial de Nicolas Monroy Pabon. Portafolio profesional, proyectos y contacto.",
+    "Edición de video, diseño gráfico, páginas web y programación en Neiva, Pitalito, Garzón, La Plata y todo el Huila. Portafolio de Nicolás Monroy Pabón.",
   applicationName: "Nicolas Monroy · Portfolio",
   authors: [{ name: "Nicolas Monroy Pabon", url: SITE_URL }],
   creator: "Nicolas Monroy Pabon",
@@ -42,6 +42,16 @@ export const metadata: Metadata = {
     "Claude API",
     "Gemini API",
     "Bogotá",
+    "Huila",
+    "Neiva",
+    "Pitalito",
+    "Garzón",
+    "La Plata Huila",
+    "diseño gráfico Neiva",
+    "edición de video Neiva",
+    "páginas web Neiva",
+    "desarrollo web Huila",
+    "programador Neiva",
     "Colombia",
     "Remote developer",
     "ERP",
@@ -65,7 +75,7 @@ export const metadata: Metadata = {
     siteName: "Nicolas Monroy Pabon · Portfolio",
     title: "Nicolas Monroy Pabon | Portafolio Profesional",
     description:
-      "Sitio web oficial de Nicolas Monroy Pabon. Portafolio profesional, proyectos y contacto.",
+      "Edición de video, diseño gráfico, páginas web y programación en Neiva, Pitalito, Garzón, La Plata y todo el Huila. Portafolio de Nicolás Monroy Pabón.",
     images: [
       {
         url: "/assets/og-cover.png",
@@ -79,7 +89,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nicolas Monroy Pabon | Portafolio Profesional",
     description:
-      "Sitio web oficial de Nicolas Monroy Pabon. Portafolio profesional, proyectos y contacto.",
+      "Edición de video, diseño gráfico, páginas web y programación en Neiva, Pitalito, Garzón, La Plata y todo el Huila. Portafolio de Nicolás Monroy Pabón.",
     images: ["/assets/og-cover.png"],
     creator: "@nicolasdrawn",
   },
@@ -104,7 +114,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0A0A0A" },
+    { media: "(prefers-color-scheme: dark)", color: "#F4F1EE" },
     { media: "(prefers-color-scheme: light)", color: "#F2EFE8" },
   ],
   width: "device-width",
@@ -124,7 +134,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${jetbrainsMono.variable} ${spaceGrotesk.variable} scroll-smooth antialiased dark`}
+      className={`${jetbrainsMono.variable} ${spaceGrotesk.variable} scroll-smooth antialiased`}
     >
       <head>
         {/* Google tag (gtag.js) */}
@@ -152,7 +162,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="font-body bg-bg text-ink selection:bg-acid selection:text-bg">
+      <body className="font-body bg-bg text-ink selection:bg-accent selection:text-bg">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -166,7 +176,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* Skip to main content - accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-acid focus:text-bg focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:outline-none"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-accent focus:text-bg focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:outline-none"
         >
           Saltar al contenido principal
         </a>

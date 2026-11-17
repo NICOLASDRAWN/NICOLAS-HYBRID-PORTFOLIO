@@ -2,13 +2,13 @@
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Edges, Float, Grid, MeshDistortMaterial, Sparkles } from "@react-three/drei";
-import { useMemo, useRef } from "react";
+import { useLayoutEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { scrollState } from "./scroll-state";
 
-const ACID = "#C6FF3D";
-const INK = "#F5F3ED";
-const BG = "#0A0A0A";
+const ACID = "#E0102B";
+const INK = "#131216";
+const BG = "#F4F1EE";
 const GAP = 34;
 
 /** Centro de cada estación y hacia qué lado se corre el encuadre (texto al lado contrario). */
@@ -16,10 +16,16 @@ const STATIONS: { pos: [number, number, number]; side: number }[] = [
   { pos: [0, 0, 0], side: -1 },
   { pos: [9, 0, -GAP], side: 1 },
   { pos: [-5, 0, -GAP * 2], side: -1 },
-  { pos: [7, 0, -GAP * 3], side: 1 },
-  { pos: [0, 0, -GAP * 4], side: 0 },
+  { pos: [0, 0, -GAP * 3], side: 0 },
+  { pos: [7, 0, -GAP * 4], side: 1 },
   { pos: [0, 0, -GAP * 5], side: 0 },
 ];
+/** PRNG con semilla (Park–Miller): mismas posiciones en cada render. */
+function seeded(seed: number) {
+  let v = seed;
+  return () => ((v = (v * 16807) % 2147483647) - 1) / 2147483646;
+}
+
 const v3 = (p: [number, number, number]) => new THREE.Vector3(...p);
 
 function buildCurves(narrow: boolean) {
@@ -85,11 +91,11 @@ function Core({ reduced }: { reduced: boolean }) {
       <Float speed={reduced ? 0 : 1.4} floatIntensity={0.6} rotationIntensity={0.3}>
         <mesh>
           <icosahedronGeometry args={[2.1, 24]} />
-          <MeshDistortMaterial color="#1a1a1a" roughness={0.25} metalness={0.9} distort={reduced ? 0 : 0.32} speed={1.6} />
+          <MeshDistortMaterial color="#ffffff" roughness={0.15} metalness={0.2} distort={reduced ? 0 : 0.32} speed={1.6} />
         </mesh>
         <mesh ref={shell}>
           <icosahedronGeometry args={[2.9, 1]} />
-          <meshBasicMaterial color={ACID} wireframe transparent opacity={0.55} />
+          <meshBasicMaterial color={ACID} wireframe transparent opacity={0.7} />
         </mesh>
         <mesh ref={ring} rotation={[Math.PI / 2.4, 0, 0]}>
           <torusGeometry args={[4.2, 0.025, 8, 160]} />
@@ -101,17 +107,17 @@ function Core({ reduced }: { reduced: boolean }) {
   );
 }
 
-/** 1 — Perfil: tres pilares (diseño, desarrollo, documentación). */
+/** 2 — Perfil: tres pilares (diseño, desarrollo, documentación). */
 function Pillars() {
   const h = [4.2, 6, 3.2];
   return (
-    <group position={STATIONS[1].pos}>
+    <group position={STATIONS[2].pos}>
       {h.map((height, i) => (
         <Float key={i} speed={1 + i * 0.3} floatIntensity={0.5} rotationIntensity={0.1}>
           <mesh position={[(i - 1) * 2.4, height / 2 - 2.2, (i % 2) * -1.2]}>
             <boxGeometry args={[1.3, height, 1.3]} />
-            <meshStandardMaterial color={i === 1 ? "#202020" : "#151515"} roughness={0.4} metalness={0.6} />
-            <Edges color={i === 1 ? ACID : "#555"} />
+            <meshStandardMaterial color={i === 1 ? "#ffffff" : "#f7f2ef"} roughness={0.3} metalness={0.1} />
+            <Edges color={i === 1 ? ACID : "#b9b0a8"} />
           </mesh>
         </Float>
       ))}
@@ -119,7 +125,7 @@ function Pillars() {
   );
 }
 
-/** 2 — Stack: anillos orbitales, uno por familia de herramientas. */
+/** 1 — Servicios: anillos orbitales, uno por familia de herramientas. */
 function Orbits({ reduced }: { reduced: boolean }) {
   const group = useRef<THREE.Group>(null);
   const rings = useMemo(
@@ -134,7 +140,7 @@ function Orbits({ reduced }: { reduced: boolean }) {
     });
   });
   return (
-    <group position={STATIONS[2].pos}>
+    <group position={STATIONS[1].pos}>
       <mesh>
         <sphereGeometry args={[0.8, 32, 32]} />
         <meshStandardMaterial color={ACID} emissive={ACID} emissiveIntensity={0.6} roughness={0.3} />
@@ -162,53 +168,41 @@ function Orbits({ reduced }: { reduced: boolean }) {
   );
 }
 
-/** 3 — Experiencia: piezas que entran crudas a un marco y salen procesadas. */
-function Pipeline({ reduced }: { reduced: boolean }) {
-  const boxes = useRef<THREE.Group>(null);
-  const COUNT = 9;
-  const LEN = 14;
+/** 4 — Huila: 37 municipios como pines sobre un territorio. */
+function HuilaPins({ reduced }: { reduced: boolean }) {
+  const pins = useMemo(() => {
+    const rand = seeded(37);
+    // forma alargada norte-sur, como el departamento
+    return Array.from({ length: 37 }, (_, i) => ({ x: (rand() - 0.5) * 5, z: (i / 36 - 0.5) * 9 + (rand() - 0.5), h: 0.6 + rand() * 1.4, main: i % 9 === 0 }));
+  }, []);
+  const group = useRef<THREE.Group>(null);
   useFrame((state) => {
-    if (!boxes.current) return;
-    const t = reduced ? 0 : state.clock.elapsedTime * 0.9;
-    boxes.current.children.forEach((child, i) => {
-      const m = child as THREE.Mesh;
-      const x = (((i / COUNT) * LEN + t) % LEN) - LEN / 2;
-      m.position.x = x;
-      const done = x > 0;
-      m.rotation.set(done ? 0 : x * 0.4, done ? 0 : x * 0.3, 0);
-      const s = done ? 0.55 : 0.75;
-      m.scale.setScalar(s);
-      (m.material as THREE.MeshStandardMaterial).color.set(done ? ACID : "#3a3a3a");
-    });
+    if (!reduced && group.current) group.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.2) * 0.35 + 0.6;
   });
   return (
-    <group position={STATIONS[3].pos}>
-      <group ref={boxes}>
-        {Array.from({ length: COUNT }, (_, i) => (
-          <mesh key={i}>
-            <boxGeometry args={[1, 1, 1]} />
-            <meshStandardMaterial color="#3a3a3a" roughness={0.5} />
+    <group position={STATIONS[4].pos}>
+      <group ref={group} rotation={[0, 0.6, 0]}>
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.5, 0]}>
+          <circleGeometry args={[5.6, 6]} />
+          <meshStandardMaterial color="#ffffff" transparent opacity={0.8} />
+          <Edges color={ACID} />
+        </mesh>
+        {pins.map((p, i) => (
+          <mesh key={i} position={[p.x, -1.5 + p.h / 2, p.z]}>
+            <boxGeometry args={[p.main ? 0.32 : 0.18, p.h, p.main ? 0.32 : 0.18]} />
+            <meshStandardMaterial color={p.main ? ACID : INK} roughness={0.4} />
           </mesh>
         ))}
       </group>
-      <mesh>
-        <boxGeometry args={[0.15, 2.6, 2.6]} />
-        <meshBasicMaterial transparent opacity={0} />
-        <Edges color={ACID} />
-      </mesh>
-      <mesh position={[0, -0.6, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[LEN, 1.4]} />
-        <meshStandardMaterial color="#141414" />
-      </mesh>
     </group>
   );
 }
 
-/** 4 — Proyectos: paneles flotantes en arco. */
+/** 3 — Proyectos: paneles flotantes en arco. */
 function Panels() {
   const n = 8;
   return (
-    <group position={STATIONS[4].pos}>
+    <group position={STATIONS[3].pos}>
       {Array.from({ length: n }, (_, i) => {
         const a = ((i - (n - 1) / 2) / n) * Math.PI * 0.9;
         const r = 7;
@@ -216,8 +210,8 @@ function Panels() {
           <Float key={i} speed={1.2} floatIntensity={0.8} rotationIntensity={0.15}>
             <mesh position={[Math.sin(a) * r, (i % 3) - 1, -Math.cos(a) * r + 3]} rotation={[0, -a, 0]}>
               <planeGeometry args={[2.2, 1.4]} />
-              <meshStandardMaterial color={i < 3 ? "#1d2410" : "#161616"} side={THREE.DoubleSide} roughness={0.3} metalness={0.5} />
-              <Edges color={i < 3 ? ACID : "#4a4a4a"} />
+              <meshStandardMaterial color={i < 3 ? "#ffe9eb" : "#ffffff"} side={THREE.DoubleSide} transparent opacity={0.85} roughness={0.2} metalness={0.1} />
+              <Edges color={i < 3 ? ACID : "#c9c0b8"} />
             </mesh>
           </Float>
         );
@@ -250,25 +244,45 @@ function Portal({ reduced }: { reduced: boolean }) {
   );
 }
 
-function Stars({ count }: { count: number }) {
-  const geo = useMemo(() => {
-    const g = new THREE.BufferGeometry();
-    const p = new Float32Array(count * 3);
-    // PRNG con semilla: mismo cielo en cada render (regla de pureza de React)
-    let seed = 1337;
-    const rand = () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483646;
-    for (let i = 0; i < count; i++) {
-      p[i * 3] = (rand() - 0.5) * 90;
-      p[i * 3 + 1] = rand() * 40 - 6;
-      p[i * 3 + 2] = 25 - rand() * (GAP * 5 + 50);
-    }
-    g.setAttribute("position", new THREE.BufferAttribute(p, 3));
-    return g;
+/** Fragmentos de píxel flotando a lo largo del recorrido (instanciados: 1 draw call). */
+function PixelField({ count, reduced }: { count: number; reduced: boolean }) {
+  const ref = useRef<THREE.InstancedMesh>(null);
+  const data = useMemo(() => {
+    const rand = seeded(1337);
+    return Array.from({ length: count }, () => ({
+      x: (rand() - 0.5) * 60, y: rand() * 24 - 4, z: 20 - rand() * (GAP * 5 + 40),
+      s: 0.06 + rand() * 0.22, sp: 0.2 + rand() * 0.6, c: rand(),
+    }));
   }, [count]);
+  const dummy = useMemo(() => new THREE.Object3D(), []);
+  useLayoutEffect(() => {
+    const mesh = ref.current;
+    if (!mesh) return;
+    const color = new THREE.Color();
+    data.forEach((d, i) => {
+      color.set(d.c < 0.55 ? ACID : d.c < 0.8 ? INK : "#ffffff");
+      mesh.setColorAt(i, color);
+    });
+    if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+  }, [data]);
+  useFrame((state) => {
+    const mesh = ref.current;
+    if (!mesh) return;
+    const t = reduced ? 0 : state.clock.elapsedTime;
+    data.forEach((d, i) => {
+      dummy.position.set(d.x, d.y + Math.sin(t * d.sp + i) * 0.4, d.z);
+      dummy.rotation.set(t * d.sp, t * d.sp * 0.7, 0);
+      dummy.scale.setScalar(d.s);
+      dummy.updateMatrix();
+      mesh.setMatrixAt(i, dummy.matrix);
+    });
+    mesh.instanceMatrix.needsUpdate = true;
+  });
   return (
-    <points geometry={geo}>
-      <pointsMaterial color={INK} size={0.06} sizeAttenuation transparent opacity={0.7} />
-    </points>
+    <instancedMesh ref={ref} args={[undefined, undefined, count]}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial roughness={0.5} />
+    </instancedMesh>
   );
 }
 
@@ -281,19 +295,19 @@ export default function WorldScene({ reduced, mobile }: { reduced: boolean; mobi
     >
       <color attach="background" args={[BG]} />
       <fog attach="fog" args={[BG, 14, 52]} />
-      <ambientLight intensity={0.35} />
+      <ambientLight intensity={0.9} />
       <directionalLight position={[6, 10, 6]} intensity={1.2} />
       <CameraRig reduced={reduced} />
-      <Stars count={mobile ? 700 : 1600} />
+      <PixelField count={mobile ? 220 : 520} reduced={reduced} />
       <Grid
         position={[0, -3, -GAP * 2.5]}
         args={[200, 260]}
         cellSize={1}
         cellThickness={0.5}
-        cellColor="#1f1f1f"
+        cellColor="#e6dfd9"
         sectionSize={6}
         sectionThickness={0.9}
-        sectionColor="#3d4d1a"
+        sectionColor="#f3b3bb"
         fadeDistance={48}
         fadeStrength={1.5}
         followCamera
@@ -302,7 +316,7 @@ export default function WorldScene({ reduced, mobile }: { reduced: boolean; mobi
       <Core reduced={reduced} />
       <Pillars />
       <Orbits reduced={reduced} />
-      <Pipeline reduced={reduced} />
+      <HuilaPins reduced={reduced} />
       <Panels />
       <Portal reduced={reduced} />
     </Canvas>

@@ -23,13 +23,13 @@ export default function NotFound() {
     <div className="min-h-screen bg-bg flex flex-col justify-center items-center p-6 text-center font-mono select-none">
       <div className="max-w-md w-full border border-line p-8 bg-bg-2 shadow-[0_30px_90px_rgba(0,0,0,0.6)] relative overflow-hidden">
         {/* Glow corner */}
-        <div className="absolute top-0 right-0 w-24 h-24 bg-acid/5 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-full blur-2xl pointer-events-none" />
         
         {/* Viewfinder crosshairs */}
-        <div className="absolute top-2 left-2 text-[8px] text-acid/40">[ + ]</div>
-        <div className="absolute bottom-2 right-2 text-[8px] text-acid/40">[ 404 ]</div>
+        <div className="absolute top-2 left-2 text-[8px] text-accent/40">[ + ]</div>
+        <div className="absolute bottom-2 right-2 text-[8px] text-accent/40">[ 404 ]</div>
 
-        <div className="text-acid font-bold text-[13px] tracking-[0.2em] mb-4 uppercase">
+        <div className="text-accent font-bold text-[13px] tracking-[0.2em] mb-4 uppercase">
           [ ERROR_CODE: SYS_404 ]
         </div>
         
@@ -43,7 +43,7 @@ export default function NotFound() {
 
         <Link 
           href="/" 
-          className="inline-block w-full bg-acid text-bg font-bold py-3 text-center text-[10px] tracking-widest hover:bg-acid-dim transition-colors uppercase"
+          className="inline-block w-full bg-accent text-bg font-bold py-3 text-center text-[10px] tracking-widest hover:bg-accent-dim transition-colors uppercase"
         >
           REGRESAR AL NÚCLEO (INICIO)
         </Link>

@@ -1,4 +1,5 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
+import { REGIONS, SERVICES } from "@/components/world/content";
 
 /**
  * Sitemap generado con la convención de Next 16 (app/sitemap.ts).
@@ -25,16 +26,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${BASE_URL}/cv`,
+      url: `${BASE_URL}/cv/`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/carta`,
+      url: `${BASE_URL}/carta/`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    { url: `${BASE_URL}/huila/`, lastModified, changeFrequency: "monthly", priority: 0.95 },
+    ...SERVICES.map((s) => ({ url: `${BASE_URL}/servicios/${s.slug}/`, lastModified, changeFrequency: "monthly" as const, priority: 0.95 })),
+    ...REGIONS.map((r) => ({ url: `${BASE_URL}/huila/${r.slug}/`, lastModified, changeFrequency: "monthly" as const, priority: 0.9 })),
   ];
 }
