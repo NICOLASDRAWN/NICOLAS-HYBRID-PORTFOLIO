@@ -171,31 +171,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           Saltar al contenido principal
         </a>
 
-        {/* UNIQUE HUD OVERLAY - MOBILE ONLY */}
-        <div className="lg:hidden fixed inset-0 z-[120] pointer-events-none p-4 font-mono text-[8px] text-acid/85 tracking-widest uppercase flex flex-col justify-between mix-blend-screen" aria-hidden="true">
-            <div className="flex justify-between items-start">
-                <div className="flex flex-col gap-1">
-                    <span>[ SIGNAL_STR: 98% ]</span>
-                    <span>[ BATT: NOMINAL ]</span>
-                </div>
-                <div className="text-right">
-                    <span>SCANNER_V1</span><br/>
-                    <span>LATENCY: 12ms</span>
-                </div>
-            </div>
-            
-            <div className="flex justify-between items-end pb-20"> {/* pb-20 to stay above bottom dock */}
-                <div>
-                    <span>COORDS: BOG/CO</span><br/>
-                    <span>TEMP: 32°C</span>
-                </div>
-                <div className="text-right">
-                    <span>SYS_CORE: DEPLOYED</span><br/>
-                    <span>REV: 2026.04.18</span>
-                </div>
-            </div>
-        </div>
-        
         {children}
       </body>
     </html>
