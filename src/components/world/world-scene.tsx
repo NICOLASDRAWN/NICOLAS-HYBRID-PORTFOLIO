@@ -35,7 +35,9 @@ function buildCurves(narrow: boolean) {
   const look: THREE.Vector3[] = [];
   STATIONS.forEach((s, i) => {
     const c = v3(s.pos).add(new THREE.Vector3(0, 1.4, dist));
-    const l = v3(s.pos).add(new THREE.Vector3(s.side * shift, 0.3, 0));
+    // en celular el titular ocupa la mitad superior del hero: bajamos el núcleo detrás del avatar
+    const lift = narrow && i === 0 ? 4.5 : 0.3;
+    const l = v3(s.pos).add(new THREE.Vector3(s.side * shift, lift, 0));
     cam.push(c);
     look.push(l);
     const next = STATIONS[i + 1];
