@@ -22,12 +22,12 @@ export function Header({ home = false }: { home?: boolean }) {
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-bg/80 backdrop-blur-md">
       <div className="shell flex items-center justify-between h-16">
-        <Link href="/" className="text-[15px] font-semibold tracking-[-0.02em] text-ink" aria-label="Inicio">
+        <a href="https://ncls.lat/" className="text-[15px] font-semibold tracking-[-0.02em] text-ink" aria-label="Inicio">
           NCLS.DEV<sup className="text-[9px] ml-0.5 text-accent">®</sup>
-        </Link>
+        </a>
         <div className="flex items-center gap-8">
           <nav className="hidden md:flex items-center gap-7 text-[13px] text-ink-dim">
-            <Link href="/" className="hover:text-ink transition-colors">Inicio</Link>
+            <a href="https://ncls.lat/" className="hover:text-ink transition-colors">Inicio</a>
             <a href={h("servicios")} className="hover:text-ink transition-colors">Servicios</a>
             <a href={h("proyectos")} className="hover:text-ink transition-colors">Trabajos</a>
             <Link href="/huila/" className="hover:text-ink transition-colors">Huila</Link>

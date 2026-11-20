@@ -60,7 +60,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <div className="speedlines fixed inset-0 pointer-events-none opacity-60" aria-hidden="true" />
       <Header />
       <main id="main-content" className="relative shell pt-32">
-        <Link href="/#servicios" className="inline-flex items-center gap-2 text-sm text-ink-dim hover:text-accent"><ArrowLeft size={16} /> Todos los servicios</Link>
+        <a href="https://ncls.lat/#servicios" className="inline-flex items-center gap-2 text-sm text-ink-dim hover:text-accent"><ArrowLeft size={16} /> Todos los servicios</a>
 
         <section className="mt-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-start">
           <div>
