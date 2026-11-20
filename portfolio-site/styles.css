@@ -342,3 +342,6 @@ html{scroll-padding-top:88px}
 }
 
 .ready .stage__fig .pose--bust.is-on { opacity: 1; }
+
+.stage__sun,.ready .stage__sun{transition:opacity .35s ease,scale .6s ease}
+.stage__word{font-family:Impact,sans-serif}

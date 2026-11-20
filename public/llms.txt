@@ -1,10 +1,21 @@
 # Nicolás Monroy Pabón
 
-Diseño, comunicación y desarrollo de software.
+> Creative Technologist based in Bogotá, Colombia. Brand identity, UI/UX, web development, motion and process automation. Remote collaboration in Colombia and internationally.
 
-Portafolio: https://ncls.lat/
-GitHub: https://github.com/NICOLASDRAWN
-Contacto: nicolasmonroypabon@gmail.com
+Spanish is the primary language. The English landing describes the same professional practice. Visual concepts are labelled as concepts or fan art; enterprise case studies do not expose internal code or client data. Contact links open external channels; the website does not confirm message delivery, prices or availability.
 
-Proyectos públicos: Brand OS (portafolio), AURA (landing conceptual), ConquistaLaCiudad (práctica inicial Android).
-Experiencia empresarial: casos anonimizados de gestión documental, compras, evaluaciones, comunicación y sincronización. Código y datos internos privados.
+## Portfolio
+- [Spanish portfolio](https://ncls.lat/index.md): Profile, disciplines, selected work, process, experience and contact in Markdown.
+- [English portfolio](https://ncls.lat/en/index.md): International introduction, services, selected work and contact in Markdown.
+- [Professional profile](https://ncls.lat/cv/): Concise CV and public repositories.
+
+## Services
+- [Web development](https://ncls.lat/servicios/desarrollo-web/): Websites and applications.
+- [Graphic design](https://ncls.lat/servicios/diseno-grafico/): Visual identity and design.
+- [Video editing](https://ncls.lat/servicios/edicion-de-video/): Video and digital visual content.
+
+## Contact and discovery
+- [Contact](https://ncls.lat/#contacto): Public contact channels and project enquiry form.
+- [Behance](https://www.behance.net/nicolasmonroy3): Selected visual case studies.
+- [GitHub](https://github.com/NICOLASDRAWN): Public code repositories.
+- [Sitemap](https://ncls.lat/sitemap.xml): Published site URLs.
