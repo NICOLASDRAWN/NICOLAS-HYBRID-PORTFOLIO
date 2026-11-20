@@ -41,7 +41,7 @@ export const SERVICES: Service[] = [
     includes: ["Reels, TikTok y Shorts en formato vertical", "Videos institucionales y de producto", "Subtítulos y textos animados", "Corrección de color y limpieza de audio", "Motion graphics sencillos para tu marca"],
     ideal: "Negocios, emprendimientos, creadores y eventos que necesitan contenido constante para redes.",
     faq: [
-      { q: "¿Cómo te envío el material?", a: "Por Google Drive, WeTransfer o el medio que prefieras. Trabajo de forma remota con clientes de todo el Huila." },
+      { q: "¿Cómo te envío el material?", a: "Por Google Drive, WeTransfer o el medio que prefieras. Trabajo de forma remota con clientes de toda Colombia y del exterior." },
       { q: "¿En qué formatos entregas?", a: "En el formato de cada red: vertical 9:16 para Reels y TikTok, horizontal 16:9 para YouTube y cuadrado cuando hace falta." },
     ],
   },
@@ -65,7 +65,7 @@ export const SERVICES: Service[] = [
     short: "Páginas web rápidas, modernas y listas para aparecer en Google.",
     intro: "Construyo sitios web a la medida: landing pages, páginas corporativas, catálogos y portafolios, optimizados para celular y para buscadores.",
     includes: ["Landing pages y sitios corporativos", "Diseño adaptado a celular", "SEO técnico y local (Google)", "Dominio, hosting y correo configurados", "Botón de WhatsApp y formularios de contacto"],
-    ideal: "Negocios del Huila que quieren que los encuentren en Google y recibir clientes por WhatsApp.",
+    ideal: "Negocios de Colombia y del exterior que necesitan una web clara para presentar sus servicios y recibir consultas.",
     faq: [
       { q: "¿Mi página aparecerá en Google?", a: "La entrego con SEO técnico, datos estructurados y sitemap. El posicionamiento depende también de la competencia y del contenido, y te explico cómo mejorarlo." },
       { q: "¿Puedo actualizar la página yo mismo?", a: "Sí, si lo necesitas te dejo una forma sencilla de editar textos e imágenes." },

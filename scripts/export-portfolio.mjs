@@ -6,7 +6,7 @@ const output = resolve('out');
 if (!existsSync(resolve(output, 'cv.html')) && !existsSync(resolve(output, 'cv/index.html'))) {
   throw new Error('Build Next.js before composing the portfolio export.');
 }
-for (const file of ['index.html', 'styles.css', 'main.js', 'assets']) {
+for (const file of ['index.html', 'styles.css', 'main.js', 'assets', 'en']) {
   cpSync(resolve(source, file), resolve(output, file), { recursive: true });
 }
 writeFileSync(resolve(output, '.nojekyll'), '');

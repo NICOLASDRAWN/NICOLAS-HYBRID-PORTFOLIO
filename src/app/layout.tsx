@@ -19,11 +19,11 @@ const SITE_URL = "https://ncls.lat";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Nicolás Monroy | Diseño, edición de video, web y programación en el Huila",
+    default: "Nicolás Monroy | Diseño web, branding y motion en Colombia",
     template: "%s · Nicolas Monroy Pabon",
   },
   description:
-    "Edición de video, diseño gráfico, páginas web y programación en Neiva, Pitalito, Garzón, La Plata y todo el Huila. Portafolio de Nicolás Monroy Pabón.",
+    "Diseño web, branding, UI/UX, video y automatización desde Bogotá para toda Colombia y proyectos internacionales. Portafolio de Nicolás Monroy Pabón.",
   applicationName: "Nicolas Monroy · Portfolio",
   authors: [{ name: "Nicolas Monroy Pabon", url: SITE_URL }],
   creator: "Nicolas Monroy Pabon",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     siteName: "Nicolas Monroy Pabon · Portfolio",
     title: "Nicolas Monroy Pabon | Portafolio Profesional",
     description:
-      "Edición de video, diseño gráfico, páginas web y programación en Neiva, Pitalito, Garzón, La Plata y todo el Huila. Portafolio de Nicolás Monroy Pabón.",
+      "Diseño web, branding, UI/UX, video y automatización desde Bogotá para toda Colombia y proyectos internacionales. Portafolio de Nicolás Monroy Pabón.",
     images: [
       {
         url: "/assets/og-cover.png",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nicolas Monroy Pabon | Portafolio Profesional",
     description:
-      "Edición de video, diseño gráfico, páginas web y programación en Neiva, Pitalito, Garzón, La Plata y todo el Huila. Portafolio de Nicolás Monroy Pabón.",
+      "Diseño web, branding, UI/UX, video y automatización desde Bogotá para toda Colombia y proyectos internacionales. Portafolio de Nicolás Monroy Pabón.",
     images: ["/assets/og-cover.png"],
     creator: "@nicolasdrawn",
   },

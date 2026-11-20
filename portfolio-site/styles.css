@@ -297,3 +297,48 @@ svg{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:square;stroke-
 @media (max-height:760px) and (min-width:861px){.intro__scroll{display:none}.intro__tags{margin-bottom:12px}}
 .chapters{transition:opacity .5s}
 .stage[data-ch="0"] ~ .chapters{opacity:0;pointer-events:none}
+
+html{scroll-padding-top:88px}
+.ch{scroll-margin-top:84px}
+.skip-link{position:fixed;top:8px;left:8px;z-index:999;background:var(--ink);color:var(--cream);padding:12px;transform:translateY(-160%)}
+.skip-link:focus{transform:none}
+.locale-link{font-family:var(--mono);font-size:12px;font-weight:700;padding:12px;min-height:44px;display:inline-flex;align-items:center}
+.service-links{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0;font-size:14px}
+.service-links a{text-decoration:underline;text-underline-offset:4px;padding:8px 0}
+.pose,.pose.is-on,.pose.is-out,.ready .stage__fig .pose--bust{clip-path:none;filter:none;will-change:auto;transition:opacity .3s ease;opacity:0}
+.pose.is-on{opacity:1}
+.pose:not(.is-on):not(.is-out){visibility:hidden}
+.stage__fig,.stage__sun{will-change:auto}
+.ready .stage{animation:none}
+.js .card,.js .card.is-in{clip-path:none;will-change:auto;transition:opacity .35s ease,translate .45s ease}
+.ready .intro>*{transition-delay:0s!important}
+.js .intro>*{opacity:1;translate:none}
+.filters button,.svc__item{min-height:44px}
+.nav a:focus-visible,.locale-link:focus-visible{outline:2px solid currentColor}
+@media(max-width:1100px) and (min-width:861px){.nav__links{gap:12px}.nav__links a{font-size:11px}.nav__in{gap:10px}.locale-link{padding:8px}}
+@media(max-width:860px){
+  html{scroll-padding-top:76px}
+  .ch{margin-top:22svh;scroll-margin-top:76px}
+  .ch--intro{min-height:112svh;display:block;padding-top:52svh!important;margin-top:0}
+  .intro{position:relative;padding-top:24px;padding-bottom:26px;background:var(--orange);max-width:none}
+  .intro__role{font-size:clamp(26px,7vw,36px)}
+  .intro__pitch{font-size:16px}
+  .intro__tags{font-size:11px;letter-spacing:.04em}
+  .intro__scroll{display:none}
+  .stage__grain{display:none}
+  .stage__name{height:calc((100vw - 6.4vw) * .3)}
+  .pose--bust{height:min(48svh,95vw)!important}
+  .stage[data-ch="0"] .stage__fig{height:62svh;bottom:auto;top:0}
+  .stage__sun{bottom:auto;top:20svh}
+  .stage__word{opacity:.3}
+  .nav__links{visibility:hidden;pointer-events:none;max-height:calc(100svh - 58px);overflow-y:auto}
+  .nav.is-open .nav__links{visibility:visible;pointer-events:auto;z-index:1}
+  .burger,.logo,.locale-link{position:relative;z-index:2}
+  input,select,textarea{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .card,.js .stg>*,.js .h2 .ln>span,.js .intro>*{opacity:1;translate:none;clip-path:none}
+}
+
+.ready .stage__fig .pose--bust.is-on { opacity: 1; }

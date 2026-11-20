@@ -21,10 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${BASE_URL}/`,
+      alternates: { languages: { es: `${BASE_URL}/`, en: `${BASE_URL}/en/` } },
       lastModified,
       changeFrequency: "weekly",
       priority: 1.0,
     },
+    { url: `${BASE_URL}/en/`, lastModified, changeFrequency: "monthly", priority: 0.9, alternates: { languages: { es: `${BASE_URL}/`, en: `${BASE_URL}/en/` } } },
     {
       url: `${BASE_URL}/cv/`,
       lastModified,

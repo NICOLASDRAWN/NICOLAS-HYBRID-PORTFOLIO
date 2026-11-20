@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Check, MessageCircle } from "lucide-react";
 import { Eyebrow, Footer, Header, JsonLd, SITE_URL } from "@/components/site/chrome";
-import { ALL_MUNICIPIOS, REGIONS, SERVICES, waLink } from "@/components/world/content";
+import { REGIONS, SERVICES, waLink } from "@/components/world/content";
 
 export const dynamicParams = false;
 
@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const s = SERVICES.find((x) => x.slug === slug);
   if (!s) return {};
-  const title = `${s.name} en Neiva y todo el Huila`;
-  const description = `${s.short} Servicio remoto para Neiva, Pitalito, Garzón, La Plata y los 37 municipios del Huila.`;
+  const title = `${s.name} en Colombia`;
+  const description = `${s.short} Trabajo remoto desde Bogotá para toda Colombia y clientes internacionales.`;
   const url = `${SITE_URL}/servicios/${s.slug}/`;
   return { title, description, alternates: { canonical: url }, openGraph: { title, description, url, images: ["/assets/og-cover.png"] } };
 }
@@ -38,8 +38,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             description: s.intro,
             url,
             serviceType: s.name,
-            provider: { "@type": "ProfessionalService", name: "Nicolás Monroy", url: SITE_URL },
-            areaServed: [{ "@type": "AdministrativeArea", name: "Huila, Colombia" }, ...ALL_MUNICIPIOS.map((m) => ({ "@type": "City", name: `${m}, Huila` }))],
+            provider: { "@type": "Person", name: "Nicolás Monroy", url: SITE_URL },
+            areaServed: [{ "@type": "Country", name: "Colombia" }, { "@type": "Place", name: "Worldwide — remote services" }],
           },
           {
             "@context": "https://schema.org",
@@ -64,9 +64,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
         <section className="mt-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-start">
           <div>
-            <Eyebrow>Servicio · Huila</Eyebrow>
+            <Eyebrow>Servicio · Colombia y remoto</Eyebrow>
             <h1 className="text-[clamp(40px,6vw,88px)] font-bold leading-[0.92] tracking-[-0.045em]">
-              {s.name}<br /><span className="energy-text">en el Huila.</span>
+              {s.name}<br /><span className="energy-text">en Colombia.</span>
             </h1>
             <p className="mt-7 text-lg text-ink-dim leading-relaxed max-w-[620px]">{s.intro}</p>
             <div className="mt-9 flex flex-wrap gap-3">

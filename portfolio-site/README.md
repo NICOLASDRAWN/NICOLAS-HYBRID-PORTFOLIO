@@ -8,3 +8,6 @@ Para revisar la portada sin compilar Next: `python -m http.server 9989 --directo
 Para revisar el sitio completo compilado: `python -m http.server 9989 --directory out`.
 
 El formulario prepara un mensaje en WhatsApp; el visitante confirma el envío allí. No hay backend de correo ni se simula una confirmación de entrega.
+
+
+2026-11-20: native scrolling with event-driven scene updates; mobile spacing and responsive decorative WebP images; accessible navigation, skip link and reduced motion. Spanish national service metadata and English landing at /en/ with reciprocal hreflang, canonical and sitemap alternates. Validate with npm run lint, npm run typecheck, npm run check:public and npm run build.
