@@ -1,5 +1,13 @@
 [
   {
+    "fecha": "2026-11-23",
+    "titulo": "ARES — web cinematográfica",
+    "texto": "Un caballero que se levanta con el scroll: créditos de cine, flechas con impacto y 120 cuadros de video. Mírala en vivo.",
+    "tipo": "Concepto web",
+    "imagen": "/assets/bitacora/2026-11-23-ares-web-cinematografica.jpg",
+    "enlace": "https://ncls.lat/ares/"
+  },
+  {
     "fecha": "2026-11-22",
     "titulo": "Nueva web: Ideas en movimiento",
     "texto": "Rediseñé ncls.lat con un astronauta de marca, estética cinematográfica en blanco, negro y lima, y una bitácora que se actualiza a diario.",

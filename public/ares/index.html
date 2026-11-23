@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARES — The Fight Isn't Over</title>
+<meta name="description" content="ARES · Mindset, discipline, progress. Concepto web cinematográfico de Nicolás Monroy.">
+<meta property="og:title" content="ARES — The Fight Isn't Over">
+<meta property="og:description" content="Web cinematográfica de Nicolás Monroy: el caballero se levanta con el scroll.">
+<meta property="og:image" content="https://ncls.lat/ares/assets/og-ares.jpg">
+<meta property="og:url" content="https://ncls.lat/ares/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ncls.lat/ares/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;1,800;1,900&family=Barlow:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23b3121a%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-size=%2720%27 text-anchor=%27middle%27 fill=%27%23efe6d6%27 font-family=%27Arial%27%3EΣ%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-logo">AR<span>Σ</span>S</div>
+  <div class="loader-bar"><i id="loadBar"></i></div>
+  <div class="loader-n mono" id="loadN">000</div>
+</div>
+<div class="credits" id="credits" aria-hidden="true"><p class="c1 mono">Nicolás Monroy presenta</p><p class="c2">AR<span>Σ</span>S</p><p class="c3 mono">Una historia sobre levantarse</p></div>
+<div class="bars" id="bars" aria-hidden="true"><i></i><i></i></div>
+<div class="vignette" aria-hidden="true"></div>
+<canvas class="embers" id="embers" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#home" aria-label="ARES, inicio">AR<span>Σ</span>S</a>
+  <nav aria-label="Principal">
+    <a href="#home" class="on">Home</a><a href="#rise">Rise</a><a href="#code">Code</a><a href="#manifesto">Manifesto</a><a href="#join">Contact</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menú" aria-expanded="false"><i></i><i></i></button>
+</header>
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="#home">Home</a><a href="#rise">Rise</a><a href="#code">Code</a><a href="#manifesto">Manifesto</a><a href="#join">Contact</a><a href="https://ncls.lat/" class="out">Portafolio ↗</a>
+</div>
+
+<div class="rail mono" aria-hidden="true">
+  <span class="on">01</span><b><i id="railFill"></i></b><span>02</span><span>03</span><span>04</span>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="stage" id="stage"><div class="hero-sky"></div><div class="rays" aria-hidden="true"></div>
+    <div class="sun" id="sun"></div>
+    <h1 class="title" id="title"><span class="t1">The fight</span><span class="t2">isn’t over</span></h1>
+    <div class="arrows" id="arrows" aria-hidden="true"></div>
+    <img class="knight" id="knight" src="assets/knight.webp" alt="Caballero con armadura y capa roja, arrodillado sobre su espada" width="1052" height="1495">
+    <div class="ground" aria-hidden="true"></div></div>
+
+    <div class="hero-left">
+      <p class="mono kicker">// Mindset<br>Discipline<br>Progress</p>
+      <p class="quote">I’ve fallen before,<br>but I’m not giving<br>up now.</p>
+      <a class="btn" href="#rise"><span>Rise again</span><i aria-hidden="true">→</i></a>
+    </div>
+
+    <aside class="card" aria-label="Rise again">
+      <div class="card-h">Rise again <span aria-hidden="true">↗</span></div>
+      <ul id="vows">
+        <li class="no">Break.</li><li class="no">Quit.</li><li class="no">Fall.</li>
+        <li class="yes">Keep fighting.</li><li class="yes">Never surrender.</li><li class="yes">Stay strong.</li><li class="yes">Keep believing.</li><li class="yes">Face the pain.</li>
+      </ul>
+    </aside>
+    <a class="scroll mono" href="#rise">Scroll to rise ↓</a>
+  </section>
+
+  <!-- RISE (secuencia) -->
+  <section class="rise" id="rise">
+    <div class="rise-pin">
+      <canvas id="riseCanvas" aria-label="Secuencia: el caballero se levanta y alza la espada" role="img"></canvas>
+      <div class="rise-shade"></div><div class="flash" id="flash" aria-hidden="true"></div><div class="rbar t" aria-hidden="true"></div><div class="rbar b" aria-hidden="true"></div>
+      <div class="chapters">
+        <article class="ch" data-ch="0"><span class="mono">01 / Fall</span><h2>Everyone<br>falls.</h2><p>The ground is not the end. It is where you learn what you are made of.</p></article>
+        <article class="ch" data-ch="1"><span class="mono">02 / Breathe</span><h2>Gather what<br>is left.</h2><p>Hands on the hilt. One breath. Then another.</p></article>
+        <article class="ch" data-ch="2"><span class="mono">03 / Rise</span><h2>Stand on<br>the pain.</h2><p>Every scar is proof that you stayed in the fight.</p></article>
+        <article class="ch" data-ch="3"><span class="mono">04 / Stand</span><h2>The fight<br>isn’t over.</h2><p>Blade up. Eyes forward. Keep moving.</p></article>
+      </div>
+      <div class="rise-ui">
+        <button class="play" id="play" type="button"><span class="ic" aria-hidden="true">▶</span><span id="playTxt">Watch the rise · sound on</span></button>
+        <div class="rise-bar mono"><span id="riseN">01</span><b><i id="riseFill"></i></b><span>04</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES -->
+  <section class="code" id="code">
+    <header class="sec-h"><p class="mono">// The code</p><h2 class="big">Three laws<br>of the <em>order</em></h2></header>
+    <div class="pillars">
+      <article class="pillar">
+        <canvas class="pimg" id="mountain" aria-label="Montaña dibujada por código" role="img"></canvas>
+        <div><span class="ico" aria-hidden="true">△</span><h3>Discipline</h3><p>Build the habits that keep you in the game.</p></div>
+      </article>
+      <article class="pillar">
+        <img class="pimg" src="assets/helmet.webp" alt="Casco del caballero, primer plano" loading="lazy">
+        <div><span class="ico" aria-hidden="true">◎</span><h3>Resilience</h3><p>Turn every fall into a stronger version of you.</p></div>
+      </article>
+      <article class="pillar">
+        <div class="pimg flagbox"><svg viewBox="0 0 200 220" class="flag" aria-label="Bandera roja ondeando" role="img"><line x1="22" y1="10" x2="22" y2="215" stroke="#bdb3a3" stroke-width="3"/><path id="flagPath" fill="#c4121b" d=""/></svg></div>
+        <div><span class="ico" aria-hidden="true">⚑</span><h3>Purpose</h3><p>Keep a clear reason to keep going.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- MANIFIESTO -->
+  <section class="manifesto" id="manifesto">
+    <p class="mono">// Manifesto</p>
+    <div class="lines" id="lines">
+      <p class="ln strike">Break.</p>
+      <p class="ln strike">Quit.</p>
+      <p class="ln strike">Fall.</p>
+      <p class="ln rise-word">Rise.</p>
+    </div>
+    <p class="quote center">Strength is not the absence of falling.<br>It is the refusal to stay down.</p>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="mq"><span>Keep moving forward</span><span>✕</span><span>Keep moving forward</span><span>✕</span><span>Keep moving forward</span><span>✕</span><span>Keep moving forward</span><span>✕</span><span>Keep moving forward</span><span>✕</span><span>Keep moving forward</span><span>✕</span></div></div>
+
+  <!-- CONTACTO -->
+  <section class="join" id="join">
+    <div>
+      <p class="mono">// Join the order</p>
+      <h2 class="big">Your next<br><em>battle</em> starts<br>today.</h2>
+    </div>
+    <form class="form" id="form" novalidate>
+      <label for="email" class="mono">Email</label>
+      <div class="field"><input id="email" type="email" placeholder="you@order.com" autocomplete="email" required><button id="send" type="submit" class="btn"><span id="sendTxt">Rise again</span><i aria-hidden="true">→</i></button></div>
+      <p class="msg mono" id="msg" role="status"></p>
+      <p class="fine">Demo: the form does not store or send anything.</p>
+    </form>
+  </section>
+</main>
+
+<section class="author" id="author">
+  <p class="mono">// Detrás de ARES</p>
+  <h2 class="big">¿Te gustó<br>la <em>historia</em>?</h2>
+  <p class="author-txt">ARES es un concepto de Nicolás Monroy: diseñador y desarrollador que construye webs cinematográficas, marcas y motion. Mira el resto de proyectos o escríbele para el tuyo.</p>
+  <div class="author-cta">
+    <a class="btn" href="https://ncls.lat/"><span>Ver portafolio</span><i aria-hidden="true">↗</i></a>
+    <a class="btn ghost" href="https://www.behance.net/gallery/258917413/ARES-The-Fight-Isnt-Over-Web-cinematografica"><span>Caso en Behance</span><i aria-hidden="true">↗</i></a>
+  </div>
+</section>
+
+<a class="pf" id="pf" href="https://ncls.lat/"><svg viewBox="0 0 64 44" aria-hidden="true"><path d="M2 42 13 2h12l12 22L43 2h17L49 42H37L25 20l-6 22Z" fill="#c6f24e"/></svg><span><b>Nicolás Monroy</b>Ver portafolio ↗</span></a>
+
+<footer class="foot">
+  <span class="logo small">AR<span>Σ</span>S</span>
+  <span class="mono">/ Keep moving forward /</span>
+  <a class="mono dim" href="https://ncls.lat/">Concepto web · marca ficticia · fan art de Nicolás Monroy · ncls.lat ↗</a>
+</footer>
+<audio id="audio" src="assets/rise.mp3" preload="none"></audio>
+<script src="main.js"></script>
+</body>
+</html>
