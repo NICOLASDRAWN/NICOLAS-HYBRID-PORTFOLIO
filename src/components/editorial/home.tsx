@@ -45,7 +45,7 @@ function Loader({ onDone }: { onDone: () => void }) {
   return (
     <div className={`ed-loader ${out ? "out" : ""}`} aria-hidden="true">
       <svg className="logo" viewBox="0 0 64 44" width="96" height="66" aria-hidden="true"><path d="M2 42 13 2h12l12 22L43 2h17L49 42H37L25 20l-6 22Z" fill="var(--l)" /></svg>
-      <span className="n">{String(n).padStart(3, "0")}</span>
+      <span className="n" style={{ ["--p" as string]: `${n}%` }}>{String(n).padStart(3, "0")}</span>
       <span className="ed-mono tag"><span>Ideas en movimiento</span><span>Bogotá — {new Date().getFullYear()}</span></span>
       <span className="bar" style={{ width: `${n}%` }} />
     </div>

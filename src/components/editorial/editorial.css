@@ -373,3 +373,8 @@
 @media (min-width: 800px) { .ed-feat { grid-template-columns: repeat(3, 1fr); } }
 .ed-card img { object-position: left center; }
 @media (min-width: 900px) { .ed-services { grid-template-columns: repeat(3, 1fr); } }
+/* loader v2: logo arriba, número que se llena de lima */
+.ed-loader { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(18px, 3vh, 34px); }
+.ed-loader .logo { position: static; translate: none; width: clamp(56px, 7vw, 96px); height: auto; }
+.ed-loader .n { font-size: clamp(72px, 13vw, 190px); padding: 0 0.06em; color: transparent; background: linear-gradient(to top, var(--l) var(--p, 0%), var(--c) var(--p, 0%)); -webkit-background-clip: text; background-clip: text; }
+.ed-loader .tag { font-size: 11px; }
