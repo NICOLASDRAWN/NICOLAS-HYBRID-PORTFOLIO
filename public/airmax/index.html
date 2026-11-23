@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIR MAX — The Icon of Air · Concepto web</title>
+<meta name="description" content="Concepto web interactivo no oficial de Air Max por Nicolás Monroy: colorways en vivo, cámara de aire que se comprime y producto que gira con el scroll.">
+<meta property="og:title" content="AIR MAX — Concepto web interactivo">
+<meta property="og:description" content="Web art design no oficial de Nicolás Monroy.">
+<meta property="og:image" content="https://ncls.lat/airmax/assets/og-airmax.jpg">
+<meta property="og:url" content="https://ncls.lat/airmax/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ncls.lat/airmax/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,700..900&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23d3121b%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2714%27 font-weight=%27900%27 font-style=%27italic%27 text-anchor=%27middle%27 fill=%27%23fff%27 font-family=%27sans-serif%27%3EAIR%3C/text%3E%3C/svg%3E">
+</head>
+<body class="cw-white">
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="gauge"><svg viewBox="0 0 200 120"><path d="M20 110a80 80 0 0 1 160 0" class="g-bg"/><path d="M20 110a80 80 0 0 1 160 0" class="g-fill" id="gFill"/></svg>
+    <p class="g-n"><b id="psi">00</b><span>PSI</span></p></div>
+  <p class="mono">Inflando la cámara de aire</p>
+</div>
+<div class="cross" id="cross" aria-hidden="true"><i></i><i></i></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Inicio">NIKE<sup>®</sup></a>
+  <nav aria-label="Principal"><a href="#top">Men</a><a href="#top">Women</a><a href="#top">Kids</a><a href="#tech" class="on">Collections</a><a href="#build">Sale</a></nav>
+  <div class="tools">
+    <button class="ic" aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></button>
+    <button class="ic" aria-label="Cuenta"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.5 4.5-6.5 8-6.5s7 2 8 6.5"/></svg></button>
+    <button class="ic bag" aria-label="Bolsa"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><em id="bagN">0</em></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <div class="band" aria-hidden="true"></div>
+  <p class="ghost" id="ghost" aria-hidden="true">AIR MAX</p>
+  <div class="orbit" aria-hidden="true"></div>
+
+  <div class="h-copy">
+    <p class="mono kick">Nike Sportswear</p>
+    <h1 class="d"><span class="l1">Nike</span><span class="l2">Air Max</span></h1>
+    <p class="lead">The icon of air.<br>Now in a new era.</p>
+    <a class="btn" href="#build"><span>Shop now</span><i aria-hidden="true">→</i></a>
+    <ul class="feats">
+      <li><svg viewBox="0 0 40 24"><rect x="2" y="5" width="36" height="14" rx="7"/><circle cx="12" cy="12" r="2.5"/><circle cx="20" cy="12" r="2.5"/><circle cx="28" cy="12" r="2.5"/></svg><b>Air Cushioning</b><span>All-day comfort</span></li>
+      <li><svg viewBox="0 0 40 24"><path d="M6 20C10 8 22 3 36 3 30 13 20 19 6 20Zm0 0 14-9"/></svg><b>Lightweight</b><span>Move freely</span></li>
+      <li><svg viewBox="0 0 40 24"><path d="m20 2 16 6-16 6-16-6Zm-16 11 16 6 16-6M4 17l16 6 16-6"/></svg><b>Durable Design</b><span>Built to last</span></li>
+    </ul>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="shoe" id="shoe">
+      <img src="assets/shoe-hero.webp" alt="Zapatilla Air Max en colorway seleccionado" width="1930" height="1245" id="shoeImg">
+      <i class="tint" aria-hidden="true"></i>
+      <button class="hot" style="--x:60%;--y:62%" data-t="Cámara Air visible · 180°"><span>+</span></button>
+      <button class="hot" style="--x:34%;--y:36%" data-t="Cuero premium perforado"><span>+</span></button>
+      <button class="hot" style="--x:22%;--y:86%" data-t="Suela waffle de caucho"><span>+</span></button>
+    </div>
+    <div class="shadow" id="shadow" aria-hidden="true"></div>
+    <img class="rock" src="assets/rock.webp" alt="" aria-hidden="true" id="rock">
+  </div>
+
+  <div class="pager mono" aria-label="Colorway">
+    <span id="cwN">01</span><i></i><span>03</span>
+    <button class="arr" id="prev" aria-label="Colorway anterior">↑</button>
+    <button class="arr dark" id="next" aria-label="Colorway siguiente">↓</button>
+  </div>
+
+  <div class="strip" id="strip">
+    <button class="nav-a" data-d="-1" aria-label="Anterior">‹</button>
+    <div class="cards">
+      <button class="card" data-cw="red"><img src="assets/shoe-red.webp" alt=""><span><small>Nike Air Max 270</small><b>$129.99</b></span></button>
+      <button class="card" data-cw="black"><img src="assets/shoe-black.webp" alt=""><span><small>Nike Air Max Pulse</small><b>$139.99</b></span></button>
+      <button class="card on" data-cw="white"><img src="assets/shoe-white.webp" alt=""><span><small>Nike Air Max Classic</small><b>$129.99</b></span><em>→</em></button>
+    </div>
+    <button class="nav-a" data-d="1" aria-label="Siguiente">›</button>
+  </div>
+</section>
+
+<section class="tech" id="tech">
+  <div class="heel"><img src="assets/heel.webp" alt="Talón de la zapatilla con logo Air" loading="lazy"><i class="slash" aria-hidden="true"></i></div>
+  <div class="t-copy">
+    <h2 class="d">Air<br>Technology</h2>
+    <p>More comfort. More style.<br>More you.</p>
+    <button class="story" id="story"><span class="pl" aria-hidden="true">▶</span><span class="mono">Watch the story</span></button>
+  </div>
+  <div class="press" id="press">
+    <span class="plus" aria-hidden="true">+</span>
+    <canvas id="air" aria-label="Cámara de aire interactiva" role="img"></canvas>
+    <p class="mono press-h"><b id="pressPsi">25</b> PSI · <span id="pressTxt">Mantén presionado</span></p>
+  </div>
+</section>
+
+<section class="spin" id="spin">
+  <div class="spin-pin">
+    <p class="spin-big d" aria-hidden="true">1987</p>
+    <div class="spin-shoe" id="spinShoe"><img src="assets/shoe-hero.webp" alt="" aria-hidden="true"><i class="tint" aria-hidden="true"></i></div>
+    <ol class="specs" id="specs">
+      <li><span class="mono">01</span><b>La ventana</b><p>En 1987 el aire se hizo visible. Una cámara expuesta en el talón.</p></li>
+      <li><span class="mono">02</span><b>El impacto</b><p>Gas presurizado que absorbe cada paso y lo devuelve.</p></li>
+      <li><span class="mono">03</span><b>La silueta</b><p>Líneas que se mueven incluso cuando estás quieto.</p></li>
+      <li><span class="mono">04</span><b>Nueva era</b><p>El icono, reconstruido para la calle de hoy.</p></li>
+    </ol>
+    <div class="spin-bar"><i id="spinFill"></i></div>
+  </div>
+</section>
+
+<section class="build" id="build">
+  <div class="b-view">
+    <p class="ghost sm d" aria-hidden="true">Your Air</p>
+    <div class="b-shoe"><img src="assets/shoe-hero.webp" alt="Vista previa de tu colorway" id="bImg"><i class="tint" aria-hidden="true"></i></div>
+  </div>
+  <form class="b-form" id="bForm" novalidate>
+    <p class="mono">Build your Air</p>
+    <h2 class="d" id="bName">Air Max Classic</h2>
+    <p class="price" id="bPrice">$129.99</p>
+    <fieldset><legend class="mono">Colorway</legend>
+      <div class="sw">
+        <label><input type="radio" name="cw" value="white" checked><i style="--c:#f2f0ec"></i>Triple White</label>
+        <label><input type="radio" name="cw" value="black"><i style="--c:#16161a"></i>Core Black</label>
+        <label><input type="radio" name="cw" value="red"><i style="--c:#d3121b"></i>University Red</label>
+      </div></fieldset>
+    <fieldset><legend class="mono">Talla (EU)</legend>
+      <div class="sizes" id="sizes"></div></fieldset>
+    <button class="btn wide" id="add" type="submit"><span id="addTxt">Añadir a la bolsa</span><i aria-hidden="true">→</i></button>
+    <p class="fine mono" id="addMsg" role="status">Demo: no se procesa ningún pago.</p>
+  </form>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="mq"><span>The icon of air</span><b>✦</b><span>Now in a new era</span><b>✦</b><span>The icon of air</span><b>✦</b><span>Now in a new era</span><b>✦</b><span>The icon of air</span><b>✦</b><span>Now in a new era</span><b>✦</b></div></div>
+</main>
+
+<section class="author">
+  <p class="mono">// Detrás del concepto</p>
+  <h2 class="d">¿Te gustó<br>esta web?</h2>
+  <p>Concepto de Nicolás Monroy: diseñador y desarrollador de webs cinematográficas, marcas y motion. Mira el resto de proyectos o escríbele para el tuyo.</p>
+  <div class="a-cta"><a class="btn" href="https://ncls.lat/"><span>Ver portafolio</span><i aria-hidden="true">↗</i></a><a class="btn ghost-b" href="https://www.behance.net/gallery/258928247/AIR-MAX-The-Icon-of-Air-Web-art-design-interactivo"><span>Caso en Behance</span><i aria-hidden="true">↗</i></a></div>
+</section>
+
+<a class="pf" id="pf" href="https://ncls.lat/"><svg viewBox="0 0 64 44" aria-hidden="true"><path d="M2 42 13 2h12l12 22L43 2h17L49 42H37L25 20l-6 22Z" fill="#c6f24e"/></svg><span><b>Nicolás Monroy</b>Ver portafolio ↗</span></a>
+
+<footer class="foot mono">
+  <span>Concepto web no oficial · sin afiliación con Nike, Inc. · marcas de sus respectivos dueños</span>
+  <a href="https://ncls.lat/">Diseño y código: Nicolás Monroy · ncls.lat ↗</a>
+</footer>
+
+<dialog class="modal" id="modal"><button class="x" id="close" aria-label="Cerrar">✕</button>
+  <div class="m-in"><p class="mono">The story · 1987 → hoy</p><h3 class="d" id="mLine">Air you can see.</h3><div class="m-bar"><i id="mFill"></i></div></div>
+</dialog>
+<script src="main.js"></script>
+</body>
+</html>

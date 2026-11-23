@@ -1,6 +1,14 @@
 [
   {
     "fecha": "2026-11-23",
+    "titulo": "AIR MAX — web art design",
+    "texto": "Concepto no oficial: la zapatilla gira con el mouse, cambia de color en vivo y su cámara de aire se aprieta. Mírala en vivo.",
+    "tipo": "Concepto web",
+    "imagen": "/assets/bitacora/2026-11-23-air-max-web-art-design.jpg",
+    "enlace": "https://ncls.lat/airmax/"
+  },
+  {
+    "fecha": "2026-11-23",
     "titulo": "ARES — web cinematográfica",
     "texto": "Un caballero que se levanta con el scroll: créditos de cine, flechas con impacto y 120 cuadros de video. Mírala en vivo.",
     "tipo": "Concepto web",
