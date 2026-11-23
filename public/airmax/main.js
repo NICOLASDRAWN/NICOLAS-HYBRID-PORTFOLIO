@@ -61,13 +61,15 @@
   requestAnimationFrame(frame);
 
   /* nav + pill + heel */
-  const nav = $("#nav"), pf = $("#pf"), heel = $(".heel img"), tech = $("#tech");
+  const nav = $("#nav"), pf = $("#pf"), heel = $(".heel img"), tech = $("#tech"), st = $("#statement");
   function onScroll() {
     nav.classList.toggle("solid", scrollY > 40);
     pf.classList.toggle("show", scrollY > innerHeight * .7);
     const r = tech.getBoundingClientRect(), p = 1 - (r.top + r.height) / (innerHeight + r.height);
     heel.style.setProperty("--hs", 1.25 - Math.max(0, Math.min(1, p)) * .2);
     spinUpdate();
+    const sr = st.getBoundingClientRect(), sp = Math.max(0, Math.min(1, (innerHeight - sr.top) / (innerHeight * .9)));
+    st.querySelectorAll('span').forEach((s, i) => s.style.setProperty('--f', Math.max(0, Math.min(100, (sp * 2 - i * .5) * 100)) + '%'));
   }
   addEventListener("scroll", onScroll, { passive: true });
 
