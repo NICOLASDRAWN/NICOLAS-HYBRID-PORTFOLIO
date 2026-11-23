@@ -30,24 +30,92 @@ function useReveal() {
   }, []);
 }
 
-function Loader({ onDone }: { onDone: () => void }) {
-  const [n, setN] = useState(0);
-  const [out, setOut] = useState(false);
-  useEffect(() => {
-    let v = 0; let fin = false;
-    const t = setInterval(() => {
-      v = Math.min(100, v + Math.max(1.2, (100 - v) * 0.09));
-      setN(Math.round(v));
-      if (v >= 100 && !fin) { fin = true; clearInterval(t); setTimeout(() => { setOut(true); onDone(); }, 250); }
-    }, 28);
-    return () => clearInterval(t);
+function Intro({ onDone }: { onDone: () => void }) {
+  const [phase, setPhase] = useState(0);
+  const [gone, setGone] = useState(false);
+  const [tc, setTc] = useState("00:00:00:00");
+  const cv = useRef<HTMLCanvasElement>(null);
+  const speed = useRef(0.4);
+  const timers = useRef<number[]>([]);
+  const ended = useRef(false);
+
+  const finish = useCallback(() => {
+    if (ended.current) return;
+    ended.current = true;
+    timers.current.forEach(clearTimeout);
+    setPhase(3); speed.current = 26;
+    timers.current = [
+      window.setTimeout(() => { setPhase(4); onDone(); }, 420),
+      window.setTimeout(() => setGone(true), 1900),
+    ];
   }, [onDone]);
+
+  useEffect(() => {
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let seen = false;
+    try { seen = sessionStorage.getItem("ncls-intro") === "1"; sessionStorage.setItem("ncls-intro", "1"); } catch {}
+    if (reduce) { timers.current.push(window.setTimeout(() => { setPhase(4); onDone(); }, 0), window.setTimeout(() => setGone(true), 600)); return; }
+    const k = seen ? 0.45 : 1;
+    const at = (ms: number, f: () => void) => timers.current.push(window.setTimeout(f, ms * k));
+    at(250, () => { setPhase(1); speed.current = 1.2; });
+    at(1500, () => { setPhase(2); speed.current = 2.4; });
+    at(3200, () => finish());
+    const skip = () => finish();
+    addEventListener("keydown", skip); addEventListener("wheel", skip, { passive: true }); addEventListener("touchmove", skip, { passive: true });
+    const list = timers.current;
+    return () => { list.forEach(clearTimeout); removeEventListener("keydown", skip); removeEventListener("wheel", skip); removeEventListener("touchmove", skip); };
+  }, [finish, onDone]);
+
+  useEffect(() => {
+    const c = cv.current; if (!c) return;
+    const ctx = c.getContext("2d"); if (!ctx) return;
+    let w = 0, h = 0, raf = 0;
+    const dpr = Math.min(2, devicePixelRatio || 1);
+    const size = () => { w = c.width = innerWidth * dpr; h = c.height = innerHeight * dpr; };
+    size(); addEventListener("resize", size);
+    const N = innerWidth < 700 ? 380 : 760;
+    const st = Array.from({ length: N }, () => ({ x: (Math.random() - 0.5) * 2, y: (Math.random() - 0.5) * 2, z: Math.random(), lime: Math.random() < 0.18 }));
+    let v = 0.4; const t0 = performance.now();
+    const draw = (t: number) => {
+      v += (speed.current - v) * 0.06;
+      ctx.fillStyle = `rgba(13,13,12,${v > 8 ? 0.35 : 0.55})`; ctx.fillRect(0, 0, w, h);
+      const cx = w / 2, cy = h / 2, f = Math.max(w, h) * 0.5;
+      for (const s of st) {
+        const pz = s.z; s.z -= 0.0022 * v;
+        if (s.z <= 0.02) { s.x = (Math.random() - 0.5) * 2; s.y = (Math.random() - 0.5) * 2; s.z = 1; continue; }
+        const x = cx + (s.x / s.z) * f, y = cy + (s.y / s.z) * f, px = cx + (s.x / pz) * f, py = cy + (s.y / pz) * f;
+        if (x < -50 || x > w + 50 || y < -50 || y > h + 50) { s.z = 1; continue; }
+        const a = Math.min(1, (1 - s.z) * 1.4);
+        ctx.strokeStyle = s.lime ? `rgba(198,242,78,${a})` : `rgba(241,237,228,${a * 0.85})`;
+        ctx.lineWidth = Math.max(0.6, (1 - s.z) * 2.4) * dpr;
+        ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(x, y); ctx.stroke();
+      }
+      const ms = t - t0, fr = Math.floor((ms % 1000) / 41.67);
+      setTc(`00:00:${String(Math.floor(ms / 1000)).padStart(2, "0")}:${String(fr).padStart(2, "0")}`);
+      raf = requestAnimationFrame(draw);
+    };
+    raf = requestAnimationFrame(draw);
+    return () => { cancelAnimationFrame(raf); removeEventListener("resize", size); };
+  }, []);
+
+  useEffect(() => { if (gone) document.documentElement.style.overflow = ""; else document.documentElement.style.overflow = "hidden"; }, [gone]);
+
+  if (gone) return null;
   return (
-    <div className={`ed-loader ${out ? "out" : ""}`} aria-hidden="true">
-      <svg className="logo" viewBox="0 0 64 44" width="96" height="66" aria-hidden="true"><path d="M2 42 13 2h12l12 22L43 2h17L49 42H37L25 20l-6 22Z" fill="var(--l)" /></svg>
-      <span className="n" style={{ ["--p" as string]: `${n}%` }}>{String(n).padStart(3, "0")}</span>
-      <span className="ed-mono tag"><span>Ideas en movimiento</span><span>Bogotá — {new Date().getFullYear()}</span></span>
-      <span className="bar" style={{ width: `${n}%` }} />
+    <div className={`ed-intro p${phase}`} aria-hidden="true" onClick={finish}>
+      <canvas ref={cv} />
+      <div className="vig" />
+      <i className="bar t" /><i className="bar b" />
+      <div className="hud ed-mono"><span className="rec"><b />REC</span><span>{tc}</span></div>
+      <div className="hud lo ed-mono"><span>4.7110° N · 74.0721° W</span><span>Bogotá — {new Date().getFullYear()}</span></div>
+      <div className="mid">
+        <p className="c1 ed-mono">Nicolás Monroy presenta</p>
+        <p className="ttl ed-display"><span><span>Ideas</span></span><span><span>en movimiento</span></span></p>
+        <p className="c2 ed-mono">Diseño · Motion · Código · IA</p>
+      </div>
+      <svg className="logo" viewBox="0 0 64 44" aria-hidden="true"><path d="M2 42 13 2h12l12 22L43 2h17L49 42H37L25 20l-6 22Z" fill="var(--l)" /></svg>
+      <div className="flash" />
+      <button type="button" className="skip ed-mono" onClick={(e) => { e.stopPropagation(); finish(); }}>Saltar intro →</button>
     </div>
   );
 }
@@ -94,8 +162,8 @@ export function EditorialHome({ entries }: { entries: Entry[] }) {
 
   return (
     <div className={`ed ${ready ? "ed-ready" : ""} ${cine ? "" : "no-cine"}`}>
-      <noscript><style>{`.ed-loader{display:none}.rv,.ed-fade{opacity:1!important;transform:none!important}.rv-clip::after{display:none}.ed-hero h1 .row>span{transform:none!important}`}</style></noscript>
-      <Loader onDone={done} />
+      <noscript><style>{`.ed-intro{display:none}.rv,.ed-fade{opacity:1!important;transform:none!important}.rv-clip::after{display:none}.ed-hero h1 .row>span{transform:none!important}`}</style></noscript>
+      <Intro onDone={done} />
       <div className="ed-grain" aria-hidden="true" />
       <div className="ed-light" ref={lightRef} aria-hidden="true" style={{ left: 0, top: 0 }} />
 
