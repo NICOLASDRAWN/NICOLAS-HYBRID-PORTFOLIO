@@ -38,7 +38,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             description: s.intro,
             url,
             serviceType: s.name,
-            provider: { "@type": "Person", name: "Nicolás Monroy", url: SITE_URL },
+            provider: { "@id": `${SITE_URL}/#nicolas` },
             areaServed: [{ "@type": "Country", name: "Colombia" }, { "@type": "Place", name: "Worldwide — remote services" }],
           },
           {
@@ -74,7 +74,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </div>
           </div>
           <div className="glass p-8 relative">
-            <span className="absolute -top-8 right-6 text-7xl font-bold text-accent/15 select-none" aria-hidden="true">{s.kanji}</span>
             <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-dimmer mb-4">Qué incluye</h2>
             <ul className="space-y-3">
               {s.includes.map((i) => (

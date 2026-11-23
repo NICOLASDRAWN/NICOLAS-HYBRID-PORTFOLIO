@@ -20,20 +20,21 @@ export function JsonLd({ data }: { data: object }) {
 export function Header({ home = false }: { home?: boolean }) {
   const h = (id: string) => (home ? `#${id}` : `/#${id}`);
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-bg/80 backdrop-blur-md">
+    <header className="sub-head fixed top-0 inset-x-0 z-50 bg-bg/85 backdrop-blur-md">
       <div className="shell flex items-center justify-between h-16">
-        <a href="https://ncls.lat/" className="text-[15px] font-semibold tracking-[-0.02em] text-ink" aria-label="Inicio">
-          NCLS.DEV<sup className="text-[9px] ml-0.5 text-accent">®</sup>
+        <a href="https://ncls.lat/" className="sub-brand" aria-label="Nicolás Monroy, inicio">
+          <svg viewBox="0 0 64 44" width="46" height="32" aria-hidden="true"><path d="M2 42 13 2h12l12 22L43 2h17L49 42H37L25 20l-6 22Z" fill="#c6f24e" /></svg>
+          <span>Nicolás<br />Monroy<sup>®</sup></span>
         </a>
         <div className="flex items-center gap-8">
-          <nav className="hidden md:flex items-center gap-7 text-[13px] text-ink-dim">
+          <nav className="sub-nav hidden md:flex items-center gap-9 text-ink-dim">
             <a href="https://ncls.lat/" className="hover:text-ink transition-colors">Inicio</a>
             <a href={h("servicios")} className="hover:text-ink transition-colors">Servicios</a>
             <a href={h("proyectos")} className="hover:text-ink transition-colors">Trabajos</a>
             <Link href="/huila/" className="hover:text-ink transition-colors">Huila</Link>
           </nav>
-          <a href={waLink("Hola Nicolás, quiero cotizar un proyecto.")} target="_blank" rel="noopener noreferrer" className="text-[13px] text-ink underline underline-offset-4 decoration-accent hover:text-accent">
-            Contacto
+          <a href={waLink("Hola Nicolás, quiero cotizar un proyecto.")} target="_blank" rel="noopener noreferrer" className="sub-cta">
+            Cotizar
           </a>
         </div>
       </div>
@@ -46,7 +47,7 @@ export function Footer() {
     <footer className="shell w-full pt-20 pb-8">
       <div className="border-t border-line-2 pt-8 grid gap-8 md:grid-cols-3 text-sm">
         <div>
-          <p className="font-mono font-bold tracking-[0.2em]">NCLS<span className="text-accent">.</span>DEV</p>
+          <p className="sub-brand"><svg viewBox="0 0 64 44" width="46" height="32" aria-hidden="true"><path d="M2 42 13 2h12l12 22L43 2h17L49 42H37L25 20l-6 22Z" fill="#c6f24e" /></svg><span>Nicolás<br />Monroy<sup>®</sup></span></p>
           <p className="mt-3 text-ink-dim">Diseño, edición de video, desarrollo web y programación para el Huila y toda Colombia. Atención remota desde Bogotá.</p>
         </div>
         <div>
@@ -67,10 +68,12 @@ export function Footer() {
         </div>
       </div>
       <div className="mt-10 flex flex-col md:flex-row gap-4 justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-ink-dimmer">
-        <span>© 2026 Nicolás Monroy Pabón · Brand OS v4</span>
+        <span>© 2026 Nicolás Monroy Pabón · Ideas en movimiento</span>
         <span className="flex flex-wrap gap-6">
           <a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="hover:text-accent">GitHub</a>
           <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-accent">LinkedIn</a>
+          <a href="https://www.behance.net/nicolasmonroy3" target="_blank" rel="noopener noreferrer" className="hover:text-accent">Behance</a>
+          <a href="https://www.instagram.com/nicolas_pabon7/" target="_blank" rel="noopener noreferrer" className="hover:text-accent">Instagram</a>
           <Link href="/cv/" className="hover:text-accent">CV</Link>
           <Link href="/carta/" className="hover:text-accent">Carta</Link>
         </span>

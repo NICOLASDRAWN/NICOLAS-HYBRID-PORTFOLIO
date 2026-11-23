@@ -381,3 +381,27 @@ section {
 @keyframes word-in { to { opacity:1; transform:none; filter:none; } }
 .hero-fade { opacity:0; animation: word-in 1s .55s cubic-bezier(.2,.7,.2,1) forwards; }
 @media (prefers-reduced-motion: reduce) { .word, .hero-fade { opacity:1; transform:none; filter:none; animation:none; } }
+
+/* ===== Subpáginas con la piel "Ideas en movimiento" ===== */
+body { background-color: #0d0d0c; background-image: none; }
+.sub-head { border-bottom: 1px solid rgba(241, 237, 228, 0.1); }
+.sub-head .shell { height: 76px; }
+.sub-brand { display: inline-flex; align-items: center; gap: 10px; }
+.sub-brand > span { font-weight: 700; font-size: 14px; line-height: 0.95; text-transform: uppercase; color: var(--color-ink); }
+.sub-brand sup { font-size: 7px; vertical-align: top; }
+.sub-brand svg { transition: transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1); }
+.sub-brand:hover svg { transform: skewX(-10deg) scale(1.06); }
+.sub-nav { font-family: var(--font-mono), monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
+.sub-cta { font-family: var(--font-mono), monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #0d0d0c; background: var(--color-accent); padding: 10px 16px; transition: background 0.2s, transform 0.15s; }
+.sub-cta:hover { background: #f1ede4; }
+.sub-cta:active { transform: scale(0.97); }
+.sub-cta:focus-visible { outline: 2px solid #f1ede4; outline-offset: 3px; }
+main h1:not(.ed-display) { font-family: var(--font-anton), sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0; line-height: 0.95; transform: skewX(-7deg); transform-origin: left bottom; }
+.energy-text { background: var(--color-accent); color: #0d0d0c; -webkit-background-clip: border-box; background-clip: border-box; animation: none; padding: 0.04em 0.12em 0; display: inline-block; line-height: 0.9; margin-top: 0.08em; }
+.speedlines { background: url("/assets/astronauta.webp") no-repeat right -4vw bottom -6vh / min(44vw, 760px); -webkit-mask-image: linear-gradient(to left, #000 30%, transparent 90%); mask-image: linear-gradient(to left, #000 30%, transparent 90%); opacity: 0.22 !important; }
+@media (max-width: 899px) { .speedlines { opacity: 0.1 !important; background-size: 90vw; } }
+.glass { border-radius: 0; border-color: rgba(241, 237, 228, 0.14); background: rgba(22, 22, 20, 0.88); transition: border-color 0.25s; }
+.glass:hover { border-color: rgba(198, 242, 78, 0.6); }
+.btn-primary { border-radius: 0; font-family: var(--font-mono), monospace; text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; }
+.btn-primary:focus-visible, .btn-outline:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+.btn-outline { border-radius: 0; }

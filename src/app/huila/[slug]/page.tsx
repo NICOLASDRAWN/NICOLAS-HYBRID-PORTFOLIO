@@ -67,16 +67,15 @@ export default async function RegionPage({ params }: { params: Promise<{ slug: s
               <a href={waLink(`Hola Nicolás, soy de ${r.city} y quiero cotizar un proyecto.`)} target="_blank" rel="noopener noreferrer" className="btn-primary"><MessageCircle size={18} /> Cotizar desde {r.city}</a>
             </div>
           </div>
-          <div className="hidden lg:block aspect-[4/5] max-w-[340px] w-full mx-auto rounded-md border border-line bg-bg-2 bg-[url(/assets/avatar-anime.webp)] bg-cover bg-top" aria-hidden="true" />
         </section>
 
         <section className="mt-24">
           <Eyebrow>Servicios en {r.city}</Eyebrow>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {SERVICES.map((s) => (
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {SERVICES.map((s, i) => (
               <li key={s.slug}>
                 <Link href={`/servicios/${s.slug}/`} className="glass group block h-full p-6 hover:-translate-y-1 transition-transform">
-                  <span className="text-2xl font-bold text-accent/80" aria-hidden="true">{s.kanji}</span>
+                  <span className="font-mono text-xs tracking-[0.2em] text-accent" aria-hidden="true">{String(i + 1).padStart(2, "0")} /</span>
                   <h2 className="mt-3 font-semibold flex items-start justify-between gap-2">{s.name} <ArrowUpRight size={16} className="text-ink-dimmer group-hover:text-accent shrink-0" /></h2>
                   <p className="mt-2 text-sm text-ink-dim">{s.short}</p>
                 </Link>
