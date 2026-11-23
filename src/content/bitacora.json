@@ -1,0 +1,33 @@
+[
+  {
+    "fecha": "2026-11-22",
+    "titulo": "Nueva web: Ideas en movimiento",
+    "texto": "Rediseñé ncls.lat con un astronauta de marca, estética cinematográfica en blanco, negro y lima, y una bitácora que se actualiza a diario.",
+    "tipo": "Web",
+    "imagen": "/assets/bitacora/2026-11-22-nueva-web.webp"
+  },
+  {
+    "fecha": "2026-11-22",
+    "titulo": "S91 Detailing Center",
+    "texto": "Web cinematográfica, 9 piezas para redes y un video de presentación de 1:24 para un taller de detailing. Marca inventada para la propuesta.",
+    "tipo": "Caso de estudio",
+    "imagen": "/assets/work/s91.webp",
+    "enlace": "https://www.behance.net/gallery/258873305/S91-Detailing-Center-Web-cinematografica-redes"
+  },
+  {
+    "fecha": "2026-11-22",
+    "titulo": "Travelia",
+    "texto": "Concepto web para una agencia de viajes, con recorrido animado y diseño pensado para el celular.",
+    "tipo": "Concepto web",
+    "imagen": "/assets/work/travelia.webp",
+    "enlace": "https://www.behance.net/gallery/258867125"
+  },
+  {
+    "fecha": "2026-11-21",
+    "titulo": "Royal Oak — vista explotada",
+    "texto": "Fan art: un reloj que se arma pieza por pieza mientras haces scroll.",
+    "tipo": "Fan art",
+    "imagen": "/assets/work/royal-oak.webp",
+    "enlace": "https://www.behance.net/gallery/258843327"
+  }
+]

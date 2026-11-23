@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Anton, Instrument_Serif, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -8,6 +8,9 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
 });
+
+const anton = Anton({ variable: "--font-anton", weight: "400", subsets: ["latin"] });
+const instrument = Instrument_Serif({ variable: "--font-serif", weight: "400", style: ["normal", "italic"], subsets: ["latin"] });
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -81,7 +84,7 @@ export const metadata: Metadata = {
         url: "/assets/og-cover.png",
         width: 1200,
         height: 630,
-        alt: "Nicolas Monroy Pabon — Portfolio Diseño + Desarrollo",
+        alt: "Ideas en movimiento — Portafolio de Nicolás Monroy",
       },
     ],
   },
@@ -134,7 +137,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${jetbrainsMono.variable} ${spaceGrotesk.variable} scroll-smooth antialiased`}
+      className={`${jetbrainsMono.variable} ${spaceGrotesk.variable} ${anton.variable} ${instrument.variable} scroll-smooth antialiased`}
     >
       <head>
         {/* Google tag (gtag.js) */}

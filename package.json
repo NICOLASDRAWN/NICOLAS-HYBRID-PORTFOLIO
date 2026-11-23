@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "check:public": "node scripts/check-public.mjs"
+    "check:public": "node scripts/check-public.mjs",
+    "bitacora": "node scripts/bitacora.mjs",
+    "bitacora:publicar": "git add src/content/bitacora.json public/assets/bitacora && git commit -m \"bitácora: actualización\" && git push"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",

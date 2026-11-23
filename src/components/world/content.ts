@@ -158,3 +158,46 @@ export const PROJECTS: Project[] = [
   { title: "Comunicación corporativa", kind: "Caso anonimizado", text: "Preparación de comunicados y generación de documentos PDF con plantillas.", tech: ["Python", "Flask", "HTML", "PDF"] },
   { title: "Sincronización de archivos", kind: "Caso anonimizado", text: "Seguimiento de archivos, historial y respaldo en servicios de almacenamiento.", tech: ["Python", "SQLite", "APIs"] },
 ];
+
+export const SOCIAL = {
+  instagram: "https://www.instagram.com/nicolas_pabon7/",
+  behance: "https://www.behance.net/nicolasmonroy3",
+  adobe: "https://nicolaspabonm.myportfolio.com/",
+  linkedin: "https://www.linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/",
+  github: "https://github.com/NICOLASDRAWN",
+};
+
+export type Work = { slug: string; title: string; kind: string; year: string; text: string; href: string };
+
+const BH = "https://www.behance.net/nicolasmonroy3";
+
+/** Portadas en /public/assets/work/{slug}.webp */
+export const WORKS: Work[] = [
+  { slug: "s91", title: "S91 Detailing", kind: "Web · Redes · Video", year: "2026", text: "Web cinematográfica, 9 piezas para redes y video de propuesta para un taller de detailing.", href: "https://www.behance.net/gallery/258873305" },
+  { slug: "travelia", title: "Travelia", kind: "Concepto web", year: "2026", text: "Agencia de viajes con recorrido animado y reservas pensadas para el celular.", href: "https://www.behance.net/gallery/258867125" },
+  { slug: "royal-oak", title: "Royal Oak", kind: "Fan art · 3D scroll", year: "2026", text: "Vista explotada de un reloj que se arma pieza por pieza con el scroll.", href: "https://www.behance.net/gallery/258843327" },
+  { slug: "submariner", title: "Submariner", kind: "Fan art · Web", year: "2026", text: "Landing de relojería con inmersión submarina y escala de profundidad.", href: "https://www.behance.net/gallery/258842243" },
+  { slug: "doom", title: "DOOM", kind: "Fan art · Web", year: "2026", text: "Experiencia web oscura con fuego, partículas y narrativa de videojuego.", href: "https://www.behance.net/gallery/258842157" },
+  { slug: "struktura", title: "Struktura", kind: "Concepto web", year: "2026", text: "Estudio de arquitectura: retícula editorial y proyectos a pantalla completa.", href: BH },
+  { slug: "mercedes", title: "Mercedes-Benz", kind: "Concepto web", year: "2026", text: "Lanzamiento automotriz con video sin fondo controlado por scroll.", href: BH },
+  { slug: "tesla", title: "Tesla", kind: "Concepto web", year: "2026", text: "Configurador y presentación de producto con movimiento de cámara.", href: BH },
+  { slug: "sotano", title: "Sótano Capital", kind: "Concepto web", year: "2026", text: "Marca financiera con datos vivos y una identidad sobria.", href: BH },
+  { slug: "bogostudio", title: "BogoStudio", kind: "Concepto web", year: "2026", text: "Estudio creativo de Bogotá con portafolio interactivo.", href: BH },
+  { slug: "huilahome", title: "HuilaHome", kind: "Concepto web", year: "2026", text: "Inmobiliaria del Huila: búsqueda clara y fichas visuales.", href: BH },
+  { slug: "supra", title: "Supra GR", kind: "Fan art · Web", year: "2026", text: "Landing automotriz con velocidad, luz y tipografía agresiva.", href: BH },
+];
+
+export const TIMELINE = [
+  { years: "2025 — Hoy", role: "Diseñador gráfico, publicista y desarrollador web", org: "MIP Internacional Trading SAS", text: "Marketing B2B, diseño visual y desarrollo de los sistemas internos del grupo: compras, proveedores, evaluaciones, comunicados y documentos. Los casos se muestran anonimizados." },
+  { years: "2025", role: "Coordinador de productos digitales", org: "Partido Cambio Radical", text: "Material de formación, motion graphics, edición de video y módulos educativos." },
+  { years: "2024", role: "Trade Mark Coordinator", org: "Districol · Mobil 1™ / ExxonMobil", text: "Campañas nacionales «Siente tu ADN Motero» y «Los motores más exigentes eligen Mobil 1™», y el seminario industrial en Cali." },
+  { years: "2023 — 2024", role: "Diseñador gráfico y producción visual", org: "Centro Comercial San Juan Plaza · Neiva", text: "Campañas y activaciones (Festival del Café y el Cacao, Geek Fest) y fotografía de eventos." },
+  { years: "Freelance", role: "Identidad, web y fotografía", org: "Covtrans · Parapente Boyacá · Espacio 385", text: "Web corporativa, manuales de marca, merchandising, fotografía gastronómica y menús digitales." },
+  { years: "2020", role: "Comunicador social", org: "UNIMINUTO", text: "Formación en comunicación, narrativa y producción audiovisual." },
+];
+
+export const STATS = [
+  { value: "6+", label: "Años creando" },
+  { value: "14", label: "Casos en Behance" },
+  { value: "7", label: "Productos de software" },
+];
