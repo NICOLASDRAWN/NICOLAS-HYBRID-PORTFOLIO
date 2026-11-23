@@ -5,7 +5,7 @@ export const CONTACT = {
     encodeURIComponent("Hola Nicolás, vi tu portafolio y me gustaría conversar sobre un proyecto."),
   calendly: "https://calendly.com/nicolasmonroypabon/15min",
   github: "https://github.com/NICOLASDRAWN",
-  linkedin: "https://www.linkedin.com/in/nicolas-monroy-pabon-a8a838176/",
+  linkedin: "https://www.linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/",
 };
 
 /** Orden = orden de las estaciones 3D que recorre la cámara. */
@@ -95,6 +95,58 @@ export const SERVICES: Service[] = [
     faq: [
       { q: "¿Tú publicas en mis redes?", a: "Te entrego el contenido listo y programado si me das acceso; también puedo dejarlo para que tú lo publiques." },
       { q: "¿Es un servicio mensual?", a: "Puede ser mensual o por paquete de piezas; lo ajustamos a lo que necesites." },
+    ],
+  },
+  {
+    slug: "diseno-ui-ux",
+    name: "Diseño UI/UX y apps",
+    kanji: "界面",
+    short: "Interfaces web y móviles claras, prototipos y sistemas de diseño.",
+    intro: "Diseño interfaces que se entienden a la primera: investigo cómo usan tu producto, prototipo las pantallas y entrego un sistema de diseño listo para desarrollar.",
+    includes: ["Arquitectura de información y flujos", "Wireframes y prototipos en Figma", "Diseño de apps móviles y paneles web", "Sistemas de diseño y componentes", "Pruebas de usabilidad y mejoras"],
+    ideal: "Startups, empresas con software interno y marcas que lanzan una app o una plataforma.",
+    faq: [
+      { q: "¿También desarrollas lo que diseñas?", a: "Sí. Diseño y desarrollo en React y Next.js, así que el diseño llega al producto final sin perder detalle." },
+      { q: "¿Trabajas con mi equipo de desarrollo?", a: "Sí. Entrego archivos de Figma, componentes documentados y acompaño la implementación." },
+    ],
+  },
+  {
+    slug: "motion-graphics",
+    name: "Motion graphics y animación",
+    kanji: "動",
+    short: "Animación de marca, logos en movimiento, reels y web con movimiento.",
+    intro: "Le doy movimiento a tu marca: animo logos, piezas para redes, presentaciones y experiencias web con scroll y transiciones cinematográficas.",
+    includes: ["Animación de logo e identidad", "Motion graphics para reels y anuncios", "Intros y cortinillas para video", "Animaciones web con GSAP y Three.js", "Explicativos y presentaciones animadas"],
+    ideal: "Marcas que quieren destacar en redes y webs que necesitan una experiencia más inmersiva.",
+    faq: [
+      { q: "¿En qué formatos entregas las animaciones?", a: "MP4, GIF, Lottie o código web según dónde se vayan a usar." },
+      { q: "¿Puedes animar mi web actual?", a: "Sí, agrego animaciones de entrada, scroll y microinteracciones sin afectar la velocidad." },
+    ],
+  },
+  {
+    slug: "fotografia",
+    name: "Fotografía de producto y eventos",
+    kanji: "写",
+    short: "Fotografía gastronómica, de producto, corporativa y cobertura de eventos.",
+    intro: "Fotografío productos, platos, espacios y eventos con dirección de arte, y entrego las imágenes editadas y listas para web, redes y catálogos.",
+    includes: ["Fotografía gastronómica y de menú", "Producto y catálogo", "Retrato corporativo", "Cobertura de eventos y activaciones", "Edición y retoque profesional"],
+    ideal: "Restaurantes, marcas de producto, centros comerciales y empresas con eventos o lanzamientos.",
+    faq: [
+      { q: "¿Dónde haces las sesiones?", a: "En Bogotá y, según el proyecto, en otras ciudades de Colombia como Neiva." },
+      { q: "¿Cuándo recibo las fotos?", a: "Normalmente entre 3 y 5 días hábiles, ya editadas y en los tamaños que necesites." },
+    ],
+  },
+  {
+    slug: "campanas-publicitarias",
+    name: "Campañas publicitarias y trade marketing",
+    kanji: "広告",
+    short: "Concepto, piezas y material de punto de venta para campañas de marca.",
+    intro: "Creo campañas completas: el concepto, las piezas digitales e impresas, el material de punto de venta y la coordinación con distribuidores, como hice para Mobil 1™.",
+    includes: ["Concepto creativo y mensaje", "Piezas para medios digitales e impresos", "Material POP y trade marketing", "Eventos, seminarios y activaciones", "Campañas para redes sociales"],
+    ideal: "Marcas, distribuidores y centros comerciales que lanzan productos o activan temporadas.",
+    faq: [
+      { q: "¿Con qué marcas has trabajado?", a: "Campañas nacionales para Mobil 1™ con Districol, activaciones para el Centro Comercial San Juan Plaza en Neiva y comunicación institucional." },
+      { q: "¿Manejas la impresión?", a: "Preparo los artes finales listos para imprenta y coordino con tu proveedor." },
     ],
   },
 ];

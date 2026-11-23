@@ -372,3 +372,4 @@
 @media (max-width: 899px) { .ed-contact-art { margin: 0 auto 10px; width: 78vw; right: auto; } }
 @media (min-width: 800px) { .ed-feat { grid-template-columns: repeat(3, 1fr); } }
 .ed-card img { object-position: left center; }
+@media (min-width: 900px) { .ed-services { grid-template-columns: repeat(3, 1fr); } }

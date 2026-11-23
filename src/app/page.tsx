@@ -12,11 +12,16 @@ const businessLd = {
   image: `${SITE_URL}/assets/astronauta.webp`,
   email: CONTACT.email,
   telephone: "+57 315 013 5016",
-  founder: { "@type": "Person", name: "Nicolás Monroy Pabón" },
+  founder: { "@id": `${SITE_URL}/#nicolas` },
+  address: { "@type": "PostalAddress", addressLocality: "Bogotá", addressCountry: "CO" },
+  sameAs: ["https://www.behance.net/nicolasmonroy3", "https://www.instagram.com/nicolas_pabon7/", "https://www.linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/"],
+  knowsLanguage: ["es", "en"],
   areaServed: [
     { "@type": "AdministrativeArea", name: "Huila, Colombia" },
     ...ALL_MUNICIPIOS.map((m) => ({ "@type": "City", name: `${m}, Huila` })),
     { "@type": "Country", name: "Colombia" },
+    { "@type": "Place", name: "Latinoamérica" },
+    { "@type": "Place", name: "Remoto — todo el mundo" },
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",

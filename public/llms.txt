@@ -10,12 +10,21 @@ Spanish is the primary language. The English landing describes the same professi
 - [Professional profile](https://ncls.lat/cv/): Concise CV and public repositories.
 
 ## Services
-- [Web development](https://ncls.lat/servicios/desarrollo-web/): Websites and applications.
-- [Graphic design](https://ncls.lat/servicios/diseno-grafico/): Visual identity and design.
-- [Video editing](https://ncls.lat/servicios/edicion-de-video/): Video and digital visual content.
+- [Web development](https://ncls.lat/servicios/desarrollo-web/): Websites, landing pages and web apps (Next.js, React).
+- [Brand identity and graphic design](https://ncls.lat/servicios/diseno-grafico/): Logos, visual identity and brand systems.
+- [UI/UX and app design](https://ncls.lat/servicios/diseno-ui-ux/): Interfaces, prototypes and design systems.
+- [Motion graphics](https://ncls.lat/servicios/motion-graphics/): Logo animation, reels and animated web experiences.
+- [Video editing](https://ncls.lat/servicios/edicion-de-video/): Reels, corporate and product videos.
+- [Photography](https://ncls.lat/servicios/fotografia/): Product, food, corporate and event photography.
+- [Social media content](https://ncls.lat/servicios/contenido-para-redes/): Monthly content, posts, carousels and reels.
+- [Advertising campaigns](https://ncls.lat/servicios/campanas-publicitarias/): Campaign concepts, POP and trade marketing.
+- [Software and AI automation](https://ncls.lat/servicios/programacion-y-automatizacion/): Custom apps, Excel/PDF automation and AI integrations.
 
 ## Contact and discovery
 - [Contact](https://ncls.lat/#contacto): Public contact channels and project enquiry form.
 - [Behance](https://www.behance.net/nicolasmonroy3): Selected visual case studies.
+- [Instagram](https://www.instagram.com/nicolas_pabon7/): Generative art and design work.
+- [LinkedIn](https://www.linkedin.com/in/nicolas-monroy-pab%C3%B3n-a8a838176/): Professional profile.
+- [Daily log](https://ncls.lat/#bitacora): Updates published almost every day.
 - [GitHub](https://github.com/NICOLASDRAWN): Public code repositories.
 - [Sitemap](https://ncls.lat/sitemap.xml): Published site URLs.

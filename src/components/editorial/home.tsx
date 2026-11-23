@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Camera, Clapperboard, Code2, Layers, MessageCircle, Monitor, Triangle, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Camera, Clapperboard, Code2, Layers, Megaphone, MessageCircle, Monitor, Sparkles, Triangle, Zap } from "lucide-react";
 import { CONTACT, SERVICES, SOCIAL, STATS, TIMELINE, WORKS, waLink } from "@/components/world/content";
 
 export type Entry = { fecha: string; titulo: string; texto: string; tipo: string; imagen?: string; enlace?: string };
@@ -16,7 +16,7 @@ const SECTIONS = [
   { id: "bitacora", label: "Bitácora" },
   { id: "contacto", label: "Contacto" },
 ];
-const ICONS = [Clapperboard, Layers, Code2, Zap, Camera];
+const ICONS: Record<string, typeof Camera> = { "edicion-de-video": Clapperboard, "diseno-grafico": Triangle, "desarrollo-web": Code2, "programacion-y-automatizacion": Zap, "contenido-para-redes": Layers, "diseno-ui-ux": Monitor, "motion-graphics": Sparkles, fotografia: Camera, "campanas-publicitarias": Megaphone };
 const pad = (n: number) => String(n).padStart(2, "0");
 const MESES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
 const fmt = (d: string) => { const [y, m, dd] = d.split("-"); return `${dd} ${MESES[+m - 1]} ${y}`; };
@@ -153,6 +153,7 @@ export function EditorialHome({ entries }: { entries: Entry[] }) {
             <h1 className="ed-display">
               <span className="row"><span>Ideas</span></span>
               <span className="row"><span>En <em className="hl">Movimiento</em></span></span>
+              <span className="sr-only"> — Nicolás Monroy, diseñador web, branding y desarrollo en Bogotá, Colombia</span>
             </h1>
             <p className="ed-fade ed-sub">Diseño, tecnología y automatización<br />para marcas que crecen.</p>
             <a href="#proyectos" className="ed-btn ed-btn-l ed-fade">Ver proyectos <ArrowUpRight size={20} /></a>
@@ -220,11 +221,11 @@ export function EditorialHome({ entries }: { entries: Entry[] }) {
         <div className="ed-wrap">
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "end", gap: 24, marginBottom: 56 }}>
             <div><p className="ed-kicker ed-mono">Servicios</p><h2 className="ed-display ed-h2 rv">Servicios</h2></div>
-            <p className="muted rv" style={{ maxWidth: 380, lineHeight: 1.6 }}>Cinco formas de llevar tu marca a lo digital, con el mismo criterio de diseño de principio a fin.</p>
+            <p className="muted rv" style={{ maxWidth: 380, lineHeight: 1.6 }}>Nueve formas de llevar tu marca a lo digital, con el mismo criterio de diseño de principio a fin.</p>
           </div>
           <div className="ed-services">
             {SERVICES.map((s, i) => {
-              const Icon = ICONS[i % ICONS.length];
+              const Icon = ICONS[s.slug] ?? Layers;
               return (
                 <Link key={s.slug} href={`/servicios/${s.slug}/`} className="ed-svc rv" style={{ transitionDelay: `${i * 80}ms` }}>
                   <span style={{ display: "flex", justifyContent: "space-between" }}><Icon size={30} strokeWidth={1.5} /><span className="ed-mono">{pad(i + 1)}</span></span>
