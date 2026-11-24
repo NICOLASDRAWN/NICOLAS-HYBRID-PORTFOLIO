@@ -1,5 +1,13 @@
 [
   {
+    "fecha": "2026-11-24",
+    "titulo": "Mi nueva web personal",
+    "texto": "De Neiva a Bogotá: mi retrato teñido en rojo o lima, una ruta que se dibuja con el scroll y una vitrina de vidrio con mis proyectos. Mírala en vivo.",
+    "tipo": "Web personal",
+    "imagen": "/assets/bitacora/2026-11-24-nicolas-monroy-estudio.jpg",
+    "enlace": "https://ncls.lat/studio/"
+  },
+  {
     "fecha": "2026-11-23",
     "titulo": "AIR MAX — web art design",
     "texto": "Concepto no oficial: la zapatilla gira con el mouse, cambia de color en vivo y su cámara de aire se aprieta. Mírala en vivo.",
